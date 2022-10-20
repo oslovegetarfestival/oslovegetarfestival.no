@@ -8,7 +8,7 @@ export const Header = () => {
       <Section width="large" verticalPadding="small">
         <Flex justify="spaceBetween" align="center">
           <p className="h1">
-            <Link href="/">Oslo vegetarfestival</Link>
+            <Link href="/">Oslo Vegetarfestival</Link>
           </p>
           <nav>
             <ul>

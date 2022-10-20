@@ -8,7 +8,7 @@ export const Footer = () => {
       <Section width="large" verticalPadding="large" noGutter>
         <Flex justify="spaceBetween">
           <div>
-            <p className="h3">Oslo vegetarfestival</p>
+            <p className="h3">Oslo Vegetarfestival</p>
           </div>
 
           <div>

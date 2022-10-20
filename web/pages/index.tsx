@@ -26,19 +26,21 @@ const Home: NextPage<Props> = ({ data = {} }) => {
 
       <Section verticalPadding="xlarge">
         <Flow>
-          <h1>Oslo vegetarfestival</h1>
-          <p>Velkommen skal dere være.</p>
-          <h2>Heading 2</h2>
+          <h1>Oslo Vegetarfestival</h1>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old.
+            Tusen takk for nå! Og hold av datoen for julemarked og Oslo
+            Vegetarfestival 2023!
           </p>
           <h2>Heading 2</h2>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old.
+            Tusen takk til alle frivillige, ansatte, foredragsholdere,
+            sponsorer, utstillere og besøkende, som har sørget for at Oslo
+            Vegetarfestival 2022 ble en helt fantastisk helg!
+          </p>
+          <h2>Heading 2</h2>
+          <p>
+            Vi synes det er alt for lenge å vente til mai 2023 for å feire alt
+            det fantastiske vegetarverden har å by på, og utvider!
           </p>
           <h3>Heading 3</h3>
 

@@ -1,6 +1,6 @@
 # Oslo vegetarfestival
 
-Website and CMS for Oslo vegetarfestival.
+Website and CMS for Oslo Vegetarfestival.
 
 ## Explore
 
