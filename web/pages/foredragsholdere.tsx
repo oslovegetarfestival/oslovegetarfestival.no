@@ -18,7 +18,7 @@ type Props = {
   preview: boolean
 }
 
-const Page: NextPage<Props> = ({ data, preview }) => {
+const Page: NextPage<Props> = ({ data }) => {
   console.log('data', data)
 
   return (

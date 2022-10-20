@@ -7,10 +7,9 @@ import { SectionBox } from 'components/SectionBox'
 
 type Props = {
   data: Record<string, unknown>
-  preview: boolean
 }
 
-const Home: NextPage<Props> = ({ data = {}, preview }) => {
+const Home: NextPage<Props> = ({ data = {} }) => {
   console.log('data', data)
 
   return (
@@ -20,7 +19,7 @@ const Home: NextPage<Props> = ({ data = {}, preview }) => {
       <SectionBox
         data={{
           image: '',
-          content: '',
+          content: {},
           backgroundColor: 'aubergine',
         }}
       />

@@ -10,7 +10,13 @@ import styles from "./Card.module.scss"
 type Props = {
   image: {
     altText?: string
-    metadata?: any
+    metadata?: {
+      palette?: {
+        lightMuted?: {
+          background?: string
+        }
+      }
+    }
   }
   title: string
   subTitle: string
