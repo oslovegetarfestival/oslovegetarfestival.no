@@ -1,0 +1,52 @@
+@import 'styles/breakpoints';
+
+.grid {
+  display: flex;
+  margin-left: calc(var(--grid-gutter) * -1);
+
+  &-reverse {
+    flex-flow: row-reverse;
+  }  
+
+  // Breakpoint
+  &:not(.grid-noWrap) {
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+      flex-flow: row; // Revert any inverted flow
+    }
+  }
+
+  &-noGutter {
+    margin: 0;
+  }
+}
+
+.gridItem {
+  flex: 1;
+  padding-left: var(--grid-gutter);
+
+  &:not(:first-of-type) {
+    @media (max-width: $breakpoint-tablet) {
+      padding-top: var(--grid-gutter)
+    }
+  } 
+
+  &-verticalCenter {
+    @media (min-width: calc($breakpoint-tablet + 1px)) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-noGutter {
+    padding: 0;
+
+    // Stupid way to reset css rule above...
+    &:not(:first-of-type) {
+      @media (max-width: $breakpoint-tablet) {
+        padding-top: 0;
+      }
+    } 
+
+  }
+}

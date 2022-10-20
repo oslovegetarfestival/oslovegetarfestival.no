@@ -1,0 +1,48 @@
+@import "utils/fluidtype";
+
+// Fluid typography
+$minWidth: 320px;
+$maxWidth: 1200px;
+
+
+@font-face {
+  font-family: "NeueMachina";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/PPNeueMachina-InktrapRegular.woff2") format("woff2"),
+    url("/fonts/PPNeueMachina-InktrapRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NeueMachina";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/PPNeueMachina-InktrapBold.woff2") format("woff2"),
+    url("/fonts/PPNeueMachina-InktrapBold.woff") format("woff");
+}
+
+body {
+  font-family: "NeueMachina", sans-serif;
+  line-height: 1.45;
+  @include fluid-type($minWidth, 1000px, 16px, 20px);  
+}
+
+h1, h2, h3 {
+  line-height: 0.95;
+  font-weight: normal;
+}
+
+h1,
+.h1 {
+  @include fluid-type($minWidth, $maxWidth, 36px, 56px);
+}
+
+h2,
+.h2 {
+  @include fluid-type($minWidth, $maxWidth, 26px, 34px);
+}
+
+h3,
+.h3 {
+  @include fluid-type($minWidth, $maxWidth, 22px, 28px);
+}

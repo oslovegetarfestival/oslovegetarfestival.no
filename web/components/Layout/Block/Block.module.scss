@@ -1,0 +1,28 @@
+.block {
+  display: block;
+}
+
+// Modifiers
+
+// Generate sizes
+@for $i from 1 through 9 {
+  .-top-#{$i} {
+    margin-top: var(--spacing-#{$i});
+  }
+}
+
+@for $i from 1 through 9 {
+  .-right-#{$i} {
+    margin-right: var(--spacing-#{$i});
+  }
+}
+@for $i from 1 through 9 {
+  .-bottom-#{$i} {
+    margin-bottom: var(--spacing-#{$i});
+  }
+}
+@for $i from 1 through 9 {
+  .-left-#{$i} {
+    margin-left: var(--spacing-#{$i});
+  }
+}

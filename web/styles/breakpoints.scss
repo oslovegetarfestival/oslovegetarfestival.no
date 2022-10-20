@@ -1,0 +1,7 @@
+// CSS vars is not supported in media queries - using scss vars instead
+// These are meant to used as "max-width". Add 1px if using in combination with "min-width". 
+// Ex: @media (max-width: $breakpoint-tablet)
+// Ex: @media (min-width: calc($breakpoint-tablet + 1px))
+
+$breakpoint-tablet: 799px;
+$breakpoint-mobile: 549px;

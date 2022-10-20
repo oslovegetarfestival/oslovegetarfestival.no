@@ -1,0 +1,28 @@
+.imageWrap {
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.textWrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: var(--spacing-9);
+}
+
+// Background colors 
+.-background-aubergine {
+  background-color: var(--color-aubergine);
+}  
+
+.-background-banana {
+  background-color: var(--color-banana);
+}
+
+.-background-pumpkin {
+  background-color: var(--color-pumpkin);
+}  
