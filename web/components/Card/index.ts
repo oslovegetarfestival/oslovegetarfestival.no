@@ -1,2 +1,2 @@
 export { Card } from "./Card"
-export { CardGrid } from './CardGrid'
+export { CardGrid } from "./CardGrid"

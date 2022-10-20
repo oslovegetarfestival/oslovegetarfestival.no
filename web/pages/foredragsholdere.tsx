@@ -2,8 +2,8 @@ import type { NextPage } from "next"
 import { getClient } from "lib/sanity.server"
 
 import { Seo } from "components/Seo"
-import { Card, CardGrid } from 'components/Card'
-import { Section } from 'components/Layout'
+import { Card, CardGrid } from "components/Card"
+import { Section } from "components/Layout"
 type Props = {
   data: {
     post: [
@@ -19,7 +19,7 @@ type Props = {
 }
 
 const Page: NextPage<Props> = ({ data }) => {
-  console.log('data', data)
+  console.log("data", data)
 
   return (
     <>

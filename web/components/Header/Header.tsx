@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import { Flex, Section } from 'components/Layout'
+import { Flex, Section } from "components/Layout"
 
 export const Header = () => {
   return (

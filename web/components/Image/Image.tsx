@@ -10,26 +10,26 @@ type Props = {
     altText?: string
   }
   maxWidth?: number
-  imageLoading?: 'lazy' | 'eager'
+  imageLoading?: "lazy" | "eager"
   hideCaption?: boolean
 }
 
 export const Image = ({
   imageObject,
   maxWidth = 800, // This should be identical to css var "--page-width-medium"
-  imageLoading = 'lazy',
+  imageLoading = "lazy",
   hideCaption,
   ...props
 }: Props) => {
-  const { caption = '', altText = '' } = imageObject || {}
+  const { caption = "", altText = "" } = imageObject || {}
 
   return (
     <picture {...props}>
       <img
         src={urlForImage(imageObject)
           .width(maxWidth)
-          .fit('max')
-          .auto('format')
+          .fit("max")
+          .auto("format")
           .url()}
         alt={altText}
         loading={imageLoading}

@@ -1,16 +1,16 @@
-import type { NextPage } from 'next'
-import { getClient } from 'lib/sanity.server'
+import type { NextPage } from "next"
+import { getClient } from "lib/sanity.server"
 
-import { Seo } from 'components/Seo'
-import { Flow, Block, Section, Flex, Grid } from 'components/Layout'
-import { SectionBox } from 'components/SectionBox'
+import { Seo } from "components/Seo"
+import { Flow, Block, Section, Flex, Grid } from "components/Layout"
+import { SectionBox } from "components/SectionBox"
 
 type Props = {
   data: Record<string, unknown>
 }
 
 const Home: NextPage<Props> = ({ data = {} }) => {
-  console.log('data', data)
+  console.log("data", data)
 
   return (
     <>
@@ -18,9 +18,9 @@ const Home: NextPage<Props> = ({ data = {} }) => {
 
       <SectionBox
         data={{
-          image: '',
+          image: "",
           content: {},
-          backgroundColor: 'aubergine',
+          backgroundColor: "aubergine",
         }}
       />
 

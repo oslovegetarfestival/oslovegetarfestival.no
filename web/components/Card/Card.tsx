@@ -42,14 +42,14 @@ export const Card = ({ title, subTitle, content, image }: Props) => {
           src={urlForImage(image)
             .width(800)
             .height(800)
-            .fit('max')
-            .auto('format')
+            .fit("max")
+            .auto("format")
             .url()}
-          alt={image?.altText ?? ''}
+          alt={image?.altText ?? ""}
           className={styles.image}
           fill
           onLoadingComplete={fadeInImage}
-          style={{ transition: '0.1s', opacity: isImageReady ? '1' : '0' }}
+          style={{ transition: "0.1s", opacity: isImageReady ? "1" : "0" }}
         />
       </picture>
 
