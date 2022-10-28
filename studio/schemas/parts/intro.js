@@ -1,4 +1,4 @@
-const intro = ({
+export const intro = ({
   title = "Intro",
   description = "En kort introduksjon",
   required = false,

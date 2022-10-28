@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function image({
+export const image = ({
   title = "Bilde",
   required = false,
   description = null,
-} = {}) {
+} = {}) => {
   return {
     name: "image",
     title: title,
@@ -48,4 +48,4 @@ export default function image({
       },
     },
   };
-}
+};

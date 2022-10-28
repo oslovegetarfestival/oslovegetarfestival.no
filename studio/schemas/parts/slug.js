@@ -1,3 +1,4 @@
+import React from "react";
 import slugify from "slugify";
 
 // Idea from https://www.simeongriggs.dev/nextjs-sanity-slug-patterns
@@ -12,13 +13,20 @@ function formatSlug(input, slugStart) {
   return slugStart + slug;
 }
 
-const slug = ({ prefix = "", source = "title" }) => {
+export const slug = ({ prefix = "", source = "title" } = {}) => {
   const slugStart = prefix ? `/${prefix}/` : "/";
 
   return {
     title: "Slug",
     name: "slug",
     type: "slug",
+    description: (
+      <span>
+        Dette blir nettadressen til siden, feks: <em>example.com/slug</em>
+        <br />
+        <strong>OBS! Slug bør ikke endres etter siden er publisert.</strong>
+      </span>
+    ),
     options: {
       source: source,
       slugify: (value) => formatSlug(value, slugStart),
@@ -51,5 +59,3 @@ const slug = ({ prefix = "", source = "title" }) => {
       }),
   };
 };
-
-export default slug;
