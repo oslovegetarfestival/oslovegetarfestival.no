@@ -6,6 +6,7 @@ export const settings = {
   title: "Settings",
   type: "document",
   fields: [title(), intro()],
+  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
 
   preview: {
     select: {
