@@ -1,5 +1,6 @@
 import image from "../parts/image";
 import intro from "../parts/intro";
+import slug from "../parts/slug";
 
 export default {
   name: "speakers",
@@ -17,6 +18,7 @@ export default {
       title: "Stilling / jobbtittel",
       type: "string",
     },
+    slug({ source: "name" }),
     intro(),
     image(),
   ],
