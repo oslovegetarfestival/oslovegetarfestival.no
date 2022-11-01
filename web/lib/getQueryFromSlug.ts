@@ -4,57 +4,97 @@ export const getQueryFromSlug = (slugArray = []) => {
   // Sanity queries
   const sanityQuery = {
     frontPage: '*[_id == "frontPage"][0]',
-    page: '*[_type == "page" && slug.current == $slug][0]',
+    genericPage: '*[_type == "page" && slug.current == $slug][0]',
+    eventMain:
+      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "event"]}',
     event: '*[_type == "event" && slug.current == $slug][0]',
+    exhibitorMain:
+      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "exhibitor"]}',
     exhibitor: '*[_type == "exhibitor" && slug.current == $slug][0]',
+    newsMain:
+      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "news"]}',
     news: '*[_type == "news" && slug.current == $slug][0]',
   }
 
   // We have to re-combine the slug array to match our slug in Sanity.
   const queryParams = { slug: `/${slugArray.join("/")}` }
 
-  // Page
-  // Ex: /program
-  if (slugArray.length === 1) {
+  // Front page
+  if (slugArray.length === 0) {
     return {
-      docType: "page",
+      docType: "frontPage",
       queryParams,
-      query: sanityQuery.page,
+      query: sanityQuery.frontPage,
     }
   }
 
   // Events
-  // Ex: /program/kokkekurs-med-veganmannen
   if (slugArray[0] === "program") {
-    return {
-      docType: "event",
-      queryParams,
-      query: sanityQuery.event,
+    // ex: /program
+    if (slugArray.length === 1) {
+      return {
+        docType: "eventMain",
+        queryParams,
+        query: sanityQuery.eventMain,
+      }
+    }
+
+    // ex: /program/kokkekurs-med-vegankollektivet
+    if (slugArray.length === 2) {
+      return {
+        docType: "event",
+        queryParams,
+        query: sanityQuery.event,
+      }
     }
   }
 
-  // Exhibitor
-  if (slugArray[0] === "utstiller") {
-    return {
-      docType: "exhibitor",
-      queryParams,
-      query: sanityQuery.exhibitor,
+  // Exhibitors
+  if (slugArray[0] === "utstillere") {
+    // ex: /utstillere
+    if (slugArray.length === 1) {
+      return {
+        docType: "exhibitorMain",
+        queryParams,
+        query: sanityQuery.exhibitorMain,
+      }
+    }
+
+    // ex: /utstillere/oatly
+    if (slugArray.length === 2) {
+      return {
+        docType: "exhibitor",
+        queryParams,
+        query: sanityQuery.exhibitor,
+      }
     }
   }
 
   // News
   if (slugArray[0] === "aktuelt") {
-    return {
-      docType: "news",
-      queryParams,
-      query: sanityQuery.news,
+    // ex: /aktuelt
+    if (slugArray.length === 1) {
+      return {
+        docType: "newsMain",
+        queryParams,
+        query: sanityQuery.newsMain,
+      }
+    }
+
+    // ex: /aktuelt/kongen-apner-festivalen
+    if (slugArray.length === 2) {
+      return {
+        docType: "news",
+        queryParams,
+        query: sanityQuery.news,
+      }
     }
   }
 
-  // Front page
+  // Generic page
   return {
-    docType: "frontPage",
+    docType: "genericPage",
     queryParams,
-    query: sanityQuery.frontPage,
+    query: sanityQuery.genericPage,
   }
 }

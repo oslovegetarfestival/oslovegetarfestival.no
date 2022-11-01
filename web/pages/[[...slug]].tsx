@@ -9,9 +9,14 @@ import { PageLayout } from "components/PageLayout"
 // Dynamic imports
 const FrontPage = dynamic(() => import("components/Pages/FrontPage"))
 const GenericPage = dynamic(() => import("components/Pages/GenericPage"))
+const NewsMainPage = dynamic(() => import("components/Pages/NewsMainPage"))
 const NewsPage = dynamic(() => import("components/Pages/NewsPage"))
 const ExhibitorPage = dynamic(() => import("components/Pages/ExhibitorPage"))
+const ExhibitorMainPage = dynamic(
+  () => import("components/Pages/ExhibitorMainPage")
+)
 const EventPage = dynamic(() => import("components/Pages/EventPage"))
+const EventMainPage = dynamic(() => import("components/Pages/EventMainPage"))
 
 type Props = {
   [key: string]: any
@@ -23,10 +28,13 @@ const Page: NextPage<Props> = ({ data = {} }) => {
   return (
     <PageLayout>
       {docType === "frontPage" && <FrontPage page={pageData} />}
-      {docType === "page" && <GenericPage page={pageData} />}
+      {docType === "genericPage" && <GenericPage page={pageData} />}
+      {docType === "newsMain" && <NewsMainPage page={pageData} />}
       {docType === "news" && <NewsPage page={pageData} />}
       {docType === "exhibitor" && <ExhibitorPage page={pageData} />}
+      {docType === "exhibitorMain" && <ExhibitorMainPage page={pageData} />}
       {docType === "event" && <EventPage page={pageData} />}
+      {docType === "eventMain" && <EventMainPage page={pageData} />}
     </PageLayout>
   )
 }
