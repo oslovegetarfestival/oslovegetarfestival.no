@@ -20,10 +20,9 @@ const Page: NextPage<Props> = ({ data = {} }) => {
 export default Page
 
 // Fetch and prebuild all pages
-// Based on: https://www.simeongriggs.dev/nextjs-sanity-slug-patterns
 export async function getStaticPaths() {
   // Query every single page and path
-  const query = `*[_type in ["page", "event", "exhibitor", "news", "settings"] && defined(slug.current)][].slug.current`
+  const query = `*[_type in ["page", "event", "exhibitor", "news"] && defined(slug.current)][].slug.current`
   const pageQueries = await sanityClient.fetch(query)
 
   // Add our index (front page)
