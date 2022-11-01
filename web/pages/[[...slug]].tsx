@@ -2,6 +2,8 @@ import type { NextPage } from "next"
 
 import { sanityClient } from "lib/sanity"
 import { getQueryFromSlug } from "lib/getQueryFromSlug"
+
+import { PageLayout } from "components/PageLayout" 
 import { Section } from "components/Layout"
 
 type Props = {
@@ -10,10 +12,12 @@ type Props = {
 
 const Page: NextPage<Props> = ({ data = {} }) => {
   return (
-    <Section verticalPadding="large">
-      <h1>{data?.pageData?.title}</h1>
-      <p>{data?.pageData?.intro}</p>
-    </Section>
+    <PageLayout>
+      <Section verticalPadding="large">
+        <h1>{data?.pageData?.title}</h1>
+        <p>{data?.pageData?.intro}</p>
+      </Section>
+    </PageLayout>
   )
 }
 

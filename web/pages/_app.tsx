@@ -1,9 +1,6 @@
 import Head from "next/head"
 import type { AppProps } from "next/app"
 
-import { Header } from "components/Header"
-import { Footer } from "components/Footer"
-
 import "styles/main.scss"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -39,11 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
-      <Header />
-
       <Component {...pageProps} />
-
-      <Footer />
     </>
   )
 }
