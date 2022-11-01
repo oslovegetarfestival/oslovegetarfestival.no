@@ -1,5 +1,5 @@
 import type { NextPage } from "next"
-import { getClient } from "lib/sanity.server"
+import { sanityClient } from "lib/sanity"
 
 import { Seo } from "components/Seo"
 import { Card, CardGrid } from "components/Card"
@@ -54,14 +54,14 @@ export async function getStaticProps({ preview = false }) {
       "metadata": asset -> metadata
     }
   }`
-  const post = (await getClient(preview).fetch(query)) || []
+  const post = (await sanityClient.fetch(query)) || []
 
   return {
     props: {
       preview,
       data: {
-        post
-      }
-    }
+        post,
+      },
+    },
   }
 }

@@ -1,5 +1,4 @@
 import type { NextPage } from "next"
-import { getClient } from "lib/sanity.server"
 
 import { Seo } from "components/Seo"
 import { Flow, Block, Section, Flex, Grid } from "components/Layout"
@@ -9,9 +8,7 @@ type Props = {
   data: Record<string, unknown>
 }
 
-const Home: NextPage<Props> = ({ data = {} }) => {
-  console.log("data", data)
-
+const Home: NextPage<Props> = () => {
   return (
     <>
       <Seo isFrontPage />
@@ -80,17 +77,3 @@ const Home: NextPage<Props> = ({ data = {} }) => {
 }
 
 export default Home
-
-export async function getStaticProps({ preview = false }) {
-  const query = `*[_type == "post"]`
-  const post = (await getClient(preview).fetch(query)) || []
-
-  return {
-    props: {
-      preview,
-      data: {
-        post,
-      },
-    },
-  }
-}
