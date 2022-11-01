@@ -1,22 +1,32 @@
 import type { NextPage } from "next"
+import dynamic from "next/dynamic"
 
 import { sanityClient } from "lib/sanity"
 import { getQueryFromSlug } from "lib/getQueryFromSlug"
 
-import { PageLayout } from "components/PageLayout" 
-import { Section } from "components/Layout"
+import { PageLayout } from "components/PageLayout"
+
+// Dynamic imports
+const FrontPage = dynamic(() => import("components/Pages/FrontPage"))
+const GenericPage = dynamic(() => import("components/Pages/GenericPage"))
+const NewsPage = dynamic(() => import("components/Pages/NewsPage"))
+const ExhibitorPage = dynamic(() => import("components/Pages/ExhibitorPage"))
+const EventPage = dynamic(() => import("components/Pages/EventPage"))
 
 type Props = {
   [key: string]: any
 }
 
 const Page: NextPage<Props> = ({ data = {} }) => {
+  const { docType, pageData } = data
+
   return (
     <PageLayout>
-      <Section verticalPadding="large">
-        <h1>{data?.pageData?.title}</h1>
-        <p>{data?.pageData?.intro}</p>
-      </Section>
+      {docType === "frontPage" && <FrontPage page={pageData} />}
+      {docType === "page" && <GenericPage page={pageData} />}
+      {docType === "news" && <NewsPage page={pageData} />}
+      {docType === "exhibitor" && <ExhibitorPage page={pageData} />}
+      {docType === "event" && <EventPage page={pageData} />}
     </PageLayout>
   )
 }
@@ -36,7 +46,6 @@ export async function getStaticPaths() {
   const paths = pageQueries.map((slug: string) => ({
     params: { slug: slug.split("/").filter((p) => p) },
   }))
-  console.log("paths", paths)
 
   return { paths, fallback: false }
 }

@@ -19,8 +19,6 @@ type Props = {
 }
 
 const Page: NextPage<Props> = ({ data }) => {
-  console.log("data", data)
-
   return (
     <>
       <Seo />

@@ -1,4 +1,4 @@
-// This is based on https://www.simeongriggs.dev/nextjs-sanity-slug-patterns
+// Based on https://www.simeongriggs.dev/nextjs-sanity-slug-patterns
 
 export const getQueryFromSlug = (slugArray = []) => {
   // Sanity queries
