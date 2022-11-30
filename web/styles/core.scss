@@ -19,6 +19,36 @@ a {
   }
 }
 
+button,
+.button {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: inherit;
+  background-color: var(--color-banana);
+  padding: var(--spacing-4) var(--spacing-7);
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background-color .3s ease;
+
+  &:after {
+    content: "→";
+    display: inline-block;
+    margin-left: .6em;
+    transition: transform .3s ease;
+  }
+
+  &:hover {
+    background-color: var(--color-aubergine);
+    cursor: pointer;
+
+    &:after {
+      transform: translateX(20%);
+    }
+  }
+}
+
 // Re-enable link style
 .link {
   text-decoration: underline;
@@ -34,6 +64,7 @@ ul.list {
   list-style: disc;
   padding-left: 1em;
 }
+
 ol.list {
   list-style: number;
   padding-left: 1em;
@@ -62,6 +93,7 @@ svg {
     transform: translateY(15px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -73,6 +105,7 @@ svg {
     transform: translateY(-15px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -82,8 +115,7 @@ svg {
 // Animation helpers
 
 [data-animate-in] {
-  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 [data-animate-down] {
@@ -93,27 +125,35 @@ svg {
 [data-animation-order="1"] {
   animation-delay: 0.1s;
 }
+
 [data-animation-order="2"] {
   animation-delay: 0.15s;
 }
+
 [data-animation-order="3"] {
   animation-delay: 0.2s;
 }
+
 [data-animation-order="4"] {
   animation-delay: 0.25s;
 }
+
 [data-animation-order="5"] {
   animation-delay: 0.3s;
 }
+
 [data-animation-order="6"] {
   animation-delay: 0.35s;
 }
+
 [data-animation-order="7"] {
   animation-delay: 0.4s;
 }
+
 [data-animation-order="8"] {
   animation-delay: 0.45s;
 }
+
 [data-animation-order="9"] {
   animation-delay: 0.5s;
 }

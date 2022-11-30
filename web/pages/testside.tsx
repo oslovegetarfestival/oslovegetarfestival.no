@@ -22,6 +22,7 @@ const Home: NextPage<Props> = () => {
             Dette er en ingress. Tusen takk for nå! Og hold av datoen for julemarked og Oslo
             Vegetarfestival 2023, det blir bra. Ingressen bør ikke være lenger.
           </p>
+          <button>Kjøp billetter</button>
           <h2>Heading 2</h2>
           <p>
             Tusen takk til alle frivillige, ansatte, foredragsholdere,
