@@ -7,16 +7,23 @@ $maxWidth: 1200px;
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+html {
+  @include fluid-type($minWidth, 1000px, 16px, 20px);
+}
+
 body {
   font-family: "Jost", sans-serif;
-  line-height: 1.45;
-  @include fluid-type($minWidth, 1000px, 16px, 20px);
+  line-height: 1.5;
 }
 
 h1,
 h2,
-h3 {
-  line-height: 0.95;
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 auto 1rem;
+  line-height: 1.2;
 }
 
 h1,
@@ -32,4 +39,14 @@ h2,
 h3,
 .h3 {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
+}
+
+p {
+  margin: 0 auto 1.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.lead {
+  font-size: 1.6rem;
 }
