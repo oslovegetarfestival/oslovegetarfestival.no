@@ -9,7 +9,7 @@ export const page = {
   name: "page",
   title: "Sider",
   type: "document",
-  fields: [title(), slug(), intro(), image()],
+  fields: [title(), slug(), intro(), image({ title: "Hovedbilde" })],
 
   preview: {
     select: {

@@ -1,14 +1,15 @@
+import { bool } from "prop-types";
 import React from "react";
 
 export const image = ({
   title = "Bilde",
   required = false,
-  description = null,
+  includeCaption = false,
 } = {}) => {
   return {
     name: "image",
     title: title,
-    description: description,
+    caption: bool,
     type: "image",
     validation: required ? (Rule) => Rule.required() : null,
     options: {
@@ -24,14 +25,18 @@ export const image = ({
           isHighlighted: true,
         },
       },
-      {
-        name: "caption",
-        title: "Bildetekst",
-        type: "string",
-        options: {
-          isHighlighted: true,
-        },
-      },
+      ...(includeCaption
+        ? [
+            {
+              name: "caption",
+              title: "Bildetekst",
+              type: "string",
+              options: {
+                isHighlighted: true,
+              },
+            },
+          ]
+        : []),
     ],
     preview: {
       select: {
