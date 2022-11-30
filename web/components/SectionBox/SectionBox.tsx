@@ -25,7 +25,7 @@ export const SectionBox = ({ data }: Props) => {
       <Grid verticalCenter noGutter reverse={isReverse}>
         <picture className={styles.imageWrap}>
           <img
-            src="https://images.unsplash.com/photo-1560698862-c340d3c8bf38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            src={data.image}
             alt="Oslo by"
             className={styles.image}
           />

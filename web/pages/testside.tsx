@@ -4,22 +4,16 @@ import { Seo } from "components/Seo"
 import { Flow, Block, Section, Flex, Grid } from "components/Layout"
 import { SectionBox } from "components/SectionBox"
 
+import { PageLayout } from "components/PageLayout"
+
 type Props = {
   data: Record<string, unknown>
 }
 
 const Home: NextPage<Props> = () => {
   return (
-    <>
+    <PageLayout>
       <Seo isFrontPage />
-
-      <SectionBox
-        data={{
-          image: "",
-          content: {},
-          backgroundColor: "aubergine",
-        }}
-      />
 
       <Section verticalPadding="xlarge">
         <Flow>
@@ -37,6 +31,27 @@ const Home: NextPage<Props> = () => {
           <p>
             Aenean finibus lacus eget lacus posuere, at sagittis sapien venenatis. Duis condimentum ultrices magna, nec volutpat leo. Integer lobortis nunc ut est eleifend ullamcorper. Cras tellus risus, scelerisque ac dolor efficitur, imperdiet molestie massa. Aenean eget arcu eu diam porttitor efficitur at id velit. Pellentesque ac ante eget eros dapibus porttitor. Quisque eu erat pellentesque, mattis ligula sit amet, gravida eros.
           </p>
+        </Flow>
+      </Section>
+
+      <SectionBox
+        data={{
+          image: "https://images.unsplash.com/photo-1493770348161-369560ae357d",
+          content: {},
+          backgroundColor: "banana",
+        }}
+      />
+
+      <SectionBox
+        data={{
+          image: "https://images.unsplash.com/photo-1570145820386-15a56730192c",
+          content: {},
+          backgroundColor: "pumpkin",
+        }}
+      />
+
+      <Section verticalPadding="xlarge">
+        <Flow>
           <h2>Heading 2</h2>
           <p>
             Vi synes det er alt for lenge å vente til mai 2023 for å feire alt
@@ -87,7 +102,7 @@ const Home: NextPage<Props> = () => {
           </ol>
         </Flow>
       </Section>
-    </>
+    </PageLayout>
   )
 }
 
