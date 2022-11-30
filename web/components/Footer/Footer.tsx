@@ -5,7 +5,7 @@ import styles from "./Footer.module.scss"
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Section width="large" verticalPadding="large" noGutter>
+      <Section width="large" verticalPadding="large">
         <Flex justify="spaceBetween">
           <div>
             <p className="h3">Oslo Vegetarfestival</p>
