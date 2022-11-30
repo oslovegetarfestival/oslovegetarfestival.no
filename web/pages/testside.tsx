@@ -24,15 +24,18 @@ const Home: NextPage<Props> = () => {
       <Section verticalPadding="xlarge">
         <Flow>
           <h1>Oslo Vegetarfestival</h1>
-          <p>
-            Tusen takk for nå! Og hold av datoen for julemarked og Oslo
-            Vegetarfestival 2023!
+          <p className="lead">
+            Dette er en ingress. Tusen takk for nå! Og hold av datoen for julemarked og Oslo
+            Vegetarfestival 2023, det blir bra. Ingressen bør ikke være lenger.
           </p>
           <h2>Heading 2</h2>
           <p>
             Tusen takk til alle frivillige, ansatte, foredragsholdere,
             sponsorer, utstillere og besøkende, som har sørget for at Oslo
-            Vegetarfestival 2022 ble en helt fantastisk helg!
+            Vegetarfestival 2022 ble en helt fantastisk helg! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in varius metus. Donec at libero a lacus luctus semper. Aliquam commodo scelerisque augue, quis mollis mauris tempor ut. Nulla quis ex hendrerit, porta tellus in, imperdiet nibh. Mauris egestas congue nisl, sed venenatis ante pretium id.
+          </p>
+          <p>
+            Aenean finibus lacus eget lacus posuere, at sagittis sapien venenatis. Duis condimentum ultrices magna, nec volutpat leo. Integer lobortis nunc ut est eleifend ullamcorper. Cras tellus risus, scelerisque ac dolor efficitur, imperdiet molestie massa. Aenean eget arcu eu diam porttitor efficitur at id velit. Pellentesque ac ante eget eros dapibus porttitor. Quisque eu erat pellentesque, mattis ligula sit amet, gravida eros.
           </p>
           <h2>Heading 2</h2>
           <p>
@@ -52,11 +55,21 @@ const Home: NextPage<Props> = () => {
           </Grid>
 
           <Block top="8">
-            <a href="#">Tekst her med gjennomganq</a>
+            <a href="#">Tekst her med gjennomgang</a>
           </Block>
 
           <ul className="list">
             <li>Hei</li>
+            <li>Hei</li>
+            <li>Hei</li>
+          </ul>
+
+          <h3>En liste med lengre punkter</h3>
+
+          <ul className="list">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in varius metus. Donec at libero a lacus luctus semper. Aliquam commodo scelerisque augue, quis mollis mauris tempor ut.</li>
+            <li>Integer lobortis nunc ut est eleifend ullamcorper. Cras tellus risus, scelerisque ac dolor efficitur, imperdiet molestie massa.</li>
+            <li>Aenean eget arcu eu diam porttitor efficitur at id velit. Pellentesque ac ante eget eros dapibus porttitor. Quisque eu erat pellentesque, mattis ligula sit amet, gravida eros.</li>
           </ul>
 
           <Flex justify="spaceBetween">
@@ -68,6 +81,8 @@ const Home: NextPage<Props> = () => {
           </Flex>
 
           <ol className="list">
+            <li>Hei</li>
+            <li>Hei</li>
             <li>Hei</li>
           </ol>
         </Flow>
