@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Import document schemas (pages)
 import { page } from "./documents/page";
 import { event } from "./documents/event";
+import { eventLocation } from "./documents/eventLocation";
+import { eventType } from "./documents/eventType";
 import { exhibitor } from "./documents/exhibitor";
 import { news } from "./documents/news";
 import { settings } from "./documents/settings";
@@ -23,6 +25,8 @@ export default createSchema({
     // in the studio.
     page,
     event,
+    eventLocation,
+    eventType,
     exhibitor,
     news,
     settings,
