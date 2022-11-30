@@ -5,31 +5,18 @@ $minWidth: 320px;
 $maxWidth: 1200px;
 
 
-@font-face {
-  font-family: "NeueMachina";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/fonts/PPNeueMachina-InktrapRegular.woff2") format("woff2"),
-    url("/fonts/PPNeueMachina-InktrapRegular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "NeueMachina";
-  font-style: normal;
-  font-weight: bold;
-  src: url("/fonts/PPNeueMachina-InktrapBold.woff2") format("woff2"),
-    url("/fonts/PPNeueMachina-InktrapBold.woff") format("woff");
-}
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  font-family: "NeueMachina", sans-serif;
+  font-family: "Jost", sans-serif;
   line-height: 1.45;
-  @include fluid-type($minWidth, 1000px, 16px, 20px);  
+  @include fluid-type($minWidth, 1000px, 16px, 20px);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 0.95;
-  font-weight: normal;
 }
 
 h1,
