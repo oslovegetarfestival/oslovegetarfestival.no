@@ -1,10 +1,20 @@
 .header {
-  background-color: var(--color-aubergine);
+  //background-color: var(--color-aubergine);
+}
+
+.logo {
+  line-height: .9;
+  span {
+    display: block;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .menuItem {
-  font-weight: 500;
   margin-right: 2rem;
+  font-family: 'Strike';
 
   &:last-child {
     margin-right: 0;

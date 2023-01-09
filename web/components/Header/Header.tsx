@@ -8,9 +8,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Section width="large" verticalPadding="small">
-        <Flex justify="spaceBetween" align="center">
+        <Flex justify="spaceBetween" align="start">
           <p className="h1">
-            <Link href="/">Oslo Vegetarfestival</Link>
+            <Link href="/"><a className={styles.logo}><span>Oslo</span> <span>vegetar</span><span>festival</span></a></Link>
           </p>
           <nav>
             <ul>
