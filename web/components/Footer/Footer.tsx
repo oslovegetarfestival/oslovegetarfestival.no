@@ -9,6 +9,7 @@ export const Footer = () => {
         <Flex justify="spaceBetween">
           <div>
             <p className="h3">Oslo Vegetarfestival</p>
+            <button>Kjøp billetter</button>
           </div>
 
           <div>
