@@ -24,14 +24,16 @@ button,
 .button {
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: 'Strike';
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: inherit;
   background-color: var(--color-banana);
-  padding: var(--spacing-4) var(--spacing-7);
+  padding: var(--spacing-2) var(--spacing-7);
   border: none;
   border-radius: var(--border-radius);
   transition: background-color .3s ease;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 
   &:after {
     content: "→";
