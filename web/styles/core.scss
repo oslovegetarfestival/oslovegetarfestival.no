@@ -27,8 +27,8 @@ button,
   font-family: 'Strike';
   font-weight: 500;
   font-size: 1.5rem;
-  color: inherit;
-  background-color: var(--color-banana);
+  background-color: var(--color-kaki);
+  color: var(--color-oatmilk);
   padding: var(--spacing-2) var(--spacing-7);
   border: none;
   border-radius: var(--border-radius);
@@ -43,11 +43,22 @@ button,
   }
 
   &:hover {
-    background-color: var(--color-aubergine);
+    background-color: var(--color-kale);
     cursor: pointer;
 
     &:after {
       transform: translateX(20%);
+    }
+  }
+
+  &--secondary {
+    padding: var(--spacing-1) var(--spacing-5);
+    background-color: var(--color-banana);
+    color: var(--color-kale);
+    text-transform: none;
+    letter-spacing: normal;
+    &:hover {
+      background-color: var(--color-aubergine);
     }
   }
 }

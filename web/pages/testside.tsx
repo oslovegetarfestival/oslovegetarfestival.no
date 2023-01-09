@@ -23,6 +23,7 @@ const Home: NextPage<Props> = () => {
             Vegetarfestival 2023, det blir bra. Ingressen bør ikke være lenger.
           </p>
           <button>Kjøp billetter</button>
+          <button className="button--secondary">Se hele programmet</button>
           <h2>Heading 2</h2>
           <p>
             Tusen takk til alle frivillige, ansatte, foredragsholdere,
