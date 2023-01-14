@@ -29,6 +29,7 @@ const Page: NextPage<Props> = ({ data = {} }) => {
     <PageLayout>
       {/* We'll use custom page routing, rather than using Next.js built in /pages folder routing */}
       {/* This enables ut to all have our queries one place (bottom of this file) rather than in all the pages */}
+      {/* It also makes it easier to share data with our PageLayout wrapper */}
       {docType === "frontPage" && <FrontPage page={pageData} />}
       {docType === "genericPage" && <GenericPage page={pageData} />}
       {docType === "newsMain" && <NewsMainPage page={pageData} />}

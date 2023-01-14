@@ -1,3 +1,4 @@
+import { contentBlocks } from "../parts/contentBlock";
 import { image } from "../parts/image";
 import { intro } from "../parts/intro";
 import { slug } from "../parts/slug";
@@ -7,7 +8,13 @@ export const news = {
   name: "news",
   title: "Aktuelt",
   type: "document",
-  fields: [title(), slug({ prefix: "aktuelt" }), intro(), image()],
+  fields: [
+    title(),
+    slug({ prefix: "aktuelt" }),
+    intro(),
+    image(),
+    contentBlocks,
+  ],
 
   preview: {
     select: {

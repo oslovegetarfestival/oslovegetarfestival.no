@@ -8,7 +8,6 @@ type Props = {
 }
 
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
-  console.log("page", page)
   return (
     <Section verticalPadding="large">
       <p>Nyheter utlisting</p>

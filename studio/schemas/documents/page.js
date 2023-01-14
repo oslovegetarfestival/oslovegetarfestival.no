@@ -2,7 +2,6 @@ import { image } from "../parts/image";
 import { intro } from "../parts/intro";
 import { slug } from "../parts/slug";
 import { title } from "../parts/title";
-import { blockContent } from "../parts/blockContent";
 
 // This is a generic page, used to create most pages
 
@@ -15,8 +14,6 @@ export const page = {
     slug(),
     intro(),
     image({ title: "Hovedbilde", name: "mainImage" }),
-    blockContent,
-    image(),
   ],
 
   preview: {
