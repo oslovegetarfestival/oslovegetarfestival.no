@@ -17,7 +17,7 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
 
       {page?.items.map((item: Props) => (
         <Link href={item.slug.current} key={item?.title}>
-          {item?.title}
+          <a className="link">{item?.title}</a>
         </Link>
       ))}
     </Section>
