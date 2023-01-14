@@ -3,11 +3,12 @@ import React from "react";
 
 export const image = ({
   title = "Bilde",
+  name = "image",
   required = false,
   includeCaption = false,
 } = {}) => {
   return {
-    name: "image",
+    name: name,
     title: title,
     caption: bool,
     type: "image",
