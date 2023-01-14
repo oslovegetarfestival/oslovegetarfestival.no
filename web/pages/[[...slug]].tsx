@@ -7,16 +7,16 @@ import { getQueryFromSlug } from "lib/getQueryFromSlug"
 import { PageLayout } from "components/PageLayout"
 
 // Dynamic imports
-const FrontPage = dynamic(() => import("components/Pages/FrontPage"))
-const GenericPage = dynamic(() => import("components/Pages/GenericPage"))
-const NewsMainPage = dynamic(() => import("components/Pages/NewsMainPage"))
-const NewsPage = dynamic(() => import("components/Pages/NewsPage"))
-const ExhibitorPage = dynamic(() => import("components/Pages/ExhibitorPage"))
+const FrontPage = dynamic(() => import("PageComponents/FrontPage"))
+const GenericPage = dynamic(() => import("PageComponents/GenericPage"))
+const NewsMainPage = dynamic(() => import("PageComponents/NewsMainPage"))
+const NewsPage = dynamic(() => import("PageComponents/NewsPage"))
+const ExhibitorPage = dynamic(() => import("PageComponents/ExhibitorPage"))
 const ExhibitorMainPage = dynamic(
-  () => import("components/Pages/ExhibitorMainPage")
+  () => import("PageComponents/ExhibitorMainPage")
 )
-const EventPage = dynamic(() => import("components/Pages/EventPage"))
-const EventMainPage = dynamic(() => import("components/Pages/EventMainPage"))
+const EventPage = dynamic(() => import("PageComponents/EventPage"))
+const EventMainPage = dynamic(() => import("PageComponents/EventMainPage"))
 
 type Props = {
   [key: string]: any
@@ -27,6 +27,8 @@ const Page: NextPage<Props> = ({ data = {} }) => {
 
   return (
     <PageLayout>
+      {/* We'll use custom page routing, rather than using Next.js built in /pages folder routing */}
+      {/* This enables ut to all have our queries one place (bottom of this file) rather than in all the pages */}
       {docType === "frontPage" && <FrontPage page={pageData} />}
       {docType === "genericPage" && <GenericPage page={pageData} />}
       {docType === "newsMain" && <NewsMainPage page={pageData} />}
