@@ -27,7 +27,8 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "image") {
     return (
       <Section verticalPadding="small">
-        <Image imageObject={data} />
+        {/* @ts-ignore */}
+        <Image imageObject={data} alt="" />
       </Section>
     )
   }
@@ -35,6 +36,6 @@ export const SanityBlockModule = ({ data }: Props) => {
   // ... add more modules here
 
   // No matches
-  console.error("No matching block module for type:", module._type)
-  return <></>
+  console.error("No matching block module for type:", blockType)
+  return null
 }
