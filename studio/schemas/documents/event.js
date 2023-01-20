@@ -31,13 +31,6 @@ export const event = {
       description: "Hvor arrangementet foregår. Feks: Barneteltet",
       to: [{ type: "eventLocation" }],
     },
-    {
-      title: "Type arrangement (valgfritt)",
-      name: "eventType",
-      type: "reference",
-      description: "Feks: Kokkekurs eller Foredrag",
-      to: [{ type: "eventType" }],
-    },
   ],
 
   preview: {

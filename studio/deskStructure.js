@@ -27,9 +27,6 @@ export default () =>
       S.documentTypeListItem("eventLocation")
         .title("Arrangement: Steder")
         .icon(FiLink),
-      S.documentTypeListItem("eventType")
-        .title("Arrangement: Typer")
-        .icon(FiLink),
       S.divider(),
       S.listItem()
         .title("Settings")
