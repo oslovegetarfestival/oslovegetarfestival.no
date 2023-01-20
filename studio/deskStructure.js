@@ -22,6 +22,9 @@ export default () =>
       S.documentTypeListItem("news").title("Aktuelt").icon(FiFileText),
       S.divider(),
       S.documentTypeListItem("exhibitor").title("Utstillere").icon(FiCoffee),
+      S.documentTypeListItem("exhibitorType")
+        .title("Utstiller: Typer")
+        .icon(FiLink),
       S.divider(),
       S.documentTypeListItem("event").title("Arrangementer").icon(FiCalendar),
       S.documentTypeListItem("eventLocation")

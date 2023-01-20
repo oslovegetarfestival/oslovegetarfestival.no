@@ -7,7 +7,20 @@ export const exhibitor = {
   name: "exhibitor",
   title: "Utstillere",
   type: "document",
-  fields: [title(), slug({ prefix: "utstillere" }), intro(), image()],
+  fields: [
+    title(),
+    slug({ prefix: "utstillere" }),
+    intro(),
+    image(),
+    {
+      title: "Type utstiller",
+      name: "type",
+      type: "reference",
+      validation: (Rule) => Rule.required(),
+      description: "Hva slags type utstiller. Feks: Restaurantbod",
+      to: [{ type: "exhibitorType" }],
+    },
+  ],
 
   preview: {
     select: {
