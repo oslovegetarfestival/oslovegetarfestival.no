@@ -12,5 +12,3 @@ export const intro = ({
     validation: required ? (Rule) => Rule.required() : null,
   };
 };
-
-export default intro;
