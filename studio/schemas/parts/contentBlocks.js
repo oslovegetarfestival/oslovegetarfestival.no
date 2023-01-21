@@ -1,4 +1,5 @@
 import { image } from "./image";
+import { quote } from "./quote";
 import { richTextObject } from "./richTextObject";
 import { video } from "./video";
 
@@ -6,5 +7,5 @@ export const contentBlocks = {
   name: "contentBlocks",
   type: "array",
   title: "Innholdsblokker",
-  of: [richTextObject, image(), video],
+  of: [richTextObject, image(), video, quote],
 };
