@@ -20,7 +20,7 @@ export const image = ({
       {
         name: "altText",
         title: "Alternativ text",
-        description: "Beskrivelse av bilde. Brukes for blinde og svaksynte",
+        description: "Beskrivelse av bilde. Brukes for blinde og svaksynte.",
         type: "string",
         options: {
           isHighlighted: true,

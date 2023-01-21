@@ -1,3 +1,4 @@
+import { contentBlocks } from "../parts/contentBlocks";
 import { image } from "../parts/image";
 import { intro } from "../parts/intro";
 import { slug } from "../parts/slug";
@@ -31,6 +32,7 @@ export const event = {
       description: "Hvor arrangementet foregår. Feks: Barneteltet",
       to: [{ type: "eventLocation" }],
     },
+    contentBlocks,
   ],
 
   preview: {

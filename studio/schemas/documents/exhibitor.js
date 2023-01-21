@@ -28,6 +28,7 @@ export const exhibitor = {
       name: "sponsor",
       type: "boolean",
     },
+    richTextObject,
   ],
 
   preview: {
