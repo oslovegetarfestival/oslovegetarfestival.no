@@ -7,6 +7,9 @@ export const exhibitor = {
   name: "exhibitor",
   title: "Utstillere",
   type: "document",
+  initialValue: {
+    sponsor: false,
+  },
   fields: [
     title(),
     slug({ prefix: "utstillere" }),
@@ -19,6 +22,11 @@ export const exhibitor = {
       validation: (Rule) => Rule.required(),
       description: "Hva slags type utstiller. Feks: Restaurantbod",
       to: [{ type: "exhibitorType" }],
+    },
+    {
+      title: "Dette er en sponsor",
+      name: "sponsor",
+      type: "boolean",
     },
   ],
 
