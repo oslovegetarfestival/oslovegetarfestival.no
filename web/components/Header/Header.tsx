@@ -7,7 +7,7 @@ import styles from "./Header.module.scss"
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <Section width="large" verticalPadding="small">
+      <Section width="full" verticalPadding="small">
         <Flex justify="spaceBetween" align="start">
           <p className="h1">
             <Link href="/">
@@ -22,9 +22,6 @@ export const Header = () => {
               <Flex justify="spaceBetween">
                 <li className={styles.menuItem}>
                   <Link href="/aktuelt">Aktuelt</Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href="/billetter">Billetter</Link>
                 </li>
                 <li className={styles.menuItem}>
                   <Link href="/bli-frivillig">Bli frivillig</Link>
@@ -49,6 +46,9 @@ export const Header = () => {
                 </li>
                 <li className={styles.menuItem}>
                   <Link href="/testside">Testside</Link>
+                </li>
+                <li className={`${styles.menuItem} ${styles.tickets}`}>
+                  <Link href="/billetter">Kjøp billetter</Link>
                 </li>
               </Flex>
             </ul>
