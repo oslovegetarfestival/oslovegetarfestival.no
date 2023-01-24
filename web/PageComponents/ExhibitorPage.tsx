@@ -9,9 +9,9 @@ type Props = {
 const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <Section verticalPadding="large">
-      <p>Utstiller</p>
-      <h1>{page?.title}</h1>
-      <p>{page?.intro}</p>
+      <p className="breadcrumb">Utstiller</p>
+      <h1 className="page-title">{page?.title}</h1>
+      <p className="lead">{page?.intro}</p>
     </Section>
   )
 }

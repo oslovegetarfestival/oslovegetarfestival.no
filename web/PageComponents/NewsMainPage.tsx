@@ -10,10 +10,10 @@ type Props = {
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <Section verticalPadding="large">
-      <p>Nyheter utlisting</p>
+      <p className="breadcrumb">Nyheter utlisting</p>
 
-      <h1>{page?.title}</h1>
-      <p>{page?.intro}</p>
+      <h1 className="page-title">{page?.title}</h1>
+      <p className="lead">{page?.intro}</p>
 
       {page?.items.map((item: Props) => (
         <Link href={item.slug.current} key={item?.title}>

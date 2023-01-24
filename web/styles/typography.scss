@@ -55,5 +55,19 @@ p {
 }
 
 .lead {
-  font-size: 1.6rem;
+  @include fluid-type($minWidth, $maxWidth, 22px, 28px);
+  text-align: center;
+  margin: 1rem auto 2rem;
+}
+
+.page-title {
+  @include fluid-type($minWidth, $maxWidth, 42px, 72px);
+  text-align: center;
+}
+
+.breadcrumb {
+  font-size: .8rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: .6rem;
 }

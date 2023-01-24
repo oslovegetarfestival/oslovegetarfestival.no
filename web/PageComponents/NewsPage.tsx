@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Flow, Section } from "components/Layout"
+import { Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 
 type Props = {
@@ -11,10 +11,9 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large">
-        <Flow>
-          <h1>{page?.title}</h1>
-          <p>{page?.intro}</p>
-        </Flow>
+        <p className="breadcrumb">Publiseringsdato?</p>
+        <h1 className="page-title">{page?.title}</h1>
+        <p className="lead">{page?.intro}</p>
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
