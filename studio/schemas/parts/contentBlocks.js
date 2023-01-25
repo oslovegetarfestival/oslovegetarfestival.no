@@ -8,5 +8,11 @@ export const contentBlocks = {
   name: "contentBlocks",
   type: "array",
   title: "Innholdsblokker",
-  of: [richTextObject, image(), video, quote, listWithImageAndText],
+  of: [
+    richTextObject,
+    image({ includeCaption: true }),
+    video,
+    quote,
+    listWithImageAndText,
+  ],
 };

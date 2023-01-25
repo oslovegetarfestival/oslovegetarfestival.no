@@ -12,7 +12,7 @@ export const news = {
     title(),
     slug({ prefix: "aktuelt" }),
     intro(),
-    image(),
+    image({ title: "Hovedbilde", includeCaption: true }),
     contentBlocks,
   ],
 
