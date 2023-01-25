@@ -22,9 +22,6 @@ export const image = ({
         title: "Alternativ text",
         description: "Beskrivelse av bilde. Brukes for blinde og svaksynte.",
         type: "string",
-        options: {
-          isHighlighted: true,
-        },
       },
       ...(includeCaption
         ? [
@@ -32,9 +29,6 @@ export const image = ({
               name: "caption",
               title: "Bildetekst",
               type: "string",
-              options: {
-                isHighlighted: true,
-              },
             },
           ]
         : []),
