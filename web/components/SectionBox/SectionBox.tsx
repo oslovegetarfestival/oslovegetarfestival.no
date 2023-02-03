@@ -7,7 +7,7 @@ type Props = {
   data: {
     image: string
     content: Record<string, unknown>
-    backgroundColor?: "aubergine" | "banana" | "pumpkin"
+    backgroundColor?: "aubergine" | "banana"
     isReverse?: boolean
   }
 }
