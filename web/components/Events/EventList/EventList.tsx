@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { EventItem } from '../EventItem'
+import { EventItem } from "../EventItem"
 
 import styles from "./EventList.module.scss"
 
@@ -17,7 +16,7 @@ export const EventList = ({ events }: Props) => {
       </div>
       <ul>
         {events.map((item: any, index: any) => (
-          <EventItem key={index} />
+          <EventItem key={index} event={item} />
         ))}
       </ul>
     </div>

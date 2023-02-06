@@ -1,5 +1,4 @@
 import type { NextPage } from "next"
-import Link from "next/link"
 
 import { Section } from "components/Layout"
 
@@ -24,14 +23,6 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section width="large" verticalPadding="large">
         <EventList events={page.items} />
-      </Section>
-
-      <Section width="large" verticalPadding="large">
-        {page?.items.map((item: Props) => (
-          <Link href={item.slug.current} key={item?.title}>
-            <a className="link">{item?.title}</a>
-          </Link>
-        ))}
       </Section>
     </>
   )

@@ -4,7 +4,7 @@ import styles from "./Flow.module.scss"
 
 type Props = {
   children: React.ReactNode
-  space?: "small" | "normal" | "large"
+  space?: "xsmall" | "small" | "normal" | "large"
 }
 
 export const Flow = ({ children, space = "normal", ...rest }: Props) => {

@@ -7,6 +7,10 @@
 }
 
 // Modifiers
+.-xsmall > * + * {
+  margin-block-start: 0.5em;
+}
+
 .-small > * + * {
   margin-block-start: 1em;
 }
