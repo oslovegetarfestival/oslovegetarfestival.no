@@ -1,6 +1,7 @@
 import type { NextPage } from "next"
 
 import { Section } from "components/Layout"
+import { SanityBlockModule } from "components/SanityBlockModule"
 
 type Props = {
   [key: string]: any
@@ -8,11 +9,17 @@ type Props = {
 
 const GenericPage: NextPage<Props> = ({ page = {} }) => {
   return (
-    <Section verticalPadding="large">
-      <p className="breadcrumb">Generisk side</p>
-      <h1 className="page-title">{page?.title}</h1>
-      <p className="lead">{page?.intro}</p>
-    </Section>
+    <>
+      <Section verticalPadding="large">
+        <p className="breadcrumb">Generisk side</p>
+        <h1 className="page-title">{page?.title}</h1>
+        <p className="lead">{page?.intro}</p>
+      </Section>
+
+      {page?.contentBlocks?.map((module: any) => (
+        <SanityBlockModule data={module} key={module._key} />
+      ))}
+    </>
   )
 }
 
