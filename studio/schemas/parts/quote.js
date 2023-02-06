@@ -17,4 +17,15 @@ export const quote = {
       type: "string",
     },
   ],
+  preview: {
+    select: {
+      quote: "text",
+    },
+    prepare(value) {
+      return {
+        title: value?.quote,
+        subtitle: "Sitat",
+      };
+    },
+  },
 };
