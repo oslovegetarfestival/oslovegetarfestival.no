@@ -1,6 +1,7 @@
 import { PortableText } from "@portabletext/react"
 
 import { Image } from "components/Image"
+import { Quote } from "components/Quote"
 import { Section } from "components/Layout"
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
 // This is a helper for connecting Sanity block modules with the corresponding component
 export const SanityBlockModule = ({ data }: Props) => {
   const { _type: blockType } = data
+  console.log("data", data)
 
   // Rich text
   if (blockType === "richTextObject") {
@@ -29,6 +31,24 @@ export const SanityBlockModule = ({ data }: Props) => {
       <Section verticalPadding="small">
         {/* @ts-ignore */}
         <Image imageObject={data} alt="" />
+      </Section>
+    )
+  }
+
+  // Video
+  if (blockType === "video") {
+    return (
+      <Section verticalPadding="small">
+        <p>Youtube embed video kode her</p>
+      </Section>
+    )
+  }
+
+  // Quote
+  if (blockType === "quote") {
+    return (
+      <Section verticalPadding="small">
+        <Quote quote={data?.text} author={data?.author} />
       </Section>
     )
   }

@@ -8,7 +8,7 @@ export const video = {
       title: "Video ID",
       type: "string",
       description:
-        "Lim inn id'en til en Vimeo video. Dette vil være feks: '552840839' dersom videoen er https://vimeo.com/552840839",
+        "Lim inn id'en til en Youtube video. Dette vil være feks: 'HMbRoB3TaqU' dersom videoen er https://www.youtube.com/watch?v=HMbRoB3TaqU",
     },
   ],
   preview: {
@@ -18,7 +18,7 @@ export const video = {
     prepare(selection) {
       const { title } = selection;
       return {
-        title: `Vimeo: ${title}`,
+        title: `YouTube: ${title}`,
         subtitle: "Video",
       };
     },
