@@ -23,7 +23,7 @@ export const quote = {
     },
     prepare(value) {
       return {
-        title: value?.quote,
+        title: `«${value?.quote}»`,
         subtitle: "Sitat",
       };
     },
