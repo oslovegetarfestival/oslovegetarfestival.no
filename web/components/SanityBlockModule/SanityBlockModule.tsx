@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react"
 
 import { Image } from "components/Image"
 import { Quote } from "components/Quote"
-import { Section } from "components/Layout"
+import { Flow, Section } from "components/Layout"
 
 type Props = {
   data: {
@@ -20,7 +20,9 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "richTextObject") {
     return (
       <Section verticalPadding="small">
-        <PortableText value={data.richText} />
+        <Flow>
+          <PortableText value={data.richText} />
+        </Flow>
       </Section>
     )
   }
