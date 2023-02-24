@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react"
 import { Image } from "components/Image"
 import { Quote } from "components/Quote"
 import { Flow, Section } from "components/Layout"
+import { Video } from "components/Video"
 
 type Props = {
   data: {
@@ -41,7 +42,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "video") {
     return (
       <Section verticalPadding="small">
-        <p>Youtube embed video kode her</p>
+        <Video id={data.videoId} />
       </Section>
     )
   }

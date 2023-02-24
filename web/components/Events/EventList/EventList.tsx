@@ -7,7 +7,6 @@ type Props = {
 }
 
 export const EventList = ({ events }: Props) => {
-  console.log(events)
   return (
     <div className={styles.eventList}>
       <div className={styles.filter}>
