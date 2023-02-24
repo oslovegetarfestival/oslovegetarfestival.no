@@ -1,9 +1,6 @@
-.header {
-  //background-color: var(--color-aubergine);
-}
-
 .logo {
   line-height: .9;
+
   span {
     display: block;
   }
@@ -11,6 +8,12 @@
     text-decoration: none;
   }
 }
+
+.date {
+  font-size: 1.25rem;
+  margin-top: var(--spacing-4)  
+}
+
 
 .menuItem {
   margin-right: 2rem;
@@ -37,3 +40,4 @@
     }
   }
 }
+

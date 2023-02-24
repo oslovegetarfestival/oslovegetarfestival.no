@@ -6,17 +6,20 @@ import styles from "./Header.module.scss"
 
 export const Header = () => {
   return (
-    <header className={styles.header}>
+    <header>
       <Section width="full" verticalPadding="small">
         <Flex justify="spaceBetween" align="start">
           <p className="h1">
             <Link href="/">
               <a className={styles.logo}>
-                <span>Oslo</span> <span>vegetar</span>
+                <span>Oslo</span>
+                <span>Vegetar</span>
                 <span>festival</span>
+                <span className={styles.date}>27.-28. mai 2023</span>
               </a>
             </Link>
           </p>
+
           <nav>
             <ul>
               <Flex justify="spaceBetween">
