@@ -11,7 +11,7 @@ type Props = {
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
-      <Section verticalPadding="large">
+      <Section verticalPadding="large" noPadding="top">
         <p className="breadcrumb">Nyheter utlisting</p>
 
         <h1 className="page-title">{page?.title}</h1>

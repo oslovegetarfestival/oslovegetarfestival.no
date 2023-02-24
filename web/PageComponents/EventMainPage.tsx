@@ -12,7 +12,7 @@ type Props = {
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
-      <Section width="large" verticalPadding="large">
+      <Section verticalPadding="large" noPadding="top">
         <h1 className="page-title">{page?.title}</h1>
         <p className="lead">{page?.intro}</p>
       </Section>

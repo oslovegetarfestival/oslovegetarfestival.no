@@ -58,7 +58,7 @@ p {
 .lead {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
   text-align: center;
-  margin: 1rem auto 2rem;
+  margin: 1rem auto 0;
 }
 
 .page-title {

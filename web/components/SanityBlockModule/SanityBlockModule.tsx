@@ -21,7 +21,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // Rich text
   if (blockType === "richTextObject") {
     return (
-      <Section verticalPadding="small">
+      <Section width="small" verticalPadding="medium">
         <Flow>
           <PortableText value={data.richText} />
         </Flow>
@@ -32,7 +32,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // Image
   if (blockType === "image") {
     return (
-      <Section verticalPadding="small">
+      <Section verticalPadding="medium">
         {/* @ts-ignore */}
         <Image imageObject={data} alt="" />
       </Section>
@@ -42,7 +42,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // Video
   if (blockType === "video") {
     return (
-      <Section verticalPadding="small">
+      <Section verticalPadding="medium">
         <Video id={data.videoId} />
       </Section>
     )
@@ -51,7 +51,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // Quote
   if (blockType === "quote") {
     return (
-      <Section verticalPadding="small">
+      <Section verticalPadding="medium">
         <Quote quote={data?.text} author={data?.author} />
       </Section>
     )

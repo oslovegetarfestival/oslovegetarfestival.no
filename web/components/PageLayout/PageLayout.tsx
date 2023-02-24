@@ -9,7 +9,7 @@ export const PageLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main style={{ paddingBottom: "60px" }}>{children}</main>
       <Footer />
     </>
   )

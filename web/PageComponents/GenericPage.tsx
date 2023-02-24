@@ -10,7 +10,7 @@ type Props = {
 const GenericPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
-      <Section verticalPadding="large">
+      <Section verticalPadding="large" noPadding="top">
         <p className="breadcrumb">Generisk side</p>
         <h1 className="page-title">{page?.title}</h1>
         <p className="lead">{page?.intro}</p>

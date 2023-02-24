@@ -8,7 +8,7 @@ type Props = {
 
 const FrontPage: NextPage<Props> = ({ page = {} }) => {
   return (
-    <Section verticalPadding="large">
+    <Section width="large" verticalPadding="large" noPadding="top">
       <p className="breadcrumb">Forside</p>
       <h1 className="page-title">{page?.title}</h1>
       <p className="lead">{page?.intro}</p>

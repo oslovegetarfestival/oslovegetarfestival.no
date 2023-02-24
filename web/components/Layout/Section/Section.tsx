@@ -6,6 +6,7 @@ import styles from "./Section.module.scss"
 type Props = {
   width?: "full" | "large" | "medium" | "small"
   verticalPadding?: "xlarge" | "large" | "medium" | "small" | "tiny"
+  noPadding?: "top" | "bottom"
   children: React.ReactNode
   centerContent?: boolean
   background?: "light" | "white"
@@ -18,6 +19,7 @@ export const Section = ({
   centerContent,
   background,
   noGutter,
+  noPadding,
   children,
   className,
   ...rest
@@ -29,6 +31,7 @@ export const Section = ({
     verticalPadding ? styles[`-vertical-padding-${verticalPadding}`] : false,
     centerContent ? styles["-center-content"] : false,
     background ? styles[`-background-${background}`] : false,
+    noPadding ? styles[`-no-padding-${noPadding}`] : false,
     noGutter ? styles["-no-gutter"] : false
   )
 
