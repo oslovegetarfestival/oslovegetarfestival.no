@@ -1,6 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 
 import { Flex, Section } from "components/Layout"
+
+import logoCandy from "./logo-candy.png"
 
 import styles from "./Header.module.scss"
 
@@ -8,6 +11,16 @@ export const Header = () => {
   return (
     <header>
       <Section width="full" verticalPadding="small">
+        <div className={styles.logoCandy}>
+          <Image
+            src={logoCandy}
+            alt=""
+            width="308"
+            height="148px"
+            className={styles.logoCandy}
+          />
+        </div>
+
         <Flex justify="spaceBetween" align="start">
           <p className="h1">
             <Link href="/">

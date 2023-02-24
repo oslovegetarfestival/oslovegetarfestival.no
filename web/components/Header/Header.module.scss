@@ -14,6 +14,12 @@
   margin-top: var(--spacing-4)  
 }
 
+.logoCandy {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 
 .menuItem {
   margin-right: 2rem;
