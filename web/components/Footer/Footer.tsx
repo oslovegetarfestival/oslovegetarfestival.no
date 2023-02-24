@@ -25,14 +25,17 @@ export const Footer = () => {
 
           <div>
             <h2>Nyhetsbrev</h2>
-            <p>Få siste nytt om plantebasert mat, konkurranser, utlodninger og mye mer!</p>
+            <p>
+              Få siste nytt om plantebasert mat, konkurranser, utlodninger og
+              mye mer!
+            </p>
             <label>
               E-post
               <input type="email" />
             </label>
           </div>
         </Grid>
-        <Flex justify="spaceBetween" align="end">
+        <Flex justify="spaceBetween" align="end" wrap>
           <p className="h1">
             <Link href="/">
               <a className={styles.logo}>
