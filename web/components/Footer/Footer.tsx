@@ -46,7 +46,7 @@ export const Footer = () => {
           </p>
           <nav>
             <ul>
-              <Flex justify="spaceBetween">
+              <Flex justify="spaceBetween" wrap>
                 <li className={styles.menuItem}>
                   <Link href="/aktuelt">Aktuelt</Link>
                 </li>

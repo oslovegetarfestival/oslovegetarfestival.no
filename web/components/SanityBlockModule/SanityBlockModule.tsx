@@ -4,6 +4,7 @@ import { Image } from "components/Image"
 import { Quote } from "components/Quote"
 import { Flow, Section } from "components/Layout"
 import { Video } from "components/Video"
+import Link from "next/link"
 
 type Props = {
   data: {
@@ -22,9 +23,43 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "richTextObject") {
     return (
       <Section width="small" verticalPadding="medium">
-        <Flow>
-          <PortableText value={data.richText} />
-        </Flow>
+        <div className="portableText">
+          <Flow>
+            <PortableText
+              value={data.richText}
+              components={{
+                marks: {
+                  link: ({
+                    value,
+                    children,
+                  }: {
+                    value: any
+                    children: any
+                  }) => {
+                    return (
+                      <a href={value?.href} className="link">
+                        {children}
+                      </a>
+                    )
+                  },
+                  internalLink: ({
+                    value,
+                    children,
+                  }: {
+                    value: any
+                    children: any
+                  }) => {
+                    return (
+                      <Link href={value?.href}>
+                        <a className="link">{children}</a>
+                      </Link>
+                    )
+                  },
+                },
+              }}
+            />
+          </Flow>
+        </div>
       </Section>
     )
   }

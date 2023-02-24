@@ -26,14 +26,28 @@ export const richText = {
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: "URL",
             name: "link",
             type: "object",
+            title: "External link",
             fields: [
               {
-                title: "URL",
                 name: "href",
                 type: "url",
+                title: "URL",
+                description: "Ex: https://nrk.no",
+              },
+            ],
+          },
+          {
+            name: "internalLink",
+            type: "object",
+            title: "Internal link",
+            fields: [
+              {
+                name: "href",
+                type: "string",
+                title: "URL",
+                description: "Ex: /aktuelt/kongen-aapner-festivalen",
               },
             ],
           },
