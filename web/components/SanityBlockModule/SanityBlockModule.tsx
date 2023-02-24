@@ -29,6 +29,7 @@ export const SanityBlockModule = ({ data }: Props) => {
               value={data.richText}
               components={{
                 marks: {
+                  //@ts-expect-error
                   link: ({
                     value,
                     children,
@@ -42,6 +43,7 @@ export const SanityBlockModule = ({ data }: Props) => {
                       </a>
                     )
                   },
+                  //@ts-expect-error
                   internalLink: ({
                     value,
                     children,
