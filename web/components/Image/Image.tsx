@@ -16,7 +16,7 @@ type Props = {
 
 export const Image = ({
   imageObject,
-  maxWidth = 800, // This should be identical to css var "--page-width-medium"
+  maxWidth = 1000, // This should be identical to css var "--page-width-medium"
   imageLoading = "lazy",
   hideCaption,
   ...props
