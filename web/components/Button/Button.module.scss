@@ -1,0 +1,53 @@
+.button {
+  display: inline-block;
+  font-family: "Strike";
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  cursor: pointer;
+
+  &:after {
+    content: "→";
+    display: inline-block;
+    margin-left: 0.6em;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateX(20%);
+    }
+  }
+}
+
+// Colors
+.color--red {
+  background-color: var(--color-tomato);
+  color: var(--color-oatmilk);
+
+  &:hover {
+    background-color: var(--color-kale);
+  }
+}
+
+.color--green {
+  background-color: var(--color-kale);
+  color: var(--color-oatmilk);
+
+  &:hover {
+    background-color: var(--color-cucumber);
+  }
+}
+
+// Size
+.size--medium {
+  padding: var(--spacing-1) var(--spacing-5);
+  font-size: 1.4rem;
+}
+
+.size--large {
+  padding: var(--spacing-2) var(--spacing-7);
+  font-size: 1.7rem;
+}

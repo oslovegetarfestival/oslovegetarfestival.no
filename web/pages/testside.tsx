@@ -2,9 +2,10 @@ import type { NextPage } from "next"
 
 import { Seo } from "components/Seo"
 import { Flow, Block, Section, Flex, Grid } from "components/Layout"
-import { SectionBox } from "components/SectionBox"
+import { SectionWithColor } from "components/SectionWithColor"
 
 import { PageLayout } from "components/PageLayout"
+import { Button } from "components/Button"
 
 type Props = {
   data: Record<string, unknown>
@@ -23,8 +24,10 @@ const Home: NextPage<Props> = () => {
             julemarked og Oslo Vegetarfestival 2023, det blir bra. Ingressen bør
             ikke være lenger.
           </p>
-          <button>Kjøp billetter</button>
-          <button className="button--secondary">Se hele programmet</button>
+          <Button size="large" color="red">
+            Kjøp billetter
+          </Button>
+          <Button>Se hele programmet</Button>
           <h2>Heading 2</h2>
           <p>
             Tusen takk til alle frivillige, ansatte, foredragsholdere,
@@ -47,24 +50,6 @@ const Home: NextPage<Props> = () => {
           </p>
         </Flow>
       </Section>
-
-      <SectionBox
-        data={{
-          image:
-            "https://cdn.sanity.io/images/y22dlo4f/production/bb10bc943c246d9c793477af8faa8b710b3228e8-5281x3961.jpg?w=800&fit=max&auto=format",
-          content: {},
-          backgroundColor: "banana",
-        }}
-      />
-
-      <SectionBox
-        data={{
-          image:
-            "https://cdn.sanity.io/images/y22dlo4f/production/bb10bc943c246d9c793477af8faa8b710b3228e8-5281x3961.jpg?w=800&fit=max&auto=format",
-          content: {},
-          backgroundColor: "aubergine",
-        }}
-      />
 
       <Section verticalPadding="xlarge">
         <Flow>

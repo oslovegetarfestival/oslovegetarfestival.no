@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Grid, Flex, Section } from "components/Layout"
 
 import styles from "./Footer.module.scss"
+import { Button } from "components/Button"
 
 export const Footer = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer = () => {
       <Section width="full" verticalPadding="large">
         <Grid>
           <div>
-            <button>Kjøp billetter</button>
+            <Button color="red">Kjøp billetter</Button>
           </div>
 
           <div></div>

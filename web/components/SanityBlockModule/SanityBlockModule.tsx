@@ -4,6 +4,7 @@ import { Image } from "components/Image"
 import { Quote } from "components/Quote"
 import { Flow, Section } from "components/Layout"
 import { Video } from "components/Video"
+import { SectionWithColor } from "components/SectionWithColor"
 import Link from "next/link"
 
 type Props = {
@@ -90,6 +91,16 @@ export const SanityBlockModule = ({ data }: Props) => {
     return (
       <Section verticalPadding="medium">
         <Quote quote={data?.text} author={data?.author} />
+      </Section>
+    )
+  }
+
+  // Section with color
+  if (blockType === "sectionWithColor") {
+    return (
+      <Section verticalPadding="medium">
+        {/* @ts-expect-error */}
+        <SectionWithColor data={data} />
       </Section>
     )
   }

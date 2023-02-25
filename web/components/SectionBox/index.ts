@@ -1,1 +1,0 @@
-export { SectionBox } from "./SectionBox"

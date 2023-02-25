@@ -1,0 +1,1 @@
+export { SectionWithColor } from "./SectionWithColor"

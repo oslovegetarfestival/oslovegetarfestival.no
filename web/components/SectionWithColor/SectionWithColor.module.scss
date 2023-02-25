@@ -1,5 +1,8 @@
 .imageWrap {
   height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-kale);
 }
 
 .image {
@@ -15,8 +18,8 @@
 }
 
 // Background colors 
-.-background-aubergine {
-  background-color: var(--color-aubergine);
+.-background-lychee {
+  background-color: var(--color-lychee);
 }  
 
 .-background-banana {

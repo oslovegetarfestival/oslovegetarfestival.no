@@ -3,6 +3,7 @@ import { listWithImageAndText } from "./listWithImageAndText";
 import { quote } from "./quote";
 import { richTextObject } from "./richTextObject";
 import { video } from "./video";
+import { sectionWithColor } from "./sectionWithColor";
 
 export const contentBlocks = {
   name: "contentBlocks",
@@ -14,5 +15,6 @@ export const contentBlocks = {
     video,
     quote,
     listWithImageAndText,
+    sectionWithColor,
   ],
 };
