@@ -18,10 +18,24 @@ export const Footer = () => {
 
           <div>
             <h2>Kontakt</h2>
-            <p>kontakt@oslovegetarfestival.no</p>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>Youtube</p>
+            <p>
+              <a href="mailto:kontakt@oslovegetarfestival.no">
+                kontakt@oslovegetarfestival.no
+              </a>
+            </p>
+            <p>
+              <a href="https://www.facebook.com/OsloVegetarfestival">
+                Facebook
+              </a>
+            </p>
+            <p>
+              <a href="https://www.instagram.com/oslovegetarfestival/">
+                Instagram
+              </a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/@oslovegetarfestival">YouTube</a>
+            </p>
           </div>
 
           <div>
