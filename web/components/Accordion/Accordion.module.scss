@@ -3,6 +3,10 @@
   display: block;
   cursor: pointer;
   position: relative;  
+
+  &::-webkit-details-marker {
+    display: none;
+  }  
 }
 
 .icon {
