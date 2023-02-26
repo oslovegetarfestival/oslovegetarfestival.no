@@ -37,7 +37,7 @@ export const sectionWithColor = {
           name: "text",
           title: "Tekst på knapp",
           type: "string",
-          hidden: ({ parent }) => !parent?.showButton,
+          hidden: ({ parent }) => !parent?.isButton,
         },
         {
           name: "url",
@@ -45,7 +45,7 @@ export const sectionWithColor = {
           description:
             "Enten en intern lenke, feks: '/billetter' eller en ekstern lenke, feks: 'https://nrk.no'",
           type: "url",
-          hidden: ({ parent }) => !parent?.showButton,
+          hidden: ({ parent }) => !parent?.isButton,
           validation: (Rule) =>
             Rule.uri({
               allowRelative: true,
