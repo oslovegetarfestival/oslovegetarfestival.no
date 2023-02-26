@@ -1,11 +1,12 @@
 import { PortableText } from "@portabletext/react"
+import Link from "next/link"
 
 import { Image } from "components/Image"
 import { Quote } from "components/Quote"
 import { Flow, Section } from "components/Layout"
 import { Video } from "components/Video"
 import { SectionWithColor } from "components/SectionWithColor"
-import Link from "next/link"
+import { Accordion } from "components/Accordion"
 
 type Props = {
   data: {
@@ -101,6 +102,15 @@ export const SanityBlockModule = ({ data }: Props) => {
       <Section verticalPadding="medium">
         {/* @ts-expect-error */}
         <SectionWithColor data={data} />
+      </Section>
+    )
+  }
+
+  // Accordion
+  if (blockType === "accordion") {
+    return (
+      <Section width="small" verticalPadding="medium">
+        <Accordion title={data?.title} list={data?.list} />
       </Section>
     )
   }

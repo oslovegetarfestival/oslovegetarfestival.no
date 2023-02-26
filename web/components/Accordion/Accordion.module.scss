@@ -1,0 +1,19 @@
+.summary {
+  list-style: none;
+  display: block;
+  cursor: pointer;
+  position: relative;  
+}
+
+.icon {
+  transform: rotate(180deg);
+  margin-right: var(--spacing-3);
+}
+
+.details[open] .icon {
+  transform: rotate(0deg);
+}
+
+.content {
+  margin-top: var(--spacing-4);
+}

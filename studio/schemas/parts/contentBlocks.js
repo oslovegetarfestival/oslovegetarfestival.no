@@ -4,6 +4,7 @@ import { quote } from "./quote";
 import { richTextObject } from "./richTextObject";
 import { video } from "./video";
 import { sectionWithColor } from "./sectionWithColor";
+import { accordion } from "./accordion";
 
 export const contentBlocks = {
   name: "contentBlocks",
@@ -16,5 +17,6 @@ export const contentBlocks = {
     quote,
     listWithImageAndText,
     sectionWithColor,
+    accordion,
   ],
 };
