@@ -5,6 +5,7 @@ import Image from "next/future/image"
 import { Flow } from "components/Layout"
 
 import styles from "./EventItem.module.scss"
+import { weekDayAndStartEndTime } from "utils/date"
 
 type Props = {
   event: {
@@ -16,10 +17,16 @@ type Props = {
     slug: {
       current: string
     }
+    location?: {
+      title: string
+    }
+    startDateTime: string
+    endDateTime?: string
   }
 }
 
 export const EventItem = ({ event }: Props) => {
+  // console.log("event", event)
   return (
     <div className={styles.eventItem}>
       <picture className={styles.imageWrap}>
@@ -39,6 +46,13 @@ export const EventItem = ({ event }: Props) => {
       <div className={styles.content}>
         <Flow space="xsmall">
           <h2>{event?.title}</h2>
+          <p>{event?.location?.title}</p>
+          <p>
+            {weekDayAndStartEndTime({
+              startDate: event?.startDateTime,
+              endDate: event?.endDateTime,
+            })}
+          </p>
           <p>{event?.intro}</p>
         </Flow>
       </div>
