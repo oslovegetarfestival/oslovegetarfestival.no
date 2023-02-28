@@ -14,7 +14,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
     <>
       <Section verticalPadding="large" noPadding="top">
         <h1 className="page-title">{page?.title}</h1>
-        <p className="lead">{page?.intro}</p>
+        {page?.intro && <p className="lead">{page?.intro}</p>}
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
@@ -22,7 +22,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large" verticalPadding="large">
-        <Card data={page.items} />
+        <Card data={page?.items} />
       </Section>
     </>
   )

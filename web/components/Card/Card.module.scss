@@ -28,13 +28,14 @@
 .imageWrap {
   background-color: var(--color-kale);
   display: block;
-  aspect-ratio: 1;
+  aspect-ratio: 1.2;
   position: relative;
   border-radius: var(--border-radius);
 }
 
 .image {
   border-radius: var(--border-radius);
+  object-fit: cover;
 }
 
 .date {
