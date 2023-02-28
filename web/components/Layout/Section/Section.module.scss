@@ -52,11 +52,13 @@
 }
 
 .-background {
-  &-light {
-    background-color: var(--color-oatmilk);
+  &-lychee {
+    background-color: var(--color-lychee);
+    margin: var(--spacing-7) 0;
   }
-  &-white {
-    background-color: white;
+  &-banana {
+    background-color: var(--color-banana);
+    margin: var(--spacing-7) 0;
   }
 }
 

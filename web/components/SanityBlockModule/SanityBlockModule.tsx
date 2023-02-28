@@ -119,7 +119,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // List with image and text
   if (blockType === "listWithImageAndText") {
     return (
-      <Section width="large" verticalPadding="medium">
+      <Section width="full" verticalPadding="medium" background="lychee">
         {/* @ts-expect-error */}
         <ListWithRoundImages data={data} />
       </Section>

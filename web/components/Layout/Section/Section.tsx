@@ -9,7 +9,7 @@ type Props = {
   noPadding?: "top" | "bottom"
   children: React.ReactNode
   centerContent?: boolean
-  background?: "light" | "white"
+  background?: "lychee" | "banana"
   noGutter?: boolean
 } & HTMLProps<HTMLDivElement>
 

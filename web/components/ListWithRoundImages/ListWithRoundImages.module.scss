@@ -1,8 +1,13 @@
+.wrap {
+  max-width: var(--page-width-large);
+  margin: 0 auto;
+  text-align: center;
+}
+
 .grid {
   display: grid;
   grid-gap: var(--grid-gutter);
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
-  text-align: center;
 }
 
 .image {
