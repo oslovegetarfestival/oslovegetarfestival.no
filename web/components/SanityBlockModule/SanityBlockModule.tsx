@@ -7,6 +7,7 @@ import { Flow, Section } from "components/Layout"
 import { Video } from "components/Video"
 import { SectionWithColor } from "components/SectionWithColor"
 import { Accordion } from "components/Accordion"
+import { ListWithRoundImages } from "components/ListWithRoundImages"
 
 type Props = {
   data: {
@@ -111,6 +112,16 @@ export const SanityBlockModule = ({ data }: Props) => {
     return (
       <Section width="small" verticalPadding="medium">
         <Accordion title={data?.title} list={data?.list} />
+      </Section>
+    )
+  }
+
+  // List with image and text
+  if (blockType === "listWithImageAndText") {
+    return (
+      <Section width="large" verticalPadding="medium">
+        {/* @ts-expect-error */}
+        <ListWithRoundImages data={data} />
       </Section>
     )
   }

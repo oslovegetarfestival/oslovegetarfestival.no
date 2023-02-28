@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-gap: var(--grid-gutter);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+  text-align: center;
+}
+
+.image {
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.subTitle {
+  text-transform: uppercase;
+  margin-top: var(--spacing-1);
+}

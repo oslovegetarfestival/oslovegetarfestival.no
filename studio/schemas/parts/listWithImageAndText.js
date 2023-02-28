@@ -3,7 +3,7 @@ import { intro } from "./intro";
 
 export const listWithImageAndText = {
   name: "listWithImageAndText",
-  title: "Utlisting: Bilde og tekst",
+  title: "Liste med runde bilder og tekst",
   description: "Denne kan brukes feks til å lage ansattlister og lignende",
   type: "object",
   fields: [
@@ -41,4 +41,16 @@ export const listWithImageAndText = {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      const { title } = selection;
+      return {
+        title: title,
+        subtitle: "Liste med runde bilder og tekst",
+      };
+    },
+  },
 };
