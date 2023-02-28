@@ -21,7 +21,7 @@ type Item = {
   }
   startDateTime: string
   endDateTime?: string
-  _key: string
+  _id: string
 }
 
 type Props = {
@@ -32,7 +32,7 @@ export const Card = ({ data }: Props) => {
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
-        <Link key={item._key} href={item.slug?.current}>
+        <Link key={item._id} href={item.slug?.current}>
           <a className={styles.link}>
             <div className={styles.wrap}>
               <picture className={styles.imageWrap}>
@@ -47,14 +47,16 @@ export const Card = ({ data }: Props) => {
                 {item?.image && (
                   <Image
                     src={urlForImage(item.image)
-                      .width(800)
-                      .height(800)
+                      .width(400)
+                      .height(320)
                       .fit("max")
                       .auto("format")
                       .url()}
                     alt={item.image?.altText ?? ""}
                     className={styles.image}
-                    fill
+                    width={400}
+                    height={320}
+                    sizes="25vw"
                   />
                 )}
               </picture>

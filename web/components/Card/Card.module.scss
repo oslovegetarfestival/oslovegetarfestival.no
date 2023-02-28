@@ -28,7 +28,7 @@
 .imageWrap {
   background-color: var(--color-kale);
   display: block;
-  aspect-ratio: 1.2;
+  aspect-ratio: 400/320; // This should be identical to the image size
   position: relative;
   border-radius: var(--border-radius);
 }
