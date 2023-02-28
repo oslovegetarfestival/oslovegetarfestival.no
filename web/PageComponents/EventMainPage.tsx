@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 
 import { Section } from "components/Layout"
 
-import { EventList } from "components/Events"
+import { Card } from "components/Card"
 import { SanityBlockModule } from "components/SanityBlockModule"
 
 type Props = {
@@ -22,7 +22,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large" verticalPadding="large">
-        <EventList events={page.items} />
+        <Card data={page.items} />
       </Section>
     </>
   )
