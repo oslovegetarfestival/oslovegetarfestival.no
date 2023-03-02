@@ -1,13 +1,11 @@
-import { PortableText } from "@portabletext/react"
-import Link from "next/link"
-
 import { Image } from "components/Image"
 import { Quote } from "components/Quote"
-import { Flow, Section } from "components/Layout"
+import { Section } from "components/Layout"
 import { Video } from "components/Video"
 import { SectionWithColor } from "components/SectionWithColor"
 import { Accordion } from "components/Accordion"
 import { ListWithRoundImages } from "components/ListWithRoundImages"
+import { RichText } from "components/RichText"
 
 type Props = {
   data: {
@@ -26,41 +24,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "richTextObject") {
     return (
       <Section width="small" verticalPadding="medium">
-        <div className="portableText">
-          <Flow>
-            <PortableText
-              value={data.richText}
-              components={{
-                marks: {
-                  //@ts-expect-error
-                  link: ({
-                    value,
-                    children,
-                  }: {
-                    value: any
-                    children: any
-                  }) => {
-                    const isInternalLink = value?.href?.startsWith("/")
-
-                    if (isInternalLink) {
-                      return (
-                        <Link href={value?.href}>
-                          <a className="link">{children}</a>
-                        </Link>
-                      )
-                    }
-
-                    return (
-                      <a href={value?.href} className="link">
-                        {children}
-                      </a>
-                    )
-                  },
-                },
-              }}
-            />
-          </Flow>
-        </div>
+        <RichText data={data?.richText} />
       </Section>
     )
   }
