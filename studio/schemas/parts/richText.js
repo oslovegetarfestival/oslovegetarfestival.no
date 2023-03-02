@@ -28,26 +28,19 @@ export const richText = {
           {
             name: "link",
             type: "object",
-            title: "External link",
+            title: "Lenke",
             fields: [
               {
                 name: "href",
                 type: "url",
                 title: "URL",
-                description: "Ex: https://nrk.no",
-              },
-            ],
-          },
-          {
-            name: "internalLink",
-            type: "object",
-            title: "Internal link",
-            fields: [
-              {
-                name: "href",
-                type: "string",
-                title: "URL",
-                description: "Ex: /aktuelt/kongen-aapner-festivalen",
+                description:
+                  "Ex: https://nrk.no eller /billetter eller mailto:mail@test.no",
+                validation: (Rule) =>
+                  Rule.uri({
+                    allowRelative: true,
+                    scheme: ["http", "https", "mailto", "tel"],
+                  }),
               },
             ],
           },

@@ -40,24 +40,20 @@ export const SanityBlockModule = ({ data }: Props) => {
                     value: any
                     children: any
                   }) => {
+                    const isInternalLink = value?.href?.startsWith("/")
+
+                    if (isInternalLink) {
+                      return (
+                        <Link href={value?.href}>
+                          <a className="link">{children}</a>
+                        </Link>
+                      )
+                    }
+
                     return (
                       <a href={value?.href} className="link">
                         {children}
                       </a>
-                    )
-                  },
-                  //@ts-expect-error
-                  internalLink: ({
-                    value,
-                    children,
-                  }: {
-                    value: any
-                    children: any
-                  }) => {
-                    return (
-                      <Link href={value?.href}>
-                        <a className="link">{children}</a>
-                      </Link>
                     )
                   },
                 },
