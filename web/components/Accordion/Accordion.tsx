@@ -1,9 +1,10 @@
 import { Flex, Flow } from "components/Layout"
+import { RichText } from "components/RichText"
 import styles from "./Accordion.module.scss"
 
 type ListItem = {
   title: string
-  intro: string
+  richTextObject: any
   _key: string
 }
 
@@ -17,7 +18,7 @@ export const Accordion = ({ title, list }: Props) => {
     <Flow>
       {title && <h2>{title}</h2>}
 
-      {list?.map(({ title, intro, _key }) => (
+      {list?.map(({ title, richTextObject, _key }) => (
         <details key={_key} className={styles.details}>
           <summary className={styles.summary}>
             <Flex align="center">
@@ -35,7 +36,9 @@ export const Accordion = ({ title, list }: Props) => {
             </Flex>
           </summary>
 
-          <p className={styles.content}>{intro}</p>
+          <div className={styles.content}>
+            <RichText data={richTextObject?.richText} />
+          </div>
         </details>
       ))}
     </Flow>

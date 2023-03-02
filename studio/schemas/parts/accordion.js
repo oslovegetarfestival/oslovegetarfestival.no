@@ -1,4 +1,5 @@
 import { intro } from "./intro";
+import { richTextObject } from "./richTextObject";
 
 export const accordion = {
   name: "accordion",
@@ -29,6 +30,7 @@ export const accordion = {
               validation: (Rule) => Rule.required(),
             },
             intro({ title: "Tekst", required: true }),
+            richTextObject,
           ],
         },
       ],
