@@ -17,6 +17,10 @@
   padding: var(--spacing-9);
 }
 
+.intro {
+  white-space: pre-line; // Keep line breaks (\n) from Sanity
+}
+
 // Background colors 
 .-background-lychee {
   background-color: var(--color-lychee);

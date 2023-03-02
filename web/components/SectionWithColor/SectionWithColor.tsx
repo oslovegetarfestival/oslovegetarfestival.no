@@ -3,9 +3,9 @@ import Image from "next/future/image"
 import { urlForImage } from "lib/sanity"
 
 import { Flow, Grid, Section } from "components/Layout"
+import { Button } from "components/Button"
 
 import styles from "./SectionWithColor.module.scss"
-import { Button } from "components/Button"
 
 type Props = {
   data: {
@@ -51,7 +51,7 @@ export const SectionWithColor = ({ data }: Props) => {
         <div className={textWrapClass}>
           <Flow>
             <p className="h2">{title}</p>
-            <p>{intro}</p>
+            <p className={styles.intro}>{intro}</p>
 
             {link?.text && (
               <div>
