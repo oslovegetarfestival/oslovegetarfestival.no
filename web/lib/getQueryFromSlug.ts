@@ -6,7 +6,7 @@ export const getQueryFromSlug = (slugArray = []) => {
     frontPage: '*[_id == "frontPage"][0]',
     genericPage: '*[_type == "page" && slug.current == $slug][0]',
     eventMain:
-      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "event"]{..., location->{title}}}',
+      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "event"] | order(startDateTime) {..., location->{title}}}',
     event:
       '*[_type == "event" && slug.current == $slug][0]{..., location->{title}}',
     exhibitorMain:
