@@ -29,10 +29,6 @@ export const accordion = {
               type: "string",
               validation: (Rule) => Rule.required(),
             },
-            intro({
-              title: "Tekst (OBS! denne brukes ikke lenger)",
-              required: true,
-            }),
             richTextObject,
           ],
         },
