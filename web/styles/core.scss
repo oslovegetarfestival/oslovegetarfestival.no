@@ -76,6 +76,14 @@ svg {
   height: auto;
 }
 
+// Date and location
+.meta-details {
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-cherry);
+  text-transform: uppercase;
+}
+
 // Animations
 @keyframes animate-in-from-bottom {
   0% {

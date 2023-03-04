@@ -1,7 +1,10 @@
 import type { NextPage } from "next"
 
-import { Section } from "components/Layout"
+import { Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
+import { Image } from "components/Image"
+
+import { weekDayAndStartEndTime } from "utils/date"
 
 type Props = {
   [key: string]: any
@@ -11,9 +14,24 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
-        <p className="breadcrumb">Arrangement</p>
-        <h1 className="page-title">{page?.title}</h1>
-        <p className="lead">{page?.intro}</p>
+        <Flow space="small">
+          <h1 className="page-title">{page?.title}</h1>
+          <p className="meta-details">
+            {weekDayAndStartEndTime({
+              startDate: page?.startDateTime,
+              endDate: page?.endDateTime,
+            })}
+            {" | "}
+            {page?.location?.title}
+          </p>
+        </Flow>
+      </Section>
+
+      <Section verticalPadding="tiny" noPadding="top">
+        <Flow>
+          <Image imageObject={page?.image} />
+          <p className="lead">{page?.intro}</p>
+        </Flow>
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
