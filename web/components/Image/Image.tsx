@@ -33,13 +33,12 @@ export const Image = ({
           .url()}
         alt={altText}
         loading={imageLoading}
+        className={styles.image}
       />
       {!hideCaption && caption && (
-        <Block top="3">
-          <figcaption className={styles.figcaption}>
-            <span className="text-caption">{caption}</span>
-          </figcaption>
-        </Block>
+        <figcaption className={styles.figcaption}>
+          <span className="text-caption">{caption}</span>
+        </figcaption>
       )}
     </picture>
   )
