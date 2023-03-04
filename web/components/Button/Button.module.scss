@@ -8,16 +8,22 @@
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   cursor: pointer;
 
-  &:after {
-    content: "→";
-    display: inline-block;
-    margin-left: 0.6em;
-    transition: transform 0.3s ease;
+  &:hover {
+    text-decoration: none;
   }
 
-  &:hover {
+  &--arrow {
     &:after {
-      transform: translateX(20%);
+      content: "→";
+      display: inline-block;
+      margin-left: 0.6em;
+      transition: transform 0.3s ease;
+    }
+  
+    &:hover {
+      &:after {
+        transform: translateX(20%);
+      }
     }
   }
 }
@@ -42,6 +48,10 @@
 }
 
 // Size
+.size--small {
+  padding: var(--spacing-1) var(--spacing-5);
+}
+
 .size--medium {
   padding: var(--spacing-1) var(--spacing-5);
   font-size: 1.4rem;

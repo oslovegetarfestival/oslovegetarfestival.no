@@ -4,9 +4,10 @@ import Link from "next/link"
 import styles from "./Button.module.scss"
 
 type Props = {
-  size?: "medium" | "large"
+  size?: "small" | "medium" | "large"
   color?: "red" | "green"
   link?: string
+  isArrow?: boolean
   onClick?: () => void
   children: React.ReactNode
 }
@@ -14,6 +15,7 @@ type Props = {
 export const Button = ({
   size = "medium",
   color = "green",
+  isArrow = true,
   link,
   children,
   onClick,
@@ -21,27 +23,28 @@ export const Button = ({
   const buttonClass = classNames(
     styles.button,
     size ? styles[`size--${size}`] : false,
-    color ? styles[`color--${color}`] : false
+    color ? styles[`color--${color}`] : false,
+    isArrow ? styles[`button--arrow`] : false
   )
 
-  const isExternalLink = link?.startsWith("http")
+  const isInternalLink = link?.startsWith("/")
 
   // Link
   if (link) {
-    // External link
-    if (isExternalLink) {
+    if (isInternalLink) {
+      // Internal link
       return (
-        <a href={link} className={buttonClass}>
-          {children}
-        </a>
+        <Link href={link}>
+          <a className={buttonClass}>{children}</a>
+        </Link>
       )
     }
 
-    // Internal link
+    // External link
     return (
-      <Link href={link}>
-        <a className={buttonClass}>{children}</a>
-      </Link>
+      <a href={link} className={buttonClass}>
+        {children}
+      </a>
     )
   }
 
