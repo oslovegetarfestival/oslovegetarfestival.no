@@ -23,6 +23,8 @@ export const Image = ({
 }: Props) => {
   const { caption = "", altText = "" } = imageObject || {}
 
+  if (!imageObject) return
+
   return (
     <picture {...props}>
       <img
