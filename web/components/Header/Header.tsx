@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 import { Flex, Section } from "components/Layout"
 import { Button } from "components/Button"
@@ -13,6 +14,20 @@ import useBodyFreeze from "hooks/useBodyFreeze"
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // Logic to close mobile menu on when a link is clicked (= route change)
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsMobileMenuOpen(false)
+    }
+    router.events.on("routeChangeComplete", handleRouteChange)
+    // Clean up on unmount
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
+
+  // Prevent page scroll when menu is open
   useBodyFreeze(isMobileMenuOpen)
 
   return (
@@ -60,48 +75,16 @@ export const Header = () => {
           >
             <ul className={styles.menuList}>
               <li className={styles.menuItem}>
-                <Link href="/program">
-                  <a
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    Program
-                  </a>
-                </Link>
+                <Link href="/program">Program</Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/utstillere">
-                  <a
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    Utstillere
-                  </a>
-                </Link>
+                <Link href="/utstillere">Utstillere</Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/praktisk-info">
-                  <a
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    Praktisk info
-                  </a>
-                </Link>
+                <Link href="/praktisk-info">Praktisk info</Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/bli-frivillig">
-                  <a
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    Bli frivillig
-                  </a>
-                </Link>
+                <Link href="/bli-frivillig">Bli frivillig</Link>
               </li>
               <li className={styles.menuItem}>
                 <Button
@@ -109,9 +92,6 @@ export const Header = () => {
                   color="red"
                   size="small"
                   link="/billetter"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                  }}
                 >
                   Kjøp billetter
                 </Button>
