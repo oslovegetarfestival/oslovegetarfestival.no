@@ -35,14 +35,16 @@ export const Button = ({
       // Internal link
       return (
         <Link href={link}>
-          <a className={buttonClass}>{children}</a>
+          <a onClick={onClick} className={buttonClass}>
+            {children}
+          </a>
         </Link>
       )
     }
 
     // External link
     return (
-      <a href={link} className={buttonClass}>
+      <a onClick={onClick} href={link} className={buttonClass}>
         {children}
       </a>
     )

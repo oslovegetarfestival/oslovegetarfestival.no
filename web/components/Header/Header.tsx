@@ -60,16 +60,48 @@ export const Header = () => {
           >
             <ul className={styles.menuList}>
               <li className={styles.menuItem}>
-                <Link href="/program">Program</Link>
+                <Link href="/program">
+                  <a
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    Program
+                  </a>
+                </Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/utstillere">Utstillere</Link>
+                <Link href="/utstillere">
+                  <a
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    Utstillere
+                  </a>
+                </Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/praktisk-info">Praktisk info</Link>
+                <Link href="/praktisk-info">
+                  <a
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    Praktisk info
+                  </a>
+                </Link>
               </li>
               <li className={styles.menuItem}>
-                <Link href="/bli-frivillig">Bli frivillig</Link>
+                <Link href="/bli-frivillig">
+                  <a
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    Bli frivillig
+                  </a>
+                </Link>
               </li>
               <li className={styles.menuItem}>
                 <Button
@@ -77,6 +109,9 @@ export const Header = () => {
                   color="red"
                   size="small"
                   link="/billetter"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                  }}
                 >
                   Kjøp billetter
                 </Button>
