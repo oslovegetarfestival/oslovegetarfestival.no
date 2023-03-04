@@ -73,6 +73,7 @@ $breakpoint: 900px;
     bottom: 0;
     left: 0;
     z-index: 9;
-    background: var(--color-lychee);    
+    background: var(--color-lychee);   
+    overflow-y: scroll; 
   }
 }
