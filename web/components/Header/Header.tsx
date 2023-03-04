@@ -40,10 +40,10 @@ export const Header = () => {
                   <Link href="/program">Program</Link>
                 </li>
                 <li className={styles.menuItem}>
-                  <Link href="/praktisk-info">Praktisk info</Link>
+                  <Link href="/utstillere">Utstillere</Link>
                 </li>
                 <li className={styles.menuItem}>
-                  <Link href="/utstillere">Utstillere</Link>
+                  <Link href="/praktisk-info">Praktisk info</Link>
                 </li>
                 <li className={styles.menuItem}>
                   <Link href="/bli-frivillig">Bli frivillig</Link>
