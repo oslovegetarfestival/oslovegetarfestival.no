@@ -1,7 +1,5 @@
 import { urlForImage } from "lib/sanity"
 
-import { Block } from "components/Layout"
-
 import styles from "./Image.module.scss"
 
 type Props = {
@@ -23,7 +21,7 @@ export const Image = ({
 }: Props) => {
   const { caption = "", altText = "" } = imageObject || {}
 
-  if (!imageObject) return
+  if (!imageObject) return null
 
   return (
     <picture {...props}>
