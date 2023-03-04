@@ -1,13 +1,20 @@
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
 import { Flex, Section } from "components/Layout"
+import { Button } from "components/Button"
 
 import logoCandy from "./logo-candy.png"
 
 import styles from "./Header.module.scss"
+import useBodyFreeze from "hooks/useBodyFreeze"
 
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useBodyFreeze(isMobileMenuOpen)
+
   return (
     <header>
       <Section width="full" verticalPadding="small">
@@ -33,25 +40,47 @@ export const Header = () => {
             </Link>
           </p>
 
-          <nav>
-            <ul>
-              <Flex justify="spaceBetween">
-                <li className={styles.menuItem}>
-                  <Link href="/program">Program</Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href="/utstillere">Utstillere</Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href="/praktisk-info">Praktisk info</Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href="/bli-frivillig">Bli frivillig</Link>
-                </li>
-                <li className={`${styles.menuItem} ${styles.tickets}`}>
-                  <Link href="/billetter">Kjøp billetter</Link>
-                </li>
-              </Flex>
+          {/* Mobile menu */}
+          <div className={styles.mobileToggle}>
+            <Button
+              size="small"
+              color="red"
+              isArrow={false}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
+            >
+              {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
+            </Button>
+          </div>
+
+          <nav
+            className={styles.menu}
+            style={{ display: isMobileMenuOpen ? "block" : "" }}
+          >
+            <ul className={styles.menuList}>
+              <li className={styles.menuItem}>
+                <Link href="/program">Program</Link>
+              </li>
+              <li className={styles.menuItem}>
+                <Link href="/utstillere">Utstillere</Link>
+              </li>
+              <li className={styles.menuItem}>
+                <Link href="/praktisk-info">Praktisk info</Link>
+              </li>
+              <li className={styles.menuItem}>
+                <Link href="/bli-frivillig">Bli frivillig</Link>
+              </li>
+              <li className={styles.menuItem}>
+                <Button
+                  isArrow={false}
+                  color="red"
+                  size="small"
+                  link="/billetter"
+                >
+                  Kjøp billetter
+                </Button>
+              </li>
             </ul>
           </nav>
         </Flex>

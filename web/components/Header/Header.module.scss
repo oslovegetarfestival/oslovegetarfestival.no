@@ -1,5 +1,9 @@
+$breakpoint: 900px;
+
 .logo {
-  line-height: .9;
+  line-height: 0.9;
+  z-index: 99;
+  position: relative;
 
   span {
     display: block;
@@ -11,7 +15,7 @@
 
 .date {
   font-size: 1.25rem;
-  margin-top: var(--spacing-4)  
+  margin-top: var(--spacing-4);
 }
 
 .logoCandy {
@@ -21,29 +25,54 @@
   z-index: -1;
 }
 
+.menuList {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+
+  @media (max-width: $breakpoint) {
+    display: block;
+    text-align: right;
+    margin-top: 20vh;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }  
+}
+
 .menuItem {
   margin-right: 2rem;
-  font-family: 'Strike';
+  font-family: "Strike";
+
+  @media (max-width: $breakpoint) {
+    margin-right: 0;
+    margin-bottom: var(--spacing-4);
+    font-size: 150%;
+  }
 
   &:last-child {
     margin-right: 0;
   }
 }
 
-.tickets {
-  padding: var(--spacing-1) var(--spacing-5);
-  background-color: var(--color-tomato);
-  color: var(--color-oatmilk);
-  text-transform: none;
-  letter-spacing: normal;
-  border-radius: var(--border-radius);
-  transition: background-color .3s ease;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  &:hover {
-    background-color: var(--color-kale);
-    a {
-      text-decoration: none;
-    }
+.mobileToggle {
+  position: relative;
+  z-index: 99;
+
+  @media (min-width: calc($breakpoint - 1px )) {
+    display: none;
   }
 }
 
+.menu {
+  @media (max-width: $breakpoint) {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    background: var(--color-lychee);    
+  }
+}
