@@ -35,15 +35,15 @@ export const Card = ({ data }: Props) => {
         <Link key={item._id} href={item.slug?.current}>
           <a className={styles.link}>
             <div className={styles.wrap}>
+              {item?.startDateTime && (
+                <div className={styles.date}>
+                  {weekDayAndStartEndTime({
+                    startDate: item.startDateTime,
+                    endDate: item.endDateTime,
+                  })}
+                </div>
+              )}
               <picture className={styles.imageWrap}>
-                {item?.startDateTime && (
-                  <div className={styles.date}>
-                    {weekDayAndStartEndTime({
-                      startDate: item.startDateTime,
-                      endDate: item.endDateTime,
-                    })}
-                  </div>
-                )}
                 {item?.image && (
                   <Image
                     src={urlForImage(item.image)
@@ -62,9 +62,9 @@ export const Card = ({ data }: Props) => {
               </picture>
 
               <div className={styles.content}>
+                <p className={styles.location}>{item.location?.title}</p>
                 <Flow space="xsmall">
                   <h2>{item.title}</h2>
-                  <p className={styles.location}>{item.location?.title}</p>
                   <p>{item.intro}</p>
                 </Flow>
               </div>
