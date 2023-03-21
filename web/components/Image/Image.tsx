@@ -6,6 +6,7 @@ type Props = {
   imageObject: {
     caption?: string
     altText?: string
+    asset: object
   }
   maxWidth?: number
   imageLoading?: "lazy" | "eager"
@@ -21,7 +22,7 @@ export const Image = ({
 }: Props) => {
   const { caption = "", altText = "" } = imageObject || {}
 
-  if (!imageObject) return null
+  if (!imageObject || !imageObject?.asset) return null
 
   return (
     <picture {...props}>
