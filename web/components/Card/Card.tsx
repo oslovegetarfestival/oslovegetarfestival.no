@@ -10,6 +10,7 @@ import { weekDayAndStartEndTime } from "utils/date"
 type Item = {
   image: {
     altText?: string
+    asset: object
   }
   title: string
   intro: string
@@ -29,6 +30,7 @@ type Props = {
 }
 
 export const Card = ({ data }: Props) => {
+  console.log("data", data)
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
@@ -44,7 +46,7 @@ export const Card = ({ data }: Props) => {
                 </div>
               )}
               <picture className={styles.imageWrap}>
-                {item?.image && (
+                {item?.image?.asset && (
                   <Image
                     src={urlForImage(item.image)
                       .width(400)
