@@ -22,6 +22,7 @@ type Item = {
   }
   startDateTime: string
   endDateTime?: string
+  sponsor: boolean
   _id: string
 }
 
@@ -30,13 +31,13 @@ type Props = {
 }
 
 export const Card = ({ data }: Props) => {
-  console.log("data", data)
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
         <Link key={item._id} href={item.slug?.current}>
           <a className={styles.link}>
             <div className={styles.wrap}>
+              {/* Event - show date and time */}
               {item?.startDateTime && (
                 <div className={styles.date}>
                   {weekDayAndStartEndTime({
@@ -45,6 +46,10 @@ export const Card = ({ data }: Props) => {
                   })}
                 </div>
               )}
+
+              {/* Sponsor - show badge */}
+              {item?.sponsor && <div className={styles.date}>Sponsor</div>}
+
               <picture className={styles.imageWrap}>
                 {item?.image?.asset && (
                   <Image
