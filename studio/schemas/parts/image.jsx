@@ -32,6 +32,21 @@ export const image = ({
             },
           ]
         : []),
+      {
+        name: "size",
+        type: "string",
+        title: "Størrelse",
+        description: "Standard (eller ikke valgt) er medium størrelse",
+        options: {
+          list: [
+            { title: "Gigastor", value: "large" },
+            { title: "Vanlig (utfallende)", value: "normal" },
+            { title: "Liten", value: "small" },
+            { title: "Bitteliten", value: "tiny" },
+          ],
+          isHighlighted: true,
+        },
+      },
     ],
     preview: {
       select: {

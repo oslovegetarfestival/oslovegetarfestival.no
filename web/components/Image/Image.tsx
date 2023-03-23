@@ -7,6 +7,7 @@ type Props = {
     caption?: string
     altText?: string
     asset: object
+    size?: string
   }
   maxWidth?: number
   imageLoading?: "lazy" | "eager"
@@ -16,7 +17,7 @@ type Props = {
 
 export const Image = ({
   imageObject,
-  maxWidth = 1080, // This should be identical to css var "--page-width-medium"
+  maxWidth = 1000, // This should be identical to css var "--page-width-medium" (minus padding)
   imageLoading = "lazy",
   hideCaption,
   isFeatureImage,
@@ -25,6 +26,12 @@ export const Image = ({
   const { caption = "", altText = "" } = imageObject || {}
 
   if (!imageObject || !imageObject?.asset) return null
+
+  let selectedWidth = maxWidth
+  // Default = 1080px
+  if (imageObject?.size === "tiny") selectedWidth = 450
+  if (imageObject?.size === "small") selectedWidth = 660
+  if (imageObject?.size === "large") selectedWidth = 1300
 
   if (isFeatureImage) {
     return (
@@ -52,7 +59,7 @@ export const Image = ({
     <picture {...props}>
       <img
         src={urlForImage(imageObject)
-          .width(maxWidth)
+          .width(selectedWidth)
           .fit("max")
           .auto("format")
           .url()}

@@ -32,7 +32,7 @@ export const SanityBlockModule = ({ data }: Props) => {
   // Image
   if (blockType === "image") {
     return (
-      <Section verticalPadding="medium">
+      <Section width="large" verticalPadding="medium">
         {/* @ts-ignore */}
         <Image imageObject={data} alt="" />
       </Section>
