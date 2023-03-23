@@ -1,8 +1,8 @@
-import { useLayoutEffect } from "react"
+import { useEffect } from "react"
 
 // Body freeze - used for modals and overlay menus
 function useBodyFreeze(isMenuOpen: boolean) {
-  useLayoutEffect(() => {
+  useEffect(() => {
     // Get original body overflow
     const originalStyle = window.getComputedStyle(document.body).overflow
 
