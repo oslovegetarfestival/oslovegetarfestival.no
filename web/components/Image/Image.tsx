@@ -45,6 +45,8 @@ export const Image = ({
           alt={altText}
           loading={imageLoading}
           className={styles.image}
+          width={maxWidth}
+          height="650"
         />
         {!hideCaption && caption && (
           <figcaption className={styles.figcaption}>
