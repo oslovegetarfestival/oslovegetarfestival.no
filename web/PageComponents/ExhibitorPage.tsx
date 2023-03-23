@@ -18,7 +18,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section verticalPadding="tiny" noPadding="top">
         <Flow>
-          <Image imageObject={page?.image} />
+          <Image imageObject={page?.image} isFeatureImage />
           <p className="lead">{page?.intro}</p>
         </Flow>
       </Section>
