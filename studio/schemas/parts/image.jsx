@@ -36,11 +36,12 @@ export const image = ({
         name: "size",
         type: "string",
         title: "Størrelse",
-        description: "Standard (eller ikke valgt) er medium størrelse",
+        description:
+          "Velg størrelse. Står feltet tomt vises det som 'Standard (utfallende)'",
         options: {
           list: [
             { title: "Gigastor", value: "large" },
-            { title: "Vanlig (utfallende)", value: "normal" },
+            { title: "Standard (utfallende)", value: "normal" },
             { title: "Liten", value: "small" },
             { title: "Bitteliten", value: "tiny" },
           ],
