@@ -15,7 +15,7 @@ export const exhibitor = {
     title(),
     slug({ prefix: "utstillere" }),
     intro(),
-    image({ title: "Hovedbilde", includeCaption: true }),
+    image({ title: "Hovedbilde", includeCaption: true, isFeaturedImage: true }),
     {
       title: "Type utstiller",
       name: "type",

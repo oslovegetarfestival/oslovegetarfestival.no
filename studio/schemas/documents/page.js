@@ -13,7 +13,7 @@ export const page = {
     title(),
     slug(),
     intro(),
-    image({ title: "Hovedbilde", includeCaption: true }),
+    image({ title: "Hovedbilde", includeCaption: true, isFeaturedImage: true }),
     contentBlocks,
   ],
 

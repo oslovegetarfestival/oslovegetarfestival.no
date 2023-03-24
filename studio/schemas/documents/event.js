@@ -12,7 +12,7 @@ export const event = {
     title(),
     slug({ prefix: "program" }),
     intro(),
-    image({ title: "Hovedbilde", includeCaption: true }),
+    image({ title: "Hovedbilde", includeCaption: true, isFeaturedImage: true }),
     {
       name: "startDateTime",
       title: "Arrangementet starter",
