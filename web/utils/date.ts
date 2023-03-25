@@ -28,3 +28,12 @@ export const weekDayAndStartEndTime = ({ startDate, endDate }: DateProps) => {
 
   return `${weekday} kl. ${startTime}`
 }
+
+// Ex: Lørdag 27. mai
+export const weekDayAndDate = (date: string) => {
+  if (!date) return ""
+
+  // Get weekday
+  const startDateObject = new Date(date)
+  return startDateObject.toLocaleDateString("no", { weekday: "long", month: 'long', day: 'numeric' })
+}

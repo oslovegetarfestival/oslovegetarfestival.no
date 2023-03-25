@@ -60,6 +60,9 @@
   }
 
   --grid-gutter: var(--spacing-7);
+  @media (max-width: $breakpoint-tablet) {
+  --grid-gutter: var(--spacing-6);
+  }
 
   // Animations
   --transition: 0.2s cubic-bezier(0, 0, 0.3, 0.9);

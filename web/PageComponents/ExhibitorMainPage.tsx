@@ -9,20 +9,20 @@ type Props = {
   [key: string]: any
 }
 
-type exhibitionItem = {
+type ExhibitionItem = {
   title: string
   [key: string]: any
 }
-type exhibitionGroupedItem = {
+type ExhibitionGroupedItem = {
   title: string
-  items: exhibitionItem[]
+  items: ExhibitionItem[]
 }
 
-const groupExhibitionByType = (data: exhibitionItem[]) => {
+const groupExhibitionByType = (data: ExhibitionItem[]) => {
   if (!data) return []
 
-  const groupedByType = data.reduce(
-    (result: exhibitionGroupedItem[], item: exhibitionItem) => {
+  const grouped = data.reduce(
+    (result: ExhibitionGroupedItem[], item: ExhibitionItem) => {
       const existingGroup = result?.find((group) => group.title === item.type)
       if (existingGroup) {
         existingGroup.items.push(item)
@@ -34,7 +34,7 @@ const groupExhibitionByType = (data: exhibitionItem[]) => {
     []
   )
 
-  return groupedByType
+  return grouped
 }
 
 const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
@@ -64,12 +64,11 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
         </Flex>
       </Section>
 
-      {groupedByType?.map(({ title, items }: exhibitionItem) => (
+      {groupedByType?.map(({ title, items }: ExhibitionItem) => (
         <Section width="large" verticalPadding="large" key={title}>
           <Flow>
             <h2 className="section-header" id={title}>
-              <span aria-hidden="true">↓</span> {title}{" "}
-              <span aria-hidden="true">↓</span>
+              {title}
             </h2>
 
             <Card data={items} />

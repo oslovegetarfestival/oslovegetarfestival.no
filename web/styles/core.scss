@@ -40,7 +40,7 @@ ul.list {
   padding-left: 1em;
 
   li {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -52,11 +52,11 @@ ol.list {
     counter-increment: counter;
     position: relative;
     padding-left: 1em;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 
     &:before {
       content: counter(counter) ". ";
-      font-family: 'Strike';
+      font-family: "Strike";
       position: absolute;
       left: 0;
     }
@@ -93,6 +93,9 @@ svg {
   color: white;
   padding: var(--spacing-4) var(--spacing-5);
   text-align: center;
+  &:first-letter {
+    text-transform: uppercase;
+  }
 }
 
 // Animations
@@ -123,7 +126,8 @@ svg {
 // Animation helpers
 
 [data-animate-in] {
-  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
 }
 
 [data-animate-down] {

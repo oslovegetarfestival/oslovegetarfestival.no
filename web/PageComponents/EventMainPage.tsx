@@ -1,15 +1,57 @@
 import type { NextPage } from "next"
 
-import { Section } from "components/Layout"
+import { Flex, Flow, Section } from "components/Layout"
 
 import { Card } from "components/Card"
 import { SanityBlockModule } from "components/SanityBlockModule"
+import { Button } from "components/Button"
+import { weekDayAndDate } from "utils/date"
 
 type Props = {
   [key: string]: any
 }
 
+type EventItem = {
+  title: string
+  startDateTime: string
+}
+
+type EventGroupedItem = {
+  startDate: string
+  items: EventItem[]
+}
+
+const groupEventByDate = (data: EventItem[]) => {
+  if (!data) return []
+
+  const grouped = data?.reduce(
+    (result: EventGroupedItem[], item: EventItem) => {
+      const currentDate = weekDayAndDate(item.startDateTime)
+
+      const existingGroup = result?.find((group) => {
+        const existingDate = weekDayAndDate(group.startDate)
+        return existingDate === currentDate
+      })
+
+      if (existingGroup) {
+        existingGroup.items.push(item)
+      } else {
+        result.push({
+          startDate: item.startDateTime,
+          items: [item],
+        })
+      }
+      return result
+    },
+    []
+  )
+
+  return grouped
+}
+
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
+  const groupedData = groupEventByDate(page?.items)
+
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
@@ -21,9 +63,36 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="large" verticalPadding="large">
-        <Card data={page?.items} />
+      <Section width="large">
+        <Flex align="center" gap="small">
+          <p className="font-strike">Hopp til: </p>
+
+          {groupedData?.map(({ startDate }) => (
+            <Button
+              size="small"
+              isArrow={false}
+              key={startDate}
+              link={`#${weekDayAndDate(startDate)}`}
+            >
+              <span className="uppercase-first">
+                {weekDayAndDate(startDate)}
+              </span>
+            </Button>
+          ))}
+        </Flex>
       </Section>
+
+      {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
+        <Section width="large" verticalPadding="large" key={startDate}>
+          <Flow>
+            <h2 className="section-header" id={weekDayAndDate(startDate)}>
+              {weekDayAndDate(startDate)}
+            </h2>
+            {/* @ts-ignore */}
+            <Card data={items} />
+          </Flow>
+        </Section>
+      ))}
     </>
   )
 }
