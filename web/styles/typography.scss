@@ -31,27 +31,44 @@ h2,
 h3,
 .h3 {
   line-height: 1.2;
-  font-family: "Strike";
+  font-weight: normal;
 }
 
 h1,
 .h1 {
   @include fluid-type($minWidth, $maxWidth, 36px, 56px);
+  font-family: "Strike";
 }
 
 h2,
 .h2 {
-  @include fluid-type($minWidth, $maxWidth, 26px, 34px);
+  @include fluid-type($minWidth, $maxWidth, 26px, 30px);
+  font-weight: 500;
 }
 
 h3,
 .h3 {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
+  font-weight: 500;
+}
+
+h4,
+.h4 {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 p {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.font-strike {
+  font-family: "Strike";
+}
+
+.font-jost {
+  font-family: "Jost", sans-serif;
 }
 
 .lead {
