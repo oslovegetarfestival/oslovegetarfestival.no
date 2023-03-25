@@ -15,7 +15,7 @@ type Props = {
 
 export const Accordion = ({ title, list }: Props) => {
   return (
-    <Flow>
+    <Flow space="small">
       {title && <h2>{title}</h2>}
 
       {list?.map(({ title, richTextObject, _key }) => (
@@ -32,7 +32,7 @@ export const Accordion = ({ title, list }: Props) => {
               >
                 <path d="M12 6.879l-7.061 7.06 2.122 2.122L12 11.121l4.939 4.94 2.122-2.122z" />
               </svg>
-              <h3>{title}</h3>
+              <h3 className="h4">{title}</h3>
             </Flex>
           </summary>
 
