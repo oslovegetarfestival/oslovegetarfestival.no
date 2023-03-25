@@ -1,8 +1,9 @@
 import type { NextPage } from "next"
 
-import { Flow, Section } from "components/Layout"
+import { Flex, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Card } from "components/Card"
+import { Button } from "components/Button"
 
 type Props = {
   [key: string]: any
@@ -17,9 +18,10 @@ type exhibitionGroupedItem = {
   items: exhibitionItem[]
 }
 
-const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
-  // Group by type
-  const groupedByType = page?.items?.reduce(
+const groupExhibitionByType = (data: exhibitionItem[]) => {
+  if (!data) return []
+
+  const groupedByType = data.reduce(
     (result: exhibitionGroupedItem[], item: exhibitionItem) => {
       const existingGroup = result?.find((group) => group.title === item.type)
       if (existingGroup) {
@@ -32,6 +34,13 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
     []
   )
 
+  return groupedByType
+}
+
+const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
+  // Group by type
+  const groupedByType = groupExhibitionByType(page?.items)
+
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
@@ -43,10 +52,22 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
+      <Section width="large">
+        <Flex align="center" gap="small">
+          <p className="font-strike">Hopp til: </p>
+
+          {groupedByType?.map(({ title }) => (
+            <Button size="small" isArrow={false} key={title} link={`#${title}`}>
+              {title}
+            </Button>
+          ))}
+        </Flex>
+      </Section>
+
       {groupedByType?.map(({ title, items }: exhibitionItem) => (
         <Section width="large" verticalPadding="large" key={title}>
           <Flow>
-            <h2 className="section-header">
+            <h2 className="section-header" id={title}>
               <span aria-hidden="true">↓</span> {title}{" "}
               <span aria-hidden="true">↓</span>
             </h2>

@@ -33,3 +33,11 @@
 .-wrap {
   flex-wrap: wrap;
 }
+
+.-gap-small {
+  gap: var(--spacing-3);
+}
+
+.-gap-medium {
+  gap: var(--spacing-6);
+}
