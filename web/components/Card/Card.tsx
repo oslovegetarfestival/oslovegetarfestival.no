@@ -71,7 +71,7 @@ export const Card = ({ data }: Props) => {
               <div className={styles.content}>
                 <p className={styles.location}>{item.location?.title}</p>
                 <Flow space="xsmall">
-                  <h2>{item.title}</h2>
+                  <h2 className="h3">{item.title}</h2>
                   <p>{item.intro}</p>
                 </Flow>
               </div>

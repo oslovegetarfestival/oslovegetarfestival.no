@@ -42,7 +42,7 @@ h1,
 
 h2,
 .h2 {
-  @include fluid-type($minWidth, $maxWidth, 26px, 30px);
+  @include fluid-type($minWidth, $maxWidth, 28px, 36px);
   font-weight: 500;
 }
 
