@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Section } from "components/Layout"
+import { Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Card } from "components/Card"
 
@@ -8,7 +8,30 @@ type Props = {
   [key: string]: any
 }
 
+type exhibitionItem = {
+  title: string
+  [key: string]: any
+}
+type exhibitionGroupedItem = {
+  title: string
+  items: exhibitionItem[]
+}
+
 const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
+  // Group by type
+  const groupedByType = page?.items?.reduce(
+    (result: exhibitionGroupedItem[], item: exhibitionItem) => {
+      const existingGroup = result?.find((group) => group.title === item.type)
+      if (existingGroup) {
+        existingGroup.items.push(item)
+      } else {
+        result.push({ title: item.type, items: [item] })
+      }
+      return result
+    },
+    []
+  )
+
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
@@ -20,9 +43,18 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="large" verticalPadding="large">
-        <Card data={page?.items} />
-      </Section>
+      {groupedByType?.map(({ title, items }: exhibitionItem) => (
+        <Section width="large" verticalPadding="large" key={title}>
+          <Flow>
+            <h2 className="section-header">
+              <span aria-hidden="true">↓</span> {title}{" "}
+              <span aria-hidden="true">↓</span>
+            </h2>
+
+            <Card data={items} />
+          </Flow>
+        </Section>
+      ))}
     </>
   )
 }

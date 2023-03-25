@@ -8,7 +8,6 @@ type Props = {
 }
 
 export const RichText = ({ data }: Props) => {
-  console.log("data", data)
   return (
     <Flow>
       <PortableText

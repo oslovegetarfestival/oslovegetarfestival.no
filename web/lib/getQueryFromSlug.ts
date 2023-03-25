@@ -10,7 +10,7 @@ export const getQueryFromSlug = (slugArray = []) => {
     event:
       '*[_type == "event" && slug.current == $slug][0]{..., location->{title}}',
     exhibitorMain:
-      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "exhibitor"] | order(title)}',
+      '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "exhibitor"] | order(title) {..., ...type->{"type": title}}}',
     exhibitor: '*[_type == "exhibitor" && slug.current == $slug][0]',
     newsMain:
       '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "news"]}',

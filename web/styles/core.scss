@@ -84,6 +84,13 @@ svg {
   text-transform: uppercase;
 }
 
+.section-header {
+  background-color: var(--color-cucumber);
+  color: white;
+  padding: var(--spacing-4) var(--spacing-5);
+  text-align: center;
+}
+
 // Animations
 @keyframes animate-in-from-bottom {
   0% {
