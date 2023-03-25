@@ -21,7 +21,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
               startDate: page?.startDateTime,
               endDate: page?.endDateTime,
             })}
-            {" | "}
+            <br />
             {page?.location?.title}
           </p>
         </Flow>
