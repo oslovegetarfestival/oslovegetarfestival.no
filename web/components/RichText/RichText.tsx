@@ -8,6 +8,7 @@ type Props = {
 }
 
 export const RichText = ({ data }: Props) => {
+  console.log("data", data)
   return (
     <Flow>
       <PortableText
@@ -32,6 +33,10 @@ export const RichText = ({ data }: Props) => {
                 </a>
               )
             },
+          },
+          list: {
+            bullet: ({ children }) => <ul className="list">{children}</ul>,
+            number: ({ children }) => <ol className="list">{children}</ol>,
           },
         }}
       />
