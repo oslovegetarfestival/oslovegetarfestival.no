@@ -47,9 +47,6 @@ export const Card = ({ data }: Props) => {
                 </div>
               )}
 
-              {/* Sponsor - show badge */}
-              {item?.sponsor && <div className={styles.date}>Sponsor</div>}
-
               <picture className={styles.imageWrap}>
                 {item?.image?.asset && (
                   <Image
