@@ -87,6 +87,9 @@ export const Header = () => {
                 <Link href="/bli-frivillig">Bli frivillig</Link>
               </li>
               <li className={styles.menuItem}>
+                <Link href="/english">English</Link>
+              </li>
+              <li className={styles.menuItem}>
                 <Button
                   isArrow={false}
                   color="red"
