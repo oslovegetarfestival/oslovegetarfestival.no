@@ -8,7 +8,7 @@ type Props = {
 export const Quote = ({ quote, author }: Props) => {
   return (
     <div className={styles.wrap}>
-      <q className={styles.quote}>{quote}</q>
+      <q className="h1">{quote}</q>
       {author && (
         <p className={styles.author}>
           <em>{author}</em>
