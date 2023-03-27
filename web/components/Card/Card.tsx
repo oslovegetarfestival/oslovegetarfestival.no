@@ -5,7 +5,7 @@ import Image from "next/future/image"
 import { Flow } from "components/Layout"
 
 import styles from "./Card.module.scss"
-import { weekDayAndStartEndTime } from "utils/date"
+import { startAndEndTime } from "utils/date"
 
 type Item = {
   image: {
@@ -37,16 +37,6 @@ export const Card = ({ data }: Props) => {
         <Link key={item._id} href={item.slug?.current}>
           <a className={styles.link}>
             <div className={styles.wrap}>
-              {/* Event - show date and time */}
-              {item?.startDateTime && (
-                <div className={styles.date}>
-                  {weekDayAndStartEndTime({
-                    startDate: item.startDateTime,
-                    endDate: item.endDateTime,
-                  })}
-                </div>
-              )}
-
               <picture className={styles.imageWrap}>
                 {item?.image?.asset && (
                   <Image
@@ -64,9 +54,15 @@ export const Card = ({ data }: Props) => {
                   />
                 )}
               </picture>
-
               <div className={styles.content}>
-                <p className={styles.location}>{item.location?.title}</p>
+                <p className={styles.metadata}>
+                  {item?.startDateTime &&
+                    startAndEndTime({
+                      startDate: item?.startDateTime,
+                      endDate: item?.endDateTime,
+                    })}
+                  , {item.location?.title}
+                </p>
                 <Flow space="xsmall">
                   <h2 className="h3">{item.title}</h2>
                   <p>{item.intro}</p>

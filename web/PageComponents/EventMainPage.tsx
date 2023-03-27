@@ -85,7 +85,10 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
         <Section width="large" verticalPadding="large" key={startDate}>
           <Flow>
-            <h2 className="section-header" id={weekDayAndDate(startDate)}>
+            <h2
+              className="sticky-section-header"
+              id={weekDayAndDate(startDate)}
+            >
               {weekDayAndDate(startDate)}
             </h2>
             {/* @ts-ignore */}

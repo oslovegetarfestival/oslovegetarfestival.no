@@ -29,6 +29,30 @@ export const weekDayAndStartEndTime = ({ startDate, endDate }: DateProps) => {
   return `${weekday} kl. ${startTime}`
 }
 
+// Ex: kl. 14:30 - 15:00
+export const startAndEndTime = ({ startDate, endDate }: DateProps) => {
+  // Get weekday
+  const startDateObject = new Date(startDate)
+
+  // Get start time
+  const startTime = startDateObject.toLocaleTimeString("no", {
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+
+  // Get end time
+  if (endDate) {
+    const endDateObject = new Date(endDate)
+    const endTime = endDateObject.toLocaleTimeString("no", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+    return `kl. ${startTime} - ${endTime} `
+  }
+
+  return `kl. ${startTime}`
+}
+
 // Ex: Lørdag 27. mai
 export const weekDayAndDate = (date: string) => {
   if (!date) return ""
