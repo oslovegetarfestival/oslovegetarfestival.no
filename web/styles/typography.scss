@@ -43,19 +43,19 @@ h1,
 h2,
 .h2 {
   @include fluid-type($minWidth, $maxWidth, 28px, 36px);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h3,
 .h3 {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h4,
 .h4 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
