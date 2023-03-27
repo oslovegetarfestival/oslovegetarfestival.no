@@ -25,7 +25,7 @@ export const ListWithRoundImages = ({ data }: Props) => {
   return (
     <div className={styles.wrap}>
       {title && (
-        <Block bottom="7">
+        <Block bottom="8">
           <h2>{title}</h2>
         </Block>
       )}
