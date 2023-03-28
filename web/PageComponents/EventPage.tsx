@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Flow, Section } from "components/Layout"
+import { Block, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Image } from "components/Image"
 
@@ -14,24 +14,23 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
-        <Flow space="small">
-          <h1 className="page-title">{page?.title}</h1>
+        <Block bottom="2">
           <p className="meta-details">
             {weekDayAndStartEndTime({
               startDate: page?.startDateTime,
               endDate: page?.endDateTime,
             })}
-            <br />
-            {page?.location?.title}
+            , {page?.location?.title}
           </p>
+        </Block>
+        <Flow>
+          <h1 className="page-title">{page?.title}</h1>
+          <p className="lead">{page?.intro}</p>
         </Flow>
       </Section>
 
       <Section verticalPadding="tiny" noPadding="top">
-        <Flow>
-          <Image imageObject={page?.image} isFeatureImage />
-          <p className="lead">{page?.intro}</p>
-        </Flow>
+        <Image imageObject={page?.image} isFeatureImage />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
