@@ -20,7 +20,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
               startDate: page?.startDateTime,
               endDate: page?.endDateTime,
             })}
-            , {page?.location?.title}
+            — {page?.location?.title}
           </p>
         </Block>
         <Flow>
