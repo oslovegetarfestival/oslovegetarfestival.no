@@ -5,7 +5,7 @@ import Image from "next/future/image"
 import { Flow } from "components/Layout"
 
 import styles from "./Card.module.scss"
-import { startAndEndTime } from "utils/date"
+import { fullDate, startAndEndTime } from "utils/date"
 
 type Item = {
   image: {
@@ -22,15 +22,18 @@ type Item = {
   }
   startDateTime: string
   endDateTime?: string
+  publishedDate?: string
+  _createdAt: string
   sponsor: boolean
   _id: string
 }
 
 type Props = {
   data: Item[]
+  type?: "event" | "news"
 }
 
-export const Card = ({ data }: Props) => {
+export const Card = ({ data, type }: Props) => {
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
@@ -56,12 +59,19 @@ export const Card = ({ data }: Props) => {
               </picture>
               <div className={styles.content}>
                 <p className={styles.metadata}>
-                  {item?.startDateTime &&
-                    startAndEndTime({
-                      startDate: item?.startDateTime,
-                      endDate: item?.endDateTime,
-                    })}
-                  {item.location?.title && <>— {item.location?.title}</>}
+                  {type === "event" && (
+                    <>
+                      {item?.startDateTime &&
+                        startAndEndTime({
+                          startDate: item?.startDateTime,
+                          endDate: item?.endDateTime,
+                        })}
+                      {item.location?.title && <>— {item.location?.title}</>}
+                    </>
+                  )}
+                  {type === "news" && (
+                    <>{fullDate(item?.publishedDate ?? item._createdAt)}</>
+                  )}
                 </p>
                 <Flow space="xsmall">
                   <h2 className="h3">{item.title}</h2>

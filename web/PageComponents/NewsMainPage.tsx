@@ -22,7 +22,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large" verticalPadding="large">
-        <Card data={page?.items} />
+        <Card data={page?.items} type="news" />
       </Section>
     </>
   )
