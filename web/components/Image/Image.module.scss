@@ -1,3 +1,7 @@
+.picture {
+  position: relative;
+}
+
 .image {
   border-radius: var(--border-radius);
   margin-left: auto;
@@ -8,4 +12,13 @@
   text-align: center;
   padding: 12px 20px;
   font-size: 80%;
+}
+
+.imageCredit {
+  font-size: 80%;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: white;
+  mix-blend-mode: difference;
 }

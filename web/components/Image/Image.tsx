@@ -35,7 +35,7 @@ export const Image = ({
 
   if (isFeatureImage) {
     return (
-      <picture {...props}>
+      <picture className={styles.picture} {...props}>
         <img
           src={urlForImage(imageObject)
             .width(maxWidth)
@@ -49,9 +49,7 @@ export const Image = ({
           height="650"
         />
         {!hideCaption && caption && (
-          <figcaption className={styles.figcaption}>
-            <span className="text-caption">{caption}</span>
-          </figcaption>
+          <figcaption className={styles.imageCredit}>{caption}</figcaption>
         )}
       </picture>
     )
@@ -70,9 +68,7 @@ export const Image = ({
         className={styles.image}
       />
       {!hideCaption && caption && (
-        <figcaption className={styles.figcaption}>
-          <span className="text-caption">{caption}</span>
-        </figcaption>
+        <figcaption className={styles.figcaption}>{caption}</figcaption>
       )}
     </picture>
   )
