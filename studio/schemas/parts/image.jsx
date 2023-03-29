@@ -46,7 +46,6 @@ export const image = ({
                   { title: "Standard", value: "small" },
                   { title: "Liten", value: "tiny" },
                 ],
-                isHighlighted: true,
               },
             },
           ]
