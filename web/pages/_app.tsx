@@ -1,9 +1,39 @@
 import Head from "next/head"
 import type { AppProps } from "next/app"
 
+import { useEffect } from "react"
+import { useRouter } from "next/router"
+
 import "styles/main.scss"
 
+// Allow smooth scroll in-page, but disable on page navigation
+export function useSmoothScroll() {
+  const router = useRouter()
+
+  const setSmoothScroll = (isSmooth: boolean) => {
+    document.documentElement.style.scrollBehavior = isSmooth ? "smooth" : "auto"
+  }
+
+  useEffect(() => {
+    setSmoothScroll(true)
+    const handleStart = () => setSmoothScroll(false)
+    const handleStop = () => setSmoothScroll(true)
+
+    router.events.on("routeChangeStart", handleStart)
+    router.events.on("routeChangeComplete", handleStop)
+    router.events.on("routeChangeError", handleStop)
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart)
+      router.events.off("routeChangeComplete", handleStop)
+      router.events.off("routeChangeError", handleStop)
+    }
+  }, [router])
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+  useSmoothScroll()
+
   return (
     // TODO: Update favicon + colors
     <>
