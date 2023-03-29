@@ -1,6 +1,6 @@
 export const quote = {
   name: "quote",
-  title: "Sitat",
+  title: "Sitat / Fremhevet tekst",
   type: "object",
   fields: [
     {
@@ -16,6 +16,11 @@ export const quote = {
       description: 'Feks: "Miljøminister Trine Grønn"',
       type: "string",
     },
+    {
+      name: "isQuote",
+      title: "Vis som sitat (med gåsetegn)",
+      type: "boolean",
+    },
   ],
   preview: {
     select: {
@@ -23,8 +28,8 @@ export const quote = {
     },
     prepare(value) {
       return {
-        title: `«${value?.quote}»`,
-        subtitle: "Sitat",
+        title: `${value?.quote}`,
+        subtitle: "Sitat / Fremhevet tekst",
       };
     },
   },

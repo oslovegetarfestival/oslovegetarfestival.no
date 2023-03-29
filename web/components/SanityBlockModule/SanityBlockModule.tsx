@@ -52,7 +52,8 @@ export const SanityBlockModule = ({ data }: Props) => {
   if (blockType === "quote") {
     return (
       <Section verticalPadding="medium">
-        <Quote quote={data?.text} author={data?.author} />
+        {/* @ts-ignore */}
+        <Quote data={data} />
       </Section>
     )
   }
