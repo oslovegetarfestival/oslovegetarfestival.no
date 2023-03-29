@@ -28,7 +28,7 @@ export function useSmoothScroll() {
       router.events.off("routeChangeComplete", handleStop)
       router.events.off("routeChangeError", handleStop)
     }
-  }, [router])
+  }, [router.events])
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
