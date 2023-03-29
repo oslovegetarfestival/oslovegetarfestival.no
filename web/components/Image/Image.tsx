@@ -47,7 +47,9 @@ export const Image = ({
           height="650"
         />
         {!hideCaption && caption && (
-          <figcaption className={styles.imageCredit}>{caption}</figcaption>
+          <figcaption aria-hidden="true" className={styles.imageCredit}>
+            {caption}
+          </figcaption>
         )}
       </picture>
     )
