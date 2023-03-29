@@ -61,7 +61,7 @@ export const Card = ({ data }: Props) => {
                       startDate: item?.startDateTime,
                       endDate: item?.endDateTime,
                     })}
-                  — {item.location?.title}
+                  {item.location?.title && <>— {item.location?.title}</>}
                 </p>
                 <Flow space="xsmall">
                   <h2 className="h3">{item.title}</h2>

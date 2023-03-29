@@ -1,14 +1,15 @@
 import type { NextPage } from "next"
-import Link from "next/link"
 
 import { Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
+import { Card } from "components/Card"
 
 type Props = {
   [key: string]: any
 }
 
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
+  console.log("page", page)
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
@@ -20,12 +21,8 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section verticalPadding="large">
-        {page?.items.map((item: Props) => (
-          <Link href={item.slug.current} key={item?.title}>
-            <a className="link">{item?.title}</a>
-          </Link>
-        ))}
+      <Section width="large" verticalPadding="large">
+        <Card data={page?.items} />
       </Section>
     </>
   )
