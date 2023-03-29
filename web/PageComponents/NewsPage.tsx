@@ -1,19 +1,31 @@
 import type { NextPage } from "next"
 
-import { Section } from "components/Layout"
+import { Block, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
+import { Image } from "components/Image"
+import { fullDate } from "utils/date"
 
 type Props = {
   [key: string]: any
 }
 
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
+  const publishedDate = page?.publishedDate ?? page._createdAt
+
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
-        <p className="breadcrumb">Publiseringsdato?</p>
-        <h1 className="page-title">{page?.title}</h1>
-        <p className="lead">{page?.intro}</p>
+        <Block bottom="2">
+          <p className="meta-details">Publisert: {fullDate(publishedDate)}</p>
+        </Block>
+        <Flow>
+          <h1 className="page-title">{page?.title}</h1>
+          <p className="lead">{page?.intro}</p>
+        </Flow>
+      </Section>
+
+      <Section verticalPadding="tiny" noPadding="top">
+        <Image imageObject={page?.image} isFeatureImage />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (

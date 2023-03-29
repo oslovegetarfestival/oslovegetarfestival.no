@@ -10,6 +10,13 @@ export const news = {
   type: "document",
   fields: [
     title(),
+    {
+      name: "publishedDate",
+      title: "Publisert dato",
+      type: "date",
+      description:
+        "Publisert dato viser datoen for når dokumentet ble opprettet. Her kan du manuelt overstyre dato om ønskelig",
+    },
     slug({ prefix: "aktuelt" }),
     intro(),
     image({ title: "Hovedbilde", includeCaption: true, isFeaturedImage: true }),

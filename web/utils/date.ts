@@ -3,6 +3,13 @@ type DateProps = {
   endDate?: string
 }
 
+// Ex: 28. mai 2023
+export const fullDate = (date: string) => {
+  // Get weekday
+  const dateObject = new Date(date)
+  return dateObject.toLocaleDateString("no", { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 // Show local time
 // Ex: Lørdag kl. 14:30 - 15:00
 export const weekDayAndStartEndTime = ({ startDate, endDate }: DateProps) => {
