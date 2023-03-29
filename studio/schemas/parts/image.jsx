@@ -40,13 +40,11 @@ export const image = ({
               type: "string",
               title: "Størrelse",
               description:
-                "Står feltet tomt vises det som 'Standard (utfallende)'. Du kan også beskjære bildet for å få riktig utsnitt og deretter velge bredden du ønsker.",
+                "Står feltet tomt vises det som 'Standard'. Du kan også beskjære bildet for å få riktig utsnitt og deretter velge bredden du ønsker.",
               options: {
                 list: [
-                  { title: "Gigastor", value: "large" },
-                  { title: "Standard (utfallende)", value: "normal" },
-                  { title: "Liten", value: "small" },
-                  { title: "Bitteliten", value: "tiny" },
+                  { title: "Standard", value: "small" },
+                  { title: "Liten", value: "tiny" },
                 ],
                 isHighlighted: true,
               },
