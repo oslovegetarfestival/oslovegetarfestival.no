@@ -41,7 +41,7 @@ export const Image = ({
             .height(650)
             .url()}
           alt={altText}
-          loading={imageLoading}
+          loading="eager"
           className={styles.image}
           width={1000}
           height="650"
