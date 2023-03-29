@@ -12,14 +12,14 @@ const GenericPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
-        <h1 className="page-title">{page?.title}</h1>
+        <Flow>
+          <h1 className="page-title">{page?.title}</h1>
+          <p className="lead">{page?.intro}</p>
+        </Flow>
       </Section>
 
       <Section verticalPadding="tiny" noPadding="top">
-        <Flow>
-          <Image imageObject={page?.image} isFeatureImage />
-          <p className="lead">{page?.intro}</p>
-        </Flow>
+        <Image imageObject={page?.image} isFeatureImage />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
