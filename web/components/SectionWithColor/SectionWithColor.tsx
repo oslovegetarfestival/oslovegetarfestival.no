@@ -28,13 +28,24 @@ export const SectionWithColor = ({ data }: Props) => {
 
   const textWrapClass = classNames(
     styles.textWrap,
-    bgColor ? styles[`-background-${bgColor}`] : "false"
+    bgColor ? styles[`-background-${bgColor}`] : false,
+    isReverse ? styles[`-is-reverse`] : false
+  )
+
+  const imageWrapClass = classNames(
+    styles.imageWrap,
+    isReverse ? styles[`-is-reverse`] : false
+  )
+
+  const imageClass = classNames(
+    styles.image,
+    isReverse ? styles[`-is-reverse`] : false
   )
 
   return (
     <Section width="large" noGutter>
       <Grid verticalCenter noGutter reverse={isReverse}>
-        <picture className={styles.imageWrap}>
+        <picture className={imageWrapClass}>
           <Image
             src={urlForImage(image)
               .width(800)
@@ -43,7 +54,7 @@ export const SectionWithColor = ({ data }: Props) => {
               .auto("format")
               .url()}
             alt={image?.altText ?? ""}
-            className={styles.image}
+            className={imageClass}
             fill
           />
         </picture>

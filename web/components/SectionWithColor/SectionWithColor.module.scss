@@ -3,11 +3,28 @@
   width: 100%;
   position: relative;
   background-color: var(--color-kale);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+
+  &.-is-reverse {
+    border-radius: 0;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
 }
 
 .image {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
   object-fit: cover;
   height: 100%;
+
+  &.-is-reverse {
+    border-radius: 0;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
 }
 
 .textWrap {
@@ -15,16 +32,24 @@
   align-items: center;
   height: 100%;
   padding: var(--spacing-9);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  
+  &.-is-reverse {
+    border-radius: 0;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
 }
 
 .intro {
   white-space: pre-line; // Keep line breaks (\n) from Sanity
 }
 
-// Background colors 
+// Background colors
 .-background-lychee {
   background-color: var(--color-lychee);
-}  
+}
 
 .-background-banana {
   background-color: var(--color-banana);
