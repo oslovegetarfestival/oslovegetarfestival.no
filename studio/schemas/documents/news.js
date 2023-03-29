@@ -14,8 +14,8 @@ export const news = {
       name: "publishedDate",
       title: "Publisert dato",
       type: "date",
-      description:
-        "Publisert dato viser datoen for når dokumentet ble opprettet. Her kan du manuelt overstyre dato om ønskelig",
+      initialValue: new Date().toISOString().slice(0, 10),
+      validation: (Rule) => Rule.required(),
     },
     slug({ prefix: "aktuelt" }),
     intro(),
