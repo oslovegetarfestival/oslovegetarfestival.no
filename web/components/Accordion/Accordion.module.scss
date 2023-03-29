@@ -14,6 +14,11 @@
   margin-right: var(--spacing-3);
 }
 
+.details {
+  border-bottom: 1px solid var(--color-cucumber);
+  padding-bottom: var(--spacing-3);
+}
+
 .details[open] .icon {
   transform: rotate(0deg);
 }
