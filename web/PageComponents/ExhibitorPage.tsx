@@ -12,7 +12,6 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
-        <p className="breadcrumb">Utstiller</p>
         <h1 className="page-title">{page?.title}</h1>
       </Section>
 
