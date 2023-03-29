@@ -70,7 +70,7 @@ export const Card = ({ data, type }: Props) => {
                     </>
                   )}
                   {type === "news" && (
-                    <>{fullDate(item?.publishedDate ?? item._createdAt)}</>
+                    <>{fullDate(item?.publishedDate || "")}</>
                   )}
                 </p>
                 <Flow space="xsmall">

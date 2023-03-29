@@ -10,13 +10,13 @@ type Props = {
 }
 
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
-  const publishedDate = page?.publishedDate ?? page._createdAt
-
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
         <Block bottom="2">
-          <p className="meta-details">Publisert: {fullDate(publishedDate)}</p>
+          <p className="meta-details">
+            Publisert: {fullDate(page?.publishedDate)}
+          </p>
         </Block>
         <Flow>
           <h1 className="page-title">{page?.title}</h1>
