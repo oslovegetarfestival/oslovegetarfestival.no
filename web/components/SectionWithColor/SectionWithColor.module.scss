@@ -3,42 +3,35 @@
   width: 100%;
   position: relative;
   background-color: var(--color-kale);
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
 
-  &.-is-reverse {
-    border-radius: 0;
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+  @media (max-width: 799px) {
+    aspect-ratio: 3/2;
   }
 }
 
 .image {
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
   object-fit: cover;
   height: 100%;
 
-  &.-is-reverse {
-    border-radius: 0;
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+  @media (max-width: 799px) {
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-large);
   }
-
 }
 
 .textWrap {
   display: flex;
   align-items: center;
   height: 100%;
+
   padding: var(--spacing-9);
-  border-top-right-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-  
-  &.-is-reverse {
-    border-radius: 0;
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+
+  @media (max-width: 799px) {
+    padding: var(--spacing-7);
+  }
+
+  @media (max-width: 500px) {
+    padding: var(--spacing-5);
   }
 }
 

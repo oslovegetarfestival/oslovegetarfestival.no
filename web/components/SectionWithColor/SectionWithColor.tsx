@@ -28,19 +28,15 @@ export const SectionWithColor = ({ data }: Props) => {
 
   const textWrapClass = classNames(
     styles.textWrap,
-    bgColor ? styles[`-background-${bgColor}`] : false,
-    isReverse ? styles[`-is-reverse`] : false
+    bgColor ? styles[`-background-${bgColor}`] : false
   )
 
   const imageWrapClass = classNames(
     styles.imageWrap,
-    isReverse ? styles[`-is-reverse`] : false
+    bgColor ? styles[`-background-${bgColor}`] : false
   )
 
-  const imageClass = classNames(
-    styles.image,
-    isReverse ? styles[`-is-reverse`] : false
-  )
+  const imageClass = classNames(styles.image)
 
   return (
     <Section width="large" noGutter>
