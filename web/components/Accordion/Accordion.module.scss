@@ -1,3 +1,9 @@
+.wrap {
+  background: var(--color-lychee);
+  padding: var(--spacing-5);
+  border-radius: var(--border-radius);
+}
+
 .summary {
   list-style: none;
   display: block;
@@ -12,11 +18,15 @@
 .icon {
   transform: rotate(180deg);
   margin-right: var(--spacing-3);
+  min-width: 24px;
+  margin-left: var(--spacing-5);
 }
 
 .details {
-  border-bottom: 1px solid var(--color-cucumber);
-  padding-bottom: var(--spacing-3);
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--color-cucumber);
+    padding-bottom: var(--spacing-3);
+  }
 }
 
 .details[open] .icon {
