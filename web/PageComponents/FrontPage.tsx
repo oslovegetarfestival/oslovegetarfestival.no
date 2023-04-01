@@ -4,6 +4,7 @@ import { FrontpageHero } from "components/FrontpageHero"
 import { Block, Section } from "components/Layout"
 import { Button } from "components/Button"
 import { Card } from "components/Card"
+import { BackgroundVideo } from "components/BackgroundVideo"
 
 type Props = {
   [key: string]: any
@@ -27,6 +28,8 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           </Button>
         </Section>
       </Section>
+
+      <BackgroundVideo />
 
       <Section
         centerContent

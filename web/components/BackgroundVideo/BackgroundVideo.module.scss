@@ -1,0 +1,14 @@
+.wrap {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/7;
+  border-radius: var(--border-radius);
+  
+  @media(max-width: 1200px) {
+    aspect-ratio: 16/9;
+  }
+
+  @media(max-width: 600px) {
+    aspect-ratio: 1;
+  }
+}
