@@ -9,7 +9,7 @@ export const Video = ({ id }: Props) => {
     <div className={styles.wrap}>
       <iframe
         className={styles.video}
-        src={`https://www.youtube-nocookie.com/embed/${id}`}
+        src={`https://www.youtube-nocookie.com/embed/${id}?rel=0`}
         title="YouTube video player"
         allow="encrypted-media"
         allowFullScreen
