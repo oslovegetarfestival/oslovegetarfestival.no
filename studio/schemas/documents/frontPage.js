@@ -1,4 +1,3 @@
-import { intro } from "../parts/intro";
 import { image } from "../parts/image";
 import { title } from "../parts/title";
 
@@ -8,7 +7,57 @@ export const frontPage = {
   type: "document",
   fields: [
     title(),
-    intro(),
+    {
+      title: "Fremhevet aktuelt",
+      name: "promotedNews",
+      type: "array",
+      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      description:
+        "Velg fire fremhevede aktueltsaker. Du kan endre rekkefølgen for å styre visningen på forsiden.",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "news" }],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+    },
+    {
+      title: "Fremhevet arrangement",
+      name: "promotedEvents",
+      type: "array",
+      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      description:
+        "Velg fire fremhevede arrangementer. Du kan endre rekkefølgen for å styre visningen på forsiden.",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "event" }],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+    },
+    {
+      title: "Fremhevet utstiller",
+      name: "promotedExhibitors",
+      type: "array",
+      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      description:
+        "Velg fire fremhevede utstillere. Du kan endre rekkefølgen for å styre visningen på forsiden.",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "exhibitor" }],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+    },
     {
       title: "Liste med sponsorer",
       name: "sponsorBlock",
