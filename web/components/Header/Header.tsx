@@ -11,7 +11,11 @@ import logoCandy from "./logo-candy.png"
 import styles from "./Header.module.scss"
 import useBodyFreeze from "hooks/useBodyFreeze"
 
-export const Header = () => {
+type Props = {
+  isFrontpage?: boolean
+}
+
+export const Header = ({ isFrontpage }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Logic to close mobile menu on when a link is clicked (= route change)
@@ -33,41 +37,31 @@ export const Header = () => {
   return (
     <header>
       <Section width="full" verticalPadding="small">
-        <div className={styles.logoCandy}>
-          <Image
-            src={logoCandy}
-            alt=""
-            width="308"
-            height="148px"
-            className={styles.logoCandy}
-          />
-        </div>
-
-        <Flex justify="spaceBetween" align="start">
-          <p className="h1">
-            <Link href="/">
-              <a className={styles.logo}>
-                <span>Oslo</span>
-                <span>Vegetar</span>
-                <span>festival</span>
-                <span className={styles.date}>27.-28. mai 2023</span>
-              </a>
-            </Link>
-          </p>
-
-          {/* Mobile menu */}
-          <div className={styles.mobileToggle}>
-            <Button
-              size="small"
-              color="red"
-              isArrow={false}
-              onClick={() => {
-                setIsMobileMenuOpen(!isMobileMenuOpen)
-              }}
-            >
-              {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
-            </Button>
+        {!isFrontpage && (
+          <div className={styles.logoCandy}>
+            <Image
+              src={logoCandy}
+              alt=""
+              width="308"
+              height="148px"
+              className={styles.logoCandy}
+            />
           </div>
+        )}
+
+        <Flex justify={isFrontpage ? "end" : "spaceBetween"} align="start">
+          {!isFrontpage && (
+            <p className="h1">
+              <Link href="/">
+                <a className={styles.logo} title="Til forsiden">
+                  <span>Oslo</span>
+                  <span>Vegetar</span>
+                  <span>festival</span>
+                  <span className={styles.date}>27.-28. mai 2023</span>
+                </a>
+              </Link>
+            </p>
+          )}
 
           <nav
             className={styles.menu}
@@ -102,6 +96,20 @@ export const Header = () => {
             </ul>
           </nav>
         </Flex>
+
+        {/* Mobile menu */}
+        <div className={styles.mobileToggle}>
+          <Button
+            size="small"
+            color="red"
+            isArrow={false}
+            onClick={() => {
+              setIsMobileMenuOpen(!isMobileMenuOpen)
+            }}
+          >
+            {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
+          </Button>
+        </div>
       </Section>
     </header>
   )

@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Section } from "components/Layout"
+import { FrontpageHero } from "components/FrontpageHero"
 
 type Props = {
   [key: string]: any
@@ -8,10 +8,11 @@ type Props = {
 
 const FrontPage: NextPage<Props> = ({ page = {} }) => {
   return (
-    <Section width="large" verticalPadding="large" noPadding="top">
+    <>
+      <FrontpageHero />
       <h1 className="page-title">{page?.title}</h1>
       <p className="lead">{page?.intro}</p>
-    </Section>
+    </>
   )
 }
 

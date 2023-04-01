@@ -58,8 +58,9 @@ $breakpoint: 900px;
 .mobileToggle {
   position: relative;
   z-index: 99;
+  text-align: right;
 
-  @media (min-width: calc($breakpoint - 1px )) {
+  @media (min-width: calc($breakpoint + 1px )) {
     display: none;
   }
 }

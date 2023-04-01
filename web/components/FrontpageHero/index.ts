@@ -1,0 +1,1 @@
+export { FrontpageHero } from "./FrontpageHero"
