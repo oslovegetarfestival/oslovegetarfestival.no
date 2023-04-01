@@ -5,7 +5,7 @@ import styles from "./ListWithRoundImages.module.scss"
 import { Block } from "components/Layout"
 
 type ListItem = {
-  image: { altText: string }
+  image?: { altText: string; asset: object }
   intro: string
   subTitle: string
   title: string
@@ -35,18 +35,19 @@ export const ListWithRoundImages = ({ data }: Props) => {
           <div key={item._key}>
             <Block bottom="4">
               <picture className={styles.imageWrap}>
-                <Image
-                  src={urlForImage(item?.image)
-                    .width(400)
-                    .height(400)
-                    .fit("max")
-                    .auto("format")
-                    .url()}
-                  alt={item?.image?.altText ?? ""}
-                  className={styles.image}
-                  width="250"
-                  height="250"
-                />
+                {item?.image?.asset && (
+                  <Image
+                    src={urlForImage(item?.image)
+                      .width(500)
+                      .height(500)
+                      .fit("max")
+                      .auto("format")
+                      .url()}
+                    alt={item?.image?.altText ?? ""}
+                    width="250"
+                    height="250"
+                  />
+                )}
               </picture>
             </Block>
 

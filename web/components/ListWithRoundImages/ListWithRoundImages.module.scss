@@ -10,9 +10,13 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
 }
 
-.image {
+.imageWrap {
+  background: var(--color-aubergine);
   border-radius: 50%;
+  aspect-ratio: 1;
   margin: 0 auto;
+  max-width: 250px;
+  overflow: hidden;
 }
 
 .subTitle {
