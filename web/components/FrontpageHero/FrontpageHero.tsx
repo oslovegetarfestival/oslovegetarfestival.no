@@ -17,8 +17,8 @@ export const FrontpageHero = () => {
         </div>
 
         <Block top="7">
-          <Button size="large" color="red" link="/billett">
-            Kjøp billett
+          <Button size="large" color="red" link="/billetter">
+            Kjøp billetter
           </Button>
         </Block>
       </Section>
