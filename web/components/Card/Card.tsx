@@ -6,6 +6,7 @@ import { Flow } from "components/Layout"
 
 import styles from "./Card.module.scss"
 import { fullDate, startAndEndTime } from "utils/date"
+import { weekDayAndStartEndTime } from "utils/date"
 
 type Item = {
   image: {
@@ -28,9 +29,42 @@ type Item = {
   _id: string
 }
 
+type TypeProps = "event" | "eventWithDate" | "news"
+
 type Props = {
   data: Item[]
-  type?: "event" | "news"
+  type?: TypeProps
+}
+
+type EventDateProps = {
+  type?: TypeProps
+  item: Item
+}
+
+const createEventDate = ({ type, item }: EventDateProps) => {
+  if (!type) return
+  if (!item?.startDateTime) return
+
+  // Show weekday (used for frontpage listing)
+  if (type === "eventWithDate") {
+    return weekDayAndStartEndTime({
+      startDate: item?.startDateTime,
+      endDate: item?.endDateTime,
+    })
+  }
+
+  if (type === "event") {
+    return startAndEndTime({
+      startDate: item?.startDateTime,
+      endDate: item?.endDateTime,
+    })
+  }
+
+  if (type === "news") {
+    return fullDate(item?.publishedDate || "")
+  }
+
+  return ""
 }
 
 export const Card = ({ data, type }: Props) => {
@@ -59,19 +93,7 @@ export const Card = ({ data, type }: Props) => {
               </picture>
               <div className={styles.content}>
                 <p className={styles.metadata}>
-                  {type === "event" && (
-                    <>
-                      {item?.startDateTime &&
-                        startAndEndTime({
-                          startDate: item?.startDateTime,
-                          endDate: item?.endDateTime,
-                        })}
-                      {item.location?.title && <>— {item.location?.title}</>}
-                    </>
-                  )}
-                  {type === "news" && (
-                    <>{fullDate(item?.publishedDate || "")}</>
-                  )}
+                  {createEventDate({ type: type, item: item })}
                 </p>
                 <Flow space="xsmall">
                   <h2 className="h3">{item.title}</h2>

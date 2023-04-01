@@ -20,7 +20,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Nytt fra festivalen</h2>
 
           <Block top="8" bottom="8">
-            <Card data={page?.promotedNews} type="news" />
+            <Card data={page?.promotedNews} />
           </Block>
 
           <Button size="large" link="/aktuelt">
@@ -41,7 +41,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Dette skjer på årets festival</h2>
 
           <Block top="8" bottom="8">
-            <Card data={page?.promotedEvents} type="event" />
+            <Card data={page?.promotedEvents} type="eventWithDate" />
           </Block>
 
           <Button size="large" link="program">
