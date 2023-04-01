@@ -6,8 +6,6 @@ type Props = {
 }
 
 export const PageLayout = ({ children }: Props) => {
-  console.log("children", children)
-
   //@ts-expect-error
   const isFrontpage = children?.[0]?.props?.page?._type === "frontPage"
 

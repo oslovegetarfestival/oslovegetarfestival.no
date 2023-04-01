@@ -3,7 +3,8 @@
 export const getQueryFromSlug = (slugArray = []) => {
   // Sanity queries
   const sanityQuery = {
-    frontPage: '*[_id == "frontPage"][0]',
+    frontPage:
+      '*[_id == "frontPage"][0] {..., "promotedEvents": promotedEvents[]->{...}, "promotedNews": promotedNews[]->{...}, "promotedExhibitors": promotedExhibitors[]->{...}}',
     genericPage: '*[_type == "page" && slug.current == $slug][0]',
     eventMain:
       '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "event"] | order(startDateTime) {..., location->{title}}}',
