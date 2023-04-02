@@ -95,21 +95,22 @@ export const Header = ({ isFrontpage }: Props) => {
               </li>
             </ul>
           </nav>
+          {/* Mobile menu */}
+          <div className={styles.mobileToggle}>
+            <Button
+              size="small"
+              color="red"
+              isArrow={false}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
+            >
+              <span className="h3">
+                {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
+              </span>
+            </Button>
+          </div>
         </Flex>
-
-        {/* Mobile menu */}
-        <div className={styles.mobileToggle}>
-          <Button
-            size="small"
-            color="red"
-            isArrow={false}
-            onClick={() => {
-              setIsMobileMenuOpen(!isMobileMenuOpen)
-            }}
-          >
-            {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
-          </Button>
-        </div>
       </Section>
     </header>
   )

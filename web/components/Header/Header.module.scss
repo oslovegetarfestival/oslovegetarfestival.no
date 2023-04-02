@@ -1,4 +1,4 @@
-$breakpoint: 900px;
+$breakpoint: 1050px;
 
 .logo {
   line-height: 0.9;
@@ -43,6 +43,7 @@ $breakpoint: 900px;
 .menuItem {
   margin-right: 2rem;
   font-family: "Strike";
+  font-size: 120%;
 
   @media (max-width: $breakpoint) {
     margin-right: 0;
