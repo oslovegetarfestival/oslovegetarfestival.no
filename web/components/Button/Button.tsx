@@ -5,9 +5,10 @@ import styles from "./Button.module.scss"
 
 type Props = {
   size?: "small" | "medium" | "large"
-  color?: "red" | "green"
+  color?: "red" | "green" | "white"
   link?: string
   isArrow?: boolean
+  type?: "button" | "submit"
   onClick?: () => void
   children: React.ReactNode
 }
@@ -17,6 +18,7 @@ export const Button = ({
   color = "green",
   isArrow = true,
   link,
+  type = "button",
   children,
   onClick,
 }: Props) => {
@@ -52,7 +54,7 @@ export const Button = ({
 
   // Button
   return (
-    <button onClick={onClick} className={buttonClass}>
+    <button onClick={onClick} className={buttonClass} type={type}>
       {children}
     </button>
   )

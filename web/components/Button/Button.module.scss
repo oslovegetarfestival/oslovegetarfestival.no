@@ -31,7 +31,7 @@
 // Colors
 .color--red {
   background-color: var(--color-tomato);
-  color: var(--color-oatmilk);
+  color: var(--color-almondmilk);
 
   &:hover {
     background-color: var(--color-kale);
@@ -40,9 +40,19 @@
 
 .color--green {
   background-color: var(--color-kale);
-  color: var(--color-oatmilk);
+  color: var(--color-almondmilk);
 
   &:hover {
+    background-color: var(--color-cucumber);
+  }
+}
+
+.color--white {
+  background-color: var(--color-almondmilk);
+  color: var(--color-kale);
+  
+  &:hover {
+    color: var(--color-almondmilk);
     background-color: var(--color-cucumber);
   }
 }

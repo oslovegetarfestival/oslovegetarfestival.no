@@ -4,6 +4,7 @@ import { Grid, Flex, Section, Flow } from "components/Layout"
 
 import styles from "./Footer.module.scss"
 import { Button } from "components/Button"
+import { Newsletter } from "components/Newsletter"
 
 export const Footer = () => {
   return (
@@ -11,52 +12,47 @@ export const Footer = () => {
       <Section width="full" verticalPadding="large">
         <Flow>
           <Grid>
-            <div>
-              <h2>Om oss</h2>
+            <Flow space="small">
+              <h2 className="font-strike">Om Oslo Vegetarfestival</h2>
               <p>
-                Oslo Vegetarfestival er Norges (og Skandinavias!) største
-                plantebaserte festival.{" "}
+                Vi er Norges (og Skandinavias!) største plantebaserte festival.{" "}
                 <Link href="/om-oss">
                   <a className="link">Les mer</a>
                 </Link>
               </p>
-            </div>
+            </Flow>
 
-            <div>
-              <h2>Kontakt</h2>
+            <Flow space="small">
+              <h2 className="font-strike">Kontakt</h2>
               <p>
+                <strong>E-post</strong>
+                <br />
                 <a href="mailto:kontakt@oslovegetarfestival.no">
                   kontakt@oslovegetarfestival.no
                 </a>
               </p>
               <p>
+                <strong>Facebook</strong> <br />
                 <a href="https://www.facebook.com/OsloVegetarfestival">
-                  Facebook
+                  @oslovegetarfestival
                 </a>
               </p>
               <p>
+                <strong>Instagram</strong> <br />
                 <a href="https://www.instagram.com/oslovegetarfestival/">
-                  Instagram
+                  @oslovegetarfestival
                 </a>
               </p>
-              <p>
-                <a href="https://www.youtube.com/@oslovegetarfestival">
-                  YouTube
-                </a>
-              </p>
-            </div>
+            </Flow>
 
-            <div>
-              <h2>Nyhetsbrev</h2>
+            <Flow space="small">
+              <h2 className="font-strike">Nyhetsbrev</h2>
               <p>
                 Få siste nytt om plantebasert mat, konkurranser, utlodninger og
                 mye mer!
               </p>
-              <label>
-                E-post
-                <input type="email" />
-              </label>
-            </div>
+              <Newsletter />
+            </Flow>
           </Grid>
 
           <Flex justify="spaceBetween" align="end" wrap>
@@ -72,25 +68,16 @@ export const Footer = () => {
               <ul>
                 <Flex justify="spaceBetween" wrap>
                   <li className={styles.menuItem}>
-                    <Link href="/aktuelt">Aktuelt</Link>
+                    <Link href="/program">Program</Link>
                   </li>
                   <li className={styles.menuItem}>
-                    <Link href="/bli-frivillig">Bli frivillig</Link>
-                  </li>
-                  <li className={styles.menuItem}>
-                    <Link href="/for-utstillere">For utstillere</Link>
-                  </li>
-                  <li className={styles.menuItem}>
-                    <Link href="/om-oss">Om oss</Link>
+                    <Link href="/utstillere">Utstillere</Link>
                   </li>
                   <li className={styles.menuItem}>
                     <Link href="/praktisk-info">Praktisk info</Link>
                   </li>
                   <li className={styles.menuItem}>
-                    <Link href="/program">Program</Link>
-                  </li>
-                  <li className={styles.menuItem}>
-                    <Link href="/utstillere">Utstillere</Link>
+                    <Link href="/bli-frivillig">Bli frivillig</Link>
                   </li>
                   <li className={styles.menuItem}>
                     <Link href="/english">English</Link>
