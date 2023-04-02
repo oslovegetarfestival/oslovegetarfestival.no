@@ -14,7 +14,7 @@ type Props = {
   imageLoading?: "lazy" | "eager"
   hideCaption?: boolean
   isFeatureImage?: boolean
-  isRoundCorners: boolean
+  isRoundCorners?: boolean
 }
 
 export const Image = ({
