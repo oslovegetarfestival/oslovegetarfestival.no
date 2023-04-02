@@ -70,37 +70,9 @@ export const Footer = () => {
                   </a>
                 </Link>
               </p>
-              <nav>
-                <ul>
-                  <Flex justify="spaceBetween" wrap>
-                    <li className={styles.menuItem}>
-                      <Link href="/program">Program</Link>
-                    </li>
-                    <li className={styles.menuItem}>
-                      <Link href="/utstillere">Utstillere</Link>
-                    </li>
-                    <li className={styles.menuItem}>
-                      <Link href="/praktisk-info">Praktisk info</Link>
-                    </li>
-                    <li className={styles.menuItem}>
-                      <Link href="/bli-frivillig">Bli frivillig</Link>
-                    </li>
-                    <li className={styles.menuItem}>
-                      <Link href="/english">English</Link>
-                    </li>
-                    <li className={styles.menuItem}>
-                      <Button
-                        isArrow={false}
-                        color="red"
-                        size="small"
-                        link="/billetter"
-                      >
-                        Kjøp billetter
-                      </Button>
-                    </li>
-                  </Flex>
-                </ul>
-              </nav>
+              <Link href="/personvern-og-cookies">
+                <a className="link">Personvern og cookies</a>
+              </Link>
             </Flex>
           </Flow>
         </Section>
@@ -108,3 +80,5 @@ export const Footer = () => {
     </>
   )
 }
+
+
