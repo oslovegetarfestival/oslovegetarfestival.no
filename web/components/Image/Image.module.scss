@@ -3,9 +3,12 @@
 }
 
 .image {
-  border-radius: var(--border-radius);
   margin-left: auto;
   margin-right: auto;
+}
+
+.-round-corners {
+  border-radius: var(--border-radius);
 }
 
 .figcaption {

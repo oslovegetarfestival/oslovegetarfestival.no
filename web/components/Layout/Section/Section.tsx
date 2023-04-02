@@ -6,7 +6,7 @@ import styles from "./Section.module.scss"
 type Props = {
   width?: "full" | "large" | "medium" | "small"
   verticalPadding?: "xlarge" | "large" | "medium" | "small" | "tiny"
-  noPadding?: "top" | "bottom"
+  noPadding?: "top" | "bottom" | "sides"
   children: React.ReactNode
   centerContent?: boolean
   background?: "lychee" | "banana"

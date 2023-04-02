@@ -1,6 +1,7 @@
 import { urlForImage } from "lib/sanity"
 
 import styles from "./Image.module.scss"
+import classNames from "classnames"
 
 type Props = {
   imageObject: {
@@ -13,6 +14,7 @@ type Props = {
   imageLoading?: "lazy" | "eager"
   hideCaption?: boolean
   isFeatureImage?: boolean
+  isRoundCorners: boolean
 }
 
 export const Image = ({
@@ -21,6 +23,7 @@ export const Image = ({
   imageLoading = "lazy",
   hideCaption,
   isFeatureImage,
+  isRoundCorners = true,
   ...props
 }: Props) => {
   const { caption = "", altText = "" } = imageObject || {}
@@ -30,6 +33,11 @@ export const Image = ({
   let selectedWidth = maxWidth
   if (imageObject?.size === "small") selectedWidth = 660
   if (imageObject?.size === "tiny") selectedWidth = 450
+
+  const imageClass = classNames(
+    styles.image,
+    isRoundCorners ? styles["-round-corners"] : false
+  )
 
   if (isFeatureImage) {
     return (
@@ -42,7 +50,7 @@ export const Image = ({
             .url()}
           alt={altText}
           loading="eager"
-          className={styles.image}
+          className={imageClass}
           width={1000}
           height="650"
         />
@@ -65,7 +73,7 @@ export const Image = ({
           .url()}
         alt={altText}
         loading={imageLoading}
-        className={styles.image}
+        className={imageClass}
       />
       {!hideCaption && caption && (
         <figcaption className={styles.figcaption}>{caption}</figcaption>
