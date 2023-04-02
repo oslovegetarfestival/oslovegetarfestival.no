@@ -73,7 +73,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             </Block>
           )}
 
-          <Flex justify="center" wrap>
+          <Flex justify="center" align="center" gap="medium" wrap>
             {page?.sponsorBlock?.sponsors?.map(
               ({
                 title = "",
@@ -86,7 +86,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
                 url: string
                 _key: string
               }) => (
-                <a href={url} key={_key}>
+                <a href={url} key={_key} style={{ maxWidth: "300px" }}>
                   <Image
                     //@ts-ignore
                     imageObject={image}
