@@ -32,12 +32,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
 
       <BackgroundVideo />
 
-      <Section
-        centerContent
-        background="lychee"
-        width="full"
-        verticalPadding="xlarge"
-      >
+      <Section centerContent width="full" verticalPadding="xlarge">
         <Section width="large" noPadding="sides">
           <h2>Dette skjer på årets festival</h2>
 
@@ -51,7 +46,12 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
         </Section>
       </Section>
 
-      <Section centerContent width="full" verticalPadding="xlarge">
+      <Section
+        centerContent
+        width="full"
+        verticalPadding="xlarge"
+        background="lychee"
+      >
         <Section width="large" noPadding="sides">
           <h2>Årets utstillere</h2>
 

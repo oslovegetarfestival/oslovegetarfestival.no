@@ -58,6 +58,10 @@
   &-banana {
     background-color: var(--color-banana);
   }
+  &-kale {
+    background-color: var(--color-kale);
+    color: var(--color-almondmilk)
+  }
 }
 
 .-no-gutter {
