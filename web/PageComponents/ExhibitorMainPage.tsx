@@ -67,7 +67,7 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
       {groupedByType?.map(({ title, items }: ExhibitionItem) => (
         <Section width="large" verticalPadding="large" key={title}>
           <Flow>
-            <h2 className="section-header" id={title}>
+            <h2 className="sticky-section-header" id={title}>
               {title}
             </h2>
 
