@@ -6,6 +6,7 @@ import { Card } from "components/Card"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Button } from "components/Button"
 import { weekDayAndDate } from "utils/date"
+import { Seo } from "components/Seo"
 
 type Props = {
   [key: string]: any
@@ -54,6 +55,8 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
 
   return (
     <>
+      <Seo page={page} />
+
       <Section verticalPadding="large" noPadding="top">
         <h1 className="page-title">{page?.title}</h1>
         {page?.intro && <p className="lead">{page?.intro}</p>}

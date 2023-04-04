@@ -6,6 +6,7 @@ import { Button } from "components/Button"
 import { Card } from "components/Card"
 import { BackgroundVideo } from "components/BackgroundVideo"
 import { Image } from "components/Image"
+import { Seo } from "components/Seo"
 
 type Props = {
   [key: string]: any
@@ -14,6 +15,8 @@ type Props = {
 const FrontPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
+      <Seo page={page} isFrontPage />
+
       <FrontpageHero />
 
       <Section centerContent width="full" verticalPadding="xlarge">

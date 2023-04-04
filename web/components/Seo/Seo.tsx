@@ -20,7 +20,7 @@ type SeoProps = {
 
 export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
   const title = page?.seo?.title || page?.title || SITE_NAME
-  const siteName = isFrontPage ? "" : ` | ${SITE_NAME}`
+  const siteName = isFrontPage ? "" : ` → ${SITE_NAME}`
 
   const description = page?.seo?.description || page?.intro || ""
 
@@ -31,7 +31,7 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
 
   // TODO: Upload image
   const defaultImage = {
-    url: DEFAULT_SOME_IMAGE
+    url: DEFAULT_SOME_IMAGE,
   }
 
   const images = [defaultImage]
@@ -45,7 +45,7 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
       description={description}
       openGraph={{
         type: "website",
-        images
+        images,
       }}
       noindex={page?.seo?.hidden}
       nofollow={page?.seo?.hidden}

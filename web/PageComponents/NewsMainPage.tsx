@@ -3,6 +3,7 @@ import type { NextPage } from "next"
 import { Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Card } from "components/Card"
+import { Seo } from "components/Seo"
 
 type Props = {
   [key: string]: any
@@ -11,6 +12,8 @@ type Props = {
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
+      <Seo page={page} />
+
       <Section verticalPadding="large" noPadding="top">
         <h1 className="page-title">{page?.title}</h1>
         <p className="lead">{page?.intro}</p>

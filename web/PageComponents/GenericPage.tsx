@@ -3,6 +3,7 @@ import type { NextPage } from "next"
 import { Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Image } from "components/Image"
+import { Seo } from "components/Seo"
 
 type Props = {
   [key: string]: any
@@ -11,6 +12,8 @@ type Props = {
 const GenericPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
+      <Seo page={page} />
+
       <Section verticalPadding="large" noPadding="top">
         <Flow>
           <h1 className="page-title">{page?.title}</h1>
