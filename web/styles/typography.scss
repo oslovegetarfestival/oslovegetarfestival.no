@@ -16,7 +16,7 @@ $maxWidth: 1200px;
 
 
 html {
-  @include fluid-type($minWidth, 1000px, 18px, 22px);
+  @include fluid-type($minWidth, 1000px, 18px, 20px);
 }
 
 body {
