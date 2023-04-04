@@ -27,9 +27,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             <Card data={page?.promotedNews} />
           </Block>
 
-          <Button size="large" link="/aktuelt">
-            Se alle nyheter
-          </Button>
+          <Button link="/aktuelt">Se alle nyheter</Button>
         </Section>
       </Section>
 
@@ -43,9 +41,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             <Card data={page?.promotedEvents} type="eventWithDate" />
           </Block>
 
-          <Button size="large" link="program">
-            Se hele programmet
-          </Button>
+          <Button link="program">Se hele programmet</Button>
         </Section>
       </Section>
 
@@ -62,9 +58,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             <Card data={page?.promotedExhibitors} />
           </Block>
 
-          <Button size="large" link="utstillere">
-            Se alle utstillere
-          </Button>
+          <Button link="utstillere">Se alle utstillere</Button>
         </Section>
       </Section>
 
