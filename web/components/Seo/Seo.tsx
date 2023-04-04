@@ -27,7 +27,10 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
   const title = page?.seo?.title || page?.title || SITE_NAME
   const siteName = isFrontPage ? "" : ` → ${SITE_NAME}`
 
-  const description = page?.seo?.description || page?.intro || ""
+  const description =
+    page?.seo?.description ||
+    page?.intro ||
+    "Velkommen til Oslo Vegetarfestival 27.-28. mai 2023"
 
   // Ordinary main image
   const mainImage =
