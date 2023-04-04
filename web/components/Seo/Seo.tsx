@@ -2,12 +2,15 @@ import { NextSeo } from "next-seo"
 
 import { urlForImage } from "lib/sanity"
 
-import { DEFAULT_SOME_IMAGE, SITE_NAME } from "const/text"
-
 type SeoProps = {
   page?: {
     title?: string
     intro?: string
+    image?: {
+      asset?: {
+        _ref: string
+      }
+    }
     seo?: {
       title?: string
       description?: string
@@ -18,26 +21,42 @@ type SeoProps = {
   isFrontPage?: boolean
 }
 
+const SITE_NAME = "Oslo Vegetarfestival"
+
 export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
   const title = page?.seo?.title || page?.title || SITE_NAME
   const siteName = isFrontPage ? "" : ` → ${SITE_NAME}`
 
   const description = page?.seo?.description || page?.intro || ""
 
-  // Prepare image
-  const seoImageRef = page?.seo?.image
-  const seoImageUrl = seoImageRef ? urlForImage(seoImageRef)?.url() : null
-  const seoImage = seoImageUrl ? { url: seoImageUrl } : null
+  // Ordinary main image
+  const mainImage =
+    page?.image?.asset && urlForImage(page?.image)?.width(1200).fit("max").url()
 
-  // TODO: Upload image
-  const defaultImage = {
-    url: DEFAULT_SOME_IMAGE,
+  // SEO image
+  const seoImage =
+    page?.seo?.image?.asset &&
+    urlForImage(page?.seo?.image)?.width(1200).fit("max").url()
+
+  // Default image
+  // TODO: Find a better default image
+  const defaultImage =
+    "https://oslovegetarfestival.no/logo-default-some.png?v=1"
+
+  const images = []
+
+  if (mainImage != null) {
+    images.push({ url: mainImage })
   }
 
-  const images = [defaultImage]
   if (seoImage != null) {
-    images.unshift(seoImage)
+    images.push({ url: seoImage })
   }
+
+  if (images.length < 1) {
+    images.push({ url: defaultImage })
+  }
+  console.log("images", images)
 
   return (
     <NextSeo
@@ -45,6 +64,7 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
       description={description}
       openGraph={{
         type: "website",
+        //@ts-ignore
         images,
       }}
       noindex={page?.seo?.hidden}
