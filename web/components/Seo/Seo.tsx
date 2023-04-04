@@ -56,7 +56,6 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
   if (images.length < 1) {
     images.push({ url: defaultImage })
   }
-  console.log("images", images)
 
   return (
     <NextSeo
