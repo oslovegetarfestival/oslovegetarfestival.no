@@ -3,6 +3,7 @@ import { image } from "../parts/image";
 import { intro } from "../parts/intro";
 import { slug } from "../parts/slug";
 import { title } from "../parts/title";
+import { seo } from "../parts/seo";
 
 export const event = {
   name: "event",
@@ -33,6 +34,7 @@ export const event = {
       to: [{ type: "eventLocation" }],
     },
     contentBlocks,
+    seo,
   ],
 
   preview: {

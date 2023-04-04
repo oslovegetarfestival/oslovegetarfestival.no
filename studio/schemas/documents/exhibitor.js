@@ -1,6 +1,7 @@
 import { contentBlocks } from "../parts/contentBlocks";
 import { image } from "../parts/image";
 import { intro } from "../parts/intro";
+import { seo } from "../parts/seo";
 import { slug } from "../parts/slug";
 import { title } from "../parts/title";
 
@@ -30,6 +31,7 @@ export const exhibitor = {
       type: "boolean",
     },
     contentBlocks,
+    seo,
   ],
 
   preview: {

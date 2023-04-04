@@ -1,4 +1,5 @@
 import { image } from "../parts/image";
+import { seo } from "../parts/seo";
 import { title } from "../parts/title";
 
 export const frontPage = {
@@ -93,6 +94,7 @@ export const frontPage = {
         },
       ],
     },
+    seo,
   ],
 
   preview: {
