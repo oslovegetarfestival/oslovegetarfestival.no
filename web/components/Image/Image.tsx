@@ -19,7 +19,7 @@ type Props = {
 
 export const Image = ({
   imageObject,
-  maxWidth = 660,
+  maxWidth = 700,
   imageLoading = "lazy",
   hideCaption,
   isFeatureImage,
@@ -31,7 +31,7 @@ export const Image = ({
   if (!imageObject || !imageObject?.asset) return null
 
   let selectedWidth = maxWidth
-  if (imageObject?.size === "small") selectedWidth = 660
+  if (imageObject?.size === "small") selectedWidth = 700
   if (imageObject?.size === "tiny") selectedWidth = 450
 
   const imageClass = classNames(
@@ -44,15 +44,15 @@ export const Image = ({
       <picture className={styles.picture} {...props}>
         <img
           src={urlForImage(imageObject)
-            .width(1000)
+            .width(1380)
             .auto("format")
-            .height(650)
+            .height(800)
             .url()}
           alt={altText}
           loading="eager"
           className={imageClass}
-          width={1000}
-          height="650"
+          width={1380}
+          height="800"
         />
         {!hideCaption && caption && (
           <figcaption aria-hidden="true" className={styles.imageCredit}>

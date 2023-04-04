@@ -24,7 +24,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
         </Flow>
       </Section>
 
-      <Section verticalPadding="tiny" noPadding="top">
+      <Section width="large" verticalPadding="tiny" noPadding="top">
         <Image imageObject={page?.image} isFeatureImage />
       </Section>
 

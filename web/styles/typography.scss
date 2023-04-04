@@ -16,13 +16,12 @@ $maxWidth: 1200px;
 
 
 html {
-  // @include fluid-type($minWidth, 1000px, 16px, 20px);
+  @include fluid-type($minWidth, 1000px, 18px, 22px);
 }
 
 body {
   font-family: "Jost", sans-serif;
   line-height: 1.5;
-  font-size: 1.2rem;
 }
 
 h1,
