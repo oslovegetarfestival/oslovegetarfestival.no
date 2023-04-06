@@ -1,17 +1,18 @@
 import Link from "next/link"
-import { urlForImage } from "lib/sanity"
-import Image from "next/future/image"
 
 import { Flow } from "components/Layout"
 
 import styles from "./Card.module.scss"
 import { fullDate, startAndEndTime } from "utils/date"
 import { weekDayAndStartEndTime } from "utils/date"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type Item = {
   image: {
     altText?: string
-    asset: object
+    asset: {
+      _ref: string
+    }
   }
   title: string
   intro: string
@@ -74,23 +75,12 @@ export const Card = ({ data, type }: Props) => {
         <Link key={item._id} href={item.slug?.current}>
           <a className={styles.link}>
             <div className={styles.wrap}>
-              <picture className={styles.imageWrap}>
-                {item?.image?.asset && (
-                  <Image
-                    src={urlForImage(item.image)
-                      .width(400)
-                      .height(320)
-                      .fit("max")
-                      .auto("format")
-                      .url()}
-                    alt={item.image?.altText ?? ""}
-                    className={styles.image}
-                    width={400}
-                    height={320}
-                    sizes="25vw"
-                  />
-                )}
-              </picture>
+              <SanityImageWrap
+                image={item?.image}
+                width={500}
+                height={380}
+                isHideCaption
+              />
               <div className={styles.content}>
                 <p className={styles.metadata}>
                   {createEventDate({ type: type, item: item })}

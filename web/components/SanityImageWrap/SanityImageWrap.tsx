@@ -26,9 +26,10 @@ type Props = {
   height?: number
   isRoundCorners?: boolean
   isFeaturedImage?: boolean
+  isHideCaption?: boolean
   fill?: "cover" | "contain"
   loading?: "eager" | "lazy"
-  [x: string]: any
+  style?: object
 }
 
 export const SanityImageWrap = ({
@@ -37,8 +38,10 @@ export const SanityImageWrap = ({
   height,
   isRoundCorners = true,
   isFeaturedImage,
+  isHideCaption,
   fill = "cover",
   loading = "lazy",
+  style,
 }: Props) => {
   const imageId = image?.asset?._ref
   if (!imageId) return null
@@ -69,9 +72,10 @@ export const SanityImageWrap = ({
         height={height}
         mode={fill}
         className={imageClass}
+        style={style}
         alt={image?.altText ?? ""}
       />
-      {image?.caption && (
+      {!isHideCaption && image?.caption && (
         <figcaption aria-hidden="true" className={captionClass}>
           {image?.caption}
         </figcaption>

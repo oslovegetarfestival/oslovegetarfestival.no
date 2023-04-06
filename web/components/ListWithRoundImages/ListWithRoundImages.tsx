@@ -1,11 +1,9 @@
-import Image from "next/future/image"
-import { urlForImage } from "lib/sanity"
-
 import styles from "./ListWithRoundImages.module.scss"
 import { Block } from "components/Layout"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type ListItem = {
-  image?: { altText: string; asset: object }
+  image: { altText: string; asset: { _ref: string } }
   intro: string
   subTitle: string
   title: string
@@ -34,21 +32,14 @@ export const ListWithRoundImages = ({ data }: Props) => {
         {list?.map((item) => (
           <div key={item._key}>
             <Block bottom="4">
-              <picture className={styles.imageWrap}>
-                {item?.image?.asset && (
-                  <Image
-                    src={urlForImage(item?.image)
-                      .width(500)
-                      .height(500)
-                      .fit("max")
-                      .auto("format")
-                      .url()}
-                    alt={item?.image?.altText ?? ""}
-                    width="250"
-                    height="250"
-                  />
-                )}
-              </picture>
+              <div className={styles.imageWrap}>
+                <SanityImageWrap
+                  image={item?.image}
+                  width={500}
+                  height={500}
+                  isHideCaption
+                />
+              </div>
             </Block>
 
             <h3>{item.title}</h3>

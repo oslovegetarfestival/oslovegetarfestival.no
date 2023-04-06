@@ -5,8 +5,8 @@ import { Block, Flex, Section } from "components/Layout"
 import { Button } from "components/Button"
 import { Card } from "components/Card"
 import { BackgroundVideo } from "components/BackgroundVideo"
-import { Image } from "components/Image"
 import { Seo } from "components/Seo"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type Props = {
   [key: string]: any
@@ -73,24 +73,31 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <Flex justify="center" align="center" gap="medium" wrap>
             {page?.sponsorBlock?.sponsors?.map(
               ({
-                title = "",
                 image,
                 url = "#",
                 _key,
               }: {
                 title: string
-                image: object
+                image: {
+                  altText?: string
+                  asset: {
+                    _ref: string
+                  }
+                }
                 url: string
                 _key: string
               }) => (
-                <a href={url} key={_key} style={{ maxWidth: "300px" }}>
-                  <Image
-                    //@ts-ignore
-                    imageObject={image}
-                    title={title}
-                    maxWidth={300}
-                    alt={title}
+                <a href={url} key={_key}>
+                  <SanityImageWrap
+                    image={image}
                     isRoundCorners={false}
+                    width={300}
+                    style={{
+                      maxWidth: "300px",
+                      maxHeight: "150px",
+                      width: "auto",
+                      height: "auto",
+                    }}
                   />
                 </a>
               )
