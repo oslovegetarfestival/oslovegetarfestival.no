@@ -2,18 +2,14 @@ import type { NextPage } from "next"
 
 import { Block, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
-import { Image } from "components/Image"
 import { fullDate } from "utils/date"
 import { SanityImageWrap } from "components/SanityImageWrap"
-import { SanityImage } from "sanity-image"
-// import { SanityImage } from "sanity-image"
 
 type Props = {
   [key: string]: any
 }
 
 const NewsPage: NextPage<Props> = ({ page = {} }) => {
-  console.log("page", page)
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
@@ -29,22 +25,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">
-        {/* <SanityImage
-          // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
-          id={page?.image?.asset?._ref}
-          baseUrl="https://cdn.sanity.io/images/y22dlo4f/production/"
-          alt="Demo image"
-        /> */}
-        <SanityImageWrap
-          image={page?.image}
-          width="1380"
-          height="800"
-          mode="cover"
-        />
-      </Section>
-
-      <Section width="large" verticalPadding="tiny" noPadding="top">
-        <Image imageObject={page?.image} isFeatureImage />
+        <SanityImageWrap image={page?.image} isFeaturedImage />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
