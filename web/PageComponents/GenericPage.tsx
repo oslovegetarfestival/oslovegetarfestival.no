@@ -2,8 +2,8 @@ import type { NextPage } from "next"
 
 import { Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
-import { Image } from "components/Image"
 import { Seo } from "components/Seo"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type Props = {
   [key: string]: any
@@ -22,7 +22,7 @@ const GenericPage: NextPage<Props> = ({ page = {} }) => {
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">
-        <Image imageObject={page?.image} isFeatureImage />
+        <SanityImageWrap image={page?.image} isFeaturedImage />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (
