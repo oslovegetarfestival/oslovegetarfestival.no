@@ -1,11 +1,10 @@
 import classNames from "classnames"
-import Image from "next/future/image"
-import { urlForImage } from "lib/sanity"
 
 import { Flow, Grid, Section } from "components/Layout"
 import { Button } from "components/Button"
 
 import styles from "./SectionWithColor.module.scss"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type Props = {
   data: {
@@ -13,6 +12,9 @@ type Props = {
     intro: string
     image: {
       altText?: string
+      asset: {
+        _ref: string
+      }
     }
     bgColor: "banana" | "lychee"
     isReverse?: boolean
@@ -36,24 +38,18 @@ export const SectionWithColor = ({ data }: Props) => {
     bgColor ? styles[`-background-${bgColor}`] : false
   )
 
-  const imageClass = classNames(styles.image)
-
   return (
     <Section width="large" noGutter>
       <Grid verticalCenter noGutter reverse={isReverse}>
-        <picture className={imageWrapClass}>
-          <Image
-            src={urlForImage(image)
-              .width(800)
-              .height(800)
-              .fit("max")
-              .auto("format")
-              .url()}
-            alt={image?.altText ?? ""}
-            className={imageClass}
-            fill
+        <div className={imageWrapClass}>
+          <SanityImageWrap
+            image={image}
+            width={800}
+            height={800}
+            isHideCaption
+            isRoundCorners={false}
           />
-        </picture>
+        </div>
 
         <div className={textWrapClass}>
           <Flow>

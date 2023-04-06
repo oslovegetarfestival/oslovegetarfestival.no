@@ -36,19 +36,6 @@
   }
 }
 
-.imageWrap {
-  background-color: var(--color-cucumber);
-  display: block;
-  // aspect-ratio: 400/320; // This should be identical to the image size
-  position: relative;
-  border-radius: var(--border-radius);
-}
-
-.image {
-  border-radius: var(--border-radius);
-  width: 100%;
-}
-
 .date {
   background-color: var(--color-apple);
   color: white;

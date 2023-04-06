@@ -1,21 +1,23 @@
 .imageWrap {
   height: 100%;
-  width: 100%;
-  position: relative;
-  background-color: var(--color-kale);
 
   @media (max-width: 799px) {
     aspect-ratio: 3/2;
   }
-}
 
-.image {
-  object-fit: cover;
-  height: 100%;
+  // Needed to target img inside SanityImageWrap
+  :global(picture) {
+    height: 100%;
+  }
 
-  @media (max-width: 799px) {
-    padding: var(--spacing-3);
-    border-radius: var(--border-radius-large);
+  :global(img) {
+    object-fit: cover;
+    height: 100%;
+
+    @media (max-width: 799px) {
+      padding: var(--spacing-3);
+      border-radius: var(--border-radius-large);
+    }
   }
 }
 
