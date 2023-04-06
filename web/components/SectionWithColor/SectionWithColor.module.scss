@@ -6,6 +6,10 @@
   }
 
   // Needed to target img inside SanityImageWrap
+  :global(picture) {
+    height: 100%;
+  }
+
   :global(img) {
     object-fit: cover;
     height: 100%;

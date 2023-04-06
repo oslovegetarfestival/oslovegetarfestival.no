@@ -6,6 +6,7 @@ import { SectionWithColor } from "components/SectionWithColor"
 import { Accordion } from "components/Accordion"
 import { ListWithRoundImages } from "components/ListWithRoundImages"
 import { RichText } from "components/RichText"
+import { SanityImageWrap } from "components/SanityImageWrap"
 
 type Props = {
   data: {
@@ -17,8 +18,6 @@ type Props = {
 // This is a helper for connecting Sanity block modules with the corresponding component
 export const SanityBlockModule = ({ data }: Props) => {
   const { _type: blockType } = data
-
-  // console.log("data", data)
 
   // Rich text
   if (blockType === "richTextObject") {
@@ -34,7 +33,7 @@ export const SanityBlockModule = ({ data }: Props) => {
     return (
       <Section width="small" verticalPadding="medium">
         {/* @ts-ignore */}
-        <Image imageObject={data} alt="" />
+        <SanityImageWrap image={data} />
       </Section>
     )
   }

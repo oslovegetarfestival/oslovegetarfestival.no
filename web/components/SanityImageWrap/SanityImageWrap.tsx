@@ -8,6 +8,7 @@ type Props = {
   image: {
     altText?: string
     caption?: string
+    size?: "tiny" | "small"
     asset: {
       _ref: string
     }
@@ -49,6 +50,14 @@ export const SanityImageWrap = ({
   if (isFeaturedImage) {
     width = 1300
     height = 800
+  }
+
+  if (image?.size === "tiny") {
+    width = 450
+  }
+
+  if (image?.size === "small") {
+    width = 700
   }
 
   const imageClass = classNames(
