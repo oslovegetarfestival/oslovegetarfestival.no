@@ -1,4 +1,3 @@
-import { Image } from "components/Image"
 import { Quote } from "components/Quote"
 import { Section } from "components/Layout"
 import { Video } from "components/Video"
