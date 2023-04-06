@@ -1,0 +1,1 @@
+export { SanityImageWrap } from "./SanityImageWrap"
