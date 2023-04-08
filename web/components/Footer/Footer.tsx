@@ -11,7 +11,7 @@ export const Footer = () => {
       <img src="/footer.svg" alt="" />
 
       <footer className={styles.footer}>
-        <Section centerContent verticalPadding="tiny">
+        <Section centerContent>
           <a href="#">Til toppen ↑</a>
         </Section>
         <Section width="full" verticalPadding="large">
