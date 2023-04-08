@@ -1,18 +1,35 @@
-.wrap {
-  background: url('./frontpage-hero.png') top right no-repeat;
-  margin-top: -100px;
-  padding-top: 100px;
+.heroImage {
+  position: absolute;
+  right: -36px;
+  top: 80px;
+  z-index: -1;
+  width: 1000px;
+  max-width: none;
 
-  @media(max-width: 1100px) {
-    background-position-x: 15rem;
+  @media(max-width: 1250px) {
+    right: auto;
+    left: 30%;
+  }
+
+  @media(max-width: 750px) {
+    left: 50%;
+    top: -10%;
+  }
+
+  @media(max-width: 400px) {
+    left: 75%;
+    top: -10%;
   }
 }
 
 .logo {
   line-height: 0.9;
   font-size: 5rem;
-  font-size: clamp(4rem, 10vw, 6rem); 
   font-family: 'Strike';
+
+  @media(max-width: 750px) {
+    font-size: 4rem;
+  }  
 
   span {
     display: block;
@@ -20,7 +37,10 @@
 }
 
 .date {
-  font-size: 2.5rem;
-  font-size: clamp(1.7rem, 10vw, 2.5rem); 
+  font-size: 2.1rem;
   line-height: 1.2;
+
+  @media(max-width: 750px) {
+    font-size: 1.8rem;
+  }   
 }

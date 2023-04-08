@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { useRouter } from "next/router"
 
 import { Flex, Section } from "components/Layout"
 import { Button } from "components/Button"
-
-import logoCandy from "./logo-candy.png"
 
 import styles from "./Header.module.scss"
 import useBodyFreeze from "hooks/useBodyFreeze"
@@ -38,7 +35,12 @@ export const Header = ({ isFrontpage }: Props) => {
     <header>
       <Section width="full" verticalPadding="small">
         {!isFrontpage && (
-          <img src="/logo-candy.svg" alt="" className={styles.logoCandy} />
+          <img
+            src="/logo-candy.svg"
+            alt=""
+            className={styles.logoCandy}
+            aria-hidden
+          />
         )}
 
         <Flex justify={isFrontpage ? "end" : "spaceBetween"} align="start">

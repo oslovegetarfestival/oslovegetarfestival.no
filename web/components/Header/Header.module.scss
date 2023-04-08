@@ -1,4 +1,4 @@
-$breakpoint: 1050px;
+$breakpoint: 1070px;
 
 .logo {
   line-height: 0.9;
@@ -23,13 +23,12 @@ $breakpoint: 1050px;
     transform: translate3d(-80%, 30%, 0);
     opacity: 0;
   }
-  
+
   100% {
     transform: translate3d(0%, 0, 0);
     opacity: 1;
   }
 }
-
 
 .logoCandy {
   position: absolute;
@@ -39,7 +38,6 @@ $breakpoint: 1050px;
   width: 530px;
   animation: animate-clouds 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   will-change: auto;
-
 }
 
 .menuList {
@@ -54,7 +52,7 @@ $breakpoint: 1050px;
     margin-top: 20vh;
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
-  }  
+  }
 }
 
 .menuItem {
@@ -92,7 +90,7 @@ $breakpoint: 1050px;
     bottom: 0;
     left: 0;
     z-index: 9;
-    background: var(--color-lychee);   
-    overflow-y: scroll; 
+    background: var(--color-lychee);
+    overflow-y: scroll;
   }
 }
