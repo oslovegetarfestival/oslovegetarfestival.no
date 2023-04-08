@@ -3,17 +3,17 @@ import Link from "next/link"
 import { Grid, Flex, Section, Flow } from "components/Layout"
 
 import styles from "./Footer.module.scss"
-import { Button } from "components/Button"
 import { Newsletter } from "components/Newsletter"
 
 export const Footer = () => {
   return (
     <>
-      <Section centerContent verticalPadding="tiny">
-        <a href="#">Til toppen ↑</a>
-      </Section>
+      <img src="/footer.svg" alt="" />
 
       <footer className={styles.footer}>
+        <Section centerContent verticalPadding="tiny">
+          <a href="#">Til toppen ↑</a>
+        </Section>
         <Section width="full" verticalPadding="large">
           <Flow>
             <Grid>
