@@ -18,11 +18,28 @@ $breakpoint: 1050px;
   margin-top: var(--spacing-4);
 }
 
+@keyframes animate-clouds {
+  0% {
+    transform: translate3d(-80%, 30%, 0);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+}
+
+
 .logoCandy {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -60px;
+  top: -60px;
   z-index: -1;
+  width: 450px;
+  animation: animate-clouds 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  will-change: auto;
+
 }
 
 .menuList {

@@ -38,15 +38,7 @@ export const Header = ({ isFrontpage }: Props) => {
     <header>
       <Section width="full" verticalPadding="small">
         {!isFrontpage && (
-          <div className={styles.logoCandy}>
-            <Image
-              src={logoCandy}
-              alt=""
-              width="308"
-              height="148px"
-              className={styles.logoCandy}
-            />
-          </div>
+          <img src="/logo-candy.svg" alt="" className={styles.logoCandy} />
         )}
 
         <Flex justify={isFrontpage ? "end" : "spaceBetween"} align="start">
