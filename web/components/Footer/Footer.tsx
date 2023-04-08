@@ -8,7 +8,11 @@ import { Newsletter } from "components/Newsletter"
 export const Footer = () => {
   return (
     <>
-      <img src="/footer.svg" alt="" />
+      <img
+        src="/footer.svg"
+        alt=""
+        style={{ maxWidth: "none", width: "102%", marginLeft: "-1%" }}
+      />
 
       <footer className={styles.footer}>
         <Section centerContent>
