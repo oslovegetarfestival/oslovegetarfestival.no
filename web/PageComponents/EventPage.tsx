@@ -6,6 +6,7 @@ import { SanityBlockModule } from "components/SanityBlockModule"
 import { weekDayAndStartEndTime } from "utils/date"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
+import Link from "next/link"
 
 type Props = {
   [key: string]: any
@@ -17,6 +18,11 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
       <Seo page={page} />
 
       <Section verticalPadding="large" noPadding="top">
+        <Block top="4" bottom="4">
+          <Link href="/program">
+            <a>← Program</a>
+          </Link>
+        </Block>
         <Block bottom="2">
           <p className="meta-details">
             {weekDayAndStartEndTime({

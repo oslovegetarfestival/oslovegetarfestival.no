@@ -4,6 +4,7 @@ import { Block, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { fullDate } from "utils/date"
 import { SanityImageWrap } from "components/SanityImageWrap"
+import Link from "next/link"
 
 type Props = {
   [key: string]: any
@@ -13,6 +14,11 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
   return (
     <>
       <Section verticalPadding="large" noPadding="top">
+        <Block top="4" bottom="4">
+          <Link href="/aktuelt">
+            <a>← Aktuelt</a>
+          </Link>
+        </Block>
         <Block bottom="2">
           <p className="meta-details">
             Publisert: {fullDate(page?.publishedDate)}
