@@ -11,7 +11,12 @@ export const Footer = () => {
       <img
         src="/footer.svg"
         alt=""
-        style={{ maxWidth: "none", width: "102%", marginLeft: "-1%" }}
+        style={{
+          maxWidth: "none",
+          width: "102%",
+          marginLeft: "-1%",
+          marginBottom: "-1px",
+        }}
       />
 
       <footer className={styles.footer}>
