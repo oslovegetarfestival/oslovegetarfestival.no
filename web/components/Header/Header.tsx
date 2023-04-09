@@ -40,6 +40,7 @@ export const Header = ({ isFrontpage }: Props) => {
             alt=""
             className={styles.logoCandy}
             aria-hidden
+            loading="eager"
           />
         )}
 

@@ -10,6 +10,7 @@ export const FrontpageHero = () => {
         alt=""
         aria-hidden
         className={styles.heroImage}
+        loading="eager"
       />
 
       <Section width="large" verticalPadding="large" noPadding="top">

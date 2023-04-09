@@ -17,6 +17,7 @@ export const Footer = () => {
           marginLeft: "-1%",
           marginBottom: "-1px",
         }}
+        loading="lazy"
       />
 
       <footer className={styles.footer}>
