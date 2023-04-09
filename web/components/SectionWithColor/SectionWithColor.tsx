@@ -44,8 +44,8 @@ export const SectionWithColor = ({ data }: Props) => {
         <div className={imageWrapClass}>
           <SanityImageWrap
             image={image}
-            width={800}
-            height={800}
+            width={500}
+            height={500}
             isHideCaption
             isRoundCorners={false}
           />

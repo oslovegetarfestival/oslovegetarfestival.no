@@ -35,8 +35,8 @@ export const ListWithRoundImages = ({ data }: Props) => {
               <div className={styles.imageWrap}>
                 <SanityImageWrap
                   image={item?.image}
-                  width={500}
-                  height={500}
+                  width={250}
+                  height={250}
                   isHideCaption
                 />
               </div>

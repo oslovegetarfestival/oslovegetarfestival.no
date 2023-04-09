@@ -32,7 +32,7 @@ export const SanityBlockModule = ({ data }: Props) => {
     return (
       <Section width="small" verticalPadding="medium">
         {/* @ts-ignore */}
-        <SanityImageWrap image={data} />
+        <SanityImageWrap image={data} width={700} />
       </Section>
     )
   }

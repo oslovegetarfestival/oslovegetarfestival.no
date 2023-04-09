@@ -77,8 +77,8 @@ export const Card = ({ data, type }: Props) => {
             <div className={styles.wrap}>
               <SanityImageWrap
                 image={item?.image}
-                width={500}
-                height={380}
+                width={468} // = Largest width on any screen size
+                height={352}
                 isHideCaption
               />
               <div className={styles.content}>
