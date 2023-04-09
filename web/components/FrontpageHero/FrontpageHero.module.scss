@@ -1,9 +1,8 @@
 .heroImage {
   position: absolute;
   right: -36px;
-  top: 80px;
   z-index: -1;
-  width: 1000px;
+  height: 100%;
   max-width: none;
 
   @media(max-width: 1250px) {
@@ -13,12 +12,10 @@
 
   @media(max-width: 750px) {
     left: 50%;
-    top: -10%;
   }
 
   @media(max-width: 400px) {
     left: 75%;
-    top: -10%;
   }
 }
 
