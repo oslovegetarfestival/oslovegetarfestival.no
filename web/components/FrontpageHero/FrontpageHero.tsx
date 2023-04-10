@@ -29,6 +29,7 @@ export const FrontpageHero = () => {
             size="large"
             color="orange"
             link="https://tikkio.com/tickets/30345-oslo-vegetarfestival-2023"
+            isOpenInNewWindow
           >
             Kjøp billett
           </Button>

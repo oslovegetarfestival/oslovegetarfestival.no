@@ -9,6 +9,7 @@ type Props = {
   link?: string
   isArrow?: boolean
   type?: "button" | "submit"
+  isOpenInNewWindow?: boolean
   onClick?: () => void
   children: React.ReactNode
 }
@@ -19,6 +20,7 @@ export const Button = ({
   isArrow = true,
   link,
   type = "button",
+  isOpenInNewWindow = false,
   children,
   onClick,
 }: Props) => {
@@ -46,7 +48,14 @@ export const Button = ({
 
     // External link
     return (
-      <a onClick={onClick} href={link} className={buttonClass}>
+      // eslint-disable-next-line react/jsx-no-target-blank
+      <a
+        onClick={onClick}
+        href={link}
+        className={buttonClass}
+        target={isOpenInNewWindow ? "_blank" : "_self"}
+        rel={isOpenInNewWindow ? "noreferrer" : ""}
+      >
         {children}
       </a>
     )

@@ -83,6 +83,7 @@ export const Header = ({ isFrontpage }: Props) => {
                   color="orange"
                   size="small"
                   link="https://tikkio.com/tickets/30345-oslo-vegetarfestival-2023"
+                  isOpenInNewWindow
                 >
                   Kjøp billett
                 </Button>
