@@ -60,7 +60,7 @@ export const Header = ({ isFrontpage }: Props) => {
 
           <nav
             className={styles.menu}
-            style={{ display: isMobileMenuOpen ? "block" : "" }}
+            style={{ display: isMobileMenuOpen ? "block" : " " }}
           >
             <ul className={styles.menuList}>
               <li className={styles.menuItem}>
