@@ -18,6 +18,8 @@ export const Footer = () => {
             marginLeft: "-1%",
             marginBottom: "-1px",
           }}
+          width="1833"
+          height="498"
           loading="lazy"
         />
       </div>
