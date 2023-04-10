@@ -88,16 +88,14 @@ export const Header = ({ isFrontpage }: Props) => {
           {/* Mobile menu */}
           <div className={styles.mobileToggle}>
             <Button
-              size="small"
+              size="medium"
               color="green"
               isArrow={false}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)
               }}
             >
-              <span className="h3">
-                {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
-              </span>
+              {isMobileMenuOpen ? "Lukk ✕" : "Meny ☰"}
             </Button>
           </div>
         </Flex>
