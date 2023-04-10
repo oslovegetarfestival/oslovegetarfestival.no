@@ -6,7 +6,7 @@ $maxWidth: 1200px;
 
 
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Strike';
   src: url('/fonts/Strike-Black.eot');
   src: url('/fonts/Strike-Black.eot?#iefix') format('embedded-opentype'), url('/fonts/Strike-Black.woff2') format('woff2'), url('/fonts/Strike-Black.woff') format('woff');
@@ -15,7 +15,7 @@ $maxWidth: 1200px;
 }
 
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
@@ -26,7 +26,7 @@ $maxWidth: 1200px;
        
 }
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Jost';
   font-style: italic;
   font-weight: 400;
@@ -37,7 +37,7 @@ $maxWidth: 1200px;
        
 }
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 500;
@@ -48,7 +48,7 @@ $maxWidth: 1200px;
        
 }
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
