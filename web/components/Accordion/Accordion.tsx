@@ -24,7 +24,9 @@ export const Accordion = ({ title, list }: Props) => {
             <details key={_key} className={styles.details}>
               <summary className={styles.summary}>
                 <Flex align="center" justify="spaceBetween" gap="small">
-                  <h3 className="h4">{title}</h3>
+                  <h3 className="h5">
+                    <strong>{title}</strong>
+                  </h3>
 
                   {/* Icon from https://reactsvgicons.com */}
                   <svg

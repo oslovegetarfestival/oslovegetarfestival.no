@@ -58,6 +58,12 @@ h4,
   font-weight: 600;
 }
 
+h5,
+.h5 {
+  @include fluid-type($minWidth, 1000px, 18px, 20px);
+  font-weight: normal;
+}
+
 p {
   line-height: 1.5;
 }
