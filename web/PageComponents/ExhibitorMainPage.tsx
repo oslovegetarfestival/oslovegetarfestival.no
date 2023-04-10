@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Flex, Flow, Section } from "components/Layout"
+import { Block, Flex, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Card } from "components/Card"
 import { Button } from "components/Button"
@@ -56,9 +56,10 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large">
-        <Flex align="center" gap="small">
+        <Block bottom="2">
           <p className="font-strike">Hopp til: </p>
-
+        </Block>
+        <Flex align="center" gap="small" wrap>
           {groupedByType?.map(({ title }) => (
             <Button size="small" isArrow={false} key={title} link={`#${title}`}>
               {title}
