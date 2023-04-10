@@ -25,7 +25,7 @@ export const FrontpageHero = () => {
         </div>
 
         <Block top="7">
-          <Button size="large" color="red" link="/billetter">
+          <Button size="large" color="orange" link="/billetter">
             Kjøp billetter
           </Button>
         </Block>

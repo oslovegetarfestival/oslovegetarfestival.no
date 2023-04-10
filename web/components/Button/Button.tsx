@@ -5,7 +5,7 @@ import styles from "./Button.module.scss"
 
 type Props = {
   size?: "small" | "medium" | "large"
-  color?: "red" | "green" | "white"
+  color?: "orange" | "green" | "white"
   link?: string
   isArrow?: boolean
   type?: "button" | "submit"

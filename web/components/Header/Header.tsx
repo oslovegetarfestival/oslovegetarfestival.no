@@ -81,7 +81,7 @@ export const Header = ({ isFrontpage }: Props) => {
               <li className={styles.menuItem}>
                 <Button
                   isArrow={false}
-                  color="red"
+                  color="orange"
                   size="small"
                   link="/billetter"
                 >
@@ -94,7 +94,7 @@ export const Header = ({ isFrontpage }: Props) => {
           <div className={styles.mobileToggle}>
             <Button
               size="small"
-              color="red"
+              color="orange"
               isArrow={false}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)

@@ -29,12 +29,12 @@
 }
 
 // Colors
-.color--red {
-  background-color: var(--color-apple);
-  color: var(--color-almondmilk);
+.color--orange {
+  background-color: var(--color-orange);
+  color: var(--color-kale);
 
   &:hover {
-    background-color: var(--color-tomato);
+    background-color: var(--color-peach);
   }
 }
 
