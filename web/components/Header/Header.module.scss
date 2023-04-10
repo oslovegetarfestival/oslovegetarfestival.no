@@ -49,7 +49,7 @@ $breakpoint: 1070px;
   @media (max-width: $breakpoint) {
     display: block;
     text-align: right;
-    margin-top: 20vh;
+    margin-top: 10vh;
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
   }
@@ -72,9 +72,10 @@ $breakpoint: 1070px;
 }
 
 .mobileToggle {
-  position: relative;
+  position: fixed;
   z-index: 99;
-  text-align: right;
+  right: 16px;
+  top: 24px;
 
   @media (min-width: calc($breakpoint + 1px )) {
     display: none;
@@ -84,7 +85,7 @@ $breakpoint: 1070px;
 .menu {
   @media (max-width: $breakpoint) {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
