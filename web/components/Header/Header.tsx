@@ -63,22 +63,46 @@ export const Header = ({ isFrontpage }: Props) => {
             style={{ display: isMobileMenuOpen ? "block" : " " }}
           >
             <ul className={styles.menuList}>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="1"
+              >
                 <Link href="/program">Program</Link>
               </li>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="2"
+              >
                 <Link href="/utstillere">Utstillere</Link>
               </li>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="3"
+              >
                 <Link href="/praktisk-info">Praktisk info</Link>
               </li>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="4"
+              >
                 <Link href="/bli-frivillig">Bli frivillig</Link>
               </li>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="5"
+              >
                 <Link href="/english">English</Link>
               </li>
-              <li className={styles.menuItem}>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="6"
+              >
                 <Button
                   color="orange"
                   size="small"
