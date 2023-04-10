@@ -49,7 +49,7 @@ $breakpoint: 1070px;
   @media (max-width: $breakpoint) {
     display: block;
     text-align: right;
-    margin-top: 10vh;
+    margin-top: var(--spacing-11);
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
   }
