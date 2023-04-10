@@ -75,7 +75,7 @@ $breakpoint: 1070px;
   position: fixed;
   z-index: 99;
   right: 16px;
-  top: 24px;
+  top: 16px;
 
   @media (min-width: calc($breakpoint + 1px )) {
     display: none;
