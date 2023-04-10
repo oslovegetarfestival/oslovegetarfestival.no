@@ -84,7 +84,7 @@ export const Footer = () => {
                   </a>
                 </Link>
               </p>
-              <Link href="/personvern-og-cookies">
+              <Link href="/personvern">
                 <a className="link">Personvern og cookies</a>
               </Link>
             </Flex>
