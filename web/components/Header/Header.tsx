@@ -79,8 +79,12 @@ export const Header = ({ isFrontpage }: Props) => {
                 <Link href="/english">English</Link>
               </li>
               <li className={styles.menuItem}>
-                <Button color="orange" size="small" link="/billetter">
-                  Kjøp billetter
+                <Button
+                  color="orange"
+                  size="small"
+                  link="https://tikkio.com/tickets/30345-oslo-vegetarfestival-2023"
+                >
+                  Kjøp billett
                 </Button>
               </li>
             </ul>

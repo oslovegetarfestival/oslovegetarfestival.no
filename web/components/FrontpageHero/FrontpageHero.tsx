@@ -25,8 +25,12 @@ export const FrontpageHero = () => {
         </div>
 
         <Block top="7">
-          <Button size="large" color="orange" link="/billetter">
-            Kjøp billetter
+          <Button
+            size="large"
+            color="orange"
+            link="https://tikkio.com/tickets/30345-oslo-vegetarfestival-2023"
+          >
+            Kjøp billett
           </Button>
         </Block>
       </Section>
