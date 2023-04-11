@@ -46,7 +46,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             <Card data={page?.promotedEvents} type="eventWithDate" />
           </Block>
 
-          <Button link="program">Se hele programmet</Button>
+          <Button link="/program">Se hele programmet</Button>
         </Section>
       </Section>
 
@@ -64,8 +64,8 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           </Block>
 
           <Flex justify="center" wrap gap="small">
-            <Button link="utstillere">Se alle utstillere</Button>
-            <Button link="info-til-utstillere">Bli utstiller</Button>
+            <Button link="/utstillere">Se alle utstillere</Button>
+            <Button link="/bli-utstiller">Bli utstiller</Button>
           </Flex>
         </Section>
       </Section>
