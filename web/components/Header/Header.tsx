@@ -44,8 +44,11 @@ export const Header = ({ isFrontpage }: Props) => {
           />
         )}
 
-        <Flex justify={isFrontpage ? "end" : "spaceBetween"} align="start">
-          {!isFrontpage && (
+        <Flex
+          justify={isFrontpage && !isMobileMenuOpen ? "end" : "spaceBetween"}
+          align="start"
+        >
+          {(!isFrontpage || isMobileMenuOpen) && (
             <p className="h1">
               <Link href="/">
                 <a className={styles.logo} title="Til forsiden">
