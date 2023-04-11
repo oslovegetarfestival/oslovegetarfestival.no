@@ -38,6 +38,7 @@ export const ListWithRoundImages = ({ data }: Props) => {
                   width={250}
                   height={250}
                   isHideCaption
+                  isRoundCorners={false}
                 />
               </div>
             </Block>
