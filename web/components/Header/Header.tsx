@@ -96,12 +96,19 @@ export const Header = ({ isFrontpage }: Props) => {
                 data-animate-in
                 data-animation-order="5"
               >
-                <Link href="/english">English</Link>
+                <Link href="/om-oss">Om oss</Link>
               </li>
               <li
                 className={styles.menuItem}
                 data-animate-in
                 data-animation-order="6"
+              >
+                <Link href="/english">English</Link>
+              </li>
+              <li
+                className={styles.menuItem}
+                data-animate-in
+                data-animation-order="7"
               >
                 <Button
                   color="orange"
