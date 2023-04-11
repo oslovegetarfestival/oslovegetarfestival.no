@@ -34,10 +34,10 @@ export const Footer = () => {
               <Flow space="small">
                 <h2 className="font-strike">Om Oslo Vegetarfestival</h2>
                 <p>
-                  Vi er Norges (og Skandinavias!) største plantebaserte
-                  festival.{" "}
+                  Opplev det beste fra planteriket! Vi er en inspirerende og
+                  idyllisk matfestival som brenner for plantebasert mat.{" "}
                   <Link href="/om-oss">
-                    <a className="link">Les mer</a>
+                    <a className="link">Mer om festivalen</a>
                   </Link>
                 </p>
               </Flow>
