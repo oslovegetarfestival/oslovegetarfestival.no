@@ -63,7 +63,10 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
             <Card data={page?.promotedExhibitors} />
           </Block>
 
-          <Button link="utstillere">Se alle utstillere</Button>
+          <Flex justify="center" wrap gap="small">
+            <Button link="utstillere">Se alle utstillere</Button>
+            <Button link="info-til-utstillere">Bli utstiller</Button>
+          </Flex>
         </Section>
       </Section>
 
