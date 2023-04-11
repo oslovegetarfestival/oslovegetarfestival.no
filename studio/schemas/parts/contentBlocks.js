@@ -5,6 +5,7 @@ import { richTextObject } from "./richTextObject";
 import { video } from "./video";
 import { sectionWithColor } from "./sectionWithColor";
 import { accordion } from "./accordion";
+import { smallSectionWithColor } from "./smallSectionWithColor";
 
 export const contentBlocks = {
   name: "contentBlocks",
@@ -17,6 +18,7 @@ export const contentBlocks = {
     quote,
     listWithImageAndText,
     sectionWithColor,
+    smallSectionWithColor,
     accordion,
   ],
 };

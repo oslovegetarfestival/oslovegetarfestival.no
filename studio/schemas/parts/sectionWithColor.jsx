@@ -54,7 +54,7 @@ export const sectionWithColor = {
         },
       ],
     },
-    image({ required: true }),
+    image({ required: true, isFeaturedImage: true }),
   ],
   preview: {
     select: {

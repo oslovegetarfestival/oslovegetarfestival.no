@@ -1,0 +1,1 @@
+export { SmallSectionWithColor } from "./SmallSectionWithColor"

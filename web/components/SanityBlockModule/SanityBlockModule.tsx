@@ -6,6 +6,7 @@ import { Accordion } from "components/Accordion"
 import { ListWithRoundImages } from "components/ListWithRoundImages"
 import { RichText } from "components/RichText"
 import { SanityImageWrap } from "components/SanityImageWrap"
+import { SmallSectionWithColor } from "components/SmallSectionWithColor"
 
 type Props = {
   data: {
@@ -62,6 +63,16 @@ export const SanityBlockModule = ({ data }: Props) => {
       <Section verticalPadding="medium">
         {/* @ts-expect-error */}
         <SectionWithColor data={data} />
+      </Section>
+    )
+  }
+
+  // Small section with color
+  if (blockType === "smallSectionWithColor") {
+    return (
+      <Section verticalPadding="small">
+        {/* @ts-expect-error */}
+        <SmallSectionWithColor data={data} />
       </Section>
     )
   }

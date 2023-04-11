@@ -1,0 +1,33 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-4);
+  
+  
+  @media(max-width: 500px) {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: var(--spacing-4);
+  }
+}
+
+.imageWrap {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.textWrap {
+  padding-bottom: var(--spacing-4);
+
+}
+
+// Background colors
+.-background-lychee {
+  background-color: var(--color-lychee);
+}
+
+.-background-banana {
+  background-color: var(--color-banana);
+}

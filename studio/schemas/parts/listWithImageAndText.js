@@ -35,7 +35,7 @@ export const listWithImageAndText = {
               type: "string",
             },
             intro({ title: "Tekst" }),
-            image({ required: true }),
+            image({ required: true, isFeaturedImage: true }),
           ],
         },
       ],
