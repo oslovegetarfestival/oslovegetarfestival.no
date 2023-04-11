@@ -11,7 +11,12 @@ $breakpoint: 1250px;
   &:hover {
     text-decoration: none;
   }
+  
+  &-mobile-menu-open {
+    position: fixed;
+  }
 }
+
 
 .date {
   font-size: 1.25rem;

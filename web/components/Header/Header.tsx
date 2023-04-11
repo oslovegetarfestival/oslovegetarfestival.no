@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import classNames from "classnames"
 
 import { Flex, Section } from "components/Layout"
 import { Button } from "components/Button"
@@ -31,6 +32,11 @@ export const Header = ({ isFrontpage }: Props) => {
   // Prevent page scroll when menu is open
   useBodyFreeze(isMobileMenuOpen)
 
+  const logoClass = classNames(
+    styles.logo,
+    isMobileMenuOpen ? styles[`logo-mobile-menu-open`] : false
+  )
+
   return (
     <header>
       <Section width="full" verticalPadding="small">
@@ -51,7 +57,7 @@ export const Header = ({ isFrontpage }: Props) => {
           {(!isFrontpage || isMobileMenuOpen) && (
             <p className="h1">
               <Link href="/">
-                <a className={styles.logo} title="Til forsiden">
+                <a className={logoClass} title="Til forsiden">
                   <span>Oslo</span>
                   <span>Vegetar</span>
                   <span>festival</span>
