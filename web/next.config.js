@@ -12,6 +12,11 @@ const nextConfig = {
         destination: "/om-oss",
         permanent: true,
       },
+      {
+        source: "/info-til-utstillere",
+        destination: "/bli-utstiller",
+        permanent: true,
+      },
     ]
   },
 }
