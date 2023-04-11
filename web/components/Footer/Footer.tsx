@@ -79,7 +79,7 @@ export const Footer = () => {
               <p className="h1">
                 <Link href="/">
                   <a className={styles.logo}>
-                    <span>Oslo</span> <span>vegetar</span>
+                    <span>Oslo</span> <span>Vegetar</span>
                     <span>festival</span>
                   </a>
                 </Link>
