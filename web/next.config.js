@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     remotePatterns: [{ hostname: "cdn.sanity.io" }],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
   async redirects() {
     return [
       {
