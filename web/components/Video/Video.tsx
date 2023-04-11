@@ -13,7 +13,9 @@ export const Video = ({ id, isAutoplay = false }: Props) => {
       <iframe
         className={styles.video}
         src={`https://www.youtube-nocookie.com/embed/${id}?rel=0${
-          isAutoplay ? `&autoplay=1&mute=1&loop=1&playlist=${id}` : ""
+          isAutoplay
+            ? `&autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&disablekb=1`
+            : ""
         }`}
         title="YouTube video player"
         allow="encrypted-media"
