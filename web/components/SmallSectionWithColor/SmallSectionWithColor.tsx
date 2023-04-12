@@ -1,6 +1,6 @@
 import classNames from "classnames"
 
-import { Flow, Section } from "components/Layout"
+import { Block, Section } from "components/Layout"
 
 import styles from "./SmallSectionWithColor.module.scss"
 import { SanityImageWrap } from "components/SanityImageWrap"
@@ -42,10 +42,10 @@ export const SmallSectionWithColor = ({ data }: Props) => {
         </div>
 
         <div className={styles.textWrap}>
-          <Flow>
+          <Block bottom="3">
             <h2 className="h3">{title}</h2>
-            <RichText data={richTextObject?.richText} />
-          </Flow>
+          </Block>
+          <RichText data={richTextObject?.richText} />
         </div>
       </div>
     </Section>

@@ -5,7 +5,7 @@
   padding: var(--spacing-4);
   
   
-  @media(max-width: 500px) {
+  @media(max-width: 600px) {
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
@@ -16,6 +16,7 @@
 .imageWrap {
   border-radius: 50%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .textWrap {
