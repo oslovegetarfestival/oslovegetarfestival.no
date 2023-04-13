@@ -15,7 +15,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
 
   // Find previous and next exhibitor
   const currentIndex = allExhibitors?.findIndex(
-    (event: any) => event?.title === currentExhibitor?.title
+    (event: any) => event?._id === currentExhibitor?._id
   )
   const nextExhibitor = allExhibitors?.[currentIndex + 1]
   const previousExhibitor = allExhibitors?.[currentIndex - 1]
