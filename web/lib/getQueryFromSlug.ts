@@ -9,7 +9,7 @@ export const getQueryFromSlug = (slugArray = []) => {
     eventMain:
       '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "event"] | order(startDateTime) {..., location->{title}}}',
     event:
-      '*[_type == "event" && slug.current == $slug][0]{..., location->{title}}',
+      '*[_type == "event" && slug.current == $slug][0] {"currentEvent": {..., location->{title}}, "allEvents": *[_type == "event"]{title, startDateTime, slug} | order(startDateTime)}',
     exhibitorMain:
       '*[_type == "page" && slug.current == $slug][0] {..., "items": *[_type == "exhibitor"] | order(title) {..., ...type->{"type": title}}}',
     exhibitor: '*[_type == "exhibitor" && slug.current == $slug][0]',

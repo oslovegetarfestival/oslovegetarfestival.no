@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Block, Flow, Section } from "components/Layout"
+import { Block, Flex, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 
 import { weekDayAndStartEndTime } from "utils/date"
@@ -13,9 +13,18 @@ type Props = {
 }
 
 const EventPage: NextPage<Props> = ({ page = {} }) => {
+  const { currentEvent, allEvents } = page
+
+  // Find previous and next event
+  const currentIndex = allEvents?.findIndex(
+    (event: any) => event?.title === currentEvent?.title
+  )
+  const nextEvent = allEvents?.[currentIndex + 1]
+  const previousEvent = allEvents?.[currentIndex - 1]
+
   return (
     <>
-      <Seo page={page} />
+      <Seo page={currentEvent} />
 
       <Section verticalPadding="large" noPadding="top">
         <Block top="4" bottom="4">
@@ -26,25 +35,42 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
         <Block bottom="2">
           <p className="meta-details">
             {weekDayAndStartEndTime({
-              startDate: page?.startDateTime,
-              endDate: page?.endDateTime,
+              startDate: currentEvent?.startDateTime,
+              endDate: currentEvent?.endDateTime,
             })}
-            — {page?.location?.title}
+            — {currentEvent?.location?.title}
           </p>
         </Block>
         <Flow>
-          <h1 className="page-title">{page?.title}</h1>
-          <p className="lead">{page?.intro}</p>
+          <h1 className="page-title">{currentEvent?.title}</h1>
+          <p className="lead">{currentEvent?.intro}</p>
         </Flow>
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">
-        <SanityImageWrap image={page?.image} isFeaturedImage />
+        <SanityImageWrap image={currentEvent?.image} isFeaturedImage />
       </Section>
 
-      {page?.contentBlocks?.map((module: any) => (
+      {currentEvent?.contentBlocks?.map((module: any) => (
         <SanityBlockModule data={module} key={module._key} />
       ))}
+
+      <Section width="small" verticalPadding="medium">
+        <Flex gap="medium" justify="spaceBetween" wrap>
+          <Link href={previousEvent?.slug?.current}>
+            <div>
+              <p>← Forrige</p>
+              <a className="link">{previousEvent?.title}</a>
+            </div>
+          </Link>
+          <Link href={nextEvent?.slug?.current}>
+            <div>
+              <p>Neste →</p>
+              <a className="link">{nextEvent?.title}</a>
+            </div>
+          </Link>
+        </Flex>
+      </Section>
     </>
   )
 }
