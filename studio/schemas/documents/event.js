@@ -43,6 +43,28 @@ export const event = {
       media: "image",
     },
   },
+  preview: {
+    select: {
+      title: "title",
+      startTime: "startDateTime",
+      imageAsset: "image",
+    },
+    prepare({ title = "", startTime = "", imageAsset = {} }) {
+      const dateOptions = { weekday: "long", month: "long", day: "numeric" };
+      const timeOptions = { hour: "2-digit", minute: "2-digit" };
+      const start = new Date(startTime);
+      const localeStart = start.toLocaleDateString("no", dateOptions);
+      const localeStartUppercase =
+        localeStart[0].toUpperCase() + localeStart.slice(1);
+      const localeTime = start.toLocaleTimeString("no", timeOptions);
+
+      return {
+        title,
+        subtitle: `${localeStartUppercase}, kl ${localeTime}`,
+        media: imageAsset,
+      };
+    },
+  },
   orderings: [
     {
       title: "Start dato",
