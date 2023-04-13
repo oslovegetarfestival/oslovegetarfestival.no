@@ -20,6 +20,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
     (event: any) => event?.title === currentEvent?.title
   )
   const nextEvent = allEvents?.[currentIndex + 1]
+  console.log("nextEvent", nextEvent)
   const previousEvent = allEvents?.[currentIndex - 1]
 
   return (
@@ -78,8 +79,8 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
                 <a>
                   <p className="meta-details" style={{ textAlign: "left" }}>
                     {weekDayAndStartEndTime({
-                      startDate: previousEvent?.startDateTime,
-                      endDate: previousEvent?.endDateTime,
+                      startDate: nextEvent?.startDateTime,
+                      endDate: nextEvent?.endDateTime,
                     })}
                   </p>
                   <p>{nextEvent?.title} →</p>
