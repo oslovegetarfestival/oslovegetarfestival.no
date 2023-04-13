@@ -14,6 +14,9 @@ const Home: NextPage<Props> = () => {
       <PageLayout>
         <Section verticalPadding="xlarge">
           <Flow>
+            <h2>#0 video bosh</h2>
+            <Video id="Ho3PIXLTvvI" />
+
             <h2>#1 video component</h2>
             <Video id="rUthsu7i7v8" />
 
