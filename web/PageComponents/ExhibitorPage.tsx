@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Block, Flow, Section } from "components/Layout"
+import { Block, Flex, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
@@ -11,9 +11,17 @@ type Props = {
 }
 
 const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
+  const { currentExhibitor, allExhibitors } = page
+
+  // Find previous and next exhibitor
+  const currentIndex = allExhibitors?.findIndex(
+    (event: any) => event?.title === currentExhibitor?.title
+  )
+  const nextExhibitor = allExhibitors?.[currentIndex + 1]
+  const previousExhibitor = allExhibitors?.[currentIndex - 1]
   return (
     <>
-      <Seo page={page} />
+      <Seo page={currentExhibitor} />
 
       <Section verticalPadding="large" noPadding="top">
         <Block top="4" bottom="4">
@@ -22,18 +30,39 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
           </Link>
         </Block>
         <Flow>
-          <h1 className="page-title">{page?.title}</h1>
-          <p className="lead">{page?.intro}</p>
+          <h1 className="page-title">{currentExhibitor?.title}</h1>
+          <p className="lead">{currentExhibitor?.intro}</p>
         </Flow>
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">
-        <SanityImageWrap image={page?.image} isFeaturedImage />
+        <SanityImageWrap image={currentExhibitor?.image} isFeaturedImage />
       </Section>
 
-      {page?.contentBlocks?.map((module: any) => (
+      {currentExhibitor?.contentBlocks?.map((module: any) => (
         <SanityBlockModule data={module} key={module._key} />
       ))}
+
+      <Section width="small" verticalPadding="medium">
+        <Flex gap="medium" justify="spaceBetween" wrap>
+          {previousExhibitor?.slug?.current && (
+            <Link href={previousExhibitor?.slug?.current}>
+              <div>
+                <p>← Forrige</p>
+                <a className="link">{previousExhibitor?.title}</a>
+              </div>
+            </Link>
+          )}
+          {nextExhibitor?.slug?.current && (
+            <Link href={nextExhibitor?.slug?.current}>
+              <div>
+                <p>Neste →</p>
+                <a className="link">{nextExhibitor?.title}</a>
+              </div>
+            </Link>
+          )}
+        </Flex>
+      </Section>
     </>
   )
 }

@@ -57,18 +57,22 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section width="small" verticalPadding="medium">
         <Flex gap="medium" justify="spaceBetween" wrap>
-          <Link href={previousEvent?.slug?.current}>
-            <div>
-              <p>← Forrige</p>
-              <a className="link">{previousEvent?.title}</a>
-            </div>
-          </Link>
-          <Link href={nextEvent?.slug?.current}>
-            <div>
-              <p>Neste →</p>
-              <a className="link">{nextEvent?.title}</a>
-            </div>
-          </Link>
+          {previousEvent?.slug?.current && (
+            <Link href={previousEvent?.slug?.current}>
+              <div>
+                <p>← Forrige</p>
+                <a className="link">{previousEvent?.title}</a>
+              </div>
+            </Link>
+          )}
+          {nextEvent?.slug?.current && (
+            <Link href={nextEvent?.slug?.current}>
+              <div>
+                <p>Neste →</p>
+                <a className="link">{nextEvent?.title}</a>
+              </div>
+            </Link>
+          )}
         </Flex>
       </Section>
     </>
