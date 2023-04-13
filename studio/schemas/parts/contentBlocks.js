@@ -6,6 +6,7 @@ import { video } from "./video";
 import { sectionWithColor } from "./sectionWithColor";
 import { accordion } from "./accordion";
 import { smallSectionWithColor } from "./smallSectionWithColor";
+import { button } from "./button";
 
 export const contentBlocks = {
   name: "contentBlocks",
@@ -20,5 +21,6 @@ export const contentBlocks = {
     sectionWithColor,
     smallSectionWithColor,
     accordion,
+    button,
   ],
 };

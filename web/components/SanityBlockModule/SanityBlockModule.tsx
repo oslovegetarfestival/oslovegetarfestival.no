@@ -7,6 +7,7 @@ import { ListWithRoundImages } from "components/ListWithRoundImages"
 import { RichText } from "components/RichText"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import { SmallSectionWithColor } from "components/SmallSectionWithColor"
+import { Button } from "components/Button"
 
 type Props = {
   data: {
@@ -92,6 +93,17 @@ export const SanityBlockModule = ({ data }: Props) => {
       <Section width="full" verticalPadding="large" background="lychee">
         {/* @ts-expect-error */}
         <ListWithRoundImages data={data} />
+      </Section>
+    )
+  }
+
+  // Button with link
+  if (blockType === "button") {
+    return (
+      <Section width="small" verticalPadding="tiny" centerContent>
+        <Button link={data?.url} color={data?.color}>
+          {data?.text}
+        </Button>
       </Section>
     )
   }
