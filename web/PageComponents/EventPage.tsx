@@ -60,16 +60,30 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
           {previousEvent?.slug?.current && (
             <Link href={previousEvent?.slug?.current}>
               <div>
-                <p>← Forrige</p>
-                <a className="link">{previousEvent?.title}</a>
+                <a>
+                  <p className="meta-details" style={{ textAlign: "left" }}>
+                    {weekDayAndStartEndTime({
+                      startDate: previousEvent?.startDateTime,
+                      endDate: previousEvent?.endDateTime,
+                    })}
+                  </p>
+                  <p>← {previousEvent?.title}</p>
+                </a>
               </div>
             </Link>
           )}
           {nextEvent?.slug?.current && (
             <Link href={nextEvent?.slug?.current}>
               <div>
-                <p>Neste →</p>
-                <a className="link">{nextEvent?.title}</a>
+                <a>
+                  <p className="meta-details" style={{ textAlign: "left" }}>
+                    {weekDayAndStartEndTime({
+                      startDate: previousEvent?.startDateTime,
+                      endDate: previousEvent?.endDateTime,
+                    })}
+                  </p>
+                  <p>{nextEvent?.title} →</p>
+                </a>
               </div>
             </Link>
           )}
