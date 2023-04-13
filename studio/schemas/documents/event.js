@@ -43,4 +43,11 @@ export const event = {
       media: "image",
     },
   },
+  orderings: [
+    {
+      title: "Start dato",
+      name: "startDateAsc",
+      by: [{ field: "startDateTime", direction: "asc" }],
+    },
+  ],
 };
