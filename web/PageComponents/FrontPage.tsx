@@ -6,7 +6,7 @@ import { Button } from "components/Button"
 import { Card } from "components/Card"
 import { BackgroundVideo } from "components/BackgroundVideo"
 import { Seo } from "components/Seo"
-import { SanityImageWrap } from "components/SanityImageWrap"
+import { SponsorBlock } from "components/SponsorBlock"
 
 type Props = {
   [key: string]: any
@@ -70,49 +70,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
         </Section>
       </Section>
 
-      <Section centerContent width="full" verticalPadding="xlarge">
-        <Section width="large" noPadding="sides">
-          {page?.sponsorBlock?.title && (
-            <Block top="8" bottom="6">
-              <h2>{page?.sponsorBlock?.title}</h2>
-            </Block>
-          )}
-
-          <Flex justify="center" align="center" gap="medium" wrap>
-            {page?.sponsorBlock?.sponsors?.map(
-              ({
-                image,
-                url = "#",
-                _key,
-              }: {
-                title: string
-                image: {
-                  altText?: string
-                  asset: {
-                    _ref: string
-                  }
-                }
-                url: string
-                _key: string
-              }) => (
-                <a href={url} key={_key}>
-                  <SanityImageWrap
-                    image={image}
-                    isRoundCorners={false}
-                    width={300}
-                    style={{
-                      maxWidth: "300px",
-                      maxHeight: "150px",
-                      width: "auto",
-                      height: "auto",
-                    }}
-                  />
-                </a>
-              )
-            )}
-          </Flex>
-        </Section>
-      </Section>
+      <SponsorBlock data={page?.sponsorBlock} />
     </>
   )
 }
