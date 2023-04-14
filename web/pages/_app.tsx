@@ -68,6 +68,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       {/* https://nextjs.org/docs/basic-features/script */}
+      {/* Piwik Pro */}
       <Script
         id="piwikPro"
         strategy="lazyOnload"
@@ -81,6 +82,21 @@ function MyApp({ Component, pageProps }: AppProps) {
             tags.async=!0,tags.src="https://oslovegetarfestival.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
             !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
             })(window, document, 'dataLayer', 'd5d3a6f1-f408-40b5-ba3b-d2a7f4bc7400');
+          `,
+        }}
+      />
+
+      {/* Google Tag Manager */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11138954316" />
+      <Script
+        id="googleTagManager"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-11138954316');
           `,
         }}
       />
