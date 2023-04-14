@@ -4,24 +4,13 @@ import { Grid, Flex, Section, Flow } from "components/Layout"
 
 import styles from "./Footer.module.scss"
 import { Newsletter } from "components/Newsletter"
+import { AnimationFooter } from "components/AnimationFooter"
 
 export const Footer = () => {
   return (
     <>
       <div style={{ overflow: "hidden" }}>
-        <img
-          src="/footer.svg"
-          alt=""
-          style={{
-            maxWidth: "none",
-            width: "102%",
-            marginLeft: "-1%",
-            marginBottom: "-1px",
-          }}
-          width="1833"
-          height="498"
-          loading="lazy"
-        />
+        <AnimationFooter />
       </div>
 
       <footer className={styles.footer}>
@@ -94,5 +83,3 @@ export const Footer = () => {
     </>
   )
 }
-
-

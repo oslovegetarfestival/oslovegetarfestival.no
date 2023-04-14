@@ -1,0 +1,94 @@
+.animation {
+  display: block;
+  height: 100%;
+  max-width: none;
+  overflow: visible;
+}
+
+.plant1 { 
+  animation: wind 3s infinite ease alternate; 
+  transform-origin: 55% 90%;
+}
+
+.cloud6 { animation: slide-narrow 6s infinite ease alternate; }
+.cloud6 { animation: slide-narrow 7s infinite ease alternate-reverse; }
+
+.butterfly1 { animation: up-down 6s infinite ease alternate-reverse; }
+.bird { animation: up-down 5s infinite ease alternate-reverse; }
+
+.mushroom1 {
+  animation: sway 4s infinite ease alternate;
+  transform-origin: 50% 100%;
+}
+.mushroom2 {
+  animation: sway 4s infinite ease alternate-reverse;
+  transform-origin: 50% 100%;
+}
+.mushroom2cap {
+  animation: tilt 4s infinite ease alternate-reverse;
+  transform-origin: 44% 46%;
+}
+
+
+@keyframes up-down {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 20px);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes wind {
+  0% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes slide-narrow {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes slide-wide {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
+}
