@@ -8,7 +8,7 @@ export const video = {
       title: "Video ID",
       type: "string",
       description:
-        "Lim inn id'en til en Youtube video. Dette vil være feks: 'HMbRoB3TaqU' dersom videoen er https://www.youtube.com/watch?v=HMbRoB3TaqU",
+        "Lim inn KUN id'en til en Youtube video (ikke hele url). ID vil være feks: 'HMbRoB3TaqU' dersom videoen er https://www.youtube.com/watch?v=HMbRoB3TaqU",
     },
   ],
   preview: {
