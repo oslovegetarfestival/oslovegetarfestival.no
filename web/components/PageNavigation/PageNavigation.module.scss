@@ -1,0 +1,39 @@
+.wrap {
+  display: flex;
+  width: 50%;
+}
+
+.previous,
+.next {
+  display: inline-block;
+  transition: all .1s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.previous {
+  text-align: left;
+
+  &:hover {
+    transform: translateX(-6px);
+  }
+
+  :global(.meta-details) {
+    text-align: left;
+  }
+}
+
+.next {
+  text-align: right;
+  margin-left: auto;
+
+  &:hover {
+    transform: translateX(6px);
+  }
+
+  :global(.meta-details) {
+    text-align: right;
+  }
+}

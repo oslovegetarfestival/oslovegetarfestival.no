@@ -1,10 +1,11 @@
 import type { NextPage } from "next"
 
-import { Block, Flex, Flow, Section } from "components/Layout"
+import { Block, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import Link from "next/link"
+import { PageNavigation } from "components/PageNavigation"
 
 type Props = {
   [key: string]: any
@@ -42,26 +43,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="small" verticalPadding="medium">
-        <Flex gap="medium" justify="spaceBetween" wrap>
-          {previousExhibitor?.slug?.current && (
-            <Link href={previousExhibitor?.slug?.current}>
-              <div>
-                <p>← Forrige</p>
-                <a className="link">{previousExhibitor?.title}</a>
-              </div>
-            </Link>
-          )}
-          {nextExhibitor?.slug?.current && (
-            <Link href={nextExhibitor?.slug?.current}>
-              <div>
-                <p>Neste →</p>
-                <a className="link">{nextExhibitor?.title}</a>
-              </div>
-            </Link>
-          )}
-        </Flex>
-      </Section>
+      <PageNavigation previous={previousExhibitor} next={nextExhibitor} />
     </>
   )
 }

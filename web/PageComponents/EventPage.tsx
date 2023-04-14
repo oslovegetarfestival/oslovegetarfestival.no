@@ -1,12 +1,13 @@
 import type { NextPage } from "next"
 
-import { Block, Flex, Flow, Section } from "components/Layout"
+import { Block, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 
 import { weekDayAndStartEndTime } from "utils/date"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import Link from "next/link"
+import { PageNavigation } from "components/PageNavigation"
 
 type Props = {
   [key: string]: any
@@ -55,40 +56,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="small" verticalPadding="medium">
-        <Flex gap="medium" justify="spaceBetween" wrap>
-          {previousEvent?.slug?.current && (
-            <Link href={previousEvent?.slug?.current}>
-              <div>
-                <a>
-                  <p className="meta-details" style={{ textAlign: "left" }}>
-                    {weekDayAndStartEndTime({
-                      startDate: previousEvent?.startDateTime,
-                      endDate: previousEvent?.endDateTime,
-                    })}
-                  </p>
-                  <p>← {previousEvent?.title}</p>
-                </a>
-              </div>
-            </Link>
-          )}
-          {nextEvent?.slug?.current && (
-            <Link href={nextEvent?.slug?.current}>
-              <div>
-                <a>
-                  <p className="meta-details" style={{ textAlign: "left" }}>
-                    {weekDayAndStartEndTime({
-                      startDate: nextEvent?.startDateTime,
-                      endDate: nextEvent?.endDateTime,
-                    })}
-                  </p>
-                  <p>{nextEvent?.title} →</p>
-                </a>
-              </div>
-            </Link>
-          )}
-        </Flex>
-      </Section>
+      <PageNavigation previous={previousEvent} next={nextEvent} />
     </>
   )
 }
