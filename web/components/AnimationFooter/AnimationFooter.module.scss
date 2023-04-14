@@ -5,11 +5,10 @@
   overflow: visible;
 }
 
-.cloud1 { animation: slide 5s infinite ease alternate; }
-.cloud2 { animation: slide 5s infinite ease alternate; }
-.cloud3 { animation: slide-wide 6s infinite ease alternate; }
-.cloud4 { animation: slide 6s infinite ease alternate; }
-.cloud5 { animation: slide-wide 7s infinite ease alternate; }
+.plant1 { 
+  animation: wind 3s infinite ease alternate; 
+  transform-origin: 55% 90%;
+}
 
 .cloud6 { animation: slide-narrow 6s infinite ease alternate; }
 .cloud6 { animation: slide-narrow 7s infinite ease alternate-reverse; }
@@ -19,11 +18,15 @@
 
 .mushroom1 {
   animation: sway 4s infinite ease alternate;
-  transform-origin: 80% 60%;
+  transform-origin: 50% 100%;
 }
 .mushroom2 {
   animation: sway 4s infinite ease alternate-reverse;
-  transform-origin: 70% 60%;
+  transform-origin: 50% 100%;
+}
+.mushroom2cap {
+  animation: tilt 4s infinite ease alternate-reverse;
+  transform-origin: 44% 46%;
 }
 
 
@@ -39,10 +42,27 @@
 
 @keyframes sway {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(-2deg);
   }
-  50% {
+  100% {
     transform: rotate(2deg);
+  }
+}
+@keyframes wind {
+  0% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(4deg);
   }
 }
 
