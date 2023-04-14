@@ -9,10 +9,10 @@ import { AnimationFooter } from "components/AnimationFooter"
 export const Footer = () => {
   return (
     <>
-      <div style={{ overflow: "hidden" }}>
+      {/* Note: -1px is needed to avoid subpixel white line below */}
+      <div style={{ overflow: "hidden", marginBottom: "-1px" }}>
         <AnimationFooter />
       </div>
-
       <footer className={styles.footer}>
         <Section centerContent>
           <a href="#">Til toppen ↑</a>
