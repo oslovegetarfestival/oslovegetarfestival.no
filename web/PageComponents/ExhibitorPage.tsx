@@ -29,10 +29,9 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
             <a>← Utstillere</a>
           </Link>
         </Block>
-        <Flow>
-          <h1 className="page-title">{currentExhibitor?.title}</h1>
-          <p className="lead">{currentExhibitor?.intro}</p>
-        </Flow>
+
+        <h1 className="page-title">{currentExhibitor?.title}</h1>
+        <p className="lead">{currentExhibitor?.intro}</p>
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">

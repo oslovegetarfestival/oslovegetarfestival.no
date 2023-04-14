@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 
-import { Block, Flow, Section } from "components/Layout"
+import { Block, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { fullDate } from "utils/date"
 import { SanityImageWrap } from "components/SanityImageWrap"
@@ -27,10 +27,9 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
             Publisert: {fullDate(page?.publishedDate)}
           </p>
         </Block>
-        <Flow>
-          <h1 className="page-title">{page?.title}</h1>
-          <p className="lead">{page?.intro}</p>
-        </Flow>
+
+        <h1 className="page-title">{page?.title}</h1>
+        <p className="lead">{page?.intro}</p>
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">

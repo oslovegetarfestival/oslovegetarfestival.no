@@ -32,6 +32,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
             <a>← Program</a>
           </Link>
         </Block>
+
         <Block bottom="2">
           <p className="meta-details">
             {weekDayAndStartEndTime({
@@ -41,10 +42,9 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
             — {currentEvent?.location?.title}
           </p>
         </Block>
-        <Flow>
-          <h1 className="page-title">{currentEvent?.title}</h1>
-          <p className="lead">{currentEvent?.intro}</p>
-        </Flow>
+
+        <h1 className="page-title">{currentEvent?.title}</h1>
+        <p className="lead">{currentEvent?.intro}</p>
       </Section>
 
       <Section width="large" verticalPadding="tiny" noPadding="top">
