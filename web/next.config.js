@@ -20,6 +20,13 @@ const nextConfig = {
         destination: "/bli-utstiller",
         permanent: true,
       },
+      {
+        source: "/nyhetsbrev",
+        destination:
+          "https://etiv-zcmp.maillist-manage.eu/ua/Optin?od=12ba7e11d358&zx=14ac23b5bd&tD=171b28f16c47a06&sD=171b28f16c4884d",
+        permanent: false,
+        basePath: false,
+      },
     ]
   },
 }
