@@ -2,12 +2,16 @@ import { Button } from "components/Button"
 import { Block, Section } from "components/Layout"
 import { AnimationHeader } from "components/AnimationHeader"
 import styles from "./FrontpageHero.module.scss"
+import { AnimationHeaderMobile } from "components/AnimationHeader/AnimationHeaderMobile"
 
 export const FrontpageHero = () => {
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
       <div className={styles.heroImage}>
         <AnimationHeader />
+      </div>
+      <div className={styles.heroImageMobile}>
+        <AnimationHeaderMobile />
       </div>
 
       <Section width="large" verticalPadding="large" noPadding="top">

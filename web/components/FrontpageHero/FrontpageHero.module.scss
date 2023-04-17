@@ -5,28 +5,50 @@
   height: 100%;
   max-width: none;
 
-  @media(max-width: 1250px) {
+  @media (max-width: 1250px) {
     right: auto;
     left: 30%;
   }
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     left: 50%;
   }
 
-  @media(max-width: 400px) {
-    left: 55%;
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.heroImageMobile {
+  display: none;
+
+  @media (max-width: 499px) {
+    max-width: 320px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 30px;
+    right: -90px;
+  }
+
+  @media (max-width: 399px) {
+    right: -120px;
+  }
+
+  @media (max-width: 359px) {
+    right: -140px;
   }
 }
 
 .logo {
   line-height: 0.9;
   font-size: 5rem;
-  font-family: 'Strike';
+  font-family: "Strike";
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     font-size: 4rem;
-  }  
+  }
 
   span {
     display: block;
@@ -37,7 +59,7 @@
   font-size: 2.1rem;
   line-height: 1.2;
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     font-size: 1.8rem;
-  }   
+  }
 }
