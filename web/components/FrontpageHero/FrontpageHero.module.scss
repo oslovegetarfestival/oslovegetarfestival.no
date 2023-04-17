@@ -29,15 +29,8 @@
     z-index: -1;
     height: 100%;
     top: 30px;
-    right: -90px;
-  }
-
-  @media (max-width: 399px) {
-    right: -120px;
-  }
-
-  @media (max-width: 359px) {
-    right: -140px;
+    left: 50%;
+    height: 320px;
   }
 }
 
