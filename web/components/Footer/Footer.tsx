@@ -5,6 +5,7 @@ import { Grid, Flex, Section, Flow } from "components/Layout"
 import styles from "./Footer.module.scss"
 import { Newsletter } from "components/Newsletter"
 import { AnimationFooter } from "components/AnimationFooter"
+import { Button } from "components/Button"
 
 export const Footer = () => {
   return (
@@ -29,6 +30,13 @@ export const Footer = () => {
                     <a className="link">Mer om festivalen</a>
                   </Link>
                 </p>
+                <Button
+                  color="orange"
+                  link="https://tikkio.com/tickets/30345-oslo-vegetarfestival-2023"
+                  isOpenInNewWindow
+                >
+                  Kjøp billett
+                </Button>
               </Flow>
 
               <Flow space="small">
