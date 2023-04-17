@@ -29,7 +29,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Nytt fra festivalen</h2>
 
           <Block top="7" bottom="5">
-            <Card data={page?.promotedNews} />
+            <Card data={page?.promotedNews} isEagerLoadImages />
           </Block>
 
           <Button link="/aktuelt">Se alle nyheter</Button>

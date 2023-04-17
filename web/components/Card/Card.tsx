@@ -35,6 +35,7 @@ type TypeProps = "event" | "eventWithDate" | "news"
 type Props = {
   data: Item[]
   type?: TypeProps
+  isEagerLoadImages?: boolean
 }
 
 type EventDateProps = {
@@ -68,7 +69,7 @@ const createEventDate = ({ type, item }: EventDateProps) => {
   return ""
 }
 
-export const Card = ({ data, type }: Props) => {
+export const Card = ({ data, type, isEagerLoadImages = false }: Props) => {
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
@@ -80,6 +81,7 @@ export const Card = ({ data, type }: Props) => {
                 width={468} // = Largest width on any screen size
                 height={352}
                 isHideCaption
+                loading={isEagerLoadImages ? "eager" : "lazy"}
               />
               <div className={styles.content}>
                 <p className={styles.metadata}>
