@@ -2,7 +2,7 @@ import { Button } from "components/Button"
 import { Block, Section } from "components/Layout"
 import { AnimationHeader } from "components/AnimationHeader"
 import styles from "./FrontpageHero.module.scss"
-import { AnimationHeaderMobile } from "components/AnimationHeader/AnimationHeaderMobile"
+import { AnimationHeaderMobile } from "components/AnimationHeaderMobile"
 
 export const FrontpageHero = () => {
   return (

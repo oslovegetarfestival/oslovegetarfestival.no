@@ -1,4 +1,4 @@
-import styles from "./AnimationHeader.module.scss"
+import styles from "./AnimationHeaderMobile.module.scss"
 
 export const AnimationHeaderMobile = () => {
   return (
