@@ -16,6 +16,9 @@ export function useSmoothScroll() {
   }
 
   useEffect(() => {
+    // Only run client side
+    if (typeof window === "undefined") return
+
     setSmoothScroll(true)
     const handleStart = () => setSmoothScroll(false)
     const handleStop = () => setSmoothScroll(true)
