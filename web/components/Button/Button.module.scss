@@ -41,7 +41,8 @@
   background-color: var(--color-orange);
   color: var(--color-kale);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--color-banana);
   }
 }
@@ -50,7 +51,8 @@
   background-color: var(--color-kale);
   color: var(--color-almondmilk);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--color-cucumber);
   }
 }
@@ -59,7 +61,8 @@
   background-color: var(--color-almondmilk);
   color: var(--color-kale);
   
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--color-almondmilk);
     background-color: var(--color-cucumber);
   }
