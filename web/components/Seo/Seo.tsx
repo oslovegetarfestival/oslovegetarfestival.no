@@ -6,6 +6,9 @@ type SeoProps = {
   page?: {
     title?: string
     intro?: string
+    slug: {
+      current: string
+    }
     image?: {
       asset?: {
         _ref: string
@@ -60,6 +63,9 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
     images.push({ url: defaultImage })
   }
 
+  // Canonical url
+  const canonicalUrl = `https://www.oslovegetarfestival.no${page.slug.current}`
+
   return (
     <NextSeo
       title={`${title}${siteName}`}
@@ -69,6 +75,7 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
         //@ts-ignore
         images,
       }}
+      canonical={canonicalUrl}
       noindex={page?.seo?.hidden}
       nofollow={page?.seo?.hidden}
       {...rest}
