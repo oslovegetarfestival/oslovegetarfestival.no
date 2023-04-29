@@ -64,7 +64,9 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
   }
 
   // Canonical url
-  const canonicalUrl = `https://www.oslovegetarfestival.no${page.slug.current}`
+  const canonicalUrl = `https://www.oslovegetarfestival.no${
+    page?.slug?.current ? page.slug.current : ""
+  }`
 
   return (
     <NextSeo
