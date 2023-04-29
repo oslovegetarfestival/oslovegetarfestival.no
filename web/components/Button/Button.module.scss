@@ -26,6 +26,14 @@
       }
     }
   }
+
+  &--arrow-external {
+    &:after {
+      content: "\2197";
+      position: relative;
+      top: -4px;
+    }
+  }
 }
 
 // Colors

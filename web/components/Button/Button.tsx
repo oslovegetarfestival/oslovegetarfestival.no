@@ -24,14 +24,16 @@ export const Button = ({
   children,
   onClick,
 }: Props) => {
+  const isInternalLink = link?.startsWith("/")
+
   const buttonClass = classNames(
     styles.button,
     size ? styles[`size--${size}`] : false,
     color ? styles[`color--${color}`] : false,
-    isArrow ? styles[`button--arrow`] : false
+    isArrow ? styles[`button--arrow`] : false,
+    !isInternalLink && isArrow ? styles[`button--arrow-external`] : false
   )
 
-  const isInternalLink = link?.startsWith("/")
 
   // Link
   if (link) {
