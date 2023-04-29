@@ -1,5 +1,5 @@
-import { Flow } from "components/Layout"
-import styles from "./Newsletter.module.scss"
+// import { Flow } from "components/Layout"
+// import styles from "./Newsletter.module.scss"
 import { Button } from "components/Button"
 
 export const Newsletter = () => {

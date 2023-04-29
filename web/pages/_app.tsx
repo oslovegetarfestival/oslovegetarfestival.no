@@ -33,10 +33,9 @@ export function useSmoothScroll() {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // useSmoothScroll()
+  useSmoothScroll()
 
   return (
-    // TODO: Update favicon + colors
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
