@@ -7,7 +7,12 @@ type DateProps = {
 export const fullDate = (date: string) => {
   // Get weekday
   const dateObject = new Date(date)
-  return dateObject.toLocaleDateString("no", { year: 'numeric', month: 'long', day: 'numeric' })
+  return dateObject.toLocaleDateString("no", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "Europe/Oslo",
+  })
 }
 
 // Show local time
@@ -15,12 +20,16 @@ export const fullDate = (date: string) => {
 export const weekDayAndStartEndTime = ({ startDate, endDate }: DateProps) => {
   // Get weekday
   const startDateObject = new Date(startDate)
-  const weekday = startDateObject.toLocaleDateString("no", { weekday: "long" })
+  const weekday = startDateObject.toLocaleDateString("no", {
+    weekday: "long",
+    timeZone: "Europe/Oslo",
+  })
 
   // Get start time
   const startTime = startDateObject.toLocaleTimeString("no", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Europe/Oslo",
   })
 
   // Get end time
@@ -29,6 +38,7 @@ export const weekDayAndStartEndTime = ({ startDate, endDate }: DateProps) => {
     const endTime = endDateObject.toLocaleTimeString("no", {
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "Europe/Oslo",
     })
     return `${weekday} kl. ${startTime} - ${endTime} `
   }
@@ -45,6 +55,7 @@ export const startAndEndTime = ({ startDate, endDate }: DateProps) => {
   const startTime = startDateObject.toLocaleTimeString("no", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Europe/Oslo",
   })
 
   // Get end time
@@ -53,6 +64,7 @@ export const startAndEndTime = ({ startDate, endDate }: DateProps) => {
     const endTime = endDateObject.toLocaleTimeString("no", {
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "Europe/Oslo",
     })
     return `kl. ${startTime} - ${endTime} `
   }
@@ -66,5 +78,10 @@ export const weekDayAndDate = (date: string) => {
 
   // Get weekday
   const startDateObject = new Date(date)
-  return startDateObject.toLocaleDateString("no", { weekday: "long", month: 'long', day: 'numeric' })
+  return startDateObject.toLocaleDateString("no", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    timeZone: "Europe/Oslo",
+  })
 }
