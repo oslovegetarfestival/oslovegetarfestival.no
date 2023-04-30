@@ -83,6 +83,10 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
           name: "Oslo Vegetarfestival",
           url: "https://www.oslovegetarfestival.no",
         }}
+        offers={{
+          url: "https://www.oslovegetarfestival.no/billett",
+          availability: "https://schema.org/InStock",
+        }}
         eventStatus="EventScheduled"
         eventAttendanceMode="OfflineEventAttendanceMode"
       />
