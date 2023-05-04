@@ -49,7 +49,7 @@ export const SanityImageWrap = ({
 
   if (isFeaturedImage) {
     width = 1300
-    height = 800
+    height = 700
     loading = "eager"
   }
 
