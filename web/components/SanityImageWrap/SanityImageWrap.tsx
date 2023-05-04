@@ -63,7 +63,8 @@ export const SanityImageWrap = ({
 
   const imageClass = classNames(
     styles.image,
-    isRoundCorners ? styles["-round-corners"] : false
+    isRoundCorners ? styles["-round-corners"] : false,
+    isFeaturedImage ? styles["-featured"] : false
   )
 
   const captionClass = classNames(

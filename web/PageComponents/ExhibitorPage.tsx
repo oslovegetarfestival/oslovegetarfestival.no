@@ -35,7 +35,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
         <p className="lead">{currentExhibitor?.intro}</p>
       </Section>
 
-      <Section width="large" verticalPadding="tiny" noPadding="top">
+      <Section width="large">
         <SanityImageWrap image={currentExhibitor?.image} isFeaturedImage />
       </Section>
 

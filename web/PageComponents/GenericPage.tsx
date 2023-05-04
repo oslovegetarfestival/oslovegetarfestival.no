@@ -19,7 +19,7 @@ const GenericPage: NextPage<Props> = ({ page = {} }) => {
         <p className="lead">{page?.intro}</p>
       </Section>
 
-      <Section width="large" verticalPadding="tiny" noPadding="top">
+      <Section width="large">
         <SanityImageWrap image={page?.image} isFeaturedImage />
       </Section>
 

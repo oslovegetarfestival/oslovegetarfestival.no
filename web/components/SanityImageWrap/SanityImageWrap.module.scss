@@ -1,3 +1,6 @@
+// Scss variables (needed for media query support)
+@import "styles/breakpoints";
+
 .picture {
   position: relative;
 }
@@ -9,6 +12,19 @@
 
 .-round-corners {
   border-radius: var(--border-radius);
+}
+
+.-featured {
+  @media (max-width: $breakpoint-tablet) {
+    border-radius: 0;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
 }
 
 .figcaption {
