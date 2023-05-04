@@ -21,10 +21,15 @@ a {
 
 // Re-enable link style
 .link {
-  text-decoration: underline;
+  border-bottom: 2px solid var(--color-kale);
   cursor: pointer;
+  background: linear-gradient(0deg, var(--color-kale), var(--color-kale)) no-repeat right bottom / 0 2px;
+  transition: background-size 350ms;
+  font-weight: 500;
 
   &:hover {
+    background-size: 100% 2px;
+    background-position-x: left;
     text-decoration: none;
   }
 }
