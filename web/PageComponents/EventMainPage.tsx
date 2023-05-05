@@ -7,6 +7,7 @@ import { SanityBlockModule } from "components/SanityBlockModule"
 import { Button } from "components/Button"
 import { weekDayAndDate } from "utils/date"
 import { Seo } from "components/Seo"
+import { useState } from "react"
 
 type Props = {
   [key: string]: any
@@ -15,6 +16,9 @@ type Props = {
 type EventItem = {
   title: string
   startDateTime: string
+  location: {
+    title: string
+  }
 }
 
 type EventGroupedItem = {
@@ -52,6 +56,14 @@ const groupEventByDate = (data: EventItem[]) => {
 
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const groupedData = groupEventByDate(page?.items)
+
+  const [currentFilter, setCurrentFilter] = useState("")
+
+  const filterEvents = (events: EventItem[]) => {
+    if (currentFilter === "" || currentFilter == null) return events
+
+    return events.filter((event) => event?.location?.title === currentFilter)
+  }
 
   return (
     <>
@@ -93,21 +105,56 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
               <p className="font-strike">Vis kun: </p>
             </Block>
             <Flex align="center" gap="small" wrap>
-              <Button color="orange" size="small" isArrow={false}>
+              <Button
+                color={currentFilter === "" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("")
+                }}
+              >
                 Vis alt
               </Button>
-              <Button size="small" isArrow={false}>
+              <Button
+                color={currentFilter === "Kokkekursteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Kokkekursteltet")
+                }}
+              >
                 Kokkekurs
               </Button>
-              <Button size="small" isArrow={false}>
+              <Button
+                color={currentFilter === "Foredragsteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Foredragsteltet")
+                }}
+              >
                 Foredrag
               </Button>
-              <Button size="small" isArrow={false}>
+              <Button
+                color={currentFilter === "Barneteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Barneteltet")
+                }}
+              >
                 For barn
               </Button>
-              <Button size="small" isArrow={false}>
+              {/* <Button
+                color={currentFilter === "Preikekroken" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Preikekroken")
+                }}
+              >
                 Preikekroken
-              </Button>
+              </Button> */}
             </Flex>
           </div>
         </Flex>
@@ -123,7 +170,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
               {weekDayAndDate(startDate)}
             </h2>
             {/* @ts-ignore */}
-            <Card data={items} type="event" />
+            <Card data={filterEvents(items)} type="event" />
           </Flow>
         </Section>
       ))}
