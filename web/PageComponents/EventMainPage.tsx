@@ -7,6 +7,7 @@ import { SanityBlockModule } from "components/SanityBlockModule"
 import { Button } from "components/Button"
 import { weekDayAndDate } from "utils/date"
 import { Seo } from "components/Seo"
+import { useState } from "react"
 
 type Props = {
   [key: string]: any
@@ -15,6 +16,9 @@ type Props = {
 type EventItem = {
   title: string
   startDateTime: string
+  location: {
+    title: string
+  }
 }
 
 type EventGroupedItem = {
@@ -53,6 +57,14 @@ const groupEventByDate = (data: EventItem[]) => {
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const groupedData = groupEventByDate(page?.items)
 
+  const [currentFilter, setCurrentFilter] = useState("")
+
+  const filterEvents = (events: EventItem[]) => {
+    if (currentFilter === "" || currentFilter == null) return events
+
+    return events.filter((event) => event?.location?.title === currentFilter)
+  }
+
   return (
     <>
       <Seo page={page} />
@@ -67,22 +79,84 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large">
-        <Block bottom="2">
-          <p className="font-strike">Hopp til: </p>
-        </Block>
-        <Flex align="center" gap="small" wrap>
-          {groupedData?.map(({ startDate }) => (
-            <Button
-              size="small"
-              isArrow={false}
-              key={startDate}
-              link={`#${weekDayAndDate(startDate)}`}
-            >
-              <span className="uppercase-first">
-                {weekDayAndDate(startDate)}
-              </span>
-            </Button>
-          ))}
+        <Flex justify="spaceBetween" gap="medium">
+          <div>
+            <Block bottom="2">
+              <p className="font-strike">Hopp til: </p>
+            </Block>
+            <Flex align="center" gap="small" wrap>
+              {groupedData?.map(({ startDate }) => (
+                <Button
+                  size="small"
+                  isArrow={false}
+                  key={startDate}
+                  link={`#${weekDayAndDate(startDate)}`}
+                >
+                  <span className="uppercase-first">
+                    {weekDayAndDate(startDate)}
+                  </span>
+                </Button>
+              ))}
+            </Flex>
+          </div>
+
+          <div>
+            <Block bottom="2">
+              <p className="font-strike">Vis kun: </p>
+            </Block>
+            <Flex align="center" gap="small" wrap>
+              <Button
+                color={currentFilter === "" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("")
+                }}
+              >
+                Vis alt
+              </Button>
+              <Button
+                color={currentFilter === "Kokkekursteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Kokkekursteltet")
+                }}
+              >
+                Kokkekurs
+              </Button>
+              <Button
+                color={currentFilter === "Foredragsteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Foredragsteltet")
+                }}
+              >
+                Foredrag
+              </Button>
+              <Button
+                color={currentFilter === "Barneteltet" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Barneteltet")
+                }}
+              >
+                For barn
+              </Button>
+              {/* <Button
+                color={currentFilter === "Preikekroken" ? "orange" : "green"}
+                size="small"
+                isArrow={false}
+                onClick={() => {
+                  setCurrentFilter("Preikekroken")
+                }}
+              >
+                Preikekroken
+              </Button> */}
+            </Flex>
+          </div>
         </Flex>
       </Section>
 
@@ -96,7 +170,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
               {weekDayAndDate(startDate)}
             </h2>
             {/* @ts-ignore */}
-            <Card data={items} type="event" />
+            <Card data={filterEvents(items)} type="event" />
           </Flow>
         </Section>
       ))}
