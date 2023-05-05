@@ -5,7 +5,7 @@ import { Block, Flex, Flow, Section } from "components/Layout"
 import { Card } from "components/Card"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Button } from "components/Button"
-import { weekDayAndDate } from "utils/date"
+import { weekDay, weekDayAndDate } from "utils/date"
 import { Seo } from "components/Seo"
 import { useState } from "react"
 
@@ -80,7 +80,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section width="large">
         <Flex justify="spaceBetween" gap="medium">
-          <div>
+          <div style={{ flex: "1 1 0px" }}>
             <Block bottom="2">
               <p className="font-strike">Hopp til: </p>
             </Block>
@@ -90,17 +90,15 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   size="small"
                   isArrow={false}
                   key={startDate}
-                  link={`#${weekDayAndDate(startDate)}`}
+                  link={`#${weekDay(startDate)}`}
                 >
-                  <span className="uppercase-first">
-                    {weekDayAndDate(startDate)}
-                  </span>
+                  <span className="uppercase-first">{weekDay(startDate)}</span>
                 </Button>
               ))}
             </Flex>
           </div>
 
-          <div>
+          <div style={{ flex: "1 1 0px" }}>
             <Block bottom="2">
               <p className="font-strike">Vis kun: </p>
             </Block>
@@ -163,10 +161,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
         <Section width="large" verticalPadding="large" key={startDate}>
           <Flow>
-            <h2
-              className="sticky-section-header"
-              id={weekDayAndDate(startDate)}
-            >
+            <h2 className="sticky-section-header" id={weekDay(startDate)}>
               {weekDayAndDate(startDate)}
             </h2>
             {/* @ts-ignore */}

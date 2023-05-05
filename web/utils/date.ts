@@ -85,3 +85,17 @@ export const weekDayAndDate = (date: string) => {
     timeZone: "Europe/Oslo",
   })
 }
+
+// Ex: Lørdag
+export const weekDay = (date: string) => {
+  if (!date) return ""
+
+  // Get weekday
+  const startDateObject = new Date(date)
+  const weekDay = startDateObject.toLocaleDateString("no", {
+    weekday: "long",
+    timeZone: "Europe/Oslo",
+  })
+
+  return weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
+}
