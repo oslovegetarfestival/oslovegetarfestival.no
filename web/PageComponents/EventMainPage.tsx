@@ -67,22 +67,49 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       <Section width="large">
-        <Block bottom="2">
-          <p className="font-strike">Hopp til: </p>
-        </Block>
-        <Flex align="center" gap="small" wrap>
-          {groupedData?.map(({ startDate }) => (
-            <Button
-              size="small"
-              isArrow={false}
-              key={startDate}
-              link={`#${weekDayAndDate(startDate)}`}
-            >
-              <span className="uppercase-first">
-                {weekDayAndDate(startDate)}
-              </span>
-            </Button>
-          ))}
+        <Flex justify="spaceBetween" gap="medium">
+          <div>
+            <Block bottom="2">
+              <p className="font-strike">Hopp til: </p>
+            </Block>
+            <Flex align="center" gap="small" wrap>
+              {groupedData?.map(({ startDate }) => (
+                <Button
+                  size="small"
+                  isArrow={false}
+                  key={startDate}
+                  link={`#${weekDayAndDate(startDate)}`}
+                >
+                  <span className="uppercase-first">
+                    {weekDayAndDate(startDate)}
+                  </span>
+                </Button>
+              ))}
+            </Flex>
+          </div>
+
+          <div>
+            <Block bottom="2">
+              <p className="font-strike">Vis kun: </p>
+            </Block>
+            <Flex align="center" gap="small" wrap>
+              <Button color="orange" size="small" isArrow={false}>
+                Vis alt
+              </Button>
+              <Button size="small" isArrow={false}>
+                Kokkekurs
+              </Button>
+              <Button size="small" isArrow={false}>
+                Foredrag
+              </Button>
+              <Button size="small" isArrow={false}>
+                For barn
+              </Button>
+              <Button size="small" isArrow={false}>
+                Preikekroken
+              </Button>
+            </Flex>
+          </div>
         </Flex>
       </Section>
 
