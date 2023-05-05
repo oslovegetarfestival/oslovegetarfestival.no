@@ -6,8 +6,6 @@ Website and CMS for Oslo Vegetarfestival.
 
 https://oslovegetarfestival.no
 
-Temporary:
-https://oslovegetarfestival.vercel.app
 
 ## Development
 
