@@ -143,16 +143,16 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
               >
                 For barn
               </Button>
-              {/* <Button
-                color={currentFilter === "Preikekroken" ? "orange" : "green"}
+              <Button
+                color={currentFilter === "Hangout" ? "orange" : "green"}
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("Preikekroken")
+                  setCurrentFilter("Hangout")
                 }}
               >
-                Preikekroken
-              </Button> */}
+                Hangout
+              </Button>
             </Flex>
           </div>
         </Flex>
