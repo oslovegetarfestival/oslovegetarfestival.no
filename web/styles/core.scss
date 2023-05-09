@@ -32,6 +32,11 @@ a {
     background-position-x: left;
     text-decoration: none;
   }
+
+  &--white {
+    border-bottom: 2px solid var(--color-almondmilk);
+    background: linear-gradient(0deg, var(--color-almondmilk), var(--color-almondmilk)) no-repeat right bottom / 0 2px;    
+  }
 }
 
 // Re-enable list style

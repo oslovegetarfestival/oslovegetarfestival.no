@@ -27,7 +27,7 @@ export const Footer = () => {
                   Opplev det beste fra planteriket! Vi er en inspirerende og
                   idyllisk matfestival som brenner for plantebasert mat.{" "}
                   <Link href="/om-oss">
-                    <a className="link">Mer om festivalen</a>
+                    <a className="link link--white">Mer om festivalen</a>
                   </Link>
                 </p>
                 <Button
@@ -82,7 +82,7 @@ export const Footer = () => {
                 </Link>
               </p>
               <Link href="/personvern">
-                <a className="link">Personvern og cookies</a>
+                <a className="link link--white">Personvern og cookies</a>
               </Link>
             </Flex>
           </Flow>
