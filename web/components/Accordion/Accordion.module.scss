@@ -1,7 +1,7 @@
 .wrap {
-  background: var(--color-lychee);
-  padding: var(--spacing-5);
+  background: var(--color-orange);
   border-radius: var(--border-radius);
+  overflow: hidden; // Make rounded edges on bottom work when open
 }
 
 .summary {
@@ -9,6 +9,7 @@
   display: block;
   cursor: pointer;
   position: relative;  
+  padding: var(--spacing-5);
 
   &::-webkit-details-marker {
     display: none;
@@ -23,17 +24,23 @@
 }
 
 .details {
-  &:not(:last-of-type) {
-    border-bottom: 1px solid var(--color-cucumber);
-    padding-bottom: var(--spacing-3);
+  transition: var(--transition-quick);
+  border-bottom: 1px solid var(--color-cherry);
+  
+  &:last-of-type {
+    border-color: transparent;
   }
 }
 
-.details[open] .icon {
-  transform: rotate(0deg);
+.details[open] {
+  background: var(--color-banana);
+
+  & .icon {
+    transform: rotate(0deg);
+  }
 }
 
+
 .content {
-  margin-top: var(--spacing-4);
-  margin-bottom: var(--spacing-7);
+  margin: 0 var(--spacing-5) var(--spacing-6);
 }
