@@ -6,7 +6,8 @@ export const sanityConfig = {
   dataset: "production",
   projectId: "y22dlo4f",
   apiVersion: "2022-09-20",
-  useCdn: false,
+  // Use CDN for development to save API quota (but don't in prod, to ensure latest changes during build)
+  useCdn: process.env.IS_LOCALHOST ? true : false,
 }
 
 // Sanity client
