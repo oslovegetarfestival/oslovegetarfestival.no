@@ -7,7 +7,7 @@ import { SanityBlockModule } from "components/SanityBlockModule"
 import { Button } from "components/Button"
 import { weekDay, weekDayAndDate } from "utils/date"
 import { Seo } from "components/Seo"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 type Props = {
   [key: string]: any
@@ -58,6 +58,17 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const groupedData = groupEventByDate(page?.items)
 
   const [currentFilter, setCurrentFilter] = useState("")
+
+  const handleFilterClick = (filter: string) => {
+    setCurrentFilter(filter)
+    // Save filter to browser to remember it on page back navigation
+    sessionStorage.setItem("eventFilter", filter)
+  }
+
+  useEffect(() => {
+    const storedFilter = sessionStorage.getItem("eventFilter")
+    setCurrentFilter(storedFilter ?? "")
+  }, [])
 
   const filterEvents = (events: EventItem[]) => {
     if (currentFilter === "" || currentFilter == null) return events
@@ -118,7 +129,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("Kokkekursteltet")
+                  handleFilterClick("Kokkekursteltet")
                 }}
               >
                 Kokkekurs
@@ -128,7 +139,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("Foredragsteltet")
+                  handleFilterClick("Foredragsteltet")
                 }}
               >
                 Foredrag
@@ -138,7 +149,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("Barneteltet")
+                  handleFilterClick("Barneteltet")
                 }}
               >
                 For barn
@@ -148,7 +159,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("Hangout")
+                  handleFilterClick("Hangout")
                 }}
               >
                 Hangout
