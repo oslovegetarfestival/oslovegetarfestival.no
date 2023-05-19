@@ -119,7 +119,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 size="small"
                 isArrow={false}
                 onClick={() => {
-                  setCurrentFilter("")
+                  handleFilterClick("")
                 }}
               >
                 Vis alt
