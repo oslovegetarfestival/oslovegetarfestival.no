@@ -120,6 +120,18 @@ svg {
   }
 }
 
+@keyframes animate-in-page {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes animate-in-from-top {
   0% {
     transform: translateY(-15px);
@@ -141,6 +153,10 @@ svg {
 
 [data-animate-down] {
   animation: animate-in-from-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+[data-animate-in-page] {
+  animation: animate-in-from-bottom 0.2s ease;
 }
 
 [data-animation-order="1"] {
