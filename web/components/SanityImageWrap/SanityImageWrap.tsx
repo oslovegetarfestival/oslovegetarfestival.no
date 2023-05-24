@@ -12,6 +12,9 @@ type Props = {
     asset: {
       _ref: string
     }
+    metadata?: {
+      lqip?: string
+    }
     hotspot?: {
       x: number
       y: number
@@ -85,6 +88,7 @@ export const SanityImageWrap = ({
         className={imageClass}
         style={style}
         alt={image?.altText ?? ""}
+        preview={image?.metadata?.lqip}
       />
       {!isHideCaption && image?.caption && (
         <figcaption aria-hidden="true" className={captionClass}>
