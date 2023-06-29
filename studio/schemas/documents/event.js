@@ -36,13 +36,6 @@ export const event = {
     contentBlocks,
     seo,
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      media: "image",
-    },
-  },
   preview: {
     select: {
       title: "title",
