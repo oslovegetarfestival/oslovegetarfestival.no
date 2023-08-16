@@ -4,58 +4,58 @@
 $minWidth: 320px;
 $maxWidth: 1200px;
 
-
 @font-face {
   font-display: fallback;
-  font-family: 'Strike';
-  src: url('/fonts/Strike-Black.eot');
-  src: url('/fonts/Strike-Black.eot?#iefix') format('embedded-opentype'), url('/fonts/Strike-Black.woff2') format('woff2'), url('/fonts/Strike-Black.woff') format('woff');
+  font-family: "Strike";
+  src: url("/fonts/Strike-Black.eot");
+  src: url("/fonts/Strike-Black.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Strike-Black.woff2") format("woff2"),
+    url("/fonts/Strike-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-display: fallback;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/jost-v14-latin-regular.eot');
-  src: url('/fonts/jost-v14-latin-regular.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/jost-v14-latin-regular.woff2') format('woff2'),
-       url('/fonts/jost-v14-latin-regular.woff') format('woff'),
-       
+  src: url("/fonts/jost-v14-latin-regular.eot");
+  src: url("/fonts/jost-v14-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/jost-v14-latin-regular.woff2") format("woff2"),
+    url("/fonts/jost-v14-latin-regular.woff") format("woff");
 }
 @font-face {
   font-display: fallback;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/jost-v14-latin-italic.eot');
-  src: url('/fonts/jost-v14-latin-italic.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/jost-v14-latin-italic.woff2') format('woff2'),
-       url('/fonts/jost-v14-latin-italic.woff') format('woff'),
-       
+  src: url("/fonts/jost-v14-latin-italic.eot");
+  src: url("/fonts/jost-v14-latin-italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/jost-v14-latin-italic.woff2") format("woff2"),
+    url("/fonts/jost-v14-latin-italic.woff") format("woff");
 }
 @font-face {
   font-display: fallback;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/jost-v14-latin-500.eot');
-  src: url('/fonts/jost-v14-latin-500.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/jost-v14-latin-500.woff2') format('woff2'),
-       url('/fonts/jost-v14-latin-500.woff') format('woff'),
-       
+  src: url("/fonts/jost-v14-latin-500.eot");
+  src: url("/fonts/jost-v14-latin-500.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/jost-v14-latin-500.woff2") format("woff2"),
+    url("/fonts/jost-v14-latin-500.woff") format("woff");
 }
 @font-face {
   font-display: fallback;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/jost-v14-latin-600.eot');
-  src: url('/fonts/jost-v14-latin-600.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/jost-v14-latin-600.woff2') format('woff2'),
-       url('/fonts/jost-v14-latin-600.woff') format('woff'),
+  src: url("/fonts/jost-v14-latin-600.eot");
+  src: url("/fonts/jost-v14-latin-600.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/jost-v14-latin-600.woff2") format("woff2"),
+    url("/fonts/jost-v14-latin-600.woff") format("woff");
 }
 
 html {
@@ -128,11 +128,12 @@ p {
 .page-title {
   @include fluid-type($minWidth, $maxWidth, 42px, 72px);
   text-align: center;
+  text-wrap: balance;
 }
 
 .breadcrumb {
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   text-align: center;
-  margin: 0 auto .6rem;
+  margin: 0 auto 0.6rem;
 }
