@@ -21,7 +21,7 @@ export const FrontpageHero = () => {
           <span>festival</span>
           <Block top="5">
             <span className={styles.date}>Kubaparken</span>
-            <span className={styles.date}>27.-28. mai 2023</span>
+            <span className={styles.date}>25.-26. mai 2024</span>
           </Block>
         </div>
 
