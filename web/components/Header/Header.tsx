@@ -56,13 +56,11 @@ export const Header = ({ isFrontpage }: Props) => {
         >
           {(!isFrontpage || isMobileMenuOpen) && (
             <p className="h1">
-              <Link href="/">
-                <a className={logoClass} title="Til forsiden">
-                  <span>Oslo</span>
-                  <span>Vegetar</span>
-                  <span>festival</span>
-                  <span className={styles.date}>25.-26. mai 2024</span>
-                </a>
+              <Link href="/" className={logoClass} title="Til forsiden">
+                <span>Oslo</span>
+                <span>Vegetar</span>
+                <span>festival</span>
+                <span className={styles.date}>25.-26. mai 2024</span>
               </Link>
             </p>
           )}

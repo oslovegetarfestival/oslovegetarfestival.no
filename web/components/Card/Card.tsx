@@ -73,27 +73,25 @@ export const Card = ({ data, type, isEagerLoadImages = false }: Props) => {
   return (
     <div className={styles.grid}>
       {data?.map((item) => (
-        <Link key={item._id} href={item.slug?.current}>
-          <a className={styles.link}>
-            <div className={styles.wrap}>
-              <SanityImageWrap
-                image={item?.image}
-                width={468} // = Largest width on any screen size
-                height={352}
-                isHideCaption
-                loading={isEagerLoadImages ? "eager" : "lazy"}
-              />
-              <div className={styles.content}>
-                <p className={styles.metadata}>
-                  {createEventDate({ type: type, item: item })}
-                </p>
-                <Flow space="xsmall">
-                  <h2 className="h3">{item.title}</h2>
-                  <p>{item.intro}</p>
-                </Flow>
-              </div>
+        <Link key={item._id} href={item.slug?.current} className={styles.link}>
+          <div className={styles.wrap}>
+            <SanityImageWrap
+              image={item?.image}
+              width={468} // = Largest width on any screen size
+              height={352}
+              isHideCaption
+              loading={isEagerLoadImages ? "eager" : "lazy"}
+            />
+            <div className={styles.content}>
+              <p className={styles.metadata}>
+                {createEventDate({ type: type, item: item })}
+              </p>
+              <Flow space="xsmall">
+                <h2 className="h3">{item.title}</h2>
+                <p>{item.intro}</p>
+              </Flow>
             </div>
-          </a>
+          </div>
         </Link>
       ))}
     </div>

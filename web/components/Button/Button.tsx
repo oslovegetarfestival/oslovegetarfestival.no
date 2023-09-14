@@ -34,16 +34,13 @@ export const Button = ({
     !isInternalLink && isArrow ? styles[`button--arrow-external`] : false
   )
 
-
   // Link
   if (link) {
     if (isInternalLink) {
       // Internal link
       return (
-        <Link href={link}>
-          <a onClick={onClick} className={buttonClass}>
-            {children}
-          </a>
+        <Link href={link} onClick={onClick} className={buttonClass}>
+          {children}
         </Link>
       )
     }

@@ -18,9 +18,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section verticalPadding="large" noPadding="top">
         <Block top="4" bottom="4">
-          <Link href="/aktuelt">
-            <a>← Aktuelt</a>
-          </Link>
+          <Link href="/aktuelt">← Aktuelt</Link>
         </Block>
         <Block bottom="2">
           <p className="meta-details">

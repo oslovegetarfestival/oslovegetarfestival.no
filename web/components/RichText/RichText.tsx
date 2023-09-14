@@ -20,8 +20,8 @@ export const RichText = ({ data }: Props) => {
 
               if (isInternalLink) {
                 return (
-                  <Link href={value?.href}>
-                    <a className="link">{children}</a>
+                  <Link href={value?.href} className="link">
+                    {children}
                   </Link>
                 )
               }

@@ -26,8 +26,8 @@ export const Footer = () => {
                 <p>
                   Opplev det beste fra planteriket! Vi er en inspirerende og
                   idyllisk matfestival som brenner for plantebasert mat.{" "}
-                  <Link href="/om-oss">
-                    <a className="link link--white">Mer om festivalen</a>
+                  <Link href="/om-oss" className="link link--white">
+                    Mer om festivalen
                   </Link>
                 </p>
                 <Button
@@ -74,15 +74,13 @@ export const Footer = () => {
 
             <Flex justify="spaceBetween" align="end" wrap>
               <p className="h1">
-                <Link href="/">
-                  <a className={styles.logo}>
-                    <span>Oslo</span> <span>Vegetar</span>
-                    <span>festival</span>
-                  </a>
+                <Link href="/" className={styles.logo}>
+                  <span>Oslo</span> <span>Vegetar</span>
+                  <span>festival</span>
                 </Link>
               </p>
-              <Link href="/personvern">
-                <a className="link link--white">Personvern og cookies</a>
+              <Link href="/personvern" className="link link--white">
+                Personvern og cookies
               </Link>
             </Flex>
           </Flow>

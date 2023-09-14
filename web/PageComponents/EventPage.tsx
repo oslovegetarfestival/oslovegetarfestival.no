@@ -31,9 +31,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
 
       <Section verticalPadding="large" noPadding="top">
         <Block top="4" bottom="4">
-          <Link href="/program">
-            <a>← Program</a>
-          </Link>
+          <Link href="/program">← Program</Link>
         </Block>
 
         <Block bottom="2">
