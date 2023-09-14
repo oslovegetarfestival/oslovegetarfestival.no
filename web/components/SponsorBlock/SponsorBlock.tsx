@@ -20,14 +20,13 @@ export const SponsorBlock = ({ data }: Props) => {
           </Block>
         )}
 
-        <Flex justify="center" align="center" gap="medium" wrap>
+        <Flex justify="center" align="center" gap="small" wrap>
           {data?.sponsors?.map(
             ({
               image,
               url = "#",
               _key,
             }: {
-              title: string
               image: {
                 altText?: string
                 asset: {
@@ -43,12 +42,6 @@ export const SponsorBlock = ({ data }: Props) => {
                   isRoundCorners={false}
                   width={300}
                   fill="contain"
-                  style={{
-                    maxWidth: "300px",
-                    maxHeight: "150px",
-                    width: "auto",
-                    height: "auto",
-                  }}
                 />
               </a>
             )
