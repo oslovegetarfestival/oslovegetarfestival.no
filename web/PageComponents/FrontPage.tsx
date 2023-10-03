@@ -57,7 +57,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
         background="lychee"
       >
         <Section width="large" noPadding="sides">
-          <h2>Årets utstillere</h2>
+          <h2>Noen av årets utstillere</h2>
 
           <Block top="7" bottom="5">
             <Card data={page?.promotedExhibitors} />
