@@ -5,11 +5,12 @@ import { urlForImage } from "lib/sanity"
 import { Block, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 
-import { weekDayAndStartEndTime } from "utils/date"
+import { fullYear, isOldEvent, weekDayAndStartEndTime } from "utils/date"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import Link from "next/link"
 import { PageNavigation } from "components/PageNavigation"
+import { Warning } from "components/Warning"
 
 type Props = {
   [key: string]: any
@@ -33,6 +34,15 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
         <Block top="4" bottom="4">
           <Link href="/program">← Program</Link>
         </Block>
+
+        {isOldEvent(currentEvent?.startDateTime) && (
+          <Block top="4" bottom="4">
+            <Warning>
+              OBS! Du ser nå på et arrangement fra{" "}
+              {fullYear(currentEvent.startDateTime)}.
+            </Warning>
+          </Block>
+        )}
 
         <Block bottom="2">
           <p className="meta-details">

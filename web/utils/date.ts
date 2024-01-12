@@ -3,6 +3,16 @@ type DateProps = {
   endDate?: string
 }
 
+// Ex: 2023
+export const fullYear = (date: string) => {
+  // Get weekday
+  const dateObject = new Date(date)
+  return dateObject.toLocaleDateString("no", {
+    year: "numeric",
+    timeZone: "Europe/Oslo",
+  })
+}
+
 // Ex: 28. mai 2023
 export const fullDate = (date: string) => {
   // Get weekday
@@ -97,5 +107,17 @@ export const weekDay = (date: string) => {
     timeZone: "Europe/Oslo",
   })
 
-  return weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
+  return weekDay.charAt(0).toUpperCase() + weekDay.slice(1)
+}
+
+export const isOldEvent = (date: string) => {
+  const currentTimeStamp = Date.now()
+  const inputTimeStamp = new Date(date).getTime()
+
+  const daysInFuture = 90
+  const msInFuture = daysInFuture * 24 * 60 * 60 * 1000
+
+  const isOldEvent = currentTimeStamp > inputTimeStamp + msInFuture
+
+  return isOldEvent
 }
