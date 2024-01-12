@@ -76,6 +76,9 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
     return events.filter((event) => event?.location?.title === currentFilter)
   }
 
+  // Temp
+  const isShowEvents = false
+
   return (
     <>
       <Seo page={page} />
@@ -89,97 +92,107 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="large">
-        <Flex justify="spaceBetween" gap="medium">
-          <div style={{ flex: "1 1 0px" }}>
-            <Block bottom="2">
-              <p className="font-strike">Hopp til: </p>
-            </Block>
-            <Flex align="center" gap="small" wrap>
-              {groupedData?.map(({ startDate }) => (
-                <Button
-                  size="small"
-                  isArrow={false}
-                  key={startDate}
-                  link={`#${weekDay(startDate)}`}
-                >
-                  <span className="uppercase-first">{weekDay(startDate)}</span>
-                </Button>
-              ))}
-            </Flex>
-          </div>
+      {isShowEvents && (
+        <>
+          <Section width="large">
+            <Flex justify="spaceBetween" gap="medium">
+              <div style={{ flex: "1 1 0px" }}>
+                <Block bottom="2">
+                  <p className="font-strike">Hopp til: </p>
+                </Block>
+                <Flex align="center" gap="small" wrap>
+                  {groupedData?.map(({ startDate }) => (
+                    <Button
+                      size="small"
+                      isArrow={false}
+                      key={startDate}
+                      link={`#${weekDay(startDate)}`}
+                    >
+                      <span className="uppercase-first">
+                        {weekDay(startDate)}
+                      </span>
+                    </Button>
+                  ))}
+                </Flex>
+              </div>
 
-          <div style={{ flex: "1 1 0px" }}>
-            <Block bottom="2">
-              <p className="font-strike">Vis kun: </p>
-            </Block>
-            <Flex align="center" gap="small" wrap>
-              <Button
-                color={currentFilter === "" ? "orange" : "green"}
-                size="small"
-                isArrow={false}
-                onClick={() => {
-                  handleFilterClick("")
-                }}
-              >
-                Vis alt
-              </Button>
-              <Button
-                color={currentFilter === "Kokkekursteltet" ? "orange" : "green"}
-                size="small"
-                isArrow={false}
-                onClick={() => {
-                  handleFilterClick("Kokkekursteltet")
-                }}
-              >
-                Kokkekurs
-              </Button>
-              <Button
-                color={currentFilter === "Foredragsteltet" ? "orange" : "green"}
-                size="small"
-                isArrow={false}
-                onClick={() => {
-                  handleFilterClick("Foredragsteltet")
-                }}
-              >
-                Foredrag
-              </Button>
-              <Button
-                color={currentFilter === "Barneteltet" ? "orange" : "green"}
-                size="small"
-                isArrow={false}
-                onClick={() => {
-                  handleFilterClick("Barneteltet")
-                }}
-              >
-                For barn
-              </Button>
-              <Button
-                color={currentFilter === "Hangout" ? "orange" : "green"}
-                size="small"
-                isArrow={false}
-                onClick={() => {
-                  handleFilterClick("Hangout")
-                }}
-              >
-                Hangout
-              </Button>
+              <div style={{ flex: "1 1 0px" }}>
+                <Block bottom="2">
+                  <p className="font-strike">Vis kun: </p>
+                </Block>
+                <Flex align="center" gap="small" wrap>
+                  <Button
+                    color={currentFilter === "" ? "orange" : "green"}
+                    size="small"
+                    isArrow={false}
+                    onClick={() => {
+                      handleFilterClick("")
+                    }}
+                  >
+                    Vis alt
+                  </Button>
+                  <Button
+                    color={
+                      currentFilter === "Kokkekursteltet" ? "orange" : "green"
+                    }
+                    size="small"
+                    isArrow={false}
+                    onClick={() => {
+                      handleFilterClick("Kokkekursteltet")
+                    }}
+                  >
+                    Kokkekurs
+                  </Button>
+                  <Button
+                    color={
+                      currentFilter === "Foredragsteltet" ? "orange" : "green"
+                    }
+                    size="small"
+                    isArrow={false}
+                    onClick={() => {
+                      handleFilterClick("Foredragsteltet")
+                    }}
+                  >
+                    Foredrag
+                  </Button>
+                  <Button
+                    color={currentFilter === "Barneteltet" ? "orange" : "green"}
+                    size="small"
+                    isArrow={false}
+                    onClick={() => {
+                      handleFilterClick("Barneteltet")
+                    }}
+                  >
+                    For barn
+                  </Button>
+                  <Button
+                    color={currentFilter === "Hangout" ? "orange" : "green"}
+                    size="small"
+                    isArrow={false}
+                    onClick={() => {
+                      handleFilterClick("Hangout")
+                    }}
+                  >
+                    Hangout
+                  </Button>
+                </Flex>
+              </div>
             </Flex>
-          </div>
-        </Flex>
-      </Section>
+          </Section>
 
-      {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
-        <Section width="large" verticalPadding="large" key={startDate}>
-          <Flow>
-            <h2 className="sticky-section-header" id={weekDay(startDate)}>
-              {weekDayAndDate(startDate)}
-            </h2>
-            {/* @ts-ignore */}
-            <Card data={filterEvents(items)} type="event" />
-          </Flow>
-        </Section>
-      ))}
+          {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
+            <Section width="large" verticalPadding="large" key={startDate}>
+              <Flow>
+                <h2 className="sticky-section-header" id={weekDay(startDate)}>
+                  {weekDayAndDate(startDate)}
+                </h2>
+                {/* @ts-ignore */}
+                <Card data={filterEvents(items)} type="event" />
+              </Flow>
+            </Section>
+          ))}
+        </>
+      )}
     </>
   )
 }
