@@ -1,12 +1,11 @@
 .heroImage {
   position: absolute;
-  right: var(--spacing-7);
+  left: 40%;
   z-index: -1;
   height: 100%;
   max-width: none;
 
   @media (max-width: 1250px) {
-    right: auto;
     left: 30%;
   }
 
