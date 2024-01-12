@@ -24,5 +24,8 @@
     "sanity": "3.16.4",
     "slugify": "1.6.5",
     "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@sanity/cli": "3.24.1"
   }
 }
