@@ -53,8 +53,13 @@ export async function getStaticPaths() {
   // Add our index (front page)
   pageQueries.push("/")
 
+  // Exclude pages that are handled by normal /pages routing
+  const filteredPageQueries = pageQueries.filter(
+    (slug: string) => slug !== "/program-2023"
+  )
+
   // Split the slug strings to arrays (as required by Next.js)
-  const paths = pageQueries.map((slug: string) => ({
+  const paths = filteredPageQueries.map((slug: string) => ({
     params: { slug: slug.split("/").filter((p) => p) },
   }))
 
