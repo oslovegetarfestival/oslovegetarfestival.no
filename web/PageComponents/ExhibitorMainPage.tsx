@@ -35,6 +35,15 @@ const groupExhibitionByType = (data: ExhibitionItem[]) => {
     []
   )
 
+  // Move "Tidligere utstillere" to the bottom of the array (and present it last)
+  const indexToMove = grouped.findIndex(
+    (event) => event.title === "Tidligere utstillere"
+  )
+  if (indexToMove !== -1) {
+    const [movedItem] = grouped.splice(indexToMove, 1)
+    grouped.push(movedItem)
+  }
+
   return grouped
 }
 
