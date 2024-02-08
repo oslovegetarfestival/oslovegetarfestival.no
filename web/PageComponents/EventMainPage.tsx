@@ -77,7 +77,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   }
 
   // Temp
-  const isShowEvents = false
+  const isShowEvents = true
 
   return (
     <>
