@@ -43,7 +43,12 @@ export const event = {
       imageAsset: "image",
     },
     prepare({ title = "", startTime = "", imageAsset = {} }) {
-      const dateOptions = { weekday: "long", month: "long", day: "numeric" };
+      const dateOptions = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      };
       const timeOptions = { hour: "2-digit", minute: "2-digit" };
       const start = new Date(startTime);
       const localeStart = start.toLocaleDateString("no", dateOptions);
@@ -62,7 +67,7 @@ export const event = {
     {
       title: "Start dato",
       name: "startDateAsc",
-      by: [{ field: "startDateTime", direction: "asc" }],
+      by: [{ field: "startDateTime", direction: "desc" }],
     },
   ],
 };
