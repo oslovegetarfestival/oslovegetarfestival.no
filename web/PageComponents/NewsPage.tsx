@@ -30,7 +30,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
         <p className="lead">{page?.intro}</p>
       </Section>
 
-      <Section width="large">
+      <Section width="medium">
         <SanityImageWrap image={page?.image} isFeaturedImage />
       </Section>
 

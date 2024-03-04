@@ -58,7 +58,7 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
         <p className="lead">{currentEvent?.intro}</p>
       </Section>
 
-      <Section width="large">
+      <Section width="medium">
         <SanityImageWrap image={currentEvent?.image} isFeaturedImage />
       </Section>
 

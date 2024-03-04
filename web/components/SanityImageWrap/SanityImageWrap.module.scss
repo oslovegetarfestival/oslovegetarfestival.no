@@ -3,6 +3,7 @@
 
 .picture {
   position: relative;
+  overflow: hidden;
 }
 
 .image {
@@ -15,15 +16,14 @@
 }
 
 .-featured {
-  @media (max-width: $breakpoint-tablet) {
-    border-radius: 0;
+  @media (max-width: 600px) {
     left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    max-width: 100vw;
+    margin-left: -70vw;
+    margin-right: -70vw;
+    max-width: 140vw;
     position: relative;
     right: 50%;
-    width: 100vw;
+    width: 140vw;
   }
 }
 

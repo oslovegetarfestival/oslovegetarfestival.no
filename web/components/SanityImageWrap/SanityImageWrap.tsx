@@ -35,7 +35,7 @@ type Props = {
 
 export const SanityImageWrap = ({
   image,
-  width = 1300, // Make sure we're never loading full resolution images by a mistake
+  width = 1000, // Make sure we're never loading full resolution images by a mistake
   height,
   isRoundCorners = true,
   isFeaturedImage,
@@ -48,8 +48,8 @@ export const SanityImageWrap = ({
   if (!imageId) return null
 
   if (isFeaturedImage) {
-    width = 1300
-    height = 700
+    width = 1000
+    height = 600
     loading = "eager"
   }
 
@@ -61,10 +61,15 @@ export const SanityImageWrap = ({
     width = 700
   }
 
+  const pictureClass = classNames(
+    styles.picture,
+    isFeaturedImage && styles["-round-corners"]
+  )
+
   const imageClass = classNames(
     styles.image,
-    isRoundCorners ? styles["-round-corners"] : false,
-    isFeaturedImage ? styles["-featured"] : false
+    isRoundCorners && styles["-round-corners"],
+    isFeaturedImage && styles["-featured"]
   )
 
   const captionClass = classNames(
@@ -72,7 +77,7 @@ export const SanityImageWrap = ({
   )
 
   return (
-    <picture className={styles.picture}>
+    <picture className={pictureClass}>
       <SanityImage
         baseUrl={`https://cdn.sanity.io/images/${sanityConfig.projectId}/${sanityConfig.dataset}/`}
         id={imageId}
