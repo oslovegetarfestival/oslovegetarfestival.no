@@ -11,6 +11,10 @@
 
   @media (max-width: 500px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    &-isSplit {
+      grid-gap: var(--spacing-4);
+    }
   }
 
   &::-webkit-scrollbar {
@@ -31,8 +35,36 @@
   position: relative;
   transition: all 0.1s ease;
 
-  &:hover {
-    transform: translateY(-6px);
+  &-isSplit {
+    @media (max-width: 500px) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--spacing-4);
+
+
+      .title {
+        hyphens: auto;
+
+        // Limit titles to 3 lines
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // height: 3.7em;
+      }
+
+      .content {
+        padding: var(--spacing-1) 0 var(--spacing-2);
+        // order: -1;
+      }
+
+      .intro {
+        // display: none;
+      }
+
+
+    }
   }
 }
 

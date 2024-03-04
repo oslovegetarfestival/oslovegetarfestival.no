@@ -187,7 +187,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   {weekDayAndDate(startDate)}
                 </h2>
                 {/* @ts-ignore */}
-                <Card data={filterEvents(items)} type="event" />
+                <Card data={filterEvents(items)} type="event" isSplit />
               </Flow>
             </Section>
           ))}

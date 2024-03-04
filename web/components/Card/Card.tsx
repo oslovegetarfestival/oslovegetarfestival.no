@@ -38,6 +38,7 @@ type Props = {
   type?: TypeProps
   isEagerLoadImages?: boolean
   isScroll?: boolean
+  isSplit?: boolean
 }
 
 type EventDateProps = {
@@ -76,16 +77,28 @@ export const Card = ({
   type,
   isEagerLoadImages = false,
   isScroll,
+  isSplit,
 }: Props) => {
   const gridClass = classNames({
     [styles.grid]: true,
     [styles[`grid-isScroll`]]: isScroll,
+    [styles[`grid-isSplit`]]: isSplit,
+  })
+
+  const wrapClass = classNames({
+    [styles.wrap]: true,
+    [styles[`wrap-isSplit`]]: isSplit,
+  })
+
+  const titleClass = classNames({
+    h3: true,
+    [styles.title]: true,
   })
   return (
     <div className={gridClass}>
       {data?.map((item) => (
         <Link key={item._id} href={item.slug?.current} className={styles.link}>
-          <div className={styles.wrap}>
+          <div className={wrapClass}>
             <SanityImageWrap
               image={item?.image}
               width={468} // = Largest width on any screen size
@@ -98,8 +111,8 @@ export const Card = ({
                 {createEventDate({ type: type, item: item })}
               </p>
               <Flow space="xsmall">
-                <h2 className="h3">{item.title}</h2>
-                <p>{item.intro}</p>
+                <h2 className={titleClass}>{item.title}</h2>
+                <p className={styles.intro}>{item.intro}</p>
               </Flow>
             </div>
           </div>

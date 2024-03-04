@@ -84,7 +84,7 @@ const ExhibitorMainPage: NextPage<Props> = ({ page = {} }) => {
               {title}
             </h2>
 
-            <Card data={items} />
+            <Card data={items} isSplit />
           </Flow>
         </Section>
       ))}
