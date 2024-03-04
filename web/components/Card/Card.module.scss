@@ -1,23 +1,35 @@
 .grid {
   display: grid;
-  grid-gap: var(--grid-gutter);
+  margin: 0 calc(var(--page-gutter) * -1);
+  padding: 0 var(--page-gutter);
   grid-gap: var(--grid-gutter);
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  
-  @media(max-width: 1200px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media(max-width: 890px) {
+
+  @media (max-width: 890px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  @media(max-width: 500px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-isScroll {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(4, minmax(85%, 1fr));
+    }
   }
 }
 
 .wrap {
   position: relative;
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 
   &:hover {
     transform: translateY(-6px);
@@ -26,7 +38,8 @@
 
 .link {
   cursor: pointer;
-  
+  scroll-snap-align: center;
+
   &:hover {
     text-decoration: none;
 
@@ -45,7 +58,7 @@
   margin-bottom: -12px;
   padding-bottom: 20px;
   font-weight: 500;
-  
+
   &::first-letter {
     text-transform: uppercase;
   }

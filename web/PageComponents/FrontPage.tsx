@@ -29,7 +29,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Nytt fra festivalen</h2>
 
           <Block top="7" bottom="5">
-            <Card data={page?.promotedNews} isEagerLoadImages />
+            <Card data={page?.promotedNews} isEagerLoadImages isScroll />
           </Block>
 
           <Button link="/aktuelt">Se alle nyheter</Button>
@@ -43,7 +43,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Dette skjer på festivalen</h2>
 
           <Block top="7" bottom="5">
-            <Card data={page?.promotedEvents} type="eventWithDate" />
+            <Card data={page?.promotedEvents} type="eventWithDate" isScroll />
           </Block>
 
           <Button link="/program">Se hele programmet</Button>
@@ -60,7 +60,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Noen av årets utstillere</h2>
 
           <Block top="7" bottom="5">
-            <Card data={page?.promotedExhibitors} />
+            <Card data={page?.promotedExhibitors} isScroll />
           </Block>
 
           <Flex justify="center" wrap gap="small">

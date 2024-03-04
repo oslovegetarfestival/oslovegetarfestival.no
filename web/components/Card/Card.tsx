@@ -6,6 +6,7 @@ import styles from "./Card.module.scss"
 import { fullDate, startAndEndTime } from "utils/date"
 import { weekDayAndStartEndTime } from "utils/date"
 import { SanityImageWrap } from "components/SanityImageWrap"
+import classNames from "classnames"
 
 type Item = {
   image: {
@@ -36,6 +37,7 @@ type Props = {
   data: Item[]
   type?: TypeProps
   isEagerLoadImages?: boolean
+  isScroll?: boolean
 }
 
 type EventDateProps = {
@@ -69,9 +71,18 @@ const createEventDate = ({ type, item }: EventDateProps) => {
   return ""
 }
 
-export const Card = ({ data, type, isEagerLoadImages = false }: Props) => {
+export const Card = ({
+  data,
+  type,
+  isEagerLoadImages = false,
+  isScroll,
+}: Props) => {
+  const gridClass = classNames({
+    [styles.grid]: true,
+    [styles[`grid-isScroll`]]: isScroll,
+  })
   return (
-    <div className={styles.grid}>
+    <div className={gridClass}>
       {data?.map((item) => (
         <Link key={item._id} href={item.slug?.current} className={styles.link}>
           <div className={styles.wrap}>
