@@ -4,13 +4,14 @@ import { HTMLProps } from "react"
 import styles from "./Section.module.scss"
 
 type Props = {
-  width?: "full" | "large" | "medium" | "small"
+  width?: "full" | "xlarge" | "large" | "medium" | "small"
   verticalPadding?: "xlarge" | "large" | "medium" | "small" | "tiny"
   noPadding?: "top" | "bottom" | "sides"
   children: React.ReactNode
   centerContent?: boolean
   background?: "lychee" | "banana" | "kale"
   noGutter?: boolean
+  isResponsive?: boolean
 } & HTMLProps<HTMLDivElement>
 
 export const Section = ({
@@ -21,6 +22,7 @@ export const Section = ({
   noGutter,
   noPadding,
   children,
+  isResponsive,
   className,
   ...rest
 }: Props) => {
@@ -28,11 +30,12 @@ export const Section = ({
     className,
     styles.section,
     styles[`-${width}`],
-    verticalPadding ? styles[`-vertical-padding-${verticalPadding}`] : false,
-    centerContent ? styles["-center-content"] : false,
-    background ? styles[`-background-${background}`] : false,
-    noPadding ? styles[`-no-padding-${noPadding}`] : false,
-    noGutter ? styles["-no-gutter"] : false
+    verticalPadding && styles[`-vertical-padding-${verticalPadding}`],
+    centerContent && styles["-center-content"],
+    background && styles[`-background-${background}`],
+    noPadding && styles[`-no-padding-${noPadding}`],
+    noGutter && styles["-no-gutter"],
+    isResponsive && styles["-responsive"]
   )
 
   return (

@@ -24,6 +24,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
         width="full"
         verticalPadding="xlarge"
         style={{ paddingTop: "40px" }}
+        isResponsive
       >
         <Section width="large" noPadding="sides">
           <h2>Nytt fra festivalen</h2>
@@ -38,7 +39,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
 
       <BackgroundVideo />
 
-      <Section centerContent width="full" verticalPadding="xlarge">
+      <Section centerContent width="full" verticalPadding="xlarge" isResponsive>
         <Section width="large" noPadding="sides">
           <h2>Dette skjer på festivalen</h2>
 
@@ -55,6 +56,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
         width="full"
         verticalPadding="xlarge"
         background="lychee"
+        isResponsive
       >
         <Section width="large" noPadding="sides">
           <h2>Noen av årets utstillere</h2>

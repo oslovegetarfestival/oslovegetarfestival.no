@@ -18,7 +18,7 @@ export const Footer = () => {
         <Section centerContent>
           <a href="#">Til toppen ↑</a>
         </Section>
-        <Section width="full" verticalPadding="large">
+        <Section width="xlarge" verticalPadding="large">
           <Flow>
             <Grid>
               <Flow space="small">
