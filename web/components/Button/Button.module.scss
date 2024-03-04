@@ -7,6 +7,7 @@
   transition: background-color 0.3s ease;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   cursor: pointer;
+  text-wrap: balance;
 
   &:hover {
     text-decoration: none;
@@ -19,7 +20,7 @@
       margin-left: 0.6em;
       transition: transform 0.3s ease;
     }
-  
+
     &:hover {
       &:after {
         transform: translateX(20%);
@@ -60,7 +61,7 @@
 .color--white {
   background-color: var(--color-almondmilk);
   color: var(--color-kale);
-  
+
   &:hover,
   &:focus {
     color: var(--color-almondmilk);
@@ -76,6 +77,11 @@
 .size--medium {
   padding: var(--spacing-1) var(--spacing-5);
   font-size: 1.4rem;
+
+  @media (max-width: 500px) {
+    padding: var(--spacing-1) var(--spacing-4);
+    font-size: 1.2rem;
+  }
 }
 
 .size--large {
