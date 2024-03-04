@@ -12,7 +12,7 @@ export const frontPage = {
       title: "Fremhevet aktuelt",
       name: "promotedNews",
       type: "array",
-      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      validation: (Rule) => [Rule.required(), Rule.max(4)],
       description:
         "Velg fire fremhevede aktueltsaker. Du kan endre rekkefølgen for å styre visningen på forsiden.",
       of: [
@@ -29,7 +29,7 @@ export const frontPage = {
       title: "Fremhevet arrangement",
       name: "promotedEvents",
       type: "array",
-      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      validation: (Rule) => [Rule.required(), Rule.max(4)],
       description:
         "Velg fire fremhevede arrangementer. Du kan endre rekkefølgen for å styre visningen på forsiden.",
       of: [
@@ -46,7 +46,7 @@ export const frontPage = {
       title: "Fremhevet utstiller",
       name: "promotedExhibitors",
       type: "array",
-      validation: (Rule) => [Rule.required(), Rule.length(4)],
+      validation: (Rule) => [Rule.required(), Rule.max(4)],
       description:
         "Velg fire fremhevede utstillere. Du kan endre rekkefølgen for å styre visningen på forsiden.",
       of: [
