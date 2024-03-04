@@ -37,12 +37,13 @@ export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
 
   // Ordinary main image
   const mainImage =
-    page?.image?.asset && urlForImage(page?.image)?.width(1200).fit("max").url()
+    page?.image?.asset &&
+    urlForImage(page?.image)?.width(1200).height(630).url()
 
   // SEO image
   const seoImage =
     page?.seo?.image?.asset &&
-    urlForImage(page?.seo?.image)?.width(1200).fit("max").url()
+    urlForImage(page?.seo?.image)?.width(1200).height(630).url()
 
   // Default image
   // TODO: Find a better default image
