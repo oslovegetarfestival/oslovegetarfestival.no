@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
 
       {/* Google Tag Manager */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11138954316" />
+      {/* <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11138954316" />
       <Script
         id="googleTagManager"
         strategy="lazyOnload"
@@ -91,7 +91,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'AW-11138954316');
           `,
         }}
-      />
+      /> */}
 
       {/* Facebook tracking */}
       <Script
