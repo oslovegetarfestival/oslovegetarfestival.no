@@ -52,7 +52,6 @@ export default Page
 export const getStaticProps = async () => {
   const query = `*[_type == 'greenEvents' && slug.current == '/gront-arrangement/forside'][0]`
   const result = await await sanityClient.fetch(query)
-  console.log("result", result)
   return {
     props: {
       page: result,

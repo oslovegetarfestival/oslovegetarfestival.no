@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
 // Get data for this particular page
 export const getStaticProps = async ({ params }: Props) => {
   const query = `*[_type == 'greenEvents' && slug.current == $slug][0]`
-  const queryParams = { slug: "/gront-arrangement/" + params.slug }
+  const queryParams = { slug: `/gront-arrangement/${params.slug}` }
   const result = await sanityClient.fetch(query, queryParams)
   return {
     props: {
