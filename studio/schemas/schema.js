@@ -7,6 +7,7 @@ import { exhibitorType } from "./documents/exhibitorType";
 import { news } from "./documents/news";
 import { settings } from "./documents/settings";
 import { frontPage } from "./documents/frontPage";
+import { greenEvents } from "./documents/greenEvents";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default [
@@ -18,4 +19,5 @@ export default [
   news,
   settings,
   frontPage,
+  greenEvents,
 ];

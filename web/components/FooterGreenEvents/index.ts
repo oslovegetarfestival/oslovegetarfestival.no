@@ -1,0 +1,1 @@
+export { FooterGreenEvents } from "./FooterGreenEvents"

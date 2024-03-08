@@ -1,5 +1,5 @@
 import {
-  FiSettings,
+  FiSun,
   FiHome,
   FiCalendar,
   FiCoffee,
@@ -30,8 +30,8 @@ export default (S) =>
         .title("Arrangement: Steder")
         .icon(FiLink),
       S.divider(),
-      S.listItem()
-        .title("Settings")
-        .icon(FiSettings)
-        .child(S.document().schemaType("settings").documentId("settings")),
+      S.documentTypeListItem("greenEvents")
+        .title("Grønt arrangement")
+        .icon(FiSun),
+      S.divider(),
     ]);

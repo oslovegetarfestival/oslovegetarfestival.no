@@ -1,0 +1,37 @@
+.footer {
+  background-color: var(--color-kale);
+  color: var(--color-almondmilk);
+}
+
+.logo {
+  line-height: .9;
+  span {
+    display: block;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.menuItem {
+  margin-right: 2rem;
+  font-family: 'Strike';
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tickets {
+  padding: var(--spacing-1) var(--spacing-5);
+  background-color: var(--color-tomato);
+  color: var(--color-oatmilk);
+  text-transform: none;
+  letter-spacing: normal;
+  border-radius: var(--border-radius);
+  transition: background-color .3s ease;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  &:hover {
+    background-color: var(--color-aubergine);
+  }
+}

@@ -1,0 +1,103 @@
+$breakpoint: 1000px;
+
+.logo {
+  line-height: 0.9;
+  z-index: 99;
+  position: relative;
+
+  span {
+    display: block;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &-mobile-menu-open {
+    position: fixed;
+  }
+}
+
+
+.date {
+  font-size: 1.25rem;
+  margin-top: var(--spacing-4);
+}
+
+@keyframes animate-clouds {
+  0% {
+    transform: translate3d(-20%, 10%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+}
+
+.logoCandy {
+  position: absolute;
+  left: -60px;
+  top: -60px;
+  z-index: -1;
+  width: 530px;
+  animation: animate-clouds 1.5s ease;
+  will-change: auto;
+}
+
+.menuList {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+
+  @media (max-width: $breakpoint) {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-11);
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+}
+
+.menuItem {
+  margin-right: 1.8rem;
+  font-family: "Strike";
+  font-size: 120%;
+
+  @media (max-width: $breakpoint) {
+    margin-right: 0;
+    margin-bottom: var(--spacing-4);
+    font-size: 150%;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.mobileToggle {
+  position: fixed;
+  z-index: 99;
+  right: 16px;
+  top: 16px;
+
+  @media (min-width: calc($breakpoint + 1px)) {
+    display: none;
+  }
+}
+
+.menu {
+  @media (max-width: $breakpoint) {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    background: var(--color-lychee);
+    overflow-y: scroll;
+  }
+}
