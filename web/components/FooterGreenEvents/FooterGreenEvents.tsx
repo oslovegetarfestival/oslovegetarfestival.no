@@ -22,10 +22,9 @@ export const FooterGreenEvents = () => {
               <Flow space="small">
                 <h2 className="font-strike">Om oss</h2>
                 <p>
-                  Grønnere mat på arrangementer er et prosjekt i regi av Oslo
-                  Vegetarfestival.{" "}
+                  Grønnere mat på arrangementer er et prosjekt i regi av{" "}
                   <Link href="/om-oss" className="link link--white">
-                    Les mer om Oslo Vegetarfestival her
+                    Oslo Vegetarfestival
                   </Link>
                   .
                 </p>
@@ -44,7 +43,9 @@ export const FooterGreenEvents = () => {
 
               <Flow space="small">
                 <h2 className="font-strike">Partnere</h2>
-                <p>Grønnere mat på arrangementer" er støttet av Oslo kommune</p>
+                <p>
+                  "Grønnere mat på arrangementer" er støttet av Oslo kommune.
+                </p>
               </Flow>
             </Grid>
 
