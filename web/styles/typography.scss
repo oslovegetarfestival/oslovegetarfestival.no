@@ -21,22 +21,22 @@ $maxWidth: 1200px;
   font-style: normal;
   font-weight: 400;
   src: url("/fonts/jost-v14-latin-regular.eot");
-  src: url("/fonts/jost-v14-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("/fonts/jost-v14-latin-regular.eot?#iefix") format("embedded-opentype"),
     url("/fonts/jost-v14-latin-regular.woff2") format("woff2"),
     url("/fonts/jost-v14-latin-regular.woff") format("woff");
 }
+
 @font-face {
   font-display: fallback;
   font-family: "Jost";
   font-style: italic;
   font-weight: 400;
   src: url("/fonts/jost-v14-latin-italic.eot");
-  src: url("/fonts/jost-v14-latin-italic.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("/fonts/jost-v14-latin-italic.eot?#iefix") format("embedded-opentype"),
     url("/fonts/jost-v14-latin-italic.woff2") format("woff2"),
     url("/fonts/jost-v14-latin-italic.woff") format("woff");
 }
+
 @font-face {
   font-display: fallback;
   font-family: "Jost";
@@ -47,6 +47,7 @@ $maxWidth: 1200px;
     url("/fonts/jost-v14-latin-500.woff2") format("woff2"),
     url("/fonts/jost-v14-latin-500.woff") format("woff");
 }
+
 @font-face {
   font-display: fallback;
   font-family: "Jost";
@@ -81,18 +82,21 @@ h1,
 .h1 {
   @include fluid-type($minWidth, $maxWidth, 36px, 56px);
   font-family: "Strike";
+  text-wrap: balance;
 }
 
 h2,
 .h2 {
   @include fluid-type($minWidth, $maxWidth, 28px, 36px);
   font-weight: 600;
+  text-wrap: balance;
 }
 
 h3,
 .h3 {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
   font-weight: 600;
+  text-wrap: balance;
 }
 
 h4,
