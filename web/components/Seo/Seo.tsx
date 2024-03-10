@@ -23,12 +23,14 @@ type SeoProps = {
   }
   isFrontPage?: boolean
   customSiteName?: string
+  customCanonicalUrl?: string
 }
 
 export const Seo = ({
   page,
   isFrontPage,
   customSiteName,
+  customCanonicalUrl,
   ...rest
 }: SeoProps) => {
   const SITE_NAME = "Oslo Vegetarfestival"
@@ -71,7 +73,7 @@ export const Seo = ({
 
   // Canonical url
   const canonicalUrl = `https://www.oslovegetarfestival.no${
-    page?.slug?.current ? page.slug.current : ""
+    customCanonicalUrl || (page?.slug?.current ? page.slug.current : "")
   }`
 
   return (

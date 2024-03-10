@@ -27,6 +27,11 @@ const nextConfig = {
         permanent: false,
         basePath: false,
       },
+      {
+        source: "/gront-arrangement/forside",
+        destination: "/gront-arrangement",
+        permanent: true,
+      },
     ]
   },
 }
