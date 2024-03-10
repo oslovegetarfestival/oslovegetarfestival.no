@@ -22,6 +22,7 @@ const Page: NextPage<Props> = ({ page = {} }) => {
         page={page}
         isFrontPage
         customSiteName="Grønnere mat på arrangementer"
+        customCanonicalUrl="/gront-arrangement"
       />
 
       <HeaderGreenEvents />
