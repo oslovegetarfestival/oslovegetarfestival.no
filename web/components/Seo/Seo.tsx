@@ -22,13 +22,18 @@ type SeoProps = {
     }
   }
   isFrontPage?: boolean
+  customSiteName?: string
 }
 
-const SITE_NAME = "Oslo Vegetarfestival"
-
-export const Seo = ({ page, isFrontPage, ...rest }: SeoProps) => {
-  const title = page?.seo?.title || page?.title || SITE_NAME
-  const siteName = isFrontPage ? "" : ` → ${SITE_NAME}`
+export const Seo = ({
+  page,
+  isFrontPage,
+  customSiteName,
+  ...rest
+}: SeoProps) => {
+  const SITE_NAME = "Oslo Vegetarfestival"
+  const title = page?.seo?.title || page?.title || customSiteName || SITE_NAME
+  const siteName = isFrontPage ? "" : ` → ${customSiteName || SITE_NAME}`
 
   const description =
     page?.seo?.description ||

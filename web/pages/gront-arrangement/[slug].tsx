@@ -18,7 +18,7 @@ const Page: NextPage<Props> = ({ page = {} }) => {
 
   return (
     <>
-      <Seo page={page} />
+      <Seo page={page} customSiteName="Grønnere mat på arrangementer" />
 
       <HeaderGreenEvents />
 
