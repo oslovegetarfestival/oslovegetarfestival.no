@@ -8,6 +8,7 @@ import { RichText } from "components/RichText"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import { SmallSectionWithColor } from "components/SmallSectionWithColor"
 import { Button } from "components/Button"
+import { Slideshow } from "components/Slideshow"
 
 type Props = {
   data: {
@@ -104,6 +105,17 @@ export const SanityBlockModule = ({ data }: Props) => {
         <Button link={data?.url} color={data?.color}>
           {data?.text}
         </Button>
+      </Section>
+    )
+  }
+
+  // Slideshow
+  if (blockType === "slideshow") {
+    console.log("data", data)
+    return (
+      <Section verticalPadding="tiny">
+        {/* @ts-expect-error */}
+        <Slideshow data={data} />
       </Section>
     )
   }

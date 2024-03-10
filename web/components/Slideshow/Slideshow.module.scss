@@ -1,0 +1,16 @@
+.wrap {
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+
+  @media(max-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  // Target global Swiper class
+  :global(.swiper) {
+    --swiper-theme-color: var(--color-avocado);
+    --swiper-pagination-bullet-inactive-color: var(--color-avocado);
+  }
+}
