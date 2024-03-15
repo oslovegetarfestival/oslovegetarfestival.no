@@ -11,7 +11,10 @@ export const Footer = () => {
   return (
     <>
       {/* Note: -1px is needed to avoid subpixel white line below */}
-      <div style={{ overflow: "hidden", marginBottom: "-1px" }}>
+      <div
+        className="footer-animation"
+        style={{ overflow: "hidden", marginBottom: "-1px" }}
+      >
         <AnimationFooter />
       </div>
       <footer className={styles.footer}>

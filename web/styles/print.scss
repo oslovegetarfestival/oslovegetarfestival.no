@@ -1,0 +1,13 @@
+@media print {
+
+  header,
+  footer,
+  .footer-animation {
+    display: none;
+  }
+
+  details,
+  details>* {
+    display: block !important;
+  }
+}
