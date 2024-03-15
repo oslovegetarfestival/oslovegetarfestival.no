@@ -14,6 +14,7 @@ type ExhibitionItem = {
   title: string
   [key: string]: any
 }
+
 type ExhibitionGroupedItem = {
   title: string
   items: ExhibitionItem[]
