@@ -111,7 +111,6 @@ export const SanityBlockModule = ({ data }: Props) => {
 
   // Slideshow
   if (blockType === "slideshow") {
-    console.log("data", data)
     return (
       <Section verticalPadding="tiny">
         {/* @ts-expect-error */}
