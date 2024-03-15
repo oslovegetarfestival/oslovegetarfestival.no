@@ -33,5 +33,11 @@ export default (S) =>
       S.documentTypeListItem("greenEvents")
         .title("Grønt arrangement")
         .icon(FiSun),
+      S.documentTypeListItem("greenEventsFoodProvider")
+        .title("Mattilbydere")
+        .icon(FiSun),
+      S.documentTypeListItem("greenEventsFoodProviderType")
+        .title("Mattilbydere: Typer")
+        .icon(FiSun),
       S.divider(),
     ]);

@@ -8,6 +8,8 @@ import { news } from "./documents/news";
 import { settings } from "./documents/settings";
 import { frontPage } from "./documents/frontPage";
 import { greenEvents } from "./documents/greenEvents";
+import { greenEventsFoodProvider } from "./documents/greenEventsFoodProvider";
+import { greenEventsFoodProviderType } from "./documents/greenEventsFoodProviderType";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default [
@@ -20,4 +22,6 @@ export default [
   settings,
   frontPage,
   greenEvents,
+  greenEventsFoodProvider,
+  greenEventsFoodProviderType,
 ];
