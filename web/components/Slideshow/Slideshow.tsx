@@ -28,7 +28,7 @@ export const Slideshow: React.FC<Props> = ({ data }) => {
       )}
       <div className={styles.wrap}>
         <Swiper
-          autoHeight={true}
+          autoHeight={false}
           navigation={true}
           pagination={{
             clickable: true,
@@ -48,7 +48,7 @@ export const Slideshow: React.FC<Props> = ({ data }) => {
         >
           {data?.images?.map((image, index) => (
             <SwiperSlide key={index}>
-              <SanityImageWrap image={image} fill="cover" />
+              <SanityImageWrap image={image} isFeaturedImage loading="lazy" />
             </SwiperSlide>
           ))}
         </Swiper>

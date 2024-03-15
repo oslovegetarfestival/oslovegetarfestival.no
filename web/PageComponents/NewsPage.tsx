@@ -31,7 +31,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
       </Section>
 
       <Section width="medium">
-        <SanityImageWrap image={page?.image} isFeaturedImage />
+        <SanityImageWrap image={page?.image} isFeaturedImage loading="eager" />
       </Section>
 
       {page?.contentBlocks?.map((module: any) => (

@@ -34,7 +34,11 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
       </Section>
 
       <Section width="medium">
-        <SanityImageWrap image={currentExhibitor?.image} isFeaturedImage />
+        <SanityImageWrap
+          image={currentExhibitor?.image}
+          isFeaturedImage
+          loading="eager"
+        />
       </Section>
 
       {currentExhibitor?.contentBlocks?.map((module: any) => (

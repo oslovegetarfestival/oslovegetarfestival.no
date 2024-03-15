@@ -66,7 +66,11 @@ const Page: NextPage<Props> = ({ page = {}, foodProviders = {} }) => {
         </Section>
 
         <Section width="medium">
-          <SanityImageWrap image={page?.image} isFeaturedImage />
+          <SanityImageWrap
+            image={page?.image}
+            isFeaturedImage
+            loading="eager"
+          />
         </Section>
 
         {page?.contentBlocks?.map((module: any) => (

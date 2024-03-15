@@ -59,7 +59,11 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
       </Section>
 
       <Section width="medium">
-        <SanityImageWrap image={currentEvent?.image} isFeaturedImage />
+        <SanityImageWrap
+          image={currentEvent?.image}
+          isFeaturedImage
+          loading="eager"
+        />
       </Section>
 
       {currentEvent?.contentBlocks?.map((module: any) => (
