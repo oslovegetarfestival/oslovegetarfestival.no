@@ -1,7 +1,9 @@
 .wrap {
   text-align: center;
-  text-wrap: balanced;
+  margin: 0 auto;
+  text-wrap: balance;
   color: var(--color-cucumber);
+  max-width: 800px;
 }
 
 .author {
