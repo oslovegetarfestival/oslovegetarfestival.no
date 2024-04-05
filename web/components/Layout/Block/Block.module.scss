@@ -4,6 +4,12 @@
 
 // Modifiers
 
+.-center {
+  text-align: center;
+  margin-left: center;
+  margin-right: center;
+}
+
 // Generate sizes
 @for $i from 1 through 9 {
   .-top-#{$i} {
@@ -16,11 +22,13 @@
     margin-right: var(--spacing-#{$i});
   }
 }
+
 @for $i from 1 through 9 {
   .-bottom-#{$i} {
     margin-bottom: var(--spacing-#{$i});
   }
 }
+
 @for $i from 1 through 9 {
   .-left-#{$i} {
     margin-left: var(--spacing-#{$i});

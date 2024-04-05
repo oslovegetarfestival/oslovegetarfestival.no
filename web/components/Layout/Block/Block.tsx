@@ -20,6 +20,7 @@ type Props = {
   bottom?: AllowedValues
   left?: AllowedValues
   children: React.ReactNode
+  center?: boolean
 }
 
 export const Block = ({
@@ -27,6 +28,7 @@ export const Block = ({
   bottom,
   left,
   right,
+  center,
   children,
   ...rest
 }: Props) => {
@@ -35,7 +37,8 @@ export const Block = ({
     top ? styles[`-top-${top}`] : false,
     right ? styles[`-right-${right}`] : false,
     bottom ? styles[`-bottom-${bottom}`] : false,
-    left ? styles[`-left-${left}`] : false
+    left ? styles[`-left-${left}`] : false,
+    center ? styles[`-center`] : false
   )
 
   return (

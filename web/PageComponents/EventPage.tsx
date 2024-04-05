@@ -31,8 +31,10 @@ const EventPage: NextPage<Props> = ({ page = {} }) => {
       <Seo page={currentEvent} />
 
       <Section verticalPadding="large" noPadding="top">
-        <Block top="4" bottom="4">
-          <Link href="/program">← Program</Link>
+        <Block top="4" bottom="4" center>
+          <Link href="/program" className="center">
+            ← Program
+          </Link>
         </Block>
 
         {isOldEvent(currentEvent?.startDateTime) && (

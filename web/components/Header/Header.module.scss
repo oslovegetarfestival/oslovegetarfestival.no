@@ -1,5 +1,9 @@
 $breakpoint: 1250px;
 
+.header {
+  padding-top: 16px;
+}
+
 .logo {
   line-height: 0.9;
   z-index: 99;
@@ -8,10 +12,11 @@ $breakpoint: 1250px;
   span {
     display: block;
   }
+
   &:hover {
     text-decoration: none;
   }
-  
+
   &-mobile-menu-open {
     position: fixed;
   }
@@ -82,7 +87,7 @@ $breakpoint: 1250px;
   right: 16px;
   top: 16px;
 
-  @media (min-width: calc($breakpoint + 1px )) {
+  @media (min-width: calc($breakpoint + 1px)) {
     display: none;
   }
 }

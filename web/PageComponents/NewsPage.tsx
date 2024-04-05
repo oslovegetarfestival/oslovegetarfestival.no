@@ -17,7 +17,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
       <Seo page={page} />
 
       <Section verticalPadding="large" noPadding="top">
-        <Block top="4" bottom="4">
+        <Block top="4" bottom="4" center>
           <Link href="/aktuelt">← Aktuelt</Link>
         </Block>
         <Block bottom="2">

@@ -38,8 +38,8 @@ export const Header = ({ isFrontpage }: Props) => {
   )
 
   return (
-    <header>
-      <Section width="full" verticalPadding="small">
+    <header className={styles.header}>
+      <Section width="full">
         {!isFrontpage && (
           <img
             src="/logo-candy.svg"

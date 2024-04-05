@@ -25,7 +25,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
       <Seo page={currentExhibitor} />
 
       <Section verticalPadding="large" noPadding="top">
-        <Block top="4" bottom="4">
+        <Block top="4" bottom="4" center>
           <Link href="/utstillere">← Utstillere</Link>
         </Block>
 
