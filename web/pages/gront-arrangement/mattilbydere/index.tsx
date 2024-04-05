@@ -111,7 +111,7 @@ const Page: NextPage<Props> = ({ page = {}, foodProviders = {} }) => {
 export default Page
 
 // Get data for this particular page
-export const getStaticProps = async ({ params }: Props) => {
+export const getStaticProps = async () => {
   const query = `{'page': *[_type == 'greenEvents' && slug.current == "/gront-arrangement/mattilbydere"][0], 'foodProviders': *[_type == 'greenEventsFoodProvider'] | order(title) {..., ...type->{"type": title}}}`
 
   const result = await sanityClient.fetch(query)
