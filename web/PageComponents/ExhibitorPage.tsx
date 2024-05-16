@@ -1,11 +1,12 @@
 import type { NextPage } from "next"
 
-import { Block, Section } from "components/Layout"
+import { Block, Flow, Section } from "components/Layout"
 import { SanityBlockModule } from "components/SanityBlockModule"
 import { Seo } from "components/Seo"
 import { SanityImageWrap } from "components/SanityImageWrap"
 import Link from "next/link"
 import { PageNavigation } from "components/PageNavigation"
+import { RichText } from "components/RichText"
 
 type Props = {
   [key: string]: any
@@ -44,6 +45,15 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
       {currentExhibitor?.contentBlocks?.map((module: any) => (
         <SanityBlockModule data={module} key={module._key} />
       ))}
+
+      {currentExhibitor?.menu && (
+        <Section width="small" verticalPadding="medium">
+          <Flow space="xsmall">
+            <h2>Festivalmeny</h2>
+            <RichText data={currentExhibitor.menu?.richText} />
+          </Flow>
+        </Section>
+      )}
 
       <PageNavigation previous={previousExhibitor} next={nextExhibitor} />
     </>
