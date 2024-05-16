@@ -1,11 +1,13 @@
-import { Flex, Flow } from "components/Layout"
+import { Block, Flex, Flow } from "components/Layout"
 import { RichText } from "components/RichText"
 import styles from "./Accordion.module.scss"
+import Link from "next/link"
 
-type ListItem = {
+export type ListItem = {
   title: string
   richTextObject: any
   _key: string
+  link?: string
 }
 
 type Props = {
@@ -19,7 +21,7 @@ export const Accordion = ({ title, list }: Props) => {
       {title && <h2>{title}</h2>}
 
       <div className={styles.wrap}>
-        {list?.map(({ title, richTextObject, _key }) => (
+        {list?.map(({ title, richTextObject, _key, link }) => (
           <details key={_key} className={styles.details}>
             <summary className={styles.summary}>
               <Flex align="center" justify="spaceBetween" gap="small">
@@ -42,6 +44,13 @@ export const Accordion = ({ title, list }: Props) => {
 
             <div className={styles.content}>
               <RichText data={richTextObject?.richText} />
+              {link && (
+                <Block top="3">
+                  <Link href={link} className="link">
+                    Les mer
+                  </Link>
+                </Block>
+              )}
             </div>
           </details>
         ))}
