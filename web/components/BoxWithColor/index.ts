@@ -1,0 +1,1 @@
+export { BoxWithColor } from './BoxWithColor';

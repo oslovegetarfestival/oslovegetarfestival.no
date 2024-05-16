@@ -7,6 +7,7 @@ import { SanityImageWrap } from "components/SanityImageWrap"
 import Link from "next/link"
 import { PageNavigation } from "components/PageNavigation"
 import { RichText } from "components/RichText"
+import { BoxWithColor } from "components/BoxWithColor"
 
 type Props = {
   [key: string]: any
@@ -48,10 +49,12 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
 
       {currentExhibitor?.menu && (
         <Section width="small" verticalPadding="medium">
-          <Flow space="xsmall">
-            <h2>Festivalmeny</h2>
-            <RichText data={currentExhibitor.menu?.richText} />
-          </Flow>
+          <BoxWithColor>
+            <Flow space="xsmall">
+              <h2>Festivalmeny</h2>
+              <RichText data={currentExhibitor.menu?.richText} />
+            </Flow>
+          </BoxWithColor>
         </Section>
       )}
 
