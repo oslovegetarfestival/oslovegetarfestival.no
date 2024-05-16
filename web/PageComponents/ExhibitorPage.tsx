@@ -48,7 +48,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       {currentExhibitor?.menu && (
-        <Section width="small" verticalPadding="medium">
+        <Section width="small" verticalPadding="medium" noPadding="top">
           <BoxWithColor>
             <Flow space="xsmall">
               <h2>Festivalmeny</h2>
