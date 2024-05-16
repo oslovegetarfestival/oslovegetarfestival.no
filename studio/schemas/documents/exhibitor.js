@@ -35,6 +35,7 @@ export const exhibitor = {
     {
       name: "area",
       title: "Sone på kart",
+      description: "Brukes på siden /kart",
       type: "string",
       options: {
         list: [
@@ -47,6 +48,7 @@ export const exhibitor = {
     {
       name: "menu",
       title: "Meny",
+      description: "Brukes for serveringsboder",
       type: "object",
       fields: [richText],
     },
