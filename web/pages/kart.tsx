@@ -7,6 +7,7 @@ import { sanityClient } from "lib/sanity"
 import { PageLayout } from "components/PageLayout"
 import { Accordion } from "components/Accordion"
 import Link from "next/link"
+import { Seo } from "components/Seo"
 
 type Props = {
   data: {
@@ -22,6 +23,14 @@ type Props = {
 }
 
 const MapPage: NextPage<Props> = ({ data }: Props) => {
+  const seoData = {
+    slug: {
+      current: "/kart",
+    },
+    intro: "Kos deg med det beste fra planteriket!",
+    title: "Oversiktskart",
+  }
+
   const accordionItems = data
     ?.filter((exhibitor) => exhibitor.type === "Serveringsbod")
     ?.map((exhibitor) => {
@@ -41,90 +50,94 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
   )
 
   return (
-    <PageLayout>
-      <Section noPadding="top">
-        <Flow space="xsmall">
-          <h1 className="page-title">Oversiktskart</h1>
-          <p className="lead">Kos deg med det beste fra planteriket!</p>
-        </Flow>
-      </Section>
+    <>
+      <Seo page={seoData} />
 
-      <Section verticalPadding="large" noPadding="sides">
-        <img
-          src="/kart.png"
-          alt="Kart over festivalområdet"
-          width="2330"
-          height="1653"
-        />
-      </Section>
+      <PageLayout>
+        <Section noPadding="top">
+          <Flow space="xsmall">
+            <h1 className="page-title">Oversiktskart</h1>
+            <p className="lead">Kos deg med det beste fra planteriket!</p>
+          </Flow>
+        </Section>
 
-      <Section width="small" noPadding="bottom">
-        <Flex justify="spaceBetween" gap="medium">
-          <div style={{ flex: "1 1 0px" }}>
-            <Block bottom="2">
-              <p className="font-strike">Hopp til: </p>
-            </Block>
+        <Section verticalPadding="large" noPadding="sides">
+          <img
+            src="/kart.png"
+            alt="Kart over festivalområdet"
+            width="2330"
+            height="1653"
+          />
+        </Section>
 
-            <Flex align="center" gap="small" wrap>
-              <Button size="small" isArrow={false} link="#hagen">
-                Hagen
-              </Button>
-              <Button size="small" isArrow={false} link="#sletta">
-                Sletta
-              </Button>
-              <Button size="small" isArrow={false} link="#skogsholtet">
-                Skogsholtet
-              </Button>
-              <Button size="small" isArrow={false} link="#serveringsboder">
-                Serveringsboder
-              </Button>
-            </Flex>
-          </div>
-        </Flex>
-      </Section>
+        <Section width="small" noPadding="bottom">
+          <Flex justify="spaceBetween" gap="medium">
+            <div style={{ flex: "1 1 0px" }}>
+              <Block bottom="2">
+                <p className="font-strike">Hopp til: </p>
+              </Block>
 
-      <Section width="small" verticalPadding="large">
-        <Flow space="xsmall">
-          <h2 className="sticky-section-header" id="hagen">
-            Utstillere i hagen
-          </h2>
+              <Flex align="center" gap="small" wrap>
+                <Button size="small" isArrow={false} link="#hagen">
+                  Hagen
+                </Button>
+                <Button size="small" isArrow={false} link="#sletta">
+                  Sletta
+                </Button>
+                <Button size="small" isArrow={false} link="#skogsholtet">
+                  Skogsholtet
+                </Button>
+                <Button size="small" isArrow={false} link="#serveringsboder">
+                  Serveringsboder
+                </Button>
+              </Flex>
+            </div>
+          </Flex>
+        </Section>
 
-          {hagenItems?.map((item) => (
-            <p key={item._id}>
-              <Link href={item.slug.current}>{item.title}</Link>
-            </p>
-          ))}
+        <Section width="small" verticalPadding="large">
+          <Flow space="xsmall">
+            <h2 className="sticky-section-header" id="hagen">
+              Utstillere i hagen
+            </h2>
 
-          <h2 className="sticky-section-header" id="sletta">
-            Utstillere på sletta
-          </h2>
+            {hagenItems?.map((item) => (
+              <p key={item._id}>
+                <Link href={item.slug.current}>{item.title}</Link>
+              </p>
+            ))}
 
-          {slettaItems?.map((item) => (
-            <p key={item._id}>
-              <Link href={item.slug.current}>{item.title}</Link>
-            </p>
-          ))}
+            <h2 className="sticky-section-header" id="sletta">
+              Utstillere på sletta
+            </h2>
 
-          <h2 className="sticky-section-header" id="skogsholtet">
-            Utstillere i skogsholtet
-          </h2>
+            {slettaItems?.map((item) => (
+              <p key={item._id}>
+                <Link href={item.slug.current}>{item.title}</Link>
+              </p>
+            ))}
 
-          {skogsholtetItems?.map((item) => (
-            <p key={item._id}>
-              <Link href={item.slug.current}>{item.title}</Link>
-            </p>
-          ))}
+            <h2 className="sticky-section-header" id="skogsholtet">
+              Utstillere i skogsholtet
+            </h2>
 
-          <h2 className="sticky-section-header" id="serveringsboder">
-            Serveringsboder
-          </h2>
-          <div>
-            {/* @ts-expect-error */}
-            <Accordion list={accordionItems} />
-          </div>
-        </Flow>
-      </Section>
-    </PageLayout>
+            {skogsholtetItems?.map((item) => (
+              <p key={item._id}>
+                <Link href={item.slug.current}>{item.title}</Link>
+              </p>
+            ))}
+
+            <h2 className="sticky-section-header" id="serveringsboder">
+              Serveringsboder
+            </h2>
+            <div>
+              {/* @ts-expect-error */}
+              <Accordion list={accordionItems} />
+            </div>
+          </Flow>
+        </Section>
+      </PageLayout>
+    </>
   )
 }
 
