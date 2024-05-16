@@ -58,7 +58,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
         />
       </Section>
 
-      <Section width="large" noPadding="bottom">
+      <Section width="small" noPadding="bottom">
         <Flex justify="spaceBetween" gap="medium">
           <div style={{ flex: "1 1 0px" }}>
             <Block bottom="2">
@@ -83,7 +83,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
         </Flex>
       </Section>
 
-      <Section width="large" verticalPadding="large">
+      <Section width="small" verticalPadding="large">
         <Flow space="xsmall">
           <h2 className="sticky-section-header" id="hagen">
             Utstillere i hagen
