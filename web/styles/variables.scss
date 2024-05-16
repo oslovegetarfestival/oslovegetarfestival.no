@@ -4,7 +4,7 @@
 // Global variables
 :root {
 
-   // Colors
+  // Colors
   --color-oatmilk: #ffffea;
   --color-soymilk: #ffffdc;
   --color-almondmilk: #fff3e0;
@@ -50,23 +50,26 @@
 
   // Gutter settings
   --page-gutter: var(--spacing-7);
+
   @media (max-width: $breakpoint-tablet) {
     --page-gutter: var(--spacing-4);
   }
 
   --vertical-gutter: var(--spacing-9);
+
   @media (max-width: $breakpoint-mobile) {
     --vertical-gutter: var(--spacing-8);
   }
 
   --grid-gutter: var(--spacing-7);
+
   @media (max-width: $breakpoint-tablet) {
-  --grid-gutter: var(--spacing-6);
+    --grid-gutter: var(--spacing-6);
   }
 
   // Animations
   --transition: 0.2s cubic-bezier(0, 0, 0.3, 0.9);
-  --transition-quick: 0.1s cubic-bezier(0, 0, 0.3, 0.9);
+  --transition-quick: 0.05s cubic-bezier(0, 0, 0.3, 0.9);
 
   // Border
   --border-radius: var(--spacing-3);
