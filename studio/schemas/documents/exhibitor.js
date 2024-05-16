@@ -31,6 +31,18 @@ export const exhibitor = {
       type: "boolean",
     },
     contentBlocks,
+    {
+      name: "area",
+      title: "Sone på kart",
+      type: "string",
+      options: {
+        list: [
+          { title: "Hagen", value: "hagen" },
+          { title: "Sletta", value: "sletta" },
+          { title: "Skogsholtet", value: "skogsholtet" },
+        ],
+      },
+    },
     seo,
   ],
 
