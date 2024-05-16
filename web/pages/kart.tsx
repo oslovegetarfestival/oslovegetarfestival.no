@@ -43,8 +43,9 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
   return (
     <PageLayout>
       <Section noPadding="top">
-        <Flow>
-          <h1 className="page-title">Kart over festivalområdet</h1>
+        <Flow space="xsmall">
+          <h1 className="page-title">Oversiktskart</h1>
+          <p className="lead">Kos deg med det beste fra planteriket!</p>
         </Flow>
       </Section>
 
@@ -74,8 +75,8 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               <Button size="small" isArrow={false} link="#skogsholtet">
                 Skogsholtet
               </Button>
-              <Button size="small" isArrow={false} link="#serveringsbod">
-                Serveringsbod
+              <Button size="small" isArrow={false} link="#serveringsboder">
+                Serveringsboder
               </Button>
             </Flex>
           </div>
@@ -85,7 +86,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
       <Section width="large" verticalPadding="large">
         <Flow space="xsmall">
           <h2 className="sticky-section-header" id="hagen">
-            Hagen
+            Utstillere i hagen
           </h2>
 
           {hagenItems?.map((item) => (
@@ -95,7 +96,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
           ))}
 
           <h2 className="sticky-section-header" id="sletta">
-            Sletta
+            Utstillere på sletta
           </h2>
 
           {slettaItems?.map((item) => (
@@ -105,7 +106,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
           ))}
 
           <h2 className="sticky-section-header" id="skogsholtet">
-            Skogsholtet
+            Utstillere i skogsholtet
           </h2>
 
           {skogsholtetItems?.map((item) => (
@@ -114,8 +115,8 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
             </p>
           ))}
 
-          <h2 className="sticky-section-header" id="serveringsbod">
-            Serveringsbod
+          <h2 className="sticky-section-header" id="serveringsboder">
+            Serveringsboder
           </h2>
           <div>
             {/* @ts-expect-error */}
