@@ -86,6 +86,33 @@ export const Footer = () => {
                 Personvern og cookies
               </Link>
             </Flex>
+
+            <div className={styles.promo}>
+              Nettsiden er laget av{" "}
+              <a
+                href="https://forestry.no"
+                target="_blank"
+                className="underline"
+              >
+                Forest
+              </a>
+              ,{" "}
+              <a
+                href="https://diplodocus.no"
+                target="_blank"
+                className="underline"
+              >
+                Diplodocus
+              </a>{" "}
+              og{" "}
+              <a
+                href="https://jakobsenfrukt.no/"
+                target="_blank"
+                className="underline"
+              >
+                Jakobsen Frukt & Grønt
+              </a>
+            </div>
           </Flow>
         </Section>
       </footer>
