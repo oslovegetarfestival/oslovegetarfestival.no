@@ -90,27 +90,15 @@ export const Footer = () => {
             <div className={styles.promo}>
               Nettsiden er laget av{" "}
               <span className={styles.nowrap}>
-                <a
-                  href="https://forestry.no"
-                  target="_blank"
-                  className="underline"
-                >
+                <a href="https://forestry.no" className="underline">
                   Forest
                 </a>
                 ,{" "}
-                <a
-                  href="https://diplodocus.no"
-                  target="_blank"
-                  className="underline"
-                >
+                <a href="https://diplodocus.no" className="underline">
                   Diplodocus
                 </a>{" "}
                 og{" "}
-                <a
-                  href="https://jakobsenfrukt.no/"
-                  target="_blank"
-                  className="underline"
-                >
+                <a href="https://jakobsenfrukt.no/" className="underline">
                   Jakobsen Frukt & Grønt
                 </a>
               </span>
