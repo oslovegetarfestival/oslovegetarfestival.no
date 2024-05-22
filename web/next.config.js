@@ -32,6 +32,11 @@ const nextConfig = {
         destination: "/gront-arrangement",
         permanent: true,
       },
+      {
+        source: "/meny",
+        destination: "/kart#serveringsboder",
+        permanent: false,
+      },
     ]
   },
 }
