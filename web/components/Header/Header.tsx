@@ -120,7 +120,7 @@ export const Header = ({ isFrontpage }: Props) => {
                 <Button
                   color="orange"
                   size="small"
-                  link="https://tikkio.com/tickets/43777-oslo-vegetarfestival-2024"
+                  link="https://tikkio.com/tickets/48169-oslo-vegetarfestival-2025#:~:text=Opplev%20det%20beste%20fra%20planteriket,som%20brenner%20for%20plantebasert%20mat"
                   isOpenInNewWindow
                 >
                   Kjøp billett
