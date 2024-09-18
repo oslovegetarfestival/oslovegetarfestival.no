@@ -60,7 +60,7 @@ export const Header = ({ isFrontpage }: Props) => {
                 <span>Oslo</span>
                 <span>Vegetar</span>
                 <span>festival</span>
-                <span className={styles.date}>25.-26. mai 2024</span>
+                <span className={styles.date}>24.-25. mai 2025</span>
               </Link>
             </p>
           )}

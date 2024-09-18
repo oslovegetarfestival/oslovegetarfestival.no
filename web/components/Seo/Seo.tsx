@@ -40,7 +40,7 @@ export const Seo = ({
   const description =
     page?.seo?.description ||
     page?.intro ||
-    "Velkommen til Oslo Vegetarfestival 25.-26. mai 2024"
+    "Velkommen til Oslo Vegetarfestival 24.-25. mai 2025"
 
   // Ordinary main image
   const mainImage =
