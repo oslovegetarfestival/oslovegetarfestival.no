@@ -127,6 +127,7 @@ p {
   @include fluid-type($minWidth, $maxWidth, 22px, 28px);
   text-align: center;
   margin: 1rem auto 0;
+  text-wrap: balance;
 }
 
 .page-title {

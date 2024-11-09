@@ -52,11 +52,10 @@ const groupEventByDate = (data: EventItem[]) => {
     },
     []
   )
-
   return grouped
 }
 
-const EventMainPage2023: NextPage<Props> = ({ data = {} }) => {
+const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
   const { page = {}, events = [] } = data
   const groupedData = groupEventByDate(events)
 
@@ -187,10 +186,13 @@ const EventMainPage2023: NextPage<Props> = ({ data = {} }) => {
   )
 }
 
-export default EventMainPage2023
+export default EventMainPage2024
 
 // Get data for this particular page
-const query = `{'page': *[_type == 'page' && slug.current == "/program-2023"][0], 'events': *[_type == 'event' && startDateTime > "2023-01-01" && startDateTime < "2023-12-31"]{..., location->{title}}}`
+const query = `{
+  'page': *[_type == 'page' && slug.current == "/program-2024"][0],
+  'events': *[_type == 'event' && startDateTime > "2024-01-01" && startDateTime < "2024-12-31"]|order(startDateTime asc){..., location->{title}}
+}`
 
 export const getStaticProps = async () => {
   const data = await sanityClient.fetch(query)

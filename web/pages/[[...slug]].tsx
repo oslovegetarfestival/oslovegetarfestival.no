@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 
   // Exclude pages that are handled by normal /pages routing
   const filteredPageQueries = pageQueries.filter(
-    (slug: string) => slug !== "/program-2023" && slug !== "/kart"
+    (slug: string) => slug !== "/program-2024" && slug !== "/kart"
   )
 
   // Split the slug strings to arrays (as required by Next.js)
