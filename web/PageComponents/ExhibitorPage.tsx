@@ -52,7 +52,7 @@ const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
           <BoxWithColor>
             <Flow space="xsmall">
               <h2>Festivalmeny</h2>
-              <RichText data={currentExhibitor.menu?.richText} />
+              <RichText data={currentExhibitor?.menu?.richText} />
             </Flow>
           </BoxWithColor>
         </Section>
