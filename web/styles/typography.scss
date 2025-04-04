@@ -81,42 +81,45 @@ h1,
 h2,
 .h2,
 h3,
-.h3 {
+.h3,
+h4,
+.h4 {
   line-height: 1.2;
   font-weight: normal;
 }
 
 h1,
 .h1 {
-  @include fluid-type($minWidth, $maxWidth, 36px, 56px);
+  @include fluid-type($minWidth, $maxWidth, 42px, 62px);
   font-family: "Canela";
   text-wrap: balance;
 }
 
 h2,
 .h2 {
-  @include fluid-type($minWidth, $maxWidth, 28px, 36px);
-  font-weight: 600;
+  @include fluid-type($minWidth, $maxWidth, 36px, 42px);
+  font-family: "Canela";
   text-wrap: balance;
 }
 
 h3,
 .h3 {
-  @include fluid-type($minWidth, $maxWidth, 22px, 28px);
-  font-weight: 600;
+  @include fluid-type($minWidth, $maxWidth, 30px, 36px);
   text-wrap: balance;
+  font-family: "Canela";
 }
 
 h4,
 .h4 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-family: "Jost";
 }
 
 h5,
 .h5 {
   @include fluid-type($minWidth, 1000px, 18px, 20px);
   font-weight: normal;
+  font-family: "Jost";
 }
 
 p {

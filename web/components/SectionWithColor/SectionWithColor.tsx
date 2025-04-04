@@ -58,7 +58,7 @@ export const SectionWithColor = ({ data }: Props) => {
 
             {link?.text && (
               <div>
-                <Button color="green" link={link?.url}>
+                <Button color="blueberry" link={link?.url}>
                   {link.text}
                 </Button>
               </div>

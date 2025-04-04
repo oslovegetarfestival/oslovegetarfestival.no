@@ -16,7 +16,7 @@ type Props = {
 
 export const Button = ({
   size = "medium",
-  color = "green",
+  color = "blueberry",
   isArrow = true,
   link,
   type = "button",

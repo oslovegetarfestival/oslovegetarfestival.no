@@ -111,7 +111,7 @@ export const HeaderGreenEvents = ({ isFrontpage }: Props) => {
           <div className={styles.mobileToggle}>
             <Button
               size="medium"
-              color="green"
+              color="blueberry"
               isArrow={false}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)

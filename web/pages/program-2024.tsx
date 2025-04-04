@@ -117,7 +117,7 @@ const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
             </Block>
             <Flex align="center" gap="small" wrap>
               <Button
-                color={currentFilter === "" ? "orange" : "green"}
+                color={currentFilter === "" ? "orange" : "blueberry"}
                 size="small"
                 isArrow={false}
                 onClick={() => {
@@ -127,7 +127,9 @@ const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
                 Vis alt
               </Button>
               <Button
-                color={currentFilter === "Kokkekursteltet" ? "orange" : "green"}
+                color={
+                  currentFilter === "Kokkekursteltet" ? "orange" : "blueberry"
+                }
                 size="small"
                 isArrow={false}
                 onClick={() => {
@@ -137,7 +139,9 @@ const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
                 Kokkekurs
               </Button>
               <Button
-                color={currentFilter === "Foredragsteltet" ? "orange" : "green"}
+                color={
+                  currentFilter === "Foredragsteltet" ? "orange" : "blueberry"
+                }
                 size="small"
                 isArrow={false}
                 onClick={() => {
@@ -147,7 +151,7 @@ const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
                 Foredrag
               </Button>
               <Button
-                color={currentFilter === "Barneteltet" ? "orange" : "green"}
+                color={currentFilter === "Barneteltet" ? "orange" : "blueberry"}
                 size="small"
                 isArrow={false}
                 onClick={() => {
@@ -157,7 +161,7 @@ const EventMainPage2024: NextPage<Props> = ({ data = {} }) => {
                 For barn
               </Button>
               <Button
-                color={currentFilter === "Hangout" ? "orange" : "green"}
+                color={currentFilter === "Hangout" ? "orange" : "blueberry"}
                 size="small"
                 isArrow={false}
                 onClick={() => {
