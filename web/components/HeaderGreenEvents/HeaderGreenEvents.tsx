@@ -55,7 +55,7 @@ export const HeaderGreenEvents = ({ isFrontpage }: Props) => {
           align="start"
         >
           {(!isFrontpage || isMobileMenuOpen) && (
-            <p className="h1">
+            <p className="h1 font-strike">
               <Link
                 href="/gront-arrangement"
                 className={logoClass}

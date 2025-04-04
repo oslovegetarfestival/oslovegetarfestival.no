@@ -55,7 +55,7 @@ export const Header = ({ isFrontpage }: Props) => {
           align="start"
         >
           {(!isFrontpage || isMobileMenuOpen) && (
-            <p className="h1">
+            <p className="h1 font-strike">
               <Link href="/" className={logoClass} title="Til forsiden">
                 <span>Oslo</span>
                 <span>Vegetar</span>
