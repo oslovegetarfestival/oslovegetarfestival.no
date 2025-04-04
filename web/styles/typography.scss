@@ -59,6 +59,14 @@ $maxWidth: 1200px;
     url("/fonts/jost-v14-latin-600.woff") format("woff");
 }
 
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/CanelaCondensed-Regular-Web.woff2') format('woff2'),
+    url('/fonts/CanelaCondensed-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
   @include fluid-type($minWidth, 1000px, 18px, 20px);
 }
@@ -81,7 +89,7 @@ h3,
 h1,
 .h1 {
   @include fluid-type($minWidth, $maxWidth, 36px, 56px);
-  font-family: "Strike";
+  font-family: "Canela";
   text-wrap: balance;
 }
 
@@ -117,6 +125,10 @@ p {
 
 .font-strike {
   font-family: "Strike";
+}
+
+.font-canela {
+  font-family: "Canela";
 }
 
 .font-jost {
