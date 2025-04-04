@@ -1,7 +1,7 @@
 // Globals
 body {
-  background: var(--color-almondmilk);
-  color: var(--color-kale);
+  background: var(--color-ikaffe);
+  color: var(--color-blueberry);
   min-width: 320px;
   vertical-align: baseline;
   position: relative;
@@ -35,7 +35,7 @@ a {
 
   &--white {
     border-bottom: 2px solid var(--color-almondmilk);
-    background: linear-gradient(0deg, var(--color-almondmilk), var(--color-almondmilk)) no-repeat right bottom / 0 2px;    
+    background: linear-gradient(0deg, var(--color-almondmilk), var(--color-almondmilk)) no-repeat right bottom / 0 2px;
   }
 }
 
@@ -147,8 +147,7 @@ svg {
 // Animation helpers
 
 [data-animate-in] {
-  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 [data-animate-down] {

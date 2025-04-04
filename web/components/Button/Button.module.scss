@@ -4,7 +4,7 @@
   font-weight: 500;
   border: none;
   border-radius: var(--border-radius);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, filter 0.3s ease;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   cursor: pointer;
   text-wrap: balance;
@@ -66,6 +66,26 @@
   &:focus {
     color: var(--color-almondmilk);
     background-color: var(--color-cucumber);
+  }
+}
+
+.color--celery {
+  background-color: var(--color-celery);
+  color: var(--color-blueberry);
+
+  &:hover,
+  &:focus {
+    filter: brightness(1.1);
+  }
+}
+
+.color--blueberry {
+  background-color: var(--color-blueberry);
+  color: var(--color-ikaffe);
+
+  &:hover,
+  &:focus {
+    filter: brightness(1.2);
   }
 }
 
