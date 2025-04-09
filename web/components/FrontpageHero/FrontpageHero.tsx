@@ -6,7 +6,7 @@ import { AnimationHeaderMobile } from "components/AnimationHeaderMobile"
 
 export const FrontpageHero = () => {
   return (
-    <div style={{ position: "relative", overflow: "hidden" }}>
+    <div className={styles.wrap}>
       <div className={styles.heroImage}>
         <AnimationHeader />
       </div>

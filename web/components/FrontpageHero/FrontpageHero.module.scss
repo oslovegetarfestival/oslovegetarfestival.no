@@ -1,3 +1,9 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 40%
+}
+
 .heroImage {
   margin-top: 50px;
   position: absolute;
@@ -19,14 +25,12 @@
   display: none;
 
   @media (max-width: 499px) {
-    max-width: 320px;
     display: block;
     position: absolute;
     z-index: -1;
     height: 100%;
-    top: 30px;
-    left: 50%;
-    height: 320px;
+    top: 140px;
+    left: var(--page-gutter)
   }
 }
 
