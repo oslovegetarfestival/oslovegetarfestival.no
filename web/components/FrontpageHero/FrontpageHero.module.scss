@@ -1,7 +1,10 @@
 .wrap {
   position: relative;
   overflow: hidden;
-  padding-bottom: 40%
+
+  @media (max-width: 500px) {
+    padding-bottom: 40%;
+  }
 }
 
 .heroImage {
