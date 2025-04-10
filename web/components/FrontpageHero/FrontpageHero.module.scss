@@ -1,16 +1,23 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 500px) {
+    padding-bottom: 40%;
+  }
+}
+
 .heroImage {
+  margin-top: 50px;
   position: absolute;
   left: 40%;
+  margin-right: var(--spacing-3);
   z-index: -1;
   height: 100%;
   max-width: none;
 
   @media (max-width: 1250px) {
     left: 30%;
-  }
-
-  @media (max-width: 750px) {
-    left: 50%;
   }
 
   @media (max-width: 500px) {
@@ -22,14 +29,12 @@
   display: none;
 
   @media (max-width: 499px) {
-    max-width: 320px;
     display: block;
     position: absolute;
     z-index: -1;
     height: 100%;
-    top: 30px;
-    left: 50%;
-    height: 320px;
+    top: 140px;
+    left: var(--page-gutter)
   }
 }
 

@@ -55,7 +55,7 @@ export const HeaderGreenEvents = ({ isFrontpage }: Props) => {
           align="start"
         >
           {(!isFrontpage || isMobileMenuOpen) && (
-            <p className="h1">
+            <p className="h1 font-strike">
               <Link
                 href="/gront-arrangement"
                 className={logoClass}
@@ -111,7 +111,7 @@ export const HeaderGreenEvents = ({ isFrontpage }: Props) => {
           <div className={styles.mobileToggle}>
             <Button
               size="medium"
-              color="green"
+              color="blueberry"
               isArrow={false}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)

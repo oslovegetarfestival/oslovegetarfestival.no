@@ -1,7 +1,7 @@
 // Globals
 body {
-  background: var(--color-almondmilk);
-  color: var(--color-kale);
+  background: var(--color-ikaffe);
+  color: var(--color-blueberry);
   min-width: 320px;
   vertical-align: baseline;
   position: relative;
@@ -21,9 +21,9 @@ a {
 
 // Re-enable link style
 .link {
-  border-bottom: 2px solid var(--color-kale);
+  border-bottom: 2px solid var(--color-blueberry);
   cursor: pointer;
-  background: linear-gradient(0deg, var(--color-kale), var(--color-kale)) no-repeat right bottom / 0 2px;
+  background: linear-gradient(0deg, var(--color-blueberry), var(--color-blueberry)) no-repeat right bottom / 0 2px;
   transition: background-size 350ms;
   font-weight: 500;
 
@@ -34,8 +34,8 @@ a {
   }
 
   &--white {
-    border-bottom: 2px solid var(--color-almondmilk);
-    background: linear-gradient(0deg, var(--color-almondmilk), var(--color-almondmilk)) no-repeat right bottom / 0 2px;    
+    border-bottom: 2px solid var(--color-ikaffe);
+    background: linear-gradient(0deg, var(--color-ikaffe), var(--color-ikaffe)) no-repeat right bottom / 0 2px;
   }
 }
 
@@ -95,7 +95,7 @@ svg {
 }
 
 .sticky-section-header {
-  background-color: var(--color-almondmilk);
+  background-color: var(--color-ikaffe);
   padding: var(--spacing-4) 0;
   font-family: "Strike";
   position: sticky;
@@ -147,8 +147,7 @@ svg {
 // Animation helpers
 
 [data-animate-in] {
-  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  animation: animate-in-from-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 [data-animate-down] {

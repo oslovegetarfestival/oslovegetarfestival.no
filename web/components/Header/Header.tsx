@@ -55,7 +55,7 @@ export const Header = ({ isFrontpage }: Props) => {
           align="start"
         >
           {(!isFrontpage || isMobileMenuOpen) && (
-            <p className="h1">
+            <p className="h1 font-strike">
               <Link href="/" className={logoClass} title="Til forsiden">
                 <span>Oslo</span>
                 <span>Vegetar</span>
@@ -118,7 +118,7 @@ export const Header = ({ isFrontpage }: Props) => {
                 data-animation-order="7"
               >
                 <Button
-                  color="orange"
+                  color="celery"
                   size="small"
                   link="https://tikkio.com/tickets/48169-oslo-vegetarfestival-2025#:~:text=Opplev%20det%20beste%20fra%20planteriket,som%20brenner%20for%20plantebasert%20mat"
                   isOpenInNewWindow
@@ -132,7 +132,7 @@ export const Header = ({ isFrontpage }: Props) => {
           <div className={styles.mobileToggle}>
             <Button
               size="medium"
-              color="green"
+              color="blueberry"
               isArrow={false}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)

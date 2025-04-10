@@ -25,7 +25,7 @@ export const Footer = () => {
           <Flow>
             <Grid>
               <Flow space="small">
-                <h2 className="font-strike">Om Oslo Vegetarfestival</h2>
+                <h2>Om Oslo Vegetarfestival</h2>
                 <p>
                   Opplev det beste fra planteriket! Vi er en inspirerende og
                   idyllisk matfestival som brenner for plantebasert mat.{" "}
@@ -43,7 +43,7 @@ export const Footer = () => {
               </Flow>
 
               <Flow space="small">
-                <h2 className="font-strike">Kontakt</h2>
+                <h2>Kontakt</h2>
                 <p>
                   <strong>E-post</strong>
                   <br />
@@ -66,7 +66,7 @@ export const Footer = () => {
               </Flow>
 
               <Flow space="small">
-                <h2 className="font-strike">Nyhetsbrev</h2>
+                <h2>Nyhetsbrev</h2>
                 <p>
                   Få siste nytt om plantebasert mat, konkurranser, utlodninger
                   og mye mer!
@@ -76,9 +76,10 @@ export const Footer = () => {
             </Grid>
 
             <Flex justify="spaceBetween" align="end" wrap>
-              <p className="h1">
+              <p className="h1 font-strike">
                 <Link href="/" className={styles.logo}>
-                  <span>Oslo</span> <span>Vegetar</span>
+                  <span>Oslo</span>
+                  <span>Vegetar</span>
                   <span>festival</span>
                 </Link>
               </p>

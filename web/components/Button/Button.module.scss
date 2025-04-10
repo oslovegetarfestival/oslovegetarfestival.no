@@ -1,11 +1,9 @@
 .button {
   display: inline-block;
-  font-family: "Strike";
+  font-family: "Canela";
   font-weight: 500;
   border: none;
-  border-radius: var(--border-radius);
-  transition: background-color 0.3s ease;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: background-color 0.3s ease, filter 0.3s ease;
   cursor: pointer;
   text-wrap: balance;
 
@@ -17,7 +15,7 @@
     &:after {
       content: "→";
       display: inline-block;
-      margin-left: 0.6em;
+      margin-left: 0.2em;
       transition: transform 0.3s ease;
     }
 
@@ -28,13 +26,13 @@
     }
   }
 
-  &--arrow-external {
-    &:after {
-      content: "\2197";
-      position: relative;
-      top: -4px;
-    }
-  }
+  // &--arrow-external {
+  //   &:after {
+  //     content: "\2197";
+  //     position: relative;
+  //     top: -4px;
+  //   }
+  // }
 }
 
 // Colors
@@ -69,22 +67,43 @@
   }
 }
 
+.color--celery {
+  background-color: var(--color-celery);
+  color: var(--color-blueberry);
+
+  &:hover,
+  &:focus {
+    filter: brightness(1.1);
+  }
+}
+
+.color--blueberry {
+  background-color: var(--color-blueberry);
+  color: var(--color-ikaffe);
+
+  &:hover,
+  &:focus {
+    filter: brightness(1.2);
+  }
+}
+
 // Size
 .size--small {
-  padding: var(--spacing-1) var(--spacing-5);
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: 1.2rem;
 }
 
 .size--medium {
-  padding: var(--spacing-1) var(--spacing-5);
-  font-size: 1.4rem;
+  padding: 0 var(--spacing-4);
+  font-size: 1.6rem;
 
   @media (max-width: 500px) {
-    padding: var(--spacing-1) var(--spacing-4);
-    font-size: 1.2rem;
+    padding: 0 var(--spacing-4);
+    font-size: 1.4rem;
   }
 }
 
 .size--large {
-  padding: var(--spacing-2) var(--spacing-7);
-  font-size: 1.7rem;
+  padding: 0 var(--spacing-5);
+  font-size: 2rem;
 }

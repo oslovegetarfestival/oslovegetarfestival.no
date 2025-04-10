@@ -98,7 +98,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
             <Flex justify="spaceBetween" gap="medium">
               <div style={{ flex: "1 1 0px" }}>
                 <Block bottom="2">
-                  <p className="font-strike">Hopp til: </p>
+                  <p>Hopp til: </p>
                 </Block>
                 <Flex align="center" gap="small" wrap>
                   {groupedData?.map(({ startDate }) => (
@@ -118,11 +118,11 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
 
               <div style={{ flex: "1 1 0px" }}>
                 <Block bottom="2">
-                  <p className="font-strike">Vis kun: </p>
+                  <p>Vis kun: </p>
                 </Block>
                 <Flex align="center" gap="small" wrap>
                   <Button
-                    color={currentFilter === "" ? "orange" : "green"}
+                    color={currentFilter === "" ? "orange" : "blueberry"}
                     size="small"
                     isArrow={false}
                     onClick={() => {
@@ -133,7 +133,9 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   </Button>
                   <Button
                     color={
-                      currentFilter === "Kokkekursteltet" ? "orange" : "green"
+                      currentFilter === "Kokkekursteltet"
+                        ? "orange"
+                        : "blueberry"
                     }
                     size="small"
                     isArrow={false}
@@ -145,7 +147,9 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   </Button>
                   <Button
                     color={
-                      currentFilter === "Foredragsteltet" ? "orange" : "green"
+                      currentFilter === "Foredragsteltet"
+                        ? "orange"
+                        : "blueberry"
                     }
                     size="small"
                     isArrow={false}
@@ -156,7 +160,9 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                     Foredrag
                   </Button>
                   <Button
-                    color={currentFilter === "Barneteltet" ? "orange" : "green"}
+                    color={
+                      currentFilter === "Barneteltet" ? "orange" : "blueberry"
+                    }
                     size="small"
                     isArrow={false}
                     onClick={() => {
@@ -166,7 +172,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                     For barn
                   </Button>
                   <Button
-                    color={currentFilter === "Hangout" ? "orange" : "green"}
+                    color={currentFilter === "Hangout" ? "orange" : "blueberry"}
                     size="small"
                     isArrow={false}
                     onClick={() => {
