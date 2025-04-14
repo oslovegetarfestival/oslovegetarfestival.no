@@ -23,7 +23,7 @@ const NewsPage: NextPage<Props> = ({ page = {} }) => {
         <SanityBlockModule data={module} key={module._key} />
       ))}
 
-      <Section width="large" verticalPadding="large">
+      <Section width="large" verticalPadding="large" noPadding="top">
         <Card data={page?.items} type="news" />
       </Section>
     </>
