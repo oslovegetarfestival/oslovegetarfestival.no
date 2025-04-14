@@ -6,6 +6,7 @@
   transition: background-color 0.3s ease, filter 0.3s ease;
   cursor: pointer;
   text-wrap: balance;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: none;
@@ -24,6 +25,10 @@
         transform: translateX(20%);
       }
     }
+  }
+
+  &--wrap {
+    white-space: wrap;
   }
 
   // &--arrow-external {
