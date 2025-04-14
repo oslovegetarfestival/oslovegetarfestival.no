@@ -31,6 +31,7 @@ export const button = {
         list: [
           { title: "Grønn", value: "green" },
           { title: "Oransje", value: "orange" },
+          { title: "Blå", value: "blueberry" },
         ],
       },
     },
