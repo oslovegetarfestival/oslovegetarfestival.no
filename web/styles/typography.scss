@@ -104,9 +104,10 @@ h2,
 
 h3,
 .h3 {
-  @include fluid-type($minWidth, $maxWidth, 30px, 36px);
+  @include fluid-type($minWidth, $maxWidth, 24px, 28px);
   text-wrap: balance;
-  font-family: "Canela";
+  font-family: "Jost";
+  font-weight: 500;
 }
 
 h4,
