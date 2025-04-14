@@ -90,21 +90,21 @@ h4,
 
 h1,
 .h1 {
-  @include fluid-type($minWidth, $maxWidth, 42px, 62px);
+  @include fluid-type($minWidth, $maxWidth, 46px, 64px);
   font-family: "Canela";
   text-wrap: balance;
 }
 
 h2,
 .h2 {
-  @include fluid-type($minWidth, $maxWidth, 36px, 42px);
+  @include fluid-type($minWidth, $maxWidth, 38px, 46px);
   font-family: "Canela";
   text-wrap: balance;
 }
 
 h3,
 .h3 {
-  @include fluid-type($minWidth, $maxWidth, 24px, 28px);
+  @include fluid-type($minWidth, $maxWidth, 22px, 26px);
   text-wrap: balance;
   font-family: "Jost";
   font-weight: 500;

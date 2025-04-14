@@ -12,6 +12,7 @@ type Props = {
   isOpenInNewWindow?: boolean
   onClick?: () => void
   children: React.ReactNode
+  isWrap?: boolean
 }
 
 export const Button = ({
@@ -23,6 +24,7 @@ export const Button = ({
   isOpenInNewWindow = false,
   children,
   onClick,
+  isWrap,
 }: Props) => {
   const isInternalLink = link?.startsWith("/")
 
@@ -31,7 +33,8 @@ export const Button = ({
     size ? styles[`size--${size}`] : false,
     color ? styles[`color--${color}`] : false,
     isArrow ? styles[`button--arrow`] : false,
-    !isInternalLink && isArrow ? styles[`button--arrow-external`] : false
+    !isInternalLink && isArrow ? styles[`button--arrow-external`] : false,
+    isWrap ? styles[`button--wrap`] : false
   )
 
   // Link
