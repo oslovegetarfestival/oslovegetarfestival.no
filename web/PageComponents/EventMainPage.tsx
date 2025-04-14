@@ -95,8 +95,8 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       {isShowEvents && (
         <>
           <Section width="large">
-            <Flex justify="spaceBetween" gap="medium">
-              <div style={{ flex: "1 1 0px" }}>
+            <Flex justify="spaceBetween" gap="medium" wrap>
+              <div>
                 <Block bottom="2">
                   <p>Hopp til: </p>
                 </Block>
@@ -116,7 +116,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 </Flex>
               </div>
 
-              <div style={{ flex: "1 1 0px" }}>
+              <div>
                 <Block bottom="2">
                   <p>Vis kun: </p>
                 </Block>

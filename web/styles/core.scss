@@ -61,7 +61,6 @@ ol.list {
 
     &:before {
       content: counter(counter) ". ";
-      font-family: "Strike";
       position: absolute;
       left: 0;
     }
@@ -97,7 +96,6 @@ svg {
 .sticky-section-header {
   background-color: var(--color-ikaffe);
   padding: var(--spacing-4) 0;
-  font-family: "Strike";
   position: sticky;
   top: 0;
   z-index: 1;
