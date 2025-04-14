@@ -94,11 +94,10 @@
 }
 
 .size--medium {
-  padding: 0 var(--spacing-4);
+  padding: var(--spacing-1) var(--spacing-5);
   font-size: 1.6rem;
 
   @media (max-width: 500px) {
-    padding: 0 var(--spacing-4);
     font-size: 1.4rem;
   }
 }
