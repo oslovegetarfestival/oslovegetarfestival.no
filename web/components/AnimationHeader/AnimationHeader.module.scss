@@ -1,15 +1,97 @@
 .animation {
   display: block;
-  height: 100%;
-  max-width: none;
   overflow: visible;
 }
 
-.cloud1 { animation: slide 5s infinite ease alternate; }
-.cloud2 { animation: slide 5s infinite ease alternate; }
-.cloud3 { animation: slide-wide 6s infinite ease alternate; }
-.cloud4 { animation: slide 6s infinite ease alternate; }
-.cloud5 { animation: slide-wide 7s infinite ease alternate; }
+.orange { 
+  animation: rotate 4s infinite ease alternate;
+  transform-origin: 83% 74%;
+}
+
+.brownBody {
+  animation: rotate 3s infinite ease alternate-reverse;
+  transform-origin: 80% 30%;
+}
+
+.blueBottom {
+  animation: rotate 3s infinite ease alternate-reverse;
+  transform-origin: 70% 90%;
+}
+
+.blueTop {
+  animation: rotate-more 3s infinite ease alternate;
+  transform-origin: 50% 70%;
+}
+
+.pink { 
+  animation: rotate-less 3s infinite ease alternate;
+  transform-origin: 60% 13%;
+}
+
+// Flower petals
+
+.petal1 {
+  animation: subtleHover 6s infinite ease-in-out;
+  transform-origin: 10% 80%;
+}
+
+.petal2 {
+  animation: subtleHover 6s infinite ease-in-out alternate-reverse;
+  transform-origin: 50% 50%;
+  animation-delay: 1s;
+}
+
+.petal3 {
+  animation: subtleHover 6s infinite ease-in-out alternate;
+  transform-origin: 50% 50%;
+  animation-delay: 2s;
+}
+
+.petal4 {
+  animation: subtleHover 6s infinite ease-in-out alternate-reverse;
+  transform-origin: 50% 50%;
+  animation-delay: 3s;
+}
+
+.petal5 {
+  animation: subtleHover 6s infinite ease-in-out alternate;
+  transform-origin: 50% 50%;
+  animation-delay: 4s;
+}
+
+.petal6 {
+  animation: subtleHover 6s infinite ease-in-out alternate-reverse;
+  transform-origin: 50% 50%;
+  animation-delay: 5s;
+}
+
+.petal7 {
+  animation: subtleHover 6s infinite ease-in-out alternate;
+  transform-origin: 50% 50%;
+  animation-delay: 6s;
+}
+
+.petal8 {
+  animation: subtleHover 6s infinite ease-in-out alternate-reverse;
+  transform-origin: 50% 50%;
+  animation-delay: 7s;
+}
+
+.petal9 {
+  animation: subtleHover 6s infinite ease-in-out alternate;
+  transform-origin: 50% 50%;
+  animation-delay: 8s;
+}
+
+
+
+
+
+
+
+
+
+
 
 .cloud6 { animation: slide-narrow 6s infinite ease alternate; }
 .cloud7 { animation: slide-narrow 7s infinite ease alternate-reverse; }
@@ -19,11 +101,11 @@
 .bird { animation: up-down 5s infinite ease alternate-reverse; }
 
 .mushroom1 {
-  animation: sway 4s infinite ease alternate;
+  animation: rotate 4s infinite ease alternate;
   transform-origin: 80% 60%;
 }
 .mushroom2 {
-  animation: sway 4s infinite ease alternate-reverse;
+  animation: rotate 4s infinite ease alternate-reverse;
   transform-origin: 70% 60%;
 }
 .mushroom2cap {
@@ -31,18 +113,7 @@
   transform-origin: 72% 30%;
 }
 
-
-@keyframes up-down {
-  0%,
-  100% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(0px, 20px);
-  }
-}
-
-@keyframes sway {
+@keyframes rotate {
   0% {
     transform: rotate(-2deg);
   }
@@ -51,38 +122,29 @@
   }
 }
 
-@keyframes tilt {
+@keyframes rotate-less {
   0% {
-    transform: rotate(-4deg);
+    transform: rotate(-1deg);
   }
   100% {
-    transform: rotate(4deg);
+    transform: rotate(1deg);
   }
 }
 
-@keyframes slide {
+@keyframes rotate-more {
   0% {
-    transform: translateX(-20px);
+    transform: rotate(-3deg);
   }
   100% {
-    transform: translateX(20px);
+    transform: rotate(3deg);
   }
 }
 
-@keyframes slide-narrow {
-  0% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes slide-wide {
-  0% {
-    transform: translateX(40px);
-  }
-  100% {
-    transform: translateX(-40px);
-  }
+@keyframes subtleHover {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  20%  { transform: translate(1px, -2px) rotate(0.3deg); }
+  40%  { transform: translate(-2px, 1px) rotate(-0.4deg); }
+  60%  { transform: translate(1.5px, -1px) rotate(0.2deg); }
+  80%  { transform: translate(-1px, 2px) rotate(-0.3deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
 }
