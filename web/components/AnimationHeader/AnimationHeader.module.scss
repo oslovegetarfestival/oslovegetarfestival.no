@@ -83,36 +83,6 @@
   animation-delay: 8s;
 }
 
-
-
-
-
-
-
-
-
-
-
-.cloud6 { animation: slide-narrow 6s infinite ease alternate; }
-.cloud7 { animation: slide-narrow 7s infinite ease alternate-reverse; }
-
-.butterfly1 { animation: up-down 6s infinite ease alternate-reverse; }
-.butterfly2 { animation: up-down 6s infinite ease alternate; }
-.bird { animation: up-down 5s infinite ease alternate-reverse; }
-
-.mushroom1 {
-  animation: rotate 4s infinite ease alternate;
-  transform-origin: 80% 60%;
-}
-.mushroom2 {
-  animation: rotate 4s infinite ease alternate-reverse;
-  transform-origin: 70% 60%;
-}
-.mushroom2cap {
-  animation: tilt 4s infinite ease alternate-reverse;
-  transform-origin: 72% 30%;
-}
-
 @keyframes rotate {
   0% {
     transform: rotate(-2deg);

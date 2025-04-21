@@ -1,9 +1,8 @@
 .wrap {
   position: relative;
-  overflow: hidden;
 
   @media (max-width: 500px) {
-    padding-bottom: 40%;
+    padding-bottom: 26%;
   }
 }
 
@@ -33,8 +32,11 @@
     position: absolute;
     z-index: -1;
     height: 100%;
-    top: 140px;
+    top: 86px;
     left: var(--page-gutter)
+  }
+  @media (max-width: 405px) {
+    top: 100px;
   }
 }
 

@@ -1,42 +1,79 @@
 .animation {
   display: block;
-  height: 100%;
-  max-width: none;
   overflow: visible;
 }
 
-.cloud1 { animation: slide 5s infinite ease alternate; }
-.cloud6 { animation: slide-narrow 6s infinite ease alternate; }
-
-.butterfly1 { animation: up-down 6s infinite ease alternate-reverse; }
-.butterfly2 { animation: up-down 6s infinite ease alternate; }
-.bird { animation: up-down 5s infinite ease alternate-reverse; }
-
-.mushroom1 {
-  animation: sway 4s infinite ease alternate;
-  transform-origin: 60% 90%;
-}
-.mushroom2 {
-  animation: sway 4s infinite ease alternate-reverse;
-  transform-origin: 40% 94%;
-}
-.mushroom2cap {
-  animation: tilt 4s infinite ease alternate-reverse;
-  transform-origin: 72% 30%;
+.orange { 
+  animation: rotate 4s infinite ease alternate;
+  transform-origin: 63% 98%;
 }
 
-
-@keyframes up-down {
-  0%,
-  100% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(0px, 20px);
-  }
+.green {
+  animation: rotate 3s infinite ease alternate-reverse;
+  transform-origin: 90% 70%;
 }
 
-@keyframes sway {
+.pink { 
+  animation: rotate-less 3s infinite ease alternate;
+  transform-origin: 20% 93%;
+}
+
+// Flower petals
+
+.petal1 {
+  animation: subtleSway 6s infinite ease-in-out;
+  transform-origin: 96% 20%;
+}
+
+.petal2 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 0.5s;
+}
+
+.petal3 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 1s;
+}
+
+.petal4 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 1.5s;
+}
+
+.petal5 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 2s;
+}
+
+.petal6 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 2.5s;
+}
+
+.petal7 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 3s;
+}
+
+.petal8 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 3.5s;
+}
+
+.petal9 {
+  animation: subtleSway 6s infinite ease-in-out alternate;
+  transform-origin: 93% 20%;
+  animation-delay: 4s;
+}
+
+@keyframes rotate {
   0% {
     transform: rotate(-2deg);
   }
@@ -45,38 +82,28 @@
   }
 }
 
-@keyframes tilt {
+@keyframes rotate-less {
   0% {
-    transform: rotate(-4deg);
+    transform: rotate(-1deg);
   }
   100% {
-    transform: rotate(4deg);
+    transform: rotate(1deg);
   }
 }
 
-@keyframes slide {
+@keyframes rotate-more {
   0% {
-    transform: translateX(-20px);
+    transform: rotate(-3deg);
   }
   100% {
-    transform: translateX(20px);
+    transform: rotate(3deg);
   }
 }
 
-@keyframes slide-narrow {
-  0% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes slide-wide {
-  0% {
-    transform: translateX(40px);
-  }
-  100% {
-    transform: translateX(-40px);
-  }
+@keyframes subtleSway {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(0.6deg); }
+  50%  { transform: rotate(-3deg); }
+  80%  { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }
