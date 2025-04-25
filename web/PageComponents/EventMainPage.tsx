@@ -16,6 +16,7 @@ type Props = {
 type EventItem = {
   title: string
   startDateTime: string
+  eventType: string
   location: {
     title: string
   }
@@ -73,7 +74,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const filterEvents = (events: EventItem[]) => {
     if (currentFilter === "" || currentFilter == null) return events
 
-    return events.filter((event) => event?.location?.title === currentFilter)
+    return events.filter((event) => event?.eventType === currentFilter)
   }
 
   // Temp
@@ -133,53 +134,47 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   </Button>
                   <Button
                     color={
-                      currentFilter === "Kokkekursteltet"
-                        ? "orange"
-                        : "blueberry"
+                      currentFilter === "kokkekurs" ? "orange" : "blueberry"
                     }
                     size="small"
                     isArrow={false}
                     onClick={() => {
-                      handleFilterClick("Kokkekursteltet")
+                      handleFilterClick("kokkekurs")
                     }}
                   >
                     Kokkekurs
                   </Button>
                   <Button
                     color={
-                      currentFilter === "Foredragsteltet"
-                        ? "orange"
-                        : "blueberry"
+                      currentFilter === "foredrag" ? "orange" : "blueberry"
                     }
                     size="small"
                     isArrow={false}
                     onClick={() => {
-                      handleFilterClick("Foredragsteltet")
+                      handleFilterClick("foredrag")
                     }}
                   >
                     Foredrag
                   </Button>
                   <Button
-                    color={
-                      currentFilter === "Barneteltet" ? "orange" : "blueberry"
-                    }
+                    color={currentFilter === "barn" ? "orange" : "blueberry"}
                     size="small"
                     isArrow={false}
                     onClick={() => {
-                      handleFilterClick("Barneteltet")
+                      handleFilterClick("barn")
                     }}
                   >
                     For barn
                   </Button>
                   <Button
-                    color={currentFilter === "Hangout" ? "orange" : "blueberry"}
+                    color={currentFilter === "annet" ? "orange" : "blueberry"}
                     size="small"
                     isArrow={false}
                     onClick={() => {
-                      handleFilterClick("Hangout")
+                      handleFilterClick("annet")
                     }}
                   >
-                    Hangout
+                    Annet
                   </Button>
                 </Flex>
               </div>

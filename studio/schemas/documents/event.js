@@ -26,6 +26,21 @@ export const event = {
       type: "datetime",
     },
     {
+      name: "eventType",
+      title: "Type arrangement",
+      description: "Hva slags type arrangement. Feks: Kokkekurs",
+      type: "string",
+      options: {
+        list: [
+          { title: "Kokkekurs", value: "kokkekurs" },
+          { title: "Foredrag", value: "foredrag" },
+          { title: "For barn", value: "barn" },
+          { title: "Annet", value: "annet" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Sted",
       name: "location",
       type: "reference",
