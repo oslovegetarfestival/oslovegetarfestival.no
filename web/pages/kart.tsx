@@ -43,10 +43,17 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
     })
 
   // Divide exhibitors into: sletta, hagen, skogsholtet
-  const slettaItems = data?.filter((exhibitor) => exhibitor.area === "sletta")
-  const hagenItems = data?.filter((exhibitor) => exhibitor.area === "hagen")
-  const skogsholtetItems = data?.filter(
-    (exhibitor) => exhibitor.area === "skogsholtet"
+  const musclePowerItems = data?.filter(
+    (exhibitor) => exhibitor.area === "muscle-power"
+  )
+  const greenLightDistrictItems = data?.filter(
+    (exhibitor) => exhibitor.area === "green-light-district"
+  )
+  const animalLoversItems = data?.filter(
+    (exhibitor) => exhibitor.area === "animal-lovers"
+  )
+  const brainPowerItems = data?.filter(
+    (exhibitor) => exhibitor.area === "brain-power"
   )
 
   return (
@@ -78,17 +85,24 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               </Block>
 
               <Flex align="center" gap="small" wrap>
-                <Button size="small" isArrow={false} link="#hagen">
-                  Hagen
+                <Button size="small" isArrow={false} link="#muscle-power">
+                  Muscle power
                 </Button>
-                <Button size="small" isArrow={false} link="#sletta">
-                  Sletta
+                <Button
+                  size="small"
+                  isArrow={false}
+                  link="#green-light-district"
+                >
+                  Green light district
                 </Button>
-                <Button size="small" isArrow={false} link="#skogsholtet">
-                  Skogsholtet
+                <Button size="small" isArrow={false} link="#animal-lovers">
+                  Animal lovers
                 </Button>
-                <Button size="small" isArrow={false} link="#serveringsboder">
-                  Serveringsboder
+                <Button size="small" isArrow={false} link="#brain-power">
+                  Brain power - hovedscenen
+                </Button>
+                <Button size="small" isArrow={false} link="#power-up">
+                  Power up - mat og drikke
                 </Button>
               </Flex>
             </div>
@@ -97,38 +111,48 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
 
         <Section width="small" verticalPadding="large">
           <Flow space="xsmall">
-            <h2 className="sticky-section-header" id="hagen">
-              Utstillere i hagen
+            <h2 className="sticky-section-header" id="muscle-power">
+              Utstillere i Muscle power
             </h2>
 
-            {hagenItems?.map((item) => (
+            {musclePowerItems?.map((item) => (
               <p key={item._id}>
                 <Link href={item.slug.current}>{item.title}</Link>
               </p>
             ))}
 
-            <h2 className="sticky-section-header" id="sletta">
-              Utstillere på sletta
+            <h2 className="sticky-section-header" id="green-light-district">
+              Utstillere i Green light district
             </h2>
 
-            {slettaItems?.map((item) => (
+            {greenLightDistrictItems?.map((item) => (
               <p key={item._id}>
                 <Link href={item.slug.current}>{item.title}</Link>
               </p>
             ))}
 
-            <h2 className="sticky-section-header" id="skogsholtet">
-              Utstillere i skogsholtet
+            <h2 className="sticky-section-header" id="animal-lovers">
+              Utstillere i Animal lovers
             </h2>
 
-            {skogsholtetItems?.map((item) => (
+            {animalLoversItems?.map((item) => (
+              <p key={item._id}>
+                <Link href={item.slug.current}>{item.title}</Link>
+              </p>
+            ))}
+
+            <h2 className="sticky-section-header" id="brain-power">
+              Utstillere i Brain power - hovedscenen
+            </h2>
+
+            {brainPowerItems?.map((item) => (
               <p key={item._id}>
                 <Link href={item.slug.current}>{item.title}</Link>
               </p>
             ))}
 
             <h2 className="sticky-section-header" id="serveringsboder">
-              Serveringsboder
+              Power up - mat og drikke
             </h2>
             <div>
               {/* @ts-expect-error */}

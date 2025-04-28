@@ -39,9 +39,11 @@ export const exhibitor = {
       type: "string",
       options: {
         list: [
-          { title: "Hagen", value: "hagen" },
-          { title: "Sletta", value: "sletta" },
-          { title: "Skogsholtet", value: "skogsholtet" },
+          { title: "Power up - mat og drikke", value: "power-up" },
+          { title: "Muscle power", value: "muscle-power" },
+          { title: "Green light district", value: "green-light-district" },
+          { title: "Animal lovers", value: "animal-lovers" },
+          { title: "Brain power - hovedscenen", value: "brain-power" },
         ],
       },
     },
