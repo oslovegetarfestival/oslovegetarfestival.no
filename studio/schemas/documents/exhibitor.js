@@ -43,7 +43,6 @@ export const exhibitor = {
           { title: "Muscle power", value: "muscle-power" },
           { title: "Green light district", value: "green-light-district" },
           { title: "Animal lovers", value: "animal-lovers" },
-          { title: "Brain power - hovedscenen", value: "brain-power" },
         ],
       },
     },

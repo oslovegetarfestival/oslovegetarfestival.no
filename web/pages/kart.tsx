@@ -98,9 +98,6 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
                 <Button size="small" isArrow={false} link="#animal-lovers">
                   Animal lovers
                 </Button>
-                <Button size="small" isArrow={false} link="#brain-power">
-                  Brain power - hovedscenen
-                </Button>
                 <Button size="small" isArrow={false} link="#power-up">
                   Power up - mat og drikke
                 </Button>
@@ -136,16 +133,6 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
             </h2>
 
             {animalLoversItems?.map((item) => (
-              <p key={item._id}>
-                <Link href={item.slug.current}>{item.title}</Link>
-              </p>
-            ))}
-
-            <h2 className="sticky-section-header" id="brain-power">
-              Utstillere i Brain power - hovedscenen
-            </h2>
-
-            {brainPowerItems?.map((item) => (
               <p key={item._id}>
                 <Link href={item.slug.current}>{item.title}</Link>
               </p>
