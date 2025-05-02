@@ -45,6 +45,15 @@ const groupExhibitionByType = (data: ExhibitionItem[]) => {
     grouped.push(movedItem)
   }
 
+  // Move "Serveringsbod" to the top of the array (and present it first)
+  const indexToMoveServeringsbod = grouped.findIndex(
+    (event) => event.title === "Serveringsbod"
+  )
+  if (indexToMoveServeringsbod !== -1) {
+    const [movedItem] = grouped.splice(indexToMoveServeringsbod, 1)
+    grouped.unshift(movedItem)
+  }
+
   return grouped
 }
 
