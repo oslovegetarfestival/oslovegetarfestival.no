@@ -52,9 +52,6 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
   const animalLoversItems = data?.filter(
     (exhibitor) => exhibitor.area === "animal-lovers"
   )
-  const brainPowerItems = data?.filter(
-    (exhibitor) => exhibitor.area === "brain-power"
-  )
 
   return (
     <>
