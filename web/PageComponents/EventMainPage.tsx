@@ -56,7 +56,22 @@ const groupEventByDate = (data: EventItem[]) => {
 }
 
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
-  const groupedData = groupEventByDate(page?.items)
+  const regularEvents = page?.items?.filter(
+    (item: EventItem) =>
+      item?.location?.title !== "Barneteltet" &&
+      item?.location?.title !== "Hundeområdet"
+  )
+  const kidsEvents = page?.items?.filter(
+    (item: EventItem) =>
+      item?.location?.title === "Barneteltet"
+  )
+  const dogEvents = page?.items?.filter(
+    (item: EventItem) => item?.location?.title === "Hundeområdet"
+  )
+
+  const groupedRegularData = groupEventByDate(regularEvents)
+  const groupedKidsData = groupEventByDate(kidsEvents)
+  const groupedDogData = groupEventByDate(dogEvents)
 
   const [currentFilter, setCurrentFilter] = useState("")
 
@@ -102,7 +117,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   <p>Hopp til: </p>
                 </Block>
                 <Flex align="center" gap="small" wrap>
-                  {groupedData?.map(({ startDate }) => (
+                  {groupedRegularData?.map(({ startDate }) => (
                     <Button
                       size="small"
                       isArrow={false}
@@ -114,6 +129,24 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                       </span>
                     </Button>
                   ))}
+                  {groupedKidsData && groupedKidsData.length > 0 && (
+                    <Button
+                      size="small"
+                      isArrow={false}
+                      link={`#Barneteltet`}
+                    >
+                      <span className="uppercase-first">For barn</span>
+                    </Button>
+                  )}
+                  {groupedDogData && groupedDogData.length > 0 && (
+                    <Button
+                      size="small"
+                      isArrow={false}
+                      link={`#Hundeområdet`}
+                    >
+                      <span className="uppercase-first">For hunder</span>
+                    </Button>
+                  )}
                 </Flex>
               </div>
 
@@ -157,16 +190,6 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                     Foredrag
                   </Button>
                   <Button
-                    color={currentFilter === "barn" ? "orange" : "blueberry"}
-                    size="small"
-                    isArrow={false}
-                    onClick={() => {
-                      handleFilterClick("barn")
-                    }}
-                  >
-                    For barn
-                  </Button>
-                  <Button
                     color={currentFilter === "annet" ? "orange" : "blueberry"}
                     size="small"
                     isArrow={false}
@@ -181,11 +204,36 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
             </Flex>
           </Section>
 
-          {groupedData?.map(({ startDate, items }: EventGroupedItem) => (
+          {groupedRegularData?.map(({ startDate, items }: EventGroupedItem) => (
             <Section width="large" verticalPadding="large" key={startDate}>
               <Flow>
                 <h2 className="sticky-section-header" id={weekDay(startDate)}>
                   {weekDayAndDate(startDate)}
+                </h2>
+                {/* @ts-ignore */}
+                <Card data={filterEvents(items)} type="event" isSplit />
+              </Flow>
+            </Section>
+          ))}
+
+          {groupedKidsData?.map(({ startDate, items }: EventGroupedItem, index) => (
+            <Section width="large" verticalPadding="large" key={startDate}>
+              <Flow>
+                <h2 className="sticky-section-header" id={index === 0 ? "Barneteltet" : ""}>
+                  For barn - {weekDay(startDate)}
+                </h2>
+                
+                {/* @ts-ignore */}
+                <Card data={filterEvents(items)} type="event" isSplit />
+              </Flow>
+            </Section>
+          ))}
+
+          {groupedDogData?.map(({ startDate, items }: EventGroupedItem, index) => (
+            <Section width="large" verticalPadding="large" key={startDate}>
+              <Flow>
+              <h2 className="sticky-section-header" id={index === 0 ? "Hundeområdet" : ""}>
+                  For hunder - {weekDay(startDate)}
                 </h2>
                 {/* @ts-ignore */}
                 <Card data={filterEvents(items)} type="event" isSplit />
