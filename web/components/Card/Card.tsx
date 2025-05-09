@@ -109,6 +109,8 @@ export const Card = ({
             <div className={styles.content}>
               <p className={styles.metadata}>
                 {createEventDate({ type: type, item: item })}
+                <br />
+                {item.location?.title}
               </p>
               <Flow space="xsmall">
                 <h2 className={titleClass}>{item.title}</h2>
