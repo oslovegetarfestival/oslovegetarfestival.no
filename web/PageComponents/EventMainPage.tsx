@@ -208,7 +208,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                       <em>
                         Inngang fra kl 11:00{" "}
                         {startDate.startsWith("2025-05-24") &&
-                          " (Morgen-rave billett kl 09:00)"}
+                          " / Morgen-rave kl 09:00"}
                       </em>
                     </p>
                   </Block>
