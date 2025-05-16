@@ -151,7 +151,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               boder samtidig. Du kan også bestille direkte fra matbodene.
             </Block>
 
-            <div>
+            <div id="power-up">
               {/* @ts-expect-error */}
               <Accordion list={accordionItems} />
             </div>
