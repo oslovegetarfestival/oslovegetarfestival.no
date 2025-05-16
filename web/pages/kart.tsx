@@ -138,6 +138,19 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
             <h2 className="sticky-section-header" id="serveringsboder">
               Power up - mat og drikke
             </h2>
+
+            <Block bottom="6">
+              <a
+                href="https://favrit.com/en-gb/menu/location/LWBOzkXd17q"
+                target="_blank"
+                className="link"
+              >
+                Bestill mat og drikke med QR
+              </a>{" "}
+              og få en SMS når du kan hente maten. Du kan bestille fra flere
+              boder samtidig. Du kan også bestille direkte fra matbodene.
+            </Block>
+
             <div>
               {/* @ts-expect-error */}
               <Accordion list={accordionItems} />
