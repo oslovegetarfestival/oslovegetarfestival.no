@@ -70,8 +70,6 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
     (item: EventItem) => item?.location?.title === "Hundeområdet"
   )
 
-  console.log(kidsEvents);
-
   const groupedRegularData = groupEventByDate(regularEvents)
   const groupedKidsData = groupEventByDate(kidsEvents)
   const groupedDogData = groupEventByDate(dogEvents)
