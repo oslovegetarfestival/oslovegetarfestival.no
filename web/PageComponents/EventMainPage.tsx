@@ -62,8 +62,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       item?.location?.title !== "Hundeområdet"
   )
   const kidsEvents = page?.items?.filter(
-    (item: EventItem) =>
-      item?.location?.title === "Barneteltet"
+    (item: EventItem) => item?.location?.title === "Barneteltet"
   )
   const dogEvents = page?.items?.filter(
     (item: EventItem) => item?.location?.title === "Hundeområdet"
@@ -130,20 +129,12 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                     </Button>
                   ))}
                   {groupedKidsData && groupedKidsData.length > 0 && (
-                    <Button
-                      size="small"
-                      isArrow={false}
-                      link={`#Barneteltet`}
-                    >
+                    <Button size="small" isArrow={false} link={`#Barneteltet`}>
                       <span className="uppercase-first">For barn</span>
                     </Button>
                   )}
                   {groupedDogData && groupedDogData.length > 0 && (
-                    <Button
-                      size="small"
-                      isArrow={false}
-                      link={`#Hundeområdet`}
-                    >
+                    <Button size="small" isArrow={false} link={`#Hundeområdet`}>
                       <span className="uppercase-first">For hunder</span>
                     </Button>
                   )}
@@ -207,39 +198,61 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
           {groupedRegularData?.map(({ startDate, items }: EventGroupedItem) => (
             <Section width="large" verticalPadding="large" key={startDate}>
               <Flow>
-                <h2 className="sticky-section-header" id={weekDay(startDate)}>
-                  {weekDayAndDate(startDate)}
-                </h2>
+                <div>
+                  <h2 className="sticky-section-header" id={weekDay(startDate)}>
+                    {weekDayAndDate(startDate)}
+                  </h2>
+
+                  <Block bottom="4">
+                    <p>
+                      <em>
+                        Inngang fra kl 11:00{" "}
+                        {startDate.startsWith("2025-05-24") &&
+                          " (Morgen-rave billett kl 09:00)"}
+                      </em>
+                    </p>
+                  </Block>
+                </div>
                 {/* @ts-ignore */}
                 <Card data={filterEvents(items)} type="event" isSplit />
               </Flow>
             </Section>
           ))}
 
-          {groupedKidsData?.map(({ startDate, items }: EventGroupedItem, index) => (
-            <Section width="large" verticalPadding="large" key={startDate}>
-              <Flow>
-                <h2 className="sticky-section-header" id={index === 0 ? "Barneteltet" : ""}>
-                  For barn - {weekDay(startDate)}
-                </h2>
-                
-                {/* @ts-ignore */}
-                <Card data={filterEvents(items)} type="event" isSplit />
-              </Flow>
-            </Section>
-          ))}
+          {groupedKidsData?.map(
+            ({ startDate, items }: EventGroupedItem, index) => (
+              <Section width="large" verticalPadding="large" key={startDate}>
+                <Flow>
+                  <h2
+                    className="sticky-section-header"
+                    id={index === 0 ? "Barneteltet" : ""}
+                  >
+                    For barn - {weekDay(startDate)}
+                  </h2>
 
-          {groupedDogData?.map(({ startDate, items }: EventGroupedItem, index) => (
-            <Section width="large" verticalPadding="large" key={startDate}>
-              <Flow>
-              <h2 className="sticky-section-header" id={index === 0 ? "Hundeområdet" : ""}>
-                  For hunder - {weekDay(startDate)}
-                </h2>
-                {/* @ts-ignore */}
-                <Card data={filterEvents(items)} type="event" isSplit />
-              </Flow>
-            </Section>
-          ))}
+                  {/* @ts-ignore */}
+                  <Card data={filterEvents(items)} type="event" isSplit />
+                </Flow>
+              </Section>
+            )
+          )}
+
+          {groupedDogData?.map(
+            ({ startDate, items }: EventGroupedItem, index) => (
+              <Section width="large" verticalPadding="large" key={startDate}>
+                <Flow>
+                  <h2
+                    className="sticky-section-header"
+                    id={index === 0 ? "Hundeområdet" : ""}
+                  >
+                    For hunder - {weekDay(startDate)}
+                  </h2>
+                  {/* @ts-ignore */}
+                  <Card data={filterEvents(items)} type="event" isSplit />
+                </Flow>
+              </Section>
+            )
+          )}
         </>
       )}
     </>
