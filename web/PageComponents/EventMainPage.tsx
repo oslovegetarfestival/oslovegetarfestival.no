@@ -59,14 +59,18 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const regularEvents = page?.items?.filter(
     (item: EventItem) =>
       item?.location?.title !== "Barneteltet" &&
-      item?.location?.title !== "Hundeområdet"
+      item?.location?.title !== "Hundeområdet" &&
+      item?.eventType !== "barn"
   )
   const kidsEvents = page?.items?.filter(
-    (item: EventItem) => item?.location?.title === "Barneteltet"
+    (item: EventItem) =>
+      item?.location?.title === "Barneteltet" || item?.eventType === "barn"
   )
   const dogEvents = page?.items?.filter(
     (item: EventItem) => item?.location?.title === "Hundeområdet"
   )
+
+  console.log(kidsEvents);
 
   const groupedRegularData = groupEventByDate(regularEvents)
   const groupedKidsData = groupEventByDate(kidsEvents)
