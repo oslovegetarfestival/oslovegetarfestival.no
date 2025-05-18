@@ -34,7 +34,7 @@ const nextConfig = {
       },
       {
         source: "/meny",
-        destination: "/kart#serveringsboder",
+        destination: "https://favrit.com/en-gb/menu/location/LWBOzkXd17q",
         permanent: false,
       },
     ]
