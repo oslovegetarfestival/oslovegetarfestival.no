@@ -130,6 +130,11 @@ export const SanityBlockModule = ({ data }: Props) => {
             data-event-id="128700"
             strategy="afterInteractive"
           />
+          <div id="checkin_registration">
+            <div style={{ textAlign: "center" }}>
+              <em>Laster inn skjema...</em>
+            </div>
+          </div>
         </>
       </Section>
     )
