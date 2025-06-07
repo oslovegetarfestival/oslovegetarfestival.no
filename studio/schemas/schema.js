@@ -10,6 +10,7 @@ import { frontPage } from "./documents/frontPage";
 import { greenEvents } from "./documents/greenEvents";
 import { greenEventsFoodProvider } from "./documents/greenEventsFoodProvider";
 import { greenEventsFoodProviderType } from "./documents/greenEventsFoodProviderType";
+import { ticketEmbed } from "./parts/ticketEmbed";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default [
@@ -24,4 +25,5 @@ export default [
   greenEvents,
   greenEventsFoodProvider,
   greenEventsFoodProviderType,
+  ticketEmbed,
 ];

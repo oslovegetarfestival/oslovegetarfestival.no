@@ -8,6 +8,7 @@ import { accordion } from "./accordion";
 import { smallSectionWithColor } from "./smallSectionWithColor";
 import { button } from "./button";
 import { slideshow } from "./slideshow";
+import { ticketEmbed } from "./ticketEmbed";
 
 export const contentBlocks = {
   name: "contentBlocks",
@@ -24,5 +25,6 @@ export const contentBlocks = {
     accordion,
     button,
     slideshow,
+    ticketEmbed,
   ],
 };

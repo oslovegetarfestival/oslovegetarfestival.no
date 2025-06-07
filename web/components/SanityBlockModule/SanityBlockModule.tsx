@@ -9,6 +9,7 @@ import { SanityImageWrap } from "components/SanityImageWrap"
 import { SmallSectionWithColor } from "components/SmallSectionWithColor"
 import { Button } from "components/Button"
 import { Slideshow } from "components/Slideshow"
+import Script from "next/script"
 
 type Props = {
   data: {
@@ -115,6 +116,21 @@ export const SanityBlockModule = ({ data }: Props) => {
       <Section verticalPadding="tiny">
         {/* @ts-expect-error */}
         <Slideshow data={data} />
+      </Section>
+    )
+  }
+
+  // Ticket embed
+  if (blockType === "ticketEmbed") {
+    return (
+      <Section verticalPadding="tiny">
+        <>
+          <Script
+            src="https://registration.checkin.no/registration.loader.js"
+            data-event-id="128700"
+            strategy="afterInteractive"
+          />
+        </>
       </Section>
     )
   }
