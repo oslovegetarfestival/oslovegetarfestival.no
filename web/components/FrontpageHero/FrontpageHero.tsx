@@ -26,12 +26,7 @@ export const FrontpageHero = () => {
         </div>
 
         <Block top="7">
-          <Button
-            size="large"
-            color="celery"
-            link="https://tikkio.com/tickets/48169-oslo-vegetarfestival-2025#:~:text=Opplev%20det%20beste%20fra%20planteriket,som%20brenner%20for%20plantebasert%20mat"
-            isOpenInNewWindow
-          >
+          <Button size="large" color="celery" link="/billett">
             Kjøp billett
           </Button>
         </Block>

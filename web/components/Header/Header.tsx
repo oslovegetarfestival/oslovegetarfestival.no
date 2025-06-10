@@ -117,12 +117,7 @@ export const Header = ({ isFrontpage }: Props) => {
                 data-animate-in
                 data-animation-order="7"
               >
-                <Button
-                  color="celery"
-                  size="small"
-                  link="https://tikkio.com/tickets/48169-oslo-vegetarfestival-2025#:~:text=Opplev%20det%20beste%20fra%20planteriket,som%20brenner%20for%20plantebasert%20mat"
-                  isOpenInNewWindow
-                >
+                <Button color="celery" size="small" link="/billett">
                   Kjøp billett
                 </Button>
               </li>

@@ -33,11 +33,7 @@ export const Footer = () => {
                     Mer om festivalen
                   </Link>
                 </p>
-                <Button
-                  color="orange"
-                  link="https://tikkio.com/tickets/48169-oslo-vegetarfestival-2025#:~:text=Opplev%20det%20beste%20fra%20planteriket,som%20brenner%20for%20plantebasert%20mat"
-                  isOpenInNewWindow
-                >
+                <Button color="orange" link="/billett">
                   Kjøp billett
                 </Button>
               </Flow>
