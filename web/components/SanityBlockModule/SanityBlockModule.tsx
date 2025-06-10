@@ -132,7 +132,16 @@ export const SanityBlockModule = ({ data }: Props) => {
           />
           <div id="checkin_registration">
             <div style={{ textAlign: "center" }}>
-              <em>Laster inn skjema...</em>
+              <p>Laster inn billettbestilling...</p>
+              {data?.url && (
+                <p>
+                  <a href={data?.url} target="_blank" rel="noopener noreferrer">
+                    <span style={{ textDecoration: "underline" }}>
+                      Trykk her om det ikke fungerer
+                    </span>
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         </>
