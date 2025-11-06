@@ -8,6 +8,8 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  // Increase timeout for static page generation during build
+  staticPageGenerationTimeout: 180, // 3 minutes
   async redirects() {
     return [
       {
