@@ -1,4 +1,4 @@
-@import "utils/fluidtype";
+@use "utils/fluidtype" as *;
 
 // Fluid typography
 $minWidth: 320px;
