@@ -1,5 +1,5 @@
 // Scss variables (needed for media query support)
-@import "styles/breakpoints";
+@use "styles/breakpoints" as *;
 
 // Global variables
 :root {

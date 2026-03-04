@@ -35,7 +35,7 @@ type Props = {
 
 export const SanityImageWrap = ({
   image,
-  width = 1000, // Make sure we're never loading full resolution images by a mistake
+  width = 1000,
   height,
   isRoundCorners = true,
   isFeaturedImage,

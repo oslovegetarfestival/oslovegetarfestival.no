@@ -1,4 +1,4 @@
-@import "styles/breakpoints";
+@use "styles/breakpoints" as *;
 
 .grid {
   display: flex;
@@ -6,7 +6,7 @@
 
   &-reverse {
     flex-flow: row-reverse;
-  }  
+  }
 
   // Breakpoint
   &:not(.grid-noWrap) {
@@ -29,7 +29,7 @@
     @media (max-width: $breakpoint-tablet) {
       padding-top: var(--grid-gutter)
     }
-  } 
+  }
 
   &-verticalCenter {
     @media (min-width: calc($breakpoint-tablet + 1px)) {
@@ -46,7 +46,7 @@
       @media (max-width: $breakpoint-tablet) {
         padding-top: 0;
       }
-    } 
+    }
 
   }
 }
