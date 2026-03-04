@@ -14,12 +14,13 @@ type Props = {
 }
 
 const ExhibitorPage: NextPage<Props> = ({ page = {} }) => {
-  const { currentExhibitor, allExhibitors } = page
+  const { currentExhibitor, allExhibitors } = page || {}
 
   // Find previous and next exhibitor
-  const currentIndex = allExhibitors?.findIndex(
-    (event: any) => event?._id === currentExhibitor?._id
-  )
+  const currentIndex =
+    allExhibitors?.findIndex(
+      (event: any) => event?._id === currentExhibitor?._id
+    ) ?? -1
   const nextExhibitor = allExhibitors?.[currentIndex + 1]
   const previousExhibitor = allExhibitors?.[currentIndex - 1]
   return (
