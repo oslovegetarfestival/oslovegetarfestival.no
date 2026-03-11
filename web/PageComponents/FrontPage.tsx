@@ -19,13 +19,7 @@ const FrontPage: NextPage<Props> = ({ page = {} }) => {
 
       <FrontpageHero />
 
-      <Section
-        centerContent
-        width="full"
-        verticalPadding="xlarge"
-        style={{ paddingTop: "40px" }}
-        isResponsive
-      >
+      <Section centerContent width="full" verticalPadding="xlarge" isResponsive>
         <Section width="large" noPadding="sides">
           <h2>Nytt fra festivalen</h2>
 
