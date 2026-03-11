@@ -1,44 +1,25 @@
 .wrap {
-  position: relative;
-
-  @media (max-width: 500px) {
-    padding-bottom: 26%;
-  }
+  display: flex;
 }
 
 .heroImage {
-  margin-top: 50px;
-  position: absolute;
-  left: 40%;
-  margin-right: var(--spacing-3);
-  z-index: -1;
-  height: 100%;
-  max-width: none;
+  flex: 1;
+  position: relative;
 
-  @media (max-width: 1250px) {
-    left: 30%;
-  }
-
-  @media (max-width: 500px) {
-    display: none;
-  }
-}
-
-.heroImageMobile {
-  display: none;
-
-  @media (max-width: 499px) {
-    display: block;
+  img {
     position: absolute;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    top: 86px;
-    left: var(--page-gutter)
-  }
-  @media (max-width: 405px) {
-    top: 100px;
+    object-fit: contain;
   }
 }
+
+.heroContent {
+  flex-shrink: 0;
+}
+
 
 .logo {
   line-height: 0.9;

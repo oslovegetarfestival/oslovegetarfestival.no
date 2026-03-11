@@ -7,14 +7,12 @@ import { AnimationHeaderMobile } from "components/AnimationHeaderMobile"
 export const FrontpageHero = () => {
   return (
     <div className={styles.wrap}>
-      <div className={styles.heroImage}>
-        <AnimationHeader />
-      </div>
-      <div className={styles.heroImageMobile}>
-        <AnimationHeaderMobile />
-      </div>
-
-      <Section width="large" verticalPadding="large" noPadding="top">
+      <Section
+        width="large"
+        verticalPadding="large"
+        noPadding="top"
+        className={styles.heroContent}
+      >
         <div className={styles.logo}>
           <span>Oslo</span>
           <span>Vegetar</span>
@@ -31,6 +29,10 @@ export const FrontpageHero = () => {
           </Button>
         </Block>
       </Section>
+
+      <div className={styles.heroImage}>
+        <img src="/frontpage-hero-2026.png" alt="Oslo Vegetarfestival" />
+      </div>
     </div>
   )
 }
