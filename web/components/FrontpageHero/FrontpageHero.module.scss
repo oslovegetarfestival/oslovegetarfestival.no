@@ -2,9 +2,11 @@ $breakpoint: 750px;
 
 .wrap {
   position: relative;
+  overflow: hidden;
 
   @media (min-width: $breakpoint) {
     display: flex;
+    overflow: visible;
   }
 }
 
@@ -44,7 +46,7 @@ $breakpoint: 750px;
   }
 
   img {
-    max-width: 700px;
+    max-width: 666px;
   }
 }
 
