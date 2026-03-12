@@ -14,6 +14,7 @@ type Props = {
 }
 
 type EventItem = {
+  highlight?: boolean
   title: string
   startDateTime: string
   eventType: string
@@ -49,25 +50,34 @@ const groupEventByDate = (data: EventItem[]) => {
       }
       return result
     },
-    []
+    [],
   )
 
   return grouped
 }
 
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
+  const favoriteEvents =
+    page?.items
+      ?.filter((item: EventItem) => item?.highlight)
+      ?.sort(
+        (a: EventItem, b: EventItem) =>
+          new Date(a.startDateTime).getTime() -
+          new Date(b.startDateTime).getTime(),
+      ) || []
+
   const regularEvents = page?.items?.filter(
     (item: EventItem) =>
       item?.location?.title !== "Barneteltet" &&
       item?.location?.title !== "Hundeområdet" &&
-      item?.eventType !== "barn"
+      item?.eventType !== "barn",
   )
   const kidsEvents = page?.items?.filter(
     (item: EventItem) =>
-      item?.location?.title === "Barneteltet" || item?.eventType === "barn"
+      item?.location?.title === "Barneteltet" || item?.eventType === "barn",
   )
   const dogEvents = page?.items?.filter(
-    (item: EventItem) => item?.location?.title === "Hundeområdet"
+    (item: EventItem) => item?.location?.title === "Hundeområdet",
   )
 
   const groupedRegularData = groupEventByDate(regularEvents)
@@ -108,6 +118,16 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       {page?.contentBlocks?.map((module: any) => (
         <SanityBlockModule data={module} key={module._key} />
       ))}
+
+      {favoriteEvents.length > 0 && (
+        <Section width="large" verticalPadding="large">
+          <h2>Få med deg dette</h2>
+
+          <Block top="4">
+            <Card data={favoriteEvents} type="event" isScroll />
+          </Block>
+        </Section>
+      )}
 
       {isShowEvents && (
         <>
@@ -236,7 +256,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   <Card data={filterEvents(items)} type="event" isSplit />
                 </Flow>
               </Section>
-            )
+            ),
           )}
 
           {groupedDogData?.map(
@@ -253,7 +273,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                   <Card data={filterEvents(items)} type="event" isSplit />
                 </Flow>
               </Section>
-            )
+            ),
           )}
         </>
       )}

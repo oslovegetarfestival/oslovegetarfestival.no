@@ -23,10 +23,42 @@
 
   &-isScroll {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    grid-auto-flow: column;
+    // Reset template so auto-flow controls columns
+    grid-template-columns: none;
+    // Match single-column width from the 4-col grid
+    grid-auto-columns: calc((100% - 3 * var(--grid-gutter)) / 4);
+
+    // Show scrollbar only on mouse-driven devices (not touch screens)
+    @media (hover: hover) and (pointer: fine) {
+      &::-webkit-scrollbar {
+        display: block;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: currentColor;
+        border-radius: 3px;
+        opacity: 0.4;
+      }
+    }
+
+    @media (max-width: 890px) {
+      grid-template-columns: none;
+      // Show ~1.5 cards so horizontal scroll is obvious
+      grid-auto-columns: calc((100% - var(--grid-gutter)) / 1.5);
+    }
 
     @media (max-width: 500px) {
-      grid-template-columns: repeat(4, minmax(85%, 1fr));
+      grid-template-columns: none;
+      // Show ~1.15 cards on small mobile
+      grid-auto-columns: calc((100% - var(--grid-gutter)) / 1.15);
     }
   }
 }
