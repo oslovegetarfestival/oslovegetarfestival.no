@@ -120,13 +120,15 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       ))}
 
       {favoriteEvents.length > 0 && (
-        <Section width="large" verticalPadding="large">
-          <h2>Få med deg dette</h2>
+        <Block bottom="6">
+          <Section width="large" verticalPadding="tiny" background="banana">
+            <h2>Få med deg dette</h2>
 
-          <Block top="4">
-            <Card data={favoriteEvents} type="event" isScroll isHideDate />
-          </Block>
-        </Section>
+            <Block top="4">
+              <Card data={favoriteEvents} type="event" isScroll isHideDate />
+            </Block>
+          </Section>
+        </Block>
       )}
 
       {isShowEvents && (
