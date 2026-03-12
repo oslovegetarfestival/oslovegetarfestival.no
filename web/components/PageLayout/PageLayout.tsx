@@ -15,11 +15,7 @@ export const PageLayout = ({ children }: Props) => {
   return (
     <>
       <Header isFrontpage={isFrontpage} />
-      <main
-        data-animate-in
-        key={router.asPath}
-        style={{ paddingBottom: "60px" }}
-      >
+      <main data-animate-in key={router.asPath}>
         {children}
       </main>
       <Footer />
