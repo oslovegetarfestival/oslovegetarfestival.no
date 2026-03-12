@@ -1,3 +1,5 @@
+$breakpoint: 750px;
+
 .wrap {
   display: flex;
 }
@@ -20,6 +22,16 @@
   flex-shrink: 0;
 }
 
+.heroTagline {
+  font-size: 80px;
+  font-family: "Canela";
+  line-height: 1;
+  margin-top: var(--spacing-6);
+
+  @media (min-width: $breakpoint) {
+    display: none;
+  }
+}
 
 .logo {
   line-height: 0.9;

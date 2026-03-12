@@ -1,8 +1,6 @@
 import { Button } from "components/Button"
 import { Block, Section } from "components/Layout"
-import { AnimationHeader } from "components/AnimationHeader"
 import styles from "./FrontpageHero.module.scss"
-import { AnimationHeaderMobile } from "components/AnimationHeaderMobile"
 
 export const FrontpageHero = () => {
   return (
@@ -28,10 +26,15 @@ export const FrontpageHero = () => {
             Kjøp billett
           </Button>
         </Block>
+
+        <div className={styles.heroTagline}>
+          <div>Pure food.</div>
+          <div>Pure energy.</div>
+        </div>
       </Section>
 
       <div className={styles.heroImage}>
-        <img src="/frontpage-hero-2026.png" alt="Oslo Vegetarfestival" />
+        <img src="/frontpage-hero-2026.png" alt="Pure food. Pure energy." />
       </div>
     </div>
   )
