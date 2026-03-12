@@ -36,6 +36,13 @@ export const FrontpageHero = () => {
       <div className={styles.heroImage}>
         <img src="/frontpage-hero-2026.png" alt="Pure food. Pure energy." />
       </div>
+
+      <div className={styles.heroImageMobile}>
+        <img
+          src="/frontpage-hero-mobile-2026.png"
+          alt="Pure food. Pure energy."
+        />
+      </div>
     </div>
   )
 }
