@@ -124,7 +124,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
           <h2>Få med deg dette</h2>
 
           <Block top="4">
-            <Card data={favoriteEvents} type="event" isScroll />
+            <Card data={favoriteEvents} type="event" isScroll isHideDate />
           </Block>
         </Section>
       )}

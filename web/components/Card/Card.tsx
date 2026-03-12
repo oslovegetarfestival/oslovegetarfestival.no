@@ -39,6 +39,7 @@ type Props = {
   isEagerLoadImages?: boolean
   isScroll?: boolean
   isSplit?: boolean
+  isHideDate?: boolean
 }
 
 type EventDateProps = {
@@ -78,6 +79,7 @@ export const Card = ({
   isEagerLoadImages = false,
   isScroll,
   isSplit,
+  isHideDate,
 }: Props) => {
   const gridClass = classNames({
     [styles.grid]: true,
@@ -107,11 +109,13 @@ export const Card = ({
               loading={isEagerLoadImages ? "eager" : "lazy"}
             />
             <div className={styles.content}>
-              <p className={styles.metadata}>
-                {createEventDate({ type: type, item: item })}
-                <br />
-                {item.location?.title}
-              </p>
+              {!isHideDate && (
+                <p className={styles.metadata}>
+                  {createEventDate({ type: type, item: item })}
+                  <br />
+                  {item.location?.title}
+                </p>
+              )}
               <Flow space="xsmall">
                 <h2 className={titleClass}>{item.title}</h2>
                 <p className={styles.intro}>{item.intro}</p>
