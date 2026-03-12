@@ -1,20 +1,16 @@
 import { Button } from "components/Button"
 import { Block, Section } from "components/Layout"
-import { AnimationHeader } from "components/AnimationHeader"
 import styles from "./FrontpageHero.module.scss"
-import { AnimationHeaderMobile } from "components/AnimationHeaderMobile"
 
 export const FrontpageHero = () => {
   return (
     <div className={styles.wrap}>
-      <div className={styles.heroImage}>
-        <AnimationHeader />
-      </div>
-      <div className={styles.heroImageMobile}>
-        <AnimationHeaderMobile />
-      </div>
-
-      <Section width="large" verticalPadding="large" noPadding="top">
+      <Section
+        width="large"
+        verticalPadding="large"
+        noPadding="top"
+        className={styles.heroContent}
+      >
         <div className={styles.logo}>
           <span>Oslo</span>
           <span>Vegetar</span>
@@ -30,7 +26,23 @@ export const FrontpageHero = () => {
             Kjøp billett
           </Button>
         </Block>
+
+        <div className={styles.heroTagline}>
+          <div>Pure food.</div>
+          <div>Pure energy.</div>
+        </div>
       </Section>
+
+      <div className={styles.heroImage}>
+        <img src="/frontpage-hero-2026.png" alt="Pure food. Pure energy." />
+      </div>
+
+      <div className={styles.heroImageMobile}>
+        <img
+          src="/frontpage-hero-mobile-2026.png"
+          alt="Pure food. Pure energy."
+        />
+      </div>
     </div>
   )
 }

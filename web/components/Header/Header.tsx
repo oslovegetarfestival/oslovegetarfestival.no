@@ -34,22 +34,12 @@ export const Header = ({ isFrontpage }: Props) => {
 
   const logoClass = classNames(
     styles.logo,
-    isMobileMenuOpen ? styles[`logo-mobile-menu-open`] : false
+    isMobileMenuOpen ? styles[`logo-mobile-menu-open`] : false,
   )
 
   return (
     <header className={styles.header}>
       <Section width="full">
-        {!isFrontpage && (
-          <img
-            src="/logo-candy.svg"
-            alt=""
-            className={styles.logoCandy}
-            aria-hidden
-            loading="eager"
-          />
-        )}
-
         <Flex
           justify={isFrontpage && !isMobileMenuOpen ? "end" : "spaceBetween"}
           align="start"

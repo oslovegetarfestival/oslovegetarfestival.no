@@ -1,42 +1,62 @@
+$breakpoint: 750px;
+
 .wrap {
   position: relative;
 
-  @media (max-width: 500px) {
-    padding-bottom: 26%;
+  @media (min-width: $breakpoint) {
+    display: flex;
   }
 }
 
+.heroContent {
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+}
+
+
 .heroImage {
-  margin-top: 50px;
-  position: absolute;
-  left: 40%;
-  margin-right: var(--spacing-3);
-  z-index: -1;
-  height: 100%;
-  max-width: none;
+  flex: 1;
+  position: relative;
 
-  @media (max-width: 1250px) {
-    left: 30%;
-  }
-
-  @media (max-width: 500px) {
-    display: none;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
 .heroImageMobile {
-  display: none;
+  position: absolute;
+  top: -50px;
+  right: -75px;
+  z-index: 0;
 
-  @media (max-width: 499px) {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    height: 100%;
-    top: 86px;
-    left: var(--page-gutter)
+  @media (max-width: 400px) {
+    right: -160px;
   }
-  @media (max-width: 405px) {
-    top: 100px;
+
+  @media (min-width: calc($breakpoint )) {
+    display: none;
+  }
+
+  img {
+    max-width: 700px;
+  }
+}
+
+
+.heroTagline {
+  font-size: 80px;
+  font-family: "Canela";
+  line-height: 1;
+  margin-top: var(--spacing-6);
+
+  @media (min-width: $breakpoint) {
+    display: none;
   }
 }
 
