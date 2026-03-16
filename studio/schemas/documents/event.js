@@ -50,7 +50,7 @@ export const event = {
     },
     {
       name: "highlight",
-      title: "Fremhev",
+      title: "Fremhevet",
       type: "boolean",
       description: "Fremhev dette arrangementet på Program-siden",
     },
