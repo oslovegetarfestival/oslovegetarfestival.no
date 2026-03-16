@@ -3,7 +3,7 @@ name: Sanity Studio deploy
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "studio/**"
 
