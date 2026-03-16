@@ -52,7 +52,7 @@ export const event = {
       name: "highlight",
       title: "Fremhevet",
       type: "boolean",
-      description: "Fremhev dette arrangementet på Program-siden",
+      description: "Fremhev dette arrangementet på Program-siden.",
     },
     contentBlocks,
     seo,
