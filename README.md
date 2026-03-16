@@ -6,7 +6,6 @@ Website and CMS for Oslo Vegetarfestival.
 
 https://oslovegetarfestival.no
 
-
 ## Development
 
 This is a monorepo for website + Sanity Studio. Built with next.js, React and css modules.
@@ -14,6 +13,10 @@ This is a monorepo for website + Sanity Studio. Built with next.js, React and cs
 Install dependencies in both /web and /studio with `npm i`.
 
 Start both frontend and Sanity studio with: `npm run dev`.
+
+## Deploy
+
+Push to `main` to deploy to prod (Vercel + Sanity)
 
 ## CMS
 
