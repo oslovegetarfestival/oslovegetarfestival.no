@@ -14,7 +14,6 @@ type Props = {
 }
 
 type EventItem = {
-  highlight?: boolean
   title: string
   startDateTime: string
   eventType: string
@@ -57,14 +56,7 @@ const groupEventByDate = (data: EventItem[]) => {
 }
 
 const EventMainPage: NextPage<Props> = ({ page = {} }) => {
-  const favoriteEvents =
-    page?.items
-      ?.filter((item: EventItem) => item?.highlight)
-      ?.sort(
-        (a: EventItem, b: EventItem) =>
-          new Date(a.startDateTime).getTime() -
-          new Date(b.startDateTime).getTime(),
-      ) || []
+  const favoriteEvents = page?.highlightedEvents || []
 
   const regularEvents = page?.items?.filter(
     (item: EventItem) =>

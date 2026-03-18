@@ -48,12 +48,6 @@ export const event = {
       description: "Hvor arrangementet foregår. Feks: Barneteltet",
       to: [{ type: "eventLocation" }],
     },
-    {
-      name: "highlight",
-      title: "Fremhevet",
-      type: "boolean",
-      description: "Fremhev dette arrangementet på Program-siden.",
-    },
     contentBlocks,
     seo,
   ],

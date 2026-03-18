@@ -2,6 +2,7 @@
 import { page } from "./documents/page";
 import { event } from "./documents/event";
 import { eventLocation } from "./documents/eventLocation";
+import { eventHighlight } from "./documents/eventHighlight";
 import { exhibitor } from "./documents/exhibitor";
 import { exhibitorType } from "./documents/exhibitorType";
 import { news } from "./documents/news";
@@ -17,6 +18,7 @@ export default [
   page,
   event,
   eventLocation,
+  eventHighlight,
   exhibitor,
   exhibitorType,
   news,

@@ -5,6 +5,7 @@ import {
   FiCoffee,
   FiFileText,
   FiLink,
+  FiStar,
 } from "react-icons/fi";
 
 export default (S) =>
@@ -29,6 +30,9 @@ export default (S) =>
       S.documentTypeListItem("eventLocation")
         .title("Arrangement: Steder")
         .icon(FiLink),
+      S.documentTypeListItem("eventHighlight")
+        .title("Arrangement: Fremhevet")
+        .icon(FiStar),
       S.divider(),
       S.documentTypeListItem("greenEvents")
         .title("Grønt arrangement")
