@@ -30,9 +30,14 @@ export default (S) =>
       S.documentTypeListItem("eventLocation")
         .title("Arrangement: Steder")
         .icon(FiLink),
-      S.documentTypeListItem("eventHighlight")
+      S.listItem()
         .title("Arrangement: Fremhevet")
-        .icon(FiStar),
+        .icon(FiStar)
+        .child(
+          S.document()
+            .schemaType("eventHighlight")
+            .documentId("eventHighlight"),
+        ),
       S.divider(),
       S.documentTypeListItem("greenEvents")
         .title("Grønt arrangement")
