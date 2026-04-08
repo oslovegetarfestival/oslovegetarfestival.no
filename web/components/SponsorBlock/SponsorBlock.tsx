@@ -12,10 +12,10 @@ type Props = {
 
 export const SponsorBlock = ({ data }: Props) => {
   return (
-    <Section centerContent width="full">
+    <Section centerContent width="full" verticalPadding="xlarge">
       <Section width="large" noPadding="sides">
         {data?.title && (
-          <Block top="8" bottom="6">
+          <Block bottom="7">
             <h2>{data?.title}</h2>
           </Block>
         )}
@@ -44,7 +44,7 @@ export const SponsorBlock = ({ data }: Props) => {
                   fill="contain"
                 />
               </a>
-            )
+            ),
           )}
         </Flex>
       </Section>
