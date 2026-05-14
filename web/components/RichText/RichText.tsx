@@ -27,7 +27,12 @@ export const RichText = ({ data }: Props) => {
               }
 
               return (
-                <a href={value?.href} className="link">
+                <a
+                  href={value?.href}
+                  className="link"
+                  target="_blank"
+                  rel="noopener"
+                >
                   {children}
                 </a>
               )
