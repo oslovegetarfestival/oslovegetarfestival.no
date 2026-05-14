@@ -214,21 +214,20 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
           {groupedRegularData?.map(({ startDate, items }: EventGroupedItem) => (
             <Section width="large" verticalPadding="large" key={startDate}>
               <Flow>
-                <div>
-                  <h2 className="sticky-section-header" id={weekDay(startDate)}>
-                    {weekDayAndDate(startDate)}
-                  </h2>
+                <h2 className="sticky-section-header" id={weekDay(startDate)}>
+                  {weekDayAndDate(startDate)}
+                </h2>
 
-                  <Block bottom="4">
-                    <p>
-                      <em>
-                        Inngang fra kl 11:00{" "}
-                        {startDate.startsWith("2025-05-24") &&
-                          " / Morgen-rave kl 09:00"}
-                      </em>
-                    </p>
-                  </Block>
-                </div>
+                <Block bottom="4">
+                  <p>
+                    <em>
+                      Inngang fra kl 11:00{" "}
+                      {startDate.startsWith("2026-05-30") &&
+                        " / Morgen-rave kl 09:00"}
+                    </em>
+                  </p>
+                </Block>
+
                 {/* @ts-ignore */}
                 <Card data={filterEvents(items)} type="event" isSplit />
               </Flow>
