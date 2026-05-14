@@ -44,13 +44,13 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
 
   // Divide exhibitors into: sletta, hagen, skogsholtet
   const musclePowerItems = data?.filter(
-    (exhibitor) => exhibitor.area === "muscle-power"
+    (exhibitor) => exhibitor.area === "muscle-power",
   )
   const greenLightDistrictItems = data?.filter(
-    (exhibitor) => exhibitor.area === "green-light-district"
+    (exhibitor) => exhibitor.area === "green-light-district",
   )
   const animalLoversItems = data?.filter(
-    (exhibitor) => exhibitor.area === "animal-lovers"
+    (exhibitor) => exhibitor.area === "animal-lovers",
   )
 
   return (
@@ -140,15 +140,10 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
             </h2>
 
             <Block bottom="6">
-              <a
-                href="https://favrit.com/en-gb/menu/location/LWBOzkXd17q"
-                target="_blank"
-                className="link"
-              >
-                Bestill mat og drikke med QR
-              </a>{" "}
-              og få en SMS når du kan hente maten. Du kan bestille fra flere
-              boder samtidig. Du kan også bestille direkte fra matbodene.
+              <p>
+                Bestill mat og drikke direkte fra matbodene. Et lite utdrag fra
+                de fristende menyene deres finner du under.
+              </p>
             </Block>
 
             <div id="power-up">
