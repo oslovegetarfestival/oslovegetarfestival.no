@@ -13,7 +13,7 @@ const NewsMainPage = dynamic(() => import("PageComponents/NewsMainPage"))
 const NewsPage = dynamic(() => import("PageComponents/NewsPage"))
 const ExhibitorPage = dynamic(() => import("PageComponents/ExhibitorPage"))
 const ExhibitorMainPage = dynamic(
-  () => import("PageComponents/ExhibitorMainPage")
+  () => import("PageComponents/ExhibitorMainPage"),
 )
 const EventPage = dynamic(() => import("PageComponents/EventPage"))
 const EventMainPage = dynamic(() => import("PageComponents/EventMainPage"))
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 
   // Exclude pages that are handled by normal /pages routing
   const filteredPageQueries = pageQueries.filter(
-    (slug: string) => slug !== "/program-2024" && slug !== "/kart"
+    (slug: string) => slug !== "/program-2024" && slug !== "/kart",
   )
 
   // Split the slug strings to arrays (as required by Next.js)
@@ -73,6 +73,10 @@ export async function getStaticProps({ params }: Props) {
 
   // Get the initial data for this page, using the correct query
   const pageData = await sanityClient.fetch(query, queryParams)
+
+  if (!pageData) {
+    return { notFound: true }
+  }
 
   return {
     props: {

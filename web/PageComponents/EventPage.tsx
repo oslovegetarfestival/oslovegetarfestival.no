@@ -17,11 +17,11 @@ type Props = {
 }
 
 const EventPage: NextPage<Props> = ({ page = {} }) => {
-  const { currentEvent, allEvents } = page
+  const { currentEvent, allEvents } = page || {}
 
   // Find previous and next event
   const currentIndex = allEvents?.findIndex(
-    (event: any) => event?._id === currentEvent?._id
+    (event: any) => event?._id === currentEvent?._id,
   )
   const nextEvent = allEvents?.[currentIndex + 1]
   const previousEvent = allEvents?.[currentIndex - 1]
