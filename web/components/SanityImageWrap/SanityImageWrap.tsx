@@ -10,7 +10,15 @@ type Props = {
     caption?: string
     size?: "tiny" | "small"
     asset: {
-      _ref: string
+      _ref?: string
+      _id?: string
+      metadata?: {
+        dimensions?: {
+          width: number
+          height: number
+          aspectRatio: number
+        }
+      }
     }
     hotspot?: {
       x: number
@@ -44,7 +52,7 @@ export const SanityImageWrap = ({
   loading = "lazy",
   style,
 }: Props) => {
-  const imageId = image?.asset?._ref
+  const imageId = image?.asset?._ref || image?.asset?._id
   if (!imageId) return null
 
   if (isFeaturedImage) {
@@ -60,19 +68,24 @@ export const SanityImageWrap = ({
     width = 700
   }
 
+  const aspectRatio = image?.asset?.metadata?.dimensions?.aspectRatio
+  if (!height && aspectRatio) {
+    height = Math.round(width / aspectRatio)
+  }
+
   const pictureClass = classNames(
     styles.picture,
-    isFeaturedImage && styles["-round-corners"]
+    isFeaturedImage && styles["-round-corners"],
   )
 
   const imageClass = classNames(
     styles.image,
     isRoundCorners && styles["-round-corners"],
-    isFeaturedImage && styles["-featured"]
+    isFeaturedImage && styles["-featured"],
   )
 
   const captionClass = classNames(
-    isFeaturedImage ? styles["imageCredit"] : styles["figcaption"]
+    isFeaturedImage ? styles["imageCredit"] : styles["figcaption"],
   )
 
   return (
@@ -89,6 +102,7 @@ export const SanityImageWrap = ({
         className={imageClass}
         style={style}
         alt={image?.altText ?? ""}
+        {...(loading === "eager" && { fetchPriority: "high" })}
       />
       {!isHideCaption && image?.caption && (
         <figcaption aria-hidden="true" className={captionClass}>
