@@ -61,7 +61,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
   const regularEvents = page?.items?.filter(
     (item: EventItem) =>
       item?.location?.title !== "Barneteltet" &&
-      item?.location?.title !== "Hundeområdet" &&
+      item?.location?.title !== "Hundehjørnet" &&
       item?.eventType !== "barn",
   )
   const kidsEvents = page?.items?.filter(
@@ -69,7 +69,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
       item?.location?.title === "Barneteltet" || item?.eventType === "barn",
   )
   const dogEvents = page?.items?.filter(
-    (item: EventItem) => item?.location?.title === "Hundeområdet",
+    (item: EventItem) => item?.location?.title === "Hundehjørnet",
   )
 
   const groupedRegularData = groupEventByDate(regularEvents)
@@ -150,7 +150,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                     </Button>
                   )}
                   {groupedDogData && groupedDogData.length > 0 && (
-                    <Button size="small" isArrow={false} link={`#Hundeområdet`}>
+                    <Button size="small" isArrow={false} link={`#Hundehjørnet`}>
                       <span className="uppercase-first">For hunder</span>
                     </Button>
                   )}
@@ -258,7 +258,7 @@ const EventMainPage: NextPage<Props> = ({ page = {} }) => {
                 <Flow>
                   <h2
                     className="sticky-section-header"
-                    id={index === 0 ? "Hundeområdet" : ""}
+                    id={index === 0 ? "Hundehjørnet" : ""}
                   >
                     For hunder - {weekDay(startDate)}
                   </h2>
