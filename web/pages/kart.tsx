@@ -95,7 +95,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
                 <Button size="small" isArrow={false} link="#animal-lovers">
                   Animal lovers
                 </Button>
-                <Button size="small" isArrow={false} link="#power-up">
+                <Button size="small" isArrow={false} link="#serveringsboder">
                   Power up - mat og drikke
                 </Button>
               </Flex>
@@ -146,10 +146,8 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               </p>
             </Block>
 
-            <div id="power-up">
-              {/* @ts-expect-error */}
-              <Accordion list={accordionItems} />
-            </div>
+            {/* @ts-expect-error */}
+            <Accordion list={accordionItems} />
           </Flow>
         </Section>
       </PageLayout>

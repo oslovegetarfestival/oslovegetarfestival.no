@@ -99,6 +99,7 @@ svg {
   position: sticky;
   top: 0;
   z-index: 1;
+  scroll-margin-top: var(--spacing-5);
 
   &:first-letter {
     text-transform: uppercase;
