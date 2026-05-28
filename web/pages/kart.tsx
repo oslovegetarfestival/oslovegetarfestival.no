@@ -37,7 +37,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
       return {
         title: exhibitor?.title,
         richTextObject: exhibitor?.menu,
-        key: exhibitor?._id,
+        _key: exhibitor?._id,
         link: exhibitor.slug.current,
       }
     })
@@ -71,6 +71,7 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
             alt="Kart over festivalområdet"
             width="2330"
             height="1653"
+            fetchPriority="high"
           />
         </Section>
 
@@ -146,7 +147,6 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               </p>
             </Block>
 
-            {/* @ts-expect-error */}
             <Accordion list={accordionItems} />
           </Flow>
         </Section>
