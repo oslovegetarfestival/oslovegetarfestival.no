@@ -136,7 +136,11 @@ const MapPage: NextPage<Props> = ({ data }: Props) => {
               </p>
             ))}
 
-            <h2 className="sticky-section-header" id="serveringsboder">
+            <Block bottom="4" top="4">
+              <div id="serveringsboder">&nbsp;</div>
+            </Block>
+
+            <h2 className="sticky-section-header" id="serveringsboder2">
               Power up - mat og drikke
             </h2>
 
