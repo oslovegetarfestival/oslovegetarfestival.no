@@ -112,8 +112,13 @@ export const Card = ({
               {!isHideDate && (
                 <p className={styles.metadata}>
                   {createEventDate({ type: type, item: item })}
-                  <br />
-                  {item.location?.title}
+
+                  {item.location?.title && (
+                    <>
+                      <br />
+                      {item.location?.title}
+                    </>
+                  )}
                 </p>
               )}
               <Flow space="xsmall">
