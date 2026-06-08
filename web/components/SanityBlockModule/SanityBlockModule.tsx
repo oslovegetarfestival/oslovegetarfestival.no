@@ -127,7 +127,7 @@ export const SanityBlockModule = ({ data }: Props) => {
         <>
           <Script
             src="https://registration.checkin.no/registration.loader.js"
-            data-event-id="128700"
+            data-event-id="225287"
             strategy="afterInteractive"
           />
           <div id="checkin_registration">
